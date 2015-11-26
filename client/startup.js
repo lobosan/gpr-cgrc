@@ -1,4 +1,2 @@
-Meteor.startup( () => {
-  Bert.defaults.style = 'growl-top-right';
-  Modules.client.startup();
-});
+Meteor.startup( () => Modules.client.startup() );
+Bert.defaults.style = 'growl-top-right';

@@ -1,7 +1,5 @@
 <template name="authenticatedNavigation">
     <ul class="nav navbar-nav">
-        <li class="{{currentRoute 'index'}}"><a href="{{pathFor 'index'}}">Index</a></li>
-
       {{#if isInRole 'admin'}}
           <li class="{{currentRoute 'users'}}"><a href="{{pathFor 'users'}}">Users</a></li>
       {{/if}}

@@ -9,17 +9,9 @@ const publicRoutes = FlowRouter.group({
   triggersEnter: [publicRedirect]
 });
 
-publicRoutes.route('/invite/:token', {
-  name: 'invite',
+publicRoutes.route('/', {
   action() {
-    BlazeLayout.render('default', {yield: 'invite'});
-  }
-});
-
-publicRoutes.route('/signup', {
-  name: 'signup',
-  action() {
-    BlazeLayout.render('default', {yield: 'signup'});
+    BlazeLayout.render('default', {yield: 'login'});
   }
 });
 
@@ -27,6 +19,13 @@ publicRoutes.route('/login', {
   name: 'login',
   action() {
     BlazeLayout.render('default', {yield: 'login'});
+  }
+});
+
+publicRoutes.route('/invite/:token', {
+  name: 'invite',
+  action() {
+    BlazeLayout.render('default', {yield: 'invite'});
   }
 });
 

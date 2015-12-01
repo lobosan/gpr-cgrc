@@ -1,6 +1,6 @@
 Meteor.methods({
-  sendInvitation( invitation ) {
-    check( invitation, {
+  sendInvitation(invitation) {
+    check(invitation, {
       email: String,
       role: String
     });
@@ -8,11 +8,11 @@ Meteor.methods({
     try {
       Modules.server.sendInvitation({
         email: invitation.email,
-        token: Random.hexString( 16 ),
+        token: Random.hexString(16),
         role: invitation.role,
         date: ( new Date() ).toISOString()
       });
-    } catch( exception ) {
+    } catch (exception) {
       return exception;
     }
   }

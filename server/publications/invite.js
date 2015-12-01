@@ -1,4 +1,4 @@
-Meteor.publish( 'invite', function( token ) {
-  check( token, String );
-  return Invitations.find( { "token": token } );
+Meteor.publish('invite', function (token) {
+  check(token, String);
+  return Invitations.find({"token": token});
 });

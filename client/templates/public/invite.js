@@ -3,7 +3,7 @@ Template.invite.onCreated(() => {
 });
 
 Template.invite.helpers({
-  invitation: function () {
+  invitation: () => {
     var invite = Invitations.findOne();
 
     if (invite) {
@@ -13,7 +13,7 @@ Template.invite.helpers({
 });
 
 Template.invite.events({
-  'submit form': function (event, template) {
+  'submit form': (event, template) => {
     event.preventDefault();
 
     let password = template.find('[name="password"]').value;
@@ -24,7 +24,7 @@ Template.invite.events({
       token: FlowRouter.current().params.token
     };
 
-    Meteor.call('acceptInvitation', user, function (error, response) {
+    Meteor.call('acceptInvitation', user, (error, response) => {
       if (error) {
         Bert.alert(error.reason, 'warning');
       } else {

@@ -1,8 +1,9 @@
 <template name="users">
   {{#if isInRole 'admin'}}
     {{> sendInvitationModal}}
-
-    <h4 class="page-header">Users</h4>
+    <div class="page-header-2">
+      <h3>Users</h3>
+    </div>
     <table class="table table-bordered">
       <thead>
       <tr>

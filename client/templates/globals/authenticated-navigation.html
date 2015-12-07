@@ -1,11 +1,11 @@
 <template name="authenticatedNavigation">
     <ul class="nav navbar-nav">
       {{#if isInRole 'admin'}}
-          <li class="{{currentRoute 'users'}}"><a href="{{pathFor 'users'}}">Users</a></li>
+          <li class="{{currentRoute 'users'}}"><a href="{{pathFor 'users'}}">Usuarios</a></li>
       {{/if}}
 
       {{#if isInRole 'admin,manager'}}
-          <li class="{{currentRoute 'managers'}}"><a href="{{pathFor 'managers'}}">Managers</a></li>
+          <li class="{{currentRoute 'productores'}}"><a href="{{pathFor 'productores'}}">Productores</a></li>
       {{/if}}
 
         <li class="{{currentRoute 'employees'}}"><a href="{{pathFor 'employees'}}">Employees</a></li>

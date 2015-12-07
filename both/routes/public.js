@@ -1,3 +1,4 @@
+//if the user is logged in and hit a public route, redirect the user to their “default” view
 const publicRedirect = (context, redirect) => {
   if (Meteor.userId()) {
     Modules.both.redirectUser({redirect: redirect});

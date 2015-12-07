@@ -3,18 +3,18 @@ Template.users.onCreated(() => {
 });
 
 Template.users.helpers({
-  users: function () {
+  users: () => {
     var users = Meteor.users.find();
 
     if (users) {
       return users;
     }
   },
-  hasInvitations: function() {
+  hasInvitations: () => {
     var invitations = Invitations.find().count();
     return invitations < 1 ? false : true;
   },
-  invitations: function() {
+  invitations: () => {
     var invitations = Invitations.find();
 
     if ( invitations ) {
@@ -24,7 +24,7 @@ Template.users.helpers({
 });
 
 Template.users.events({
-  'change [name="userRole"]': function (event, template) {
+  'change [name="userRole"]': function(event, template) {
     let role = $(event.target).find('option:selected').val();
 
     Meteor.call("setRoleOnUser", {

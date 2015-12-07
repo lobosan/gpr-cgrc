@@ -1,0 +1,30 @@
+<template name="nuevoProductor">
+  <div class="page-header-2">
+    <h3>Nuevo productor</h3>
+  </div>
+  {{#autoForm collection='Productores' id='insertProductorForm' type='insert'}}
+    {{> afQuickField name='zona'}}
+    {{> afQuickField name='provincia'}}
+    {{> afQuickField name='anio'}}
+    {{> afQuickField name='cuatrimestre'}}
+    {{> afQuickField name='cedula'}}
+    {{> afQuickField name='genero'}}
+    {{> afQuickField name='apellidos'}}
+    {{> afQuickField name='nombres'}}
+    {{> afQuickField name='telefonoFijoContacto'}}
+    {{> afQuickField name='celularContacto'}}
+    {{> afQuickField name='emailContacto'}}
+    {{> afQuickField name='organizacion'}}
+    {{> afQuickField name='feria'}}
+    {{> afQuickField name='canasta'}}
+    {{> afQuickField name='canastaInstitucional'}}
+    {{> afQuickField name='pieDeFinca'}}
+    {{> afQuickField name='tienda'}}
+    {{> afQuickField name='compraPublica'}}
+    {{> afQuickField name='catering'}}
+    {{> afQuickField name='otro'}}
+    {{> afQuickField name='respaldo'}}
+
+    <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
+  {{/autoForm}}
+</template>

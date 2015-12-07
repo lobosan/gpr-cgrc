@@ -1,45 +1,53 @@
 const authenticatedRedirect = () => {
-  if ( !Meteor.loggingIn() && !Meteor.userId() ) {
-    FlowRouter.go( 'login' );
+  if (!Meteor.loggingIn() && !Meteor.userId()) {
+    FlowRouter.go('login');
   }
 };
 
-const blockUnauthorizedAdmin = ( context, redirect ) => {
-  if ( Meteor.userId() && !Roles.userIsInRole( Meteor.userId(), 'admin' ) ) {
-    Modules.both.redirectUser( { redirect: redirect } );
+const blockUnauthorizedAdmin = (context, redirect) => {
+  if (Meteor.userId() && !Roles.userIsInRole(Meteor.userId(), 'admin')) {
+    Modules.both.redirectUser({redirect: redirect});
   }
 };
 
-const blockUnauthorizedManager = ( context, redirect ) => {
-  if ( Meteor.userId() && !Roles.userIsInRole( Meteor.userId(), [ 'admin', 'manager' ] ) ) {
-    Modules.both.redirectUser( { redirect: redirect } );
+const blockUnauthorizedManager = (context, redirect) => {
+  if (Meteor.userId() && !Roles.userIsInRole(Meteor.userId(), ['admin', 'manager'])) {
+    Modules.both.redirectUser({redirect: redirect});
   }
 };
 
 const authenticatedRoutes = FlowRouter.group({
   name: 'authenticated',
-  triggersEnter: [ authenticatedRedirect ]
+  triggersEnter: [authenticatedRedirect]
 });
 
-authenticatedRoutes.route( '/users', {
+authenticatedRoutes.route('/users', {
   name: 'users',
-  triggersEnter: [ blockUnauthorizedAdmin ],
+  triggersEnter: [blockUnauthorizedAdmin],
   action() {
-    BlazeLayout.render( 'default', { yield: 'users' } );
+    BlazeLayout.render('default', {yield: 'users'});
   }
 });
 
-authenticatedRoutes.route( '/managers', {
-  name: 'managers',
-  triggersEnter: [ blockUnauthorizedManager ],
+authenticatedRoutes.route('/productores', {
+  name: 'productores',
+  triggersEnter: [blockUnauthorizedManager],
   action() {
-    BlazeLayout.render( 'default', { yield: 'managers' } );
+    BlazeLayout.render('default', {yield: 'productores'});
   }
 });
 
-authenticatedRoutes.route( '/employees', {
+authenticatedRoutes.route('/nuevo-productor', {
+  name: 'nuevo-productor',
+  triggersEnter: [blockUnauthorizedManager],
+  action() {
+    BlazeLayout.render('default', {yield: 'nuevoProductor'});
+  }
+});
+
+authenticatedRoutes.route('/employees', {
   name: 'employees',
   action() {
-    BlazeLayout.render( 'default', { yield: 'employees' } );
+    BlazeLayout.render('default', {yield: 'employees'});
   }
 });

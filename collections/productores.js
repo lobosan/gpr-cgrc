@@ -5,7 +5,7 @@ let ProductoresSchema = new SimpleSchema({
     type: String,
     label: 'Zona',
     autoform: {
-      typ: 'select-radio-inline',
+      type: 'select-radio-inline',
       options: function () {
         return [
           {label: '1', value: '1'},

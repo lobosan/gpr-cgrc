@@ -50,26 +50,7 @@ let OrganizacionesSchema = new SimpleSchema({
   },
   localidad: {
     type: String,
-    label: 'Nombre de la organización'
-  },
-  anio: {
-    type: Number,
-    label: 'Año',
-    autoValue: function () {
-      var currentDate = new Date();
-      var date = currentDate.getFullYear();
-      if (this.isInsert) {
-        return date;
-      } else if (this.isUpsert) {
-        return {$setOnInsert: date};
-      } else {
-        this.unset();
-      }
-    },
-    autoform: {
-      type: 'hidden',
-      label: false
-    }
+    label: 'Localidad'
   },
   cuatrimestre: {
     type: String,
@@ -126,33 +107,105 @@ let OrganizacionesSchema = new SimpleSchema({
     optional: true
   },
   productoresOrganizacion: {
-    type: String,
+    type: Number,
     label: 'Número de productores de la organización'
   },
-  productoresFeria: {
+  productoresCialco: {
     type: Array,
-    label: 'Productores de la Feria',
+    label: 'Productores del CIALCO',
     optional: true
   },
-  'productoresFeria.$': {
-    type: Object,
-    label: 'Feria'
+  'productoresCialco.$': {
+    type: Object
   },
-  'productoresFeria.$.cialcoID': {
+  'productoresCialco.$.cialcoID': {
     type: String,
-    label: 'Nombre de la feria'
+    label: 'Nombre del CIALCO'
   },
-  'productoresFeria.$.hombres': {
+  'productoresCialco.$.hombres': {
     type: Number,
-    label: 'Número de hombres en feria'
+    label: 'Número de hombres en el CIALCO'
   },
-  'productoresFeria.$.mujeres': {
+  'productoresCialco.$.mujeres': {
     type: Number,
-    label: 'Número de mujeres en feria'
+    label: 'Número de mujeres en el CIALCO'
   },
-  'productoresFeria.$.total': {
+  'productoresCialco.$.total': {
     type: Number,
-    label: 'Total de productores en feria'
+    label: 'Total de productores en el CIALCO'
+  },
+  anio: {
+    type: Number,
+    label: 'Año',
+    autoValue: function () {
+      var currentDate = new Date();
+      var date = currentDate.getFullYear();
+      if (this.isInsert) {
+        return date;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: date};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    }
+  },
+  createdAt: {
+    type: String,
+    label: 'Fecha de creación',
+    autoValue: function () {
+      var currentDate = new Date();
+      var date = currentDate.getFullYear() + '-' + ('0' + (currentDate.getMonth() + 1)).slice(-2) + '-' + ('0' + currentDate.getDate()).slice(-2);
+      if (this.isInsert) {
+        return date;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: date};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    }
+  },
+  createdBy: {
+    type: String,
+    autoValue: function () {
+      if (this.isInsert) {
+        return Meteor.userId();
+      } else if (this.isUpsert) {
+        return {$setOnInsert: Meteor.userId()};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    },
+    optional: true
+  },
+  responsable: {
+    type: String,
+    label: 'Responsable',
+    autoValue: function () {
+      if (this.isInsert) {
+        return Meteor.users.findOne().profile.name;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: Meteor.users.findOne().profile.name};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    },
+    optional: true
   }
 });
 

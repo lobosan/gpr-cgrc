@@ -85,9 +85,9 @@ let CialcosSchema = new SimpleSchema({
       }
     }
   },
-  fase: {
+  estado: {
     type: String,
-    label: 'Fase',
+    label: 'Estado',
     autoform: {
       type: 'select-radio-inline',
       options: function () {

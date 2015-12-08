@@ -39,3 +39,5 @@ ongoworks:security
 msavin:mongol
 gwendall:autoform-i18n
 gwendall:simple-schema-i18n
+aldeed:autoform-select2
+zimme:select2-bootstrap3-css

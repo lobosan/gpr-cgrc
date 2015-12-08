@@ -1,0 +1,25 @@
+<template name="nuevoCialco">
+  <div class="page-header-2">
+    <h3>Nuevo CIALCO</h3>
+  </div>
+  {{#autoForm collection='Cialcos' id='insertCialcoForm' type='insert'}}
+    {{> afQuickField name='zona'}}
+    {{> afQuickField name='provincia'}}
+    {{> afQuickField name='canton'}}
+    {{> afQuickField name='localidad'}}
+    {{> afQuickField name='cuatrimestre'}}
+    {{> afQuickField name='modalidad'}}
+    {{> afQuickField name='fase'}}
+    {{> afQuickField name='nombreCialco'}}
+    {{> afQuickField name='nombreRepresentante'}}
+    {{> afQuickField name='telefonoFijoRepresentante'}}
+    {{> afQuickField name='celularRepresentante'}}
+    {{> afQuickField name='emailRepresentante'}}
+    {{> afQuickField name='hombresCialco'}}
+    {{> afQuickField name='mujeresCialco'}}
+    {{> afQuickField name='totalProductoresCialco'}}
+    {{> afQuickField name='observaciones'}}
+
+    <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
+  {{/autoForm}}
+</template>

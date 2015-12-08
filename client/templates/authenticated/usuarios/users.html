@@ -2,25 +2,25 @@
   {{#if isInRole 'admin'}}
     {{> sendInvitationModal}}
     <div class="page-header-2">
-      <h3>Users</h3>
+      <h3>Usuarios</h3>
     </div>
     <table class="table table-bordered">
       <thead>
       <tr>
-        <th>Email Address</th>
-        <th class="text-center">Role</th>
+        <th>Correo electrónico</th>
+        <th class="text-center">Rol</th>
       </tr>
       </thead>
       <tbody>
       {{#each users}}
         <tr>
           <td class="text-left text-middle">{{#if isCurrentUser _id}}<label
-            class="label label-success">You!</label>{{/if}} {{emails.[0].address}}</td>
+            class="label label-success">Usted!</label>{{/if}} {{emails.[0].address}}</td>
           <td>
             <select {{disableIfAdmin _id}} name="userRole" class="form-control">
-              <option selected="{{selected roles.[0] 'admin'}}" value="admin">Admin</option>
-              <option selected="{{selected roles.[0] 'manager'}}" value="manager">Manager</option>
-              <option selected="{{selected roles.[0] 'employee'}}" value="employee">Employee</option>
+              <option selected="{{selected roles.[0] 'admin'}}" value="admin">Administrador</option>
+              <option selected="{{selected roles.[0] 'manager'}}" value="manager">Director zonal</option>
+              <option selected="{{selected roles.[0] 'employee'}}" value="employee">Técnico provincial</option>
             </select>
           </td>
         </tr>
@@ -29,16 +29,16 @@
     </table>
 
     <div class="page-header clearfix">
-      <h4 class="pull-left">Invitations</h4>
-      <button class="btn btn-success pull-right" data-toggle="modal" data-target="#send-invitation-modal">Send Invitation</button>
+      <h4 class="pull-left">Invitaciones</h4>
+      <button class="btn btn-success pull-right" data-toggle="modal" data-target="#send-invitation-modal">Invitar usuario</button>
     </div>
     {{#if hasInvitations}}
       <table class="table table-bordered">
         <thead>
         <tr>
-          <th>Email Address</th>
-          <th class="text-center">Type</th>
-          <th class="text-center">Date Sent</th>
+          <th>Correo electrónico</th>
+          <th class="text-center">Tipo</th>
+          <th class="text-center">Fecha de envío</th>
           <th></th>
         </tr>
         </thead>
@@ -49,14 +49,14 @@
             <td class="text-center text-middle">{{role}}</td>
             <td class="text-center text-middle">{{humanDate date}}</td>
             <td class="text-center">
-              <button type="button" class="btn btn-danger revoke-invite">Revoke</button>
+              <button type="button" class="btn btn-danger revoke-invite">Revocar</button>
             </td>
           </tr>
         {{/each}}
         </tbody>
       </table>
     {{else}}
-      <p class="alert alert-warning">No open invitations.</p>
+      <p class="alert alert-warning">No existen invitaciones abiertas.</p>
     {{/if}}
   {{/if}}
 </template>

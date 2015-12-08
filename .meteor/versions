@@ -2,9 +2,11 @@ accounts-base@1.2.2
 accounts-password@1.1.4
 alanning:roles@1.2.14
 aldeed:autoform@5.7.1
+aldeed:autoform-select2@2.0.2
 aldeed:collection2@2.5.0
 aldeed:simple-schema@1.4.0
 aldeed:tabular@1.4.2
+aldeed:template-extension@3.4.3
 audit-argument-checks@1.0.4
 autoupdate@1.2.4
 babel-compiler@5.8.24_1
@@ -104,3 +106,4 @@ underscore@1.0.4
 url@1.0.5
 webapp@1.2.3
 webapp-hashing@1.0.5
+zimme:select2-bootstrap3-css@1.4.6

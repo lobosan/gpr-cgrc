@@ -45,9 +45,32 @@ authenticatedRoutes.route('/nuevo-productor', {
   }
 });
 
-authenticatedRoutes.route('/employees', {
-  name: 'employees',
+authenticatedRoutes.route('/organizaciones', {
+  name: 'organizaciones',
   action() {
-    BlazeLayout.render('default', {yield: 'employees'});
+    BlazeLayout.render('default', {yield: 'organizaciones'});
+  }
+});
+
+authenticatedRoutes.route('/nueva-organizacion', {
+  name: 'nueva-organizacion',
+  triggersEnter: [blockUnauthorizedManager],
+  action() {
+    BlazeLayout.render('default', {yield: 'nuevaOrganizacion'});
+  }
+});
+
+authenticatedRoutes.route('/cialcos', {
+  name: 'cialcos',
+  action() {
+    BlazeLayout.render('default', {yield: 'cialcos'});
+  }
+});
+
+authenticatedRoutes.route('/nuevo-cialco', {
+  name: 'nuevo-cialco',
+  triggersEnter: [blockUnauthorizedManager],
+  action() {
+    BlazeLayout.render('default', {yield: 'nuevoCialco'});
   }
 });

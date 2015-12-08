@@ -1,21 +1,45 @@
 <template name="authenticatedNavigation">
-    <ul class="nav navbar-nav">
-      {{#if isInRole 'admin'}}
-          <li class="{{currentRoute 'users'}}"><a href="{{pathFor 'users'}}">Usuarios</a></li>
-      {{/if}}
+  <ul class="nav navbar-nav">
+    {{#if isInRole 'admin'}}
+      <li class="dropdown {{currentRoute 'cialcos'}} {{currentRoute 'nuevo-cialco'}}">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+          CIALCOs <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="{{pathFor 'cialcos'}}">Lista de CIALCOs</a></li>
+          <li><a href="{{pathFor 'nuevo-cialco'}}">Nuevo CIALCO</a></li>
+        </ul>
+      </li>
 
-      {{#if isInRole 'admin,manager'}}
-          <li class="{{currentRoute 'productores'}}"><a href="{{pathFor 'productores'}}">Productores</a></li>
-      {{/if}}
+      <li class="dropdown {{currentRoute 'organizaciones'}} {{currentRoute 'nueva-organizacion'}}">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+          Organizaciones <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="{{pathFor 'organizaciones'}}">Lista de organizaciones</a></li>
+          <li><a href="{{pathFor 'nueva-organizacion'}}">Nueva organización</a></li>
+        </ul>
+      </li>
 
-        <li class="{{currentRoute 'employees'}}"><a href="{{pathFor 'employees'}}">Employees</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{currentUser.emails.[0].address}} <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                <li class="logout"><a href="#">Logout</a></li>
-            </ul>
-        </li>
-    </ul>
+      <li class="dropdown {{currentRoute 'productores'}} {{currentRoute 'nuevo-productor'}}">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+          Productores <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="{{pathFor 'productores'}}">Lista de productores</a></li>
+          <li><a href="{{pathFor 'nuevo-productor'}}">Nuevo productor</a></li>
+        </ul>
+      </li>
+
+      <li class="{{currentRoute 'users'}}"><a href="{{pathFor 'users'}}">Usuarios</a></li>
+    {{/if}}
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{currentUser.emails.[0].address}} <span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+        <li class="logout"><a href="#">Cerrar sesión</a></li>
+      </ul>
+    </li>
+  </ul>
 </template>

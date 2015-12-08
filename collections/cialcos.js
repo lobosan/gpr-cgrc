@@ -1,6 +1,6 @@
-Productores = new Meteor.Collection('productores');
+Cialcos = new Meteor.Collection('cialcos');
 
-let ProductoresSchema = new SimpleSchema({
+let CialcosSchema = new SimpleSchema({
   zona: {
     type: String,
     label: 'Zona',
@@ -28,10 +28,29 @@ let ProductoresSchema = new SimpleSchema({
       firstOption: '',
       options: function () {
         return DPA.find({grupo: 'Provincia'}).map(function (dpa) {
-          return {label: dpa.descripcion, value: dpa.descripcion};
+          return {label: dpa.descripcion, value: dpa.codigo};
         });
       }
     }
+  },
+  canton: {
+    type: String,
+    label: 'Cantón',
+    autoform: {
+      type: 'select',
+      firstOption: '',
+      options: function () {
+        var codigoProvincia = AutoForm.getFieldValue('provincia');
+        var cantones = new RegExp('^' + codigoProvincia + '[\\d]{2}$');
+        return DPA.find({codigo: {$regex: cantones}}).map(function (dpa) {
+          return {label: dpa.descripcion, value: dpa.codigo};
+        });
+      }
+    }
+  },
+  localidad: {
+    type: String,
+    label: 'Localidad'
   },
   cuatrimestre: {
     type: String,
@@ -47,71 +66,88 @@ let ProductoresSchema = new SimpleSchema({
       }
     }
   },
-  cedula: {
+  modalidad: {
     type: String,
-    label: 'Cédula',
-    index: true,
-    unique: true
-  },
-  genero: {
-    type: String,
-    label: 'Género',
+    label: 'Modalidad',
     autoform: {
       type: 'select-radio-inline',
       options: function () {
         return [
-          {label: 'Hombre', value: 'Hombre'},
-          {label: 'Mujer', value: 'Mujer'}
+          {label: 'Feria', value: 'Feria'},
+          {label: 'Canasta', value: 'Canasta'},
+          {label: 'Canasta institucional', value: 'Canasta institucional'},
+          {label: 'Pie de finca', value: 'Pie de finca'},
+          {label: 'Tienda', value: 'Tienda'},
+          {label: 'Compra pública', value: 'Compra pública'},
+          {label: 'Catering', value: 'Catering'},
+          {label: 'Otro', value: 'Otro'}
         ];
       }
     }
   },
-  apellidos: {
+  fase: {
     type: String,
-    label: 'Apellidos'
+    label: 'Fase',
+    autoform: {
+      type: 'select-radio-inline',
+      options: function () {
+        return [
+          {label: 'Nuevo', value: 'Nuevo'},
+          {label: 'Fortalecido', value: 'Fortalecido'}
+        ];
+      }
+    }
   },
-  nombres: {
+  nombreCialco: {
     type: String,
-    label: 'Nombres'
+    label: 'Nombre del CIALCO'
   },
-  telefonoFijoContacto: {
+  nombreRepresentante: {
     type: String,
-    label: 'Teléfono fijo',
+    label: 'Representante del circuito'
+  },
+  telefonoFijoRepresentante: {
+    type: String,
+    label: 'Teléfono fijo del representante',
     regEx: /^0[2-7]{1}-?\d{3}-?\d{4}$/,
     autoform: {
       placeholder: '02-000-0000'
     },
     optional: true
   },
-  celularContacto: {
+  celularRepresentante: {
     type: String,
-    label: 'Teléfono celular',
+    label: 'Teléfono celular del representante',
     regEx: /^0[8-9]{1}\d{1}-?\d{3}-?\d{4}$/,
     autoform: {
       placeholder: '090-000-0000'
     },
     optional: true
   },
-  emailContacto: {
+  emailRepresentante: {
     type: String,
-    label: 'Correo electrónico',
+    label: 'Correo electrónico del representante',
     regEx: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
     optional: true
   },
-  organizacion: {
-    type: String,
-    label: 'Organización a la que pertenece',
-    optional: true
+  hombresCialco: {
+    type: Number,
+    label: 'Hombres vinculados al CIALCO'
   },
-  cialcos: {
-    type: String,
-    label: 'CIALCOs',
-    optional: true
+  mujeresCialco: {
+    type: Number,
+    label: 'Mujeres vinculadas al CIALCO'
   },
-  respaldo: {
+  totalProductoresCialco: {
+    type: Number,
+    label: 'Total de productores vinculados al CIALCO'
+  },
+  observaciones: {
     type: String,
-    label: 'Respaldo',
-    optional: true
+    label: 'Observaciones',
+    autoform: {
+      rows: 4
+    }
   },
   anio: {
     type: Number,
@@ -188,17 +224,18 @@ let ProductoresSchema = new SimpleSchema({
   }
 });
 
-Productores.attachSchema(ProductoresSchema);
+Cialcos.attachSchema(CialcosSchema);
 
-TabularTables.Productores = new Tabular.Table({
-  name: "Lista de productores",
-  collection: Productores,
+TabularTables.Cialcos = new Tabular.Table({
+  name: "Lista de cialcos",
+  collection: Cialcos,
   columns: [
     {data: "zona", title: "Zona"},
     {data: "provincia", title: "Provincia"},
+    {data: "canton", title: "Cantón"},
     {data: "cuatrimestre", title: "Cuatrimestre"},
-    {data: "cedula", title: "Cédula"},
-    {data: "apellidos", title: "Apellidos"},
-    {data: "nombres", title: "Nombres"}
+    {data: "modalidad", title: "Modalidad"},
+    {data: "cialco", title: "CIALCO"},
+    {data: "nombreRepresentante", title: "Representante"}
   ]
 });

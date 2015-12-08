@@ -1,0 +1,25 @@
+<template name="nuevaOrganizacion">
+  <div class="page-header-2">
+    <h3>Nueva organización</h3>
+  </div>
+  {{#autoForm collection='Organizaciones' id='insertOrganizacionForm' type='insert'}}
+    {{> afQuickField name='zona'}}
+    {{> afQuickField name='provincia'}}
+    {{> afQuickField name='canton'}}
+    {{> afQuickField name='localidad'}}
+    {{> afQuickField name='anio'}}
+    {{> afQuickField name='cuatrimestre'}}
+    {{> afQuickField name='nombre'}}
+    {{> afQuickField name='seps'}}
+    {{> afQuickField name='acreditacionMagap'}}
+    {{> afQuickField name='nombreRepresentante'}}
+    {{> afQuickField name='telefonoFijoRepresentante'}}
+    {{> afQuickField name='celularRepresentante'}}
+    {{> afQuickField name='emailRepresentante'}}
+    {{> afQuickField name='productoresOrganizacion'}}
+    {{> afQuickField name='productoresFeria'}}
+
+
+    <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
+  {{/autoForm}}
+</template>

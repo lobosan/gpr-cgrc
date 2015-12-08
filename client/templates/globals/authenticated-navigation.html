@@ -21,6 +21,16 @@
         </ul>
       </li>
 
+      <li class="dropdown {{currentRoute 'redes'}} {{currentRoute 'nueva-red'}}">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+          Redes <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="{{pathFor 'redes'}}">Lista de redes</a></li>
+          <li><a href="{{pathFor 'nueva-red'}}">Nueva red</a></li>
+        </ul>
+      </li>
+
       <li class="dropdown {{currentRoute 'productores'}} {{currentRoute 'nuevo-productor'}}">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
           Productores <span class="caret"></span>

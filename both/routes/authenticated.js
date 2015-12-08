@@ -74,3 +74,18 @@ authenticatedRoutes.route('/nuevo-cialco', {
     BlazeLayout.render('default', {yield: 'nuevoCialco'});
   }
 });
+
+authenticatedRoutes.route('/redes', {
+  name: 'redes',
+  action() {
+    BlazeLayout.render('default', {yield: 'redes'});
+  }
+});
+
+authenticatedRoutes.route('/nueva-red', {
+  name: 'nueva-red',
+  triggersEnter: [blockUnauthorizedManager],
+  action() {
+    BlazeLayout.render('default', {yield: 'nuevaRed'});
+  }
+});

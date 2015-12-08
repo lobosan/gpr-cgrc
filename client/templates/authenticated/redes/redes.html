@@ -1,0 +1,7 @@
+<template name="redes">
+  <div class="page-header-2 clearfix">
+    <h3 class="pull-left">Lista de redes</h3>
+    <a class="btn btn-success pull-right btn-top-buffer" title="Nueva Red" href="{{pathFor 'nueva-red'}}">Nueva red</a>
+  </div>
+  {{> tabular table=TabularTables.Redes class="table table-striped table-bordered table-condensed"}}
+</template>

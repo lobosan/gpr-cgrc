@@ -89,3 +89,18 @@ authenticatedRoutes.route('/nueva-red', {
     BlazeLayout.render('default', {yield: 'nuevaRed'});
   }
 });
+
+authenticatedRoutes.route('/montos-venta', {
+  name: 'montos-venta',
+  action() {
+    BlazeLayout.render('default', {yield: 'montosVenta'});
+  }
+});
+
+authenticatedRoutes.route('/nuevo-monto-venta', {
+  name: 'nuevo-monto-venta',
+  triggersEnter: [blockUnauthorizedManager],
+  action() {
+    BlazeLayout.render('default', {yield: 'nuevoMontoVenta'});
+  }
+});

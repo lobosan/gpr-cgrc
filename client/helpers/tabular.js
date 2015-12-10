@@ -3,7 +3,7 @@ $.extend($.fn.dataTable.defaults, {
     "sProcessing": "Procesando...",
     "sLengthMenu": "Mostrar _MENU_ registros",
     "sZeroRecords": "No se encontraron resultados",
-    "sEmptyTable": "Ningún dato disponible en esta tabla",
+    "sEmptyTable": "No existen datos",
     "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_",
     "sInfoEmpty": "",
     "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",

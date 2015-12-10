@@ -98,15 +98,37 @@ let ProductoresSchema = new SimpleSchema({
     regEx: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
     optional: true
   },
-  organizacion: {
-    type: String,
-    label: 'Organización a la que pertenece',
-    optional: true
+  organizaciones: {
+    type: [String],
+    label: 'Organizaciones a las que pertenece',
+    optional: true,
+    autoform: {
+      type: "select2",
+      options: function () {
+        return Organizaciones.find().map(function (organizacion) {
+          return {label: organizacion.nombreOrganizacion, value: organizacion._id};
+        });
+      },
+      afFieldInput: {
+        multiple: true
+      }
+    }
   },
   cialcos: {
-    type: String,
-    label: 'CIALCOs',
-    optional: true
+    type: [String],
+    label: 'CIALCOs a los que perntenece',
+    optional: true,
+    autoform: {
+      type: "select2",
+      options: function () {
+        return Cialcos.find().map(function (cialco) {
+          return {label: cialco.nombreCialco, value: cialco._id};
+        });
+      },
+      afFieldInput: {
+        multiple: true
+      }
+    }
   },
   respaldo: {
     type: String,

@@ -58,15 +58,26 @@ let RedesSchema = new SimpleSchema({
       type: 'select-radio-inline',
       options: function () {
         return [
-          {label: 'Nuevo', value: 'Nuevo'},
-          {label: 'Fortalecido', value: 'Fortalecido'}
+          {label: 'Nueva', value: 'Nueva'},
+          {label: 'Fortalecida', value: 'Fortalecida'}
         ];
       }
     }
   },
   nombreOrganizaciones: {
-    type: String,
-    label: 'Nombre de las organizaciones'
+    type: [String],
+    label: 'Organizaciones que conforman la red',
+    autoform: {
+      type: "select2",
+      options: function () {
+        return Organizaciones.find().map(function (organizacion) {
+          return {label: organizacion.nombreOrganizacion, value: organizacion._id};
+        });
+      },
+      afFieldInput: {
+        multiple: true
+      }
+    }
   },
   nombreRepresentante: {
     type: String,
@@ -99,6 +110,7 @@ let RedesSchema = new SimpleSchema({
   observaciones: {
     type: String,
     label: 'Observaciones',
+    optional: true,
     autoform: {
       rows: 4
     }

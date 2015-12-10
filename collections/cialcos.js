@@ -50,7 +50,8 @@ let CialcosSchema = new SimpleSchema({
   },
   localidad: {
     type: String,
-    label: 'Localidad'
+    label: 'Localidad',
+    optional: true
   },
   cuatrimestre: {
     type: String,
@@ -75,10 +76,10 @@ let CialcosSchema = new SimpleSchema({
         return [
           {label: 'Feria', value: 'Feria'},
           {label: 'Canasta', value: 'Canasta'},
-          {label: 'Canasta institucional', value: 'Canasta institucional'},
           {label: 'Pie de finca', value: 'Pie de finca'},
           {label: 'Tienda', value: 'Tienda'},
           {label: 'Compra pública', value: 'Compra pública'},
+          {label: 'Abastecimiento a pequeñas industrias', value: 'Abastecimiento a pequeñas industrias'},
           {label: 'Catering', value: 'Catering'},
           {label: 'Otro', value: 'Otro'}
         ];
@@ -132,19 +133,30 @@ let CialcosSchema = new SimpleSchema({
   },
   hombresCialco: {
     type: Number,
-    label: 'Hombres vinculados al CIALCO'
+    label: 'Número de hombres vinculados al CIALCO',
+    min: 1
   },
   mujeresCialco: {
     type: Number,
-    label: 'Mujeres vinculadas al CIALCO'
+    label: 'Número de mujeres vinculadas al CIALCO',
+    min: 1
   },
   totalProductoresCialco: {
     type: Number,
-    label: 'Total de productores vinculados al CIALCO'
+    label: 'Total de productores vinculados al CIALCO',
+    optional: true,
+    autoValue: function () {
+      return this.field("hombresCialco").value + this.field("mujeresCialco").value;
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    }
   },
   observaciones: {
     type: String,
     label: 'Observaciones',
+    optional: true,
     autoform: {
       rows: 4
     }

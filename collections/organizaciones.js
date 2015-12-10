@@ -50,7 +50,8 @@ let OrganizacionesSchema = new SimpleSchema({
   },
   localidad: {
     type: String,
-    label: 'Localidad'
+    label: 'Localidad',
+    optional: true
   },
   cuatrimestre: {
     type: String,
@@ -66,17 +67,29 @@ let OrganizacionesSchema = new SimpleSchema({
       }
     }
   },
-  nombre: {
+  nombreOrganizacion: {
     type: String,
     label: 'Nombre de la organización'
   },
   seps: {
     type: String,
-    label: 'Fecha de registro en la SEPS'
+    label: 'Fecha de registro en la SEPS',
+    optional: true,
+    autoform: {
+      afFieldInput: {
+        type: "bootstrap-datepicker"
+      }
+    }
   },
   acreditacionMagap: {
     type: String,
-    label: 'Fecha de acreditación en el MAGAP'
+    label: 'Fecha de acreditación en el MAGAP',
+    optional: true,
+    autoform: {
+      afFieldInput: {
+        type: "bootstrap-datepicker"
+      }
+    }
   },
   nombreRepresentante: {
     type: String,
@@ -108,7 +121,8 @@ let OrganizacionesSchema = new SimpleSchema({
   },
   productoresOrganizacion: {
     type: Number,
-    label: 'Número de productores de la organización'
+    label: 'Número de productores de la organización',
+    min: 1
   },
   productoresCialco: {
     type: Array,
@@ -120,19 +134,41 @@ let OrganizacionesSchema = new SimpleSchema({
   },
   'productoresCialco.$.cialcoID': {
     type: String,
-    label: 'Nombre del CIALCO'
+    label: 'Nombre del CIALCO',
+    autoform: {
+      type: "select2",
+      options: function () {
+        return Cialcos.find().map(function (cialco) {
+          return {label: cialco.nombreCialco, value: cialco._id};
+        });
+      }
+    }
   },
   'productoresCialco.$.hombres': {
     type: Number,
-    label: 'Número de hombres en el CIALCO'
+    label: 'Número de hombres en el CIALCO',
+    min: 0,
+    defaultValue: 0,
+    optional: true
   },
   'productoresCialco.$.mujeres': {
     type: Number,
-    label: 'Número de mujeres en el CIALCO'
+    label: 'Número de mujeres en el CIALCO',
+    min: 0,
+    defaultValue: 0,
+    optional: true
   },
   'productoresCialco.$.total': {
     type: Number,
-    label: 'Total de productores en el CIALCO'
+    label: 'Total de productores en el CIALCO',
+    optional: true,
+    autoValue: function () {
+      return this.siblingField("hombres").value + this.siblingField("mujeres").value;
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    }
   },
   anio: {
     type: Number,
@@ -219,7 +255,7 @@ TabularTables.Organizaciones = new Tabular.Table({
     {data: "provincia", title: "Provincia"},
     {data: "canton", title: "Cantón"},
     {data: "cuatrimestre", title: "Cuatrimestre"},
-    {data: "nombre", title: "Organización"},
+    {data: "nombreOrganizacion", title: "Organización"},
     {data: "nombreRepresentante", title: "Representante"}
   ]
 });

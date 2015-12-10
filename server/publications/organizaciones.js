@@ -1,3 +1,3 @@
 Meteor.publish('organizaciones', function () {
-  return Organizaciones.find();
+  return Organizaciones.find({}, {fields: {nombreOrganizacion: 1}});
 });

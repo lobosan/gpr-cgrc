@@ -3,9 +3,14 @@ let hooksObject = {
     Bert.alert('La información ha sido guardada exitosamente', 'success');
   },
   onError: function (formType, error) {
-    console.log(error);
-    Bert.alert( `No se guardó la información, revise sus datos. ${error}`, 'warning' );
+    Bert.alert( `No se guardó la información, revise sus datos. ${error}`, 'danger' );
   }
 };
 
-AutoForm.addHooks(['insertProductorForm'], hooksObject);
+AutoForm.addHooks([
+  'insertCialcoForm',
+  'insertOrganizacionForm',
+  'insertRedForm',
+  'insertProductorForm',
+  'insertMontoVentaForm'
+], hooksObject);

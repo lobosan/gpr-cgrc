@@ -48,7 +48,16 @@ let MontosVentaSchema = new SimpleSchema({
   },
   cialco: {
     type: String,
-    label: 'CIALCO'
+    label: 'CIALCO',
+    optional: true,
+    autoform: {
+      type: "select2",
+      options: function () {
+        return Cialcos.find().map(function (cialco) {
+          return {label: cialco.nombreCialco, value: cialco._id};
+        });
+      }
+    }
   },
   ventasSemestre: {
     type: Number,

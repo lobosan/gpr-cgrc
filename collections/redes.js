@@ -20,7 +20,7 @@ let RedesSchema = new SimpleSchema({
       }
     }
   },
-  provincia: {
+  provinciaID: {
     type: String,
     label: 'Provincia',
     autoform: {
@@ -32,6 +32,24 @@ let RedesSchema = new SimpleSchema({
         });
       }
     }
+  },
+  provinciaNombre: {
+    type: String,
+    autoValue: function () {
+      if (this.isInsert) {
+        let codigoProvincia = this.field('provinciaID').value;
+        return DPA.findOne({codigo: codigoProvincia}).descripcion;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: DPA.findOne({codigo: codigoProvincia}).descripcion};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    },
+    optional: true
   },
   cuatrimestre: {
     type: String,
@@ -117,7 +135,6 @@ let RedesSchema = new SimpleSchema({
   },
   anio: {
     type: Number,
-    label: 'Año',
     autoValue: function () {
       var currentDate = new Date();
       var date = currentDate.getFullYear();
@@ -136,7 +153,6 @@ let RedesSchema = new SimpleSchema({
   },
   createdAt: {
     type: String,
-    label: 'Fecha de creación',
     autoValue: function () {
       var currentDate = new Date();
       var date = currentDate.getFullYear() + '-' + ('0' + (currentDate.getMonth() + 1)).slice(-2) + '-' + ('0' + currentDate.getDate()).slice(-2);
@@ -172,7 +188,6 @@ let RedesSchema = new SimpleSchema({
   },
   responsable: {
     type: String,
-    label: 'Responsable',
     autoValue: function () {
       if (this.isInsert) {
         return Meteor.users.findOne({_id: Meteor.userId()}).profile.name;
@@ -197,7 +212,7 @@ TabularTables.Redes = new Tabular.Table({
   collection: Redes,
   columns: [
     {data: "zona", title: "Zona"},
-    {data: "provincia", title: "Provincia"},
+    {data: "provinciaNombre", title: "Provincia"},
     {data: "cuatrimestre", title: "Cuatrimestre"},
     {data: "nombreRed", title: "Red"},
     {data: "nombreRepresentante", title: "Representante"}

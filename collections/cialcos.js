@@ -199,7 +199,6 @@ let CialcosSchema = new SimpleSchema({
   },
   anio: {
     type: Number,
-    label: 'Año',
     autoValue: function () {
       var currentDate = new Date();
       var date = currentDate.getFullYear();
@@ -218,7 +217,6 @@ let CialcosSchema = new SimpleSchema({
   },
   createdAt: {
     type: String,
-    label: 'Fecha de creación',
     autoValue: function () {
       var currentDate = new Date();
       var date = currentDate.getFullYear() + '-' + ('0' + (currentDate.getMonth() + 1)).slice(-2) + '-' + ('0' + currentDate.getDate()).slice(-2);
@@ -254,7 +252,6 @@ let CialcosSchema = new SimpleSchema({
   },
   responsable: {
     type: String,
-    label: 'Responsable',
     autoValue: function () {
       if (this.isInsert) {
         return Meteor.users.findOne({_id: Meteor.userId()}).profile.name;

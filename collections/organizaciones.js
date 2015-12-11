@@ -20,7 +20,7 @@ let OrganizacionesSchema = new SimpleSchema({
       }
     }
   },
-  provincia: {
+  provinciaID: {
     type: String,
     label: 'Provincia',
     autoform: {
@@ -33,20 +33,56 @@ let OrganizacionesSchema = new SimpleSchema({
       }
     }
   },
-  canton: {
+  provinciaNombre: {
+    type: String,
+    autoValue: function () {
+      if (this.isInsert) {
+        let codigoProvincia = this.field('provinciaID').value;
+        return DPA.findOne({codigo: codigoProvincia}).descripcion;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: DPA.findOne({codigo: codigoProvincia}).descripcion};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    },
+    optional: true
+  },
+  cantonID: {
     type: String,
     label: 'Cantón',
     autoform: {
       type: 'select',
       firstOption: '',
       options: function () {
-        var codigoProvincia = AutoForm.getFieldValue('provincia');
+        var codigoProvincia = AutoForm.getFieldValue('provinciaID');
         var cantones = new RegExp('^' + codigoProvincia + '[\\d]{2}$');
         return DPA.find({codigo: {$regex: cantones}}).map(function (dpa) {
           return {label: dpa.descripcion, value: dpa.codigo};
         });
       }
     }
+  },
+  cantonNombre: {
+    type: String,
+    autoValue: function () {
+      if (this.isInsert) {
+        let codigoCanton = this.field('cantonID').value;
+        return DPA.findOne({codigo: codigoCanton}).descripcion;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: DPA.findOne({codigo: codigoCanton}).descripcion};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    },
+    optional: true
   },
   localidad: {
     type: String,
@@ -158,9 +194,20 @@ let OrganizacionesSchema = new SimpleSchema({
     defaultValue: 0,
     optional: true
   },
+  'productoresCialco.$.cialcoNombre': {
+    type: String,
+    optional: true,
+    autoValue: function () {
+      let cialcoID = this.siblingField("cialcoID").value;
+      return Cialcos.findOne({_id: cialcoID}).nombreCialco;
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    }
+  },
   'productoresCialco.$.total': {
     type: Number,
-    label: 'Total de productores en el CIALCO',
     optional: true,
     autoValue: function () {
       return this.siblingField("hombres").value + this.siblingField("mujeres").value;
@@ -172,7 +219,6 @@ let OrganizacionesSchema = new SimpleSchema({
   },
   anio: {
     type: Number,
-    label: 'Año',
     autoValue: function () {
       var currentDate = new Date();
       var date = currentDate.getFullYear();
@@ -191,7 +237,6 @@ let OrganizacionesSchema = new SimpleSchema({
   },
   createdAt: {
     type: String,
-    label: 'Fecha de creación',
     autoValue: function () {
       var currentDate = new Date();
       var date = currentDate.getFullYear() + '-' + ('0' + (currentDate.getMonth() + 1)).slice(-2) + '-' + ('0' + currentDate.getDate()).slice(-2);
@@ -227,7 +272,6 @@ let OrganizacionesSchema = new SimpleSchema({
   },
   responsable: {
     type: String,
-    label: 'Responsable',
     autoValue: function () {
       if (this.isInsert) {
         return Meteor.users.findOne({_id: Meteor.userId()}).profile.name;
@@ -252,8 +296,8 @@ TabularTables.Organizaciones = new Tabular.Table({
   collection: Organizaciones,
   columns: [
     {data: "zona", title: "Zona"},
-    {data: "provincia", title: "Provincia"},
-    {data: "canton", title: "Cantón"},
+    {data: "provinciaNombre", title: "Provincia"},
+    {data: "cantonNombre", title: "Cantón"},
     {data: "cuatrimestre", title: "Cuatrimestre"},
     {data: "nombreOrganizacion", title: "Organización"},
     {data: "nombreRepresentante", title: "Representante"}

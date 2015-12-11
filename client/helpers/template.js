@@ -23,6 +23,9 @@ Template.registerHelper('datePickerOptions', () => {
     format: "yyyy-mm-dd",
     weekStart: 1,
     autoclose: true,
+    startView: 'year',
+    todayHighlight: true,
+    clearBtn: true,
     language: "es"
   }
 });

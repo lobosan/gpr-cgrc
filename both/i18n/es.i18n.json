@@ -22,6 +22,7 @@
       "expectedObject": "[label] tiene que ser un objeto",
       "expectedConstructor": "[label] tiene que ser de tipo [type]",
       "keyNotInSchema": "[key] no está permitido por el esquema",
+      "notUnique": "[label] ya existe",
       "regEx": {
         "0": {
           "msg": "[label] tiene que tener un formato válido"

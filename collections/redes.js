@@ -81,7 +81,7 @@ let RedesSchema = new SimpleSchema({
   },
   nombreRepresentante: {
     type: String,
-    label: 'Representante de la Red'
+    label: 'Representante de la red'
   },
   telefonoFijoRepresentante: {
     type: String,
@@ -199,7 +199,7 @@ TabularTables.Redes = new Tabular.Table({
     {data: "zona", title: "Zona"},
     {data: "provincia", title: "Provincia"},
     {data: "cuatrimestre", title: "Cuatrimestre"},
-    {data: "nombre", title: "Red"},
+    {data: "nombreRed", title: "Red"},
     {data: "nombreRepresentante", title: "Representante"}
   ]
 });

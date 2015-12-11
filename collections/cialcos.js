@@ -247,7 +247,7 @@ TabularTables.Cialcos = new Tabular.Table({
     {data: "canton", title: "Cantón"},
     {data: "cuatrimestre", title: "Cuatrimestre"},
     {data: "modalidad", title: "Modalidad"},
-    {data: "cialco", title: "CIALCO"},
+    {data: "nombreCialco", title: "CIALCO"},
     {data: "nombreRepresentante", title: "Representante"}
   ]
 });

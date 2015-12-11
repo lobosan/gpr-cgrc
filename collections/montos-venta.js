@@ -150,6 +150,6 @@ TabularTables.MontosVenta = new Tabular.Table({
     {data: "provincia", title: "Provincia"},
     {data: "semestre", title: "Semestre"},
     {data: "cialco", title: "CIALCO"},
-    {data: "ventasSemestre", title: "Venta semestral"}
+    {data: "ventasSemestre", title: "Venta semestral ($)"}
   ]
 });

@@ -17,14 +17,14 @@ Template.users.helpers({
   invitations: () => {
     var invitations = Invitations.find();
 
-    if ( invitations ) {
+    if (invitations) {
       return invitations;
     }
   }
 });
 
 Template.users.events({
-  'change [name="userRole"]': function(event, template) {
+  'change [name="userRole"]': function (event, template) {
     let role = $(event.target).find('option:selected').val();
 
     Meteor.call("setRoleOnUser", {
@@ -36,13 +36,13 @@ Template.users.events({
       }
     });
   },
-  'click .revoke-invite': function( event, template ) {
-    if ( confirm( "Are you sure? This is permanent." ) ) {
-      Meteor.call( "revokeInvitation", this._id, function( error, response ) {
-        if ( error ) {
-          Bert.alert( error.reason, "warning" );
+  'click .revoke-invite': function (event, template) {
+    if (confirm("Está seguro? Esta acción es permanente.")) {
+      Meteor.call("revokeInvitation", this._id, function (error, response) {
+        if (error) {
+          Bert.alert(error.reason, "warning");
         } else {
-          Bert.alert( "Invitation revoked!", "success" );
+          Bert.alert("Invitación revocada!", "success");
         }
       });
     }

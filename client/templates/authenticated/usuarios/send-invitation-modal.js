@@ -19,7 +19,7 @@ Template.sendInvitationModal.events({
         }
       });
     } else {
-      Bert.alert("Por favor ingrese un correo electrónico y seleccione al menos un tipo de usario", "warning");
+      Bert.alert("Por favor ingrese un correo electrónico y seleccione un tipo de usario", "warning");
     }
   }
 });

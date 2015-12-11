@@ -175,9 +175,9 @@ let RedesSchema = new SimpleSchema({
     label: 'Responsable',
     autoValue: function () {
       if (this.isInsert) {
-        return Meteor.users.findOne().profile.name;
+        return Meteor.users.findOne({_id: Meteor.userId()}).profile.name;
       } else if (this.isUpsert) {
-        return {$setOnInsert: Meteor.users.findOne().profile.name};
+        return {$setOnInsert: Meteor.users.findOne({_id: Meteor.userId()}).profile.name};
       } else {
         this.unset();
       }

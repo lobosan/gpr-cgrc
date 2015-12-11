@@ -20,7 +20,7 @@ let CialcosSchema = new SimpleSchema({
       }
     }
   },
-  provincia: {
+  provinciaID: {
     type: String,
     label: 'Provincia',
     autoform: {
@@ -33,20 +33,56 @@ let CialcosSchema = new SimpleSchema({
       }
     }
   },
-  canton: {
+  provinciaNombre: {
+    type: String,
+    autoValue: function () {
+      if (this.isInsert) {
+        let codigoProvincia = this.field('provinciaID').value;
+        return DPA.findOne({codigo: codigoProvincia}).descripcion;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: DPA.findOne({codigo: codigoProvincia}).descripcion};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    },
+    optional: true
+  },
+  cantonID: {
     type: String,
     label: 'Cantón',
     autoform: {
       type: 'select',
       firstOption: '',
       options: function () {
-        var codigoProvincia = AutoForm.getFieldValue('provincia');
+        var codigoProvincia = AutoForm.getFieldValue('provinciaID');
         var cantones = new RegExp('^' + codigoProvincia + '[\\d]{2}$');
         return DPA.find({codigo: {$regex: cantones}}).map(function (dpa) {
           return {label: dpa.descripcion, value: dpa.codigo};
         });
       }
     }
+  },
+  cantonNombre: {
+    type: String,
+    autoValue: function () {
+      if (this.isInsert) {
+        let codigoCanton = this.field('cantonID').value;
+        return DPA.findOne({codigo: codigoCanton}).descripcion;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: DPA.findOne({codigo: codigoCanton}).descripcion};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    },
+    optional: true
   },
   localidad: {
     type: String,
@@ -134,12 +170,12 @@ let CialcosSchema = new SimpleSchema({
   hombresCialco: {
     type: Number,
     label: 'Número de hombres vinculados al CIALCO',
-    min: 1
+    min: 0
   },
   mujeresCialco: {
     type: Number,
     label: 'Número de mujeres vinculadas al CIALCO',
-    min: 1
+    min: 0
   },
   totalProductoresCialco: {
     type: Number,
@@ -221,9 +257,9 @@ let CialcosSchema = new SimpleSchema({
     label: 'Responsable',
     autoValue: function () {
       if (this.isInsert) {
-        return Meteor.users.findOne().profile.name;
+        return Meteor.users.findOne({_id: Meteor.userId()}).profile.name;
       } else if (this.isUpsert) {
-        return {$setOnInsert: Meteor.users.findOne().profile.name};
+        return {$setOnInsert: Meteor.users.findOne({_id: Meteor.userId()}).profile.name};
       } else {
         this.unset();
       }
@@ -243,8 +279,8 @@ TabularTables.Cialcos = new Tabular.Table({
   collection: Cialcos,
   columns: [
     {data: "zona", title: "Zona"},
-    {data: "provincia", title: "Provincia"},
-    {data: "canton", title: "Cantón"},
+    {data: "provinciaNombre", title: "Provincia"},
+    {data: "cantonNombre", title: "Cantón"},
     {data: "cuatrimestre", title: "Cuatrimestre"},
     {data: "modalidad", title: "Modalidad"},
     {data: "nombreCialco", title: "CIALCO"},

@@ -3,9 +3,9 @@
     <h3>Nueva red</h3>
   </div>
   {{#autoForm collection='Redes' id='insertRedForm' type='insert'}}
+    {{> afQuickField name='cuatrimestre'}}
     {{> afQuickField name='zona'}}
     {{> afQuickField name='provinciaID'}}
-    {{> afQuickField name='cuatrimestre'}}
     {{> afQuickField name='nombreRed'}}
     {{> afQuickField name='estado'}}
     {{> afQuickField name='nombreOrganizaciones' class='s2b'}}

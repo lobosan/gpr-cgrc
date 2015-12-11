@@ -3,14 +3,14 @@
     <h3>Nuevo CIALCO</h3>
   </div>
   {{#autoForm collection='Cialcos' id='insertCialcoForm' type='insert'}}
+    {{> afQuickField name='cuatrimestre'}}
     {{> afQuickField name='zona'}}
     {{> afQuickField name='provinciaID'}}
     {{> afQuickField name='cantonID'}}
     {{> afQuickField name='localidad'}}
-    {{> afQuickField name='cuatrimestre'}}
+    {{> afQuickField name='nombreCialco'}}
     {{> afQuickField name='modalidad'}}
     {{> afQuickField name='estado'}}
-    {{> afQuickField name='nombreCialco'}}
     {{> afQuickField name='nombreRepresentante'}}
     {{> afQuickField name='telefonoFijoRepresentante'}}
     {{> afQuickField name='celularRepresentante'}}

@@ -1,6 +1,19 @@
 MontosVenta = new Meteor.Collection('montos-venta');
 
 let MontosVentaSchema = new SimpleSchema({
+  semestre: {
+    type: String,
+    label: 'Semestre',
+    autoform: {
+      type: 'select-radio-inline',
+      options: function () {
+        return [
+          {label: '1', value: '1'},
+          {label: '2', value: '2'}
+        ];
+      }
+    }
+  },
   zona: {
     type: String,
     label: 'Zona',
@@ -15,12 +28,12 @@ let MontosVentaSchema = new SimpleSchema({
           {label: '5', value: '5'},
           {label: '6', value: '6'},
           {label: '7', value: '7'},
-          {label: 'INSULAR', value: 'INSULAR'}
+          {label: 'Insular', value: 'Insular'}
         ];
       }
     }
   },
-  provincia: {
+  provinciaID: {
     type: String,
     label: 'Provincia',
     autoform: {
@@ -33,20 +46,25 @@ let MontosVentaSchema = new SimpleSchema({
       }
     }
   },
-  semestre: {
+  provinciaNombre: {
     type: String,
-    label: 'Semestre',
-    autoform: {
-      type: 'select-radio-inline',
-      options: function () {
-        return [
-          {label: '1', value: '1'},
-          {label: '2', value: '2'}
-        ];
+    autoValue: function () {
+      if (this.isInsert) {
+        let codigoProvincia = this.field('provinciaID').value;
+        return DPA.findOne({codigo: codigoProvincia}).descripcion;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: DPA.findOne({codigo: codigoProvincia}).descripcion};
+      } else {
+        this.unset();
       }
-    }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    },
+    optional: true
   },
-  cialco: {
+  cialcoID: {
     type: String,
     label: 'CIALCO',
     optional: true,
@@ -59,15 +77,44 @@ let MontosVentaSchema = new SimpleSchema({
       }
     }
   },
+  cialcoNombre: {
+    type: String,
+    optional: true,
+    autoValue: function () {
+      let cialcoID = this.field("cialcoID").value;
+      return Cialcos.findOne({_id: cialcoID}).nombreCialco;
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    }
+  },
+  cialcoModalidad: {
+    type: String,
+    optional: true,
+    autoValue: function () {
+      let cialcoID = this.field("cialcoID").value;
+      return Cialcos.findOne({_id: cialcoID}).modalidad;
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    }
+  },
   ventasSemestre: {
     type: Number,
     decimal: true,
-    min: 0,
+    min: 1,
     label: 'Total de ventas por semestre'
+  },
+  metaSemestral: {
+    type: Number,
+    decimal: true,
+    min: 1,
+    label: 'Meta semestral'
   },
   anio: {
     type: Number,
-    label: 'Año',
     autoValue: function () {
       var currentDate = new Date();
       var date = currentDate.getFullYear();
@@ -86,7 +133,6 @@ let MontosVentaSchema = new SimpleSchema({
   },
   createdAt: {
     type: String,
-    label: 'Fecha de creación',
     autoValue: function () {
       var currentDate = new Date();
       var date = currentDate.getFullYear() + '-' + ('0' + (currentDate.getMonth() + 1)).slice(-2) + '-' + ('0' + currentDate.getDate()).slice(-2);
@@ -122,7 +168,6 @@ let MontosVentaSchema = new SimpleSchema({
   },
   responsable: {
     type: String,
-    label: 'Responsable',
     autoValue: function () {
       if (this.isInsert) {
         return Meteor.users.findOne({_id: Meteor.userId()}).profile.name;
@@ -146,10 +191,12 @@ TabularTables.MontosVenta = new Tabular.Table({
   name: "Lista de montos de venta",
   collection: MontosVenta,
   columns: [
-    {data: "zona", title: "Zona"},
-    {data: "provincia", title: "Provincia"},
     {data: "semestre", title: "Semestre"},
-    {data: "cialco", title: "CIALCO"},
-    {data: "ventasSemestre", title: "Venta semestral ($)"}
+    {data: "zona", title: "Zona"},
+    {data: "provinciaNombre", title: "Provincia"},
+    {data: "cialcoNombre", title: "CIALCO"},
+    {data: "cialcoModalidad", title: "Modalidad"},
+    {data: "ventasSemestre", title: "Venta semestral ($)"},
+    {data: "metaSemestral", title: "Meta semestral ($)"}
   ]
 });

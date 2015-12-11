@@ -1,6 +1,20 @@
 Redes = new Meteor.Collection('redes');
 
 let RedesSchema = new SimpleSchema({
+  cuatrimestre: {
+    type: String,
+    label: 'Cuatrimestre',
+    autoform: {
+      type: 'select-radio-inline',
+      options: function () {
+        return [
+          {label: '1', value: '1'},
+          {label: '2', value: '2'},
+          {label: '3', value: '3'}
+        ];
+      }
+    }
+  },
   zona: {
     type: String,
     label: 'Zona',
@@ -15,7 +29,7 @@ let RedesSchema = new SimpleSchema({
           {label: '5', value: '5'},
           {label: '6', value: '6'},
           {label: '7', value: '7'},
-          {label: 'INSULAR', value: 'INSULAR'}
+          {label: 'Insular', value: 'Insular'}
         ];
       }
     }
@@ -50,20 +64,6 @@ let RedesSchema = new SimpleSchema({
       label: false
     },
     optional: true
-  },
-  cuatrimestre: {
-    type: String,
-    label: 'Cuatrimestre',
-    autoform: {
-      type: 'select-radio-inline',
-      options: function () {
-        return [
-          {label: '1', value: '1'},
-          {label: '2', value: '2'},
-          {label: '3', value: '3'}
-        ];
-      }
-    }
   },
   nombreRed: {
     type: String,
@@ -211,9 +211,9 @@ TabularTables.Redes = new Tabular.Table({
   name: "Lista de redes",
   collection: Redes,
   columns: [
+    {data: "cuatrimestre", title: "Cuatrimestre"},
     {data: "zona", title: "Zona"},
     {data: "provinciaNombre", title: "Provincia"},
-    {data: "cuatrimestre", title: "Cuatrimestre"},
     {data: "nombreRed", title: "Red"},
     {data: "nombreRepresentante", title: "Representante"}
   ]

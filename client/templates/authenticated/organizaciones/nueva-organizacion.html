@@ -3,12 +3,12 @@
     <h3>Nueva organización</h3>
   </div>
   {{#autoForm collection='Organizaciones' id='insertOrganizacionForm' type='insert'}}
+    {{> afQuickField name='cuatrimestre'}}
     {{> afQuickField name='zona'}}
     {{> afQuickField name='provinciaID'}}
     {{> afQuickField name='cantonID'}}
     {{> afQuickField name='localidad'}}
     {{> afQuickField name='anio'}}
-    {{> afQuickField name='cuatrimestre'}}
     {{> afQuickField name='nombreOrganizacion'}}
     {{> afQuickField name='seps' datePickerOptions=datePickerOptions}}
     {{> afQuickField name='acreditacionMagap' datePickerOptions=datePickerOptions}}

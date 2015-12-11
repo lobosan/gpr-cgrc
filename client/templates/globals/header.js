@@ -1,18 +1,18 @@
 Template.header.helpers({
   brandLink() {
-    let login = FlowRouter.path( 'login' ),
-        index = FlowRouter.path( 'users' );
+    let login = FlowRouter.path('login'),
+      index = FlowRouter.path('users');
     return !Meteor.loggingIn() && !Meteor.userId() ? login : index;
   }
 });
 
 Template.header.events({
   'click .logout' () {
-    Meteor.logout( ( error ) => {
-      if ( error ) {
-        Bert.alert( error.reason, 'warning' );
+    Meteor.logout((error) => {
+      if (error) {
+        Bert.alert(error.reason, 'warning');
       } else {
-        Bert.alert( 'Sesión cerrada!', 'success' );
+        Bert.alert('Sesión cerrada!', 'success');
       }
     });
   }

@@ -1,6 +1,20 @@
 Organizaciones = new Meteor.Collection('organizaciones');
 
 let OrganizacionesSchema = new SimpleSchema({
+  cuatrimestre: {
+    type: String,
+    label: 'Cuatrimestre',
+    autoform: {
+      type: 'select-radio-inline',
+      options: function () {
+        return [
+          {label: '1', value: '1'},
+          {label: '2', value: '2'},
+          {label: '3', value: '3'}
+        ];
+      }
+    }
+  },
   zona: {
     type: String,
     label: 'Zona',
@@ -15,7 +29,7 @@ let OrganizacionesSchema = new SimpleSchema({
           {label: '5', value: '5'},
           {label: '6', value: '6'},
           {label: '7', value: '7'},
-          {label: 'INSULAR', value: 'INSULAR'}
+          {label: 'Insular', value: 'Insular'}
         ];
       }
     }
@@ -88,20 +102,6 @@ let OrganizacionesSchema = new SimpleSchema({
     type: String,
     label: 'Localidad',
     optional: true
-  },
-  cuatrimestre: {
-    type: String,
-    label: 'Cuatrimestre',
-    autoform: {
-      type: 'select-radio-inline',
-      options: function () {
-        return [
-          {label: '1', value: '1'},
-          {label: '2', value: '2'},
-          {label: '3', value: '3'}
-        ];
-      }
-    }
   },
   nombreOrganizacion: {
     type: String,
@@ -295,10 +295,10 @@ TabularTables.Organizaciones = new Tabular.Table({
   name: "Lista de organizaciones",
   collection: Organizaciones,
   columns: [
+    {data: "cuatrimestre", title: "Cuatrimestre"},
     {data: "zona", title: "Zona"},
     {data: "provinciaNombre", title: "Provincia"},
     {data: "cantonNombre", title: "Cantón"},
-    {data: "cuatrimestre", title: "Cuatrimestre"},
     {data: "nombreOrganizacion", title: "Organización"},
     {data: "nombreRepresentante", title: "Representante"}
   ]

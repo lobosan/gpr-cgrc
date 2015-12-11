@@ -1,6 +1,20 @@
 Cialcos = new Meteor.Collection('cialcos');
 
 let CialcosSchema = new SimpleSchema({
+  cuatrimestre: {
+    type: String,
+    label: 'Cuatrimestre',
+    autoform: {
+      type: 'select-radio-inline',
+      options: function () {
+        return [
+          {label: '1', value: '1'},
+          {label: '2', value: '2'},
+          {label: '3', value: '3'}
+        ];
+      }
+    }
+  },
   zona: {
     type: String,
     label: 'Zona',
@@ -15,7 +29,7 @@ let CialcosSchema = new SimpleSchema({
           {label: '5', value: '5'},
           {label: '6', value: '6'},
           {label: '7', value: '7'},
-          {label: 'INSULAR', value: 'INSULAR'}
+          {label: 'Insular', value: 'Insular'}
         ];
       }
     }
@@ -89,19 +103,9 @@ let CialcosSchema = new SimpleSchema({
     label: 'Localidad',
     optional: true
   },
-  cuatrimestre: {
+  nombreCialco: {
     type: String,
-    label: 'Cuatrimestre',
-    autoform: {
-      type: 'select-radio-inline',
-      options: function () {
-        return [
-          {label: '1', value: '1'},
-          {label: '2', value: '2'},
-          {label: '3', value: '3'}
-        ];
-      }
-    }
+    label: 'Nombre del CIALCO'
   },
   modalidad: {
     type: String,
@@ -134,10 +138,6 @@ let CialcosSchema = new SimpleSchema({
         ];
       }
     }
-  },
-  nombreCialco: {
-    type: String,
-    label: 'Nombre del CIALCO'
   },
   nombreRepresentante: {
     type: String,
@@ -275,12 +275,12 @@ TabularTables.Cialcos = new Tabular.Table({
   name: "Lista de cialcos",
   collection: Cialcos,
   columns: [
+    {data: "cuatrimestre", title: "Cuatrimestre"},
     {data: "zona", title: "Zona"},
     {data: "provinciaNombre", title: "Provincia"},
     {data: "cantonNombre", title: "Cantón"},
-    {data: "cuatrimestre", title: "Cuatrimestre"},
-    {data: "modalidad", title: "Modalidad"},
     {data: "nombreCialco", title: "CIALCO"},
+    {data: "modalidad", title: "Modalidad"},
     {data: "nombreRepresentante", title: "Representante"}
   ]
 });

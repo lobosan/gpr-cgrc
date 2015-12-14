@@ -51,7 +51,8 @@ let MontosVentaSchema = new SimpleSchema({
     autoValue: function () {
       if (this.isInsert) {
         let codigoProvincia = this.field('provinciaID').value;
-        return DPA.findOne({codigo: codigoProvincia}).descripcion;
+        if (codigoProvincia)
+          return DPA.findOne({codigo: codigoProvincia}).descripcion;
       } else if (this.isUpsert) {
         return {$setOnInsert: DPA.findOne({codigo: codigoProvincia}).descripcion};
       } else {
@@ -82,7 +83,8 @@ let MontosVentaSchema = new SimpleSchema({
     optional: true,
     autoValue: function () {
       let cialcoID = this.field("cialcoID").value;
-      return Cialcos.findOne({_id: cialcoID}).nombreCialco;
+      if (cialcoID)
+        return Cialcos.findOne({_id: cialcoID}).nombreCialco;
     },
     autoform: {
       type: 'hidden',
@@ -94,7 +96,8 @@ let MontosVentaSchema = new SimpleSchema({
     optional: true,
     autoValue: function () {
       let cialcoID = this.field("cialcoID").value;
-      return Cialcos.findOne({_id: cialcoID}).modalidad;
+      if (cialcoID)
+        return Cialcos.findOne({_id: cialcoID}).modalidad;
     },
     autoform: {
       type: 'hidden',

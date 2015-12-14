@@ -52,7 +52,8 @@ let RedesSchema = new SimpleSchema({
     autoValue: function () {
       if (this.isInsert) {
         let codigoProvincia = this.field('provinciaID').value;
-        return DPA.findOne({codigo: codigoProvincia}).descripcion;
+        if (codigoProvincia)
+          return DPA.findOne({codigo: codigoProvincia}).descripcion;
       } else if (this.isUpsert) {
         return {$setOnInsert: DPA.findOne({codigo: codigoProvincia}).descripcion};
       } else {

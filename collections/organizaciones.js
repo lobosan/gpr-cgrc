@@ -164,7 +164,7 @@ let OrganizacionesSchema = new SimpleSchema({
   },
   productoresCialco: {
     type: Array,
-    label: 'Productores del CIALCO',
+    label: 'Productores la la organización vinculados a CIALCOs',
     optional: true
   },
   'productoresCialco.$': {
@@ -173,6 +173,7 @@ let OrganizacionesSchema = new SimpleSchema({
   'productoresCialco.$.cialcoID': {
     type: String,
     label: 'Nombre del CIALCO',
+    optional: true,
     autoform: {
       type: "select2",
       options: function () {
@@ -182,37 +183,38 @@ let OrganizacionesSchema = new SimpleSchema({
       }
     }
   },
-  'productoresCialco.$.hombres': {
-    type: Number,
-    label: 'Número de hombres en el CIALCO',
-    min: 0,
-    defaultValue: 0,
-    optional: true
-  },
-  'productoresCialco.$.mujeres': {
-    type: Number,
-    label: 'Número de mujeres en el CIALCO',
-    min: 0,
-    defaultValue: 0,
-    optional: true
-  },
   'productoresCialco.$.cialcoNombre': {
     type: String,
     optional: true,
     autoValue: function () {
       let cialcoID = this.siblingField("cialcoID").value;
-      return Cialcos.findOne({_id: cialcoID}).nombreCialco;
+      if (cialcoID)
+        return Cialcos.findOne({_id: cialcoID}).nombreCialco;
     },
     autoform: {
       type: 'hidden',
       label: false
     }
   },
-  'productoresCialco.$.total': {
+  'productoresCialco.$.hombres': {
+    type: Number,
+    label: 'Número de hombres en el CIALCO',
+    min: 0,
+    optional: true
+  },
+  'productoresCialco.$.mujeres': {
+    type: Number,
+    label: 'Número de mujeres en el CIALCO',
+    min: 0,
+    optional: true
+  },
+  'productoresCialco.$.totalProductores': {
     type: Number,
     optional: true,
     autoValue: function () {
-      return this.siblingField("hombres").value + this.siblingField("mujeres").value;
+      let hombres = (this.siblingField("hombres").value) ? this.siblingField("hombres").value : 0;
+      let mujeres = (this.siblingField("mujeres").value) ? this.siblingField("mujeres").value : 0;
+      return hombres + mujeres;
     },
     autoform: {
       type: 'hidden',

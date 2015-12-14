@@ -34,3 +34,6 @@ body {
 .select2-container--default .select2-selection--multiple {
   border-color: #CCC !important;
 }
+[data-required] label:not(.radio-inline):after {
+  content: ' *'
+}

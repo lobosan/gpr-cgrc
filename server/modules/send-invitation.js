@@ -1,13 +1,14 @@
 let _insertInvitation = (invite) => {
+  console.log(invite);
   Invitations.insert(invite);
 };
 
-let _prepareEmail = (token) => {
+let _prepareEmail = (options) => {
   let domain = Meteor.settings.private.domain;
-  let url = `http://${ domain }/invite/${ token }`;
+  let url = `http://${ domain }/invite/${ options.token }`;
 
   SSR.compileTemplate('invitation', Assets.getText('email/templates/invitation.html'));
-  let html = SSR.render('invitation', {url: url});
+  let html = SSR.render('invitation', {url: url, name: options.name});
 
   return html;
 };
@@ -23,7 +24,7 @@ let _sendInvitation = (email, content) => {
 
 let invitation = (options) => {
   _insertInvitation(options);
-  var email = _prepareEmail(options.token);
+  var email = _prepareEmail(options);
   _sendInvitation(options.email, email);
 };
 

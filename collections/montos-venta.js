@@ -201,5 +201,6 @@ TabularTables.MontosVenta = new Tabular.Table({
     {data: "cialcoModalidad", title: "Modalidad"},
     {data: "ventasSemestre", title: "Venta semestral ($)"},
     {data: "metaSemestral", title: "Meta semestral ($)"}
-  ]
+  ],
+  sub: new SubsManager()
 });

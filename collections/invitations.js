@@ -13,6 +13,10 @@ Invitations.deny({
 });
 
 let InvitationsSchema = new SimpleSchema({
+  name: {
+    type: String,
+    label: "User name."
+  },
   email: {
     type: String,
     label: "Email to send invitation to."

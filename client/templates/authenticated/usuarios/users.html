@@ -7,6 +7,7 @@
     <table class="table table-bordered">
       <thead>
       <tr>
+        <th>Usuario</th>
         <th>Correo electrónico</th>
         <th class="text-center">Rol</th>
       </tr>
@@ -14,6 +15,7 @@
       <tbody>
       {{#each users}}
         <tr>
+          <td class="text-left text-middle">{{profile.name}}</td>
           <td class="text-left text-middle">{{#if isCurrentUser _id}}<label
             class="label label-success">Usted!</label>{{/if}} {{emails.[0].address}}</td>
           <td>
@@ -36,6 +38,7 @@
       <table class="table table-bordered">
         <thead>
         <tr>
+          <th>Usuario</th>
           <th>Correo electrónico</th>
           <th class="text-center">Tipo</th>
           <th class="text-center">Fecha de envío</th>
@@ -45,6 +48,7 @@
         <tbody>
         {{#each invitations}}
           <tr>
+            <td class="text-left text-middle">{{name}}</td>
             <td class="text-left text-middle">{{email}}</td>
             <td class="text-center text-middle">{{role}}</td>
             <td class="text-center text-middle">{{humanDate date}}</td>

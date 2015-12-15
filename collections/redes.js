@@ -217,5 +217,6 @@ TabularTables.Redes = new Tabular.Table({
     {data: "provinciaNombre", title: "Provincia"},
     {data: "nombreRed", title: "Red"},
     {data: "nombreRepresentante", title: "Representante"}
-  ]
+  ],
+  sub: new SubsManager()
 });

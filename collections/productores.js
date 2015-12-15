@@ -241,5 +241,6 @@ TabularTables.Productores = new Tabular.Table({
     {data: "cedula", title: "Cédula"},
     {data: "apellidos", title: "Apellidos"},
     {data: "nombres", title: "Nombres"}
-  ]
+  ],
+  sub: new SubsManager()
 });

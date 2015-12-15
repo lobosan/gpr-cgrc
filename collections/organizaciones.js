@@ -305,5 +305,6 @@ TabularTables.Organizaciones = new Tabular.Table({
     {data: "cantonNombre", title: "Cantón"},
     {data: "nombreOrganizacion", title: "Organización"},
     {data: "nombreRepresentante", title: "Representante"}
-  ]
+  ],
+  sub: new SubsManager()
 });

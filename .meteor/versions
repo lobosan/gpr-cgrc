@@ -64,6 +64,7 @@ meteorhacks:inject-data@1.4.1
 meteorhacks:npm@1.5.0
 meteorhacks:picker@1.0.3
 meteorhacks:ssr@2.2.0
+meteorhacks:subs-manager@1.6.2
 meteorspark:util@0.2.0
 meteortoys:toykit@2.2.1
 minifiers@1.1.7

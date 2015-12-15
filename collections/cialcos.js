@@ -284,5 +284,6 @@ TabularTables.Cialcos = new Tabular.Table({
     {data: "nombreCialco", title: "CIALCO"},
     {data: "modalidad", title: "Modalidad"},
     {data: "nombreRepresentante", title: "Representante"}
-  ]
+  ],
+  sub: new SubsManager()
 });

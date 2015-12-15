@@ -2,11 +2,13 @@ Template.sendInvitationModal.events({
   'submit form' (event, template) {
     event.preventDefault();
 
-    let email = template.find("[name='emailAddress']").value,
+    let userName = template.find("[name='userName']").value,
+      email = template.find("[name='emailAddress']").value,
       role = template.find("[name='roles'] option:selected").value;
 
-    if (email && role !== "") {
+    if (userName && email && role !== "") {
       Meteor.call("sendInvitation", {
+        name: userName,
         email: email,
         role: role
       }, (error, response) => {
@@ -19,7 +21,7 @@ Template.sendInvitationModal.events({
         }
       });
     } else {
-      Bert.alert("Por favor ingrese un correo electrónico y seleccione un tipo de usario", "warning");
+      Bert.alert("Por favor ingrese un nombre de usuario, un correo electrónico y seleccione un tipo de usario", "warning");
     }
   }
 });

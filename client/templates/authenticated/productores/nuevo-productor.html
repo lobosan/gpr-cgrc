@@ -2,22 +2,25 @@
   <div class="page-header-2">
     <h3>Nuevo productor</h3>
   </div>
-  {{#autoForm collection='Productores' id='insertProductorForm' type='insert'}}
-    {{> afQuickField name='cuatrimestre'}}
-    {{> afQuickField name='zona'}}
-    {{> afQuickField name='provinciaID'}}
-    {{> afQuickField name='anio'}}
-    {{> afQuickField name='cedula'}}
-    {{> afQuickField name='genero'}}
-    {{> afQuickField name='apellidos'}}
-    {{> afQuickField name='nombres'}}
-    {{> afQuickField name='telefonoFijoContacto'}}
-    {{> afQuickField name='celularContacto'}}
-    {{> afQuickField name='emailContacto'}}
-    {{> afQuickField name='organizaciones' class='s2b'}}
-    {{> afQuickField name='cialcos' class='s2b'}}
-    {{> afQuickField name='respaldo'}}
-
-    <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
-  {{/autoForm}}
+  {{#if Template.subscriptionsReady}}
+    {{#autoForm collection='Productores' id='insertProductorForm' type='insert'}}
+      {{> afQuickField name='cuatrimestre'}}
+      {{> afQuickField name='zona'}}
+      {{> afQuickField name='provinciaID'}}
+      {{> afQuickField name='anio'}}
+      {{> afQuickField name='cedula'}}
+      {{> afQuickField name='genero'}}
+      {{> afQuickField name='apellidos'}}
+      {{> afQuickField name='nombres'}}
+      {{> afQuickField name='telefonoFijoContacto'}}
+      {{> afQuickField name='celularContacto'}}
+      {{> afQuickField name='emailContacto'}}
+      {{> afQuickField name='organizaciones' class='s2b'}}
+      {{> afQuickField name='cialcos' class='s2b'}}
+      {{> afQuickField name='respaldo'}}
+      <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
+    {{/autoForm}}
+  {{else}}
+    {{> spinner}}
+  {{/if}}
 </template>

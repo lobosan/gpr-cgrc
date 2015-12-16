@@ -2,14 +2,17 @@
   <div class="page-header-2">
     <h3>Nuevo monto de venta</h3>
   </div>
-  {{#autoForm collection='MontosVenta' id='insertMontoVentaForm' type='insert'}}
-    {{> afQuickField name='semestre'}}
-    {{> afQuickField name='zona'}}
-    {{> afQuickField name='provinciaID'}}
-    {{> afQuickField name='cialcoID'}}
-    {{> afQuickField name='ventasSemestre'}}
-    {{> afQuickField name='metaSemestral'}}
-
-    <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
-  {{/autoForm}}
+  {{#if Template.subscriptionsReady}}
+    {{#autoForm collection='MontosVenta' id='insertMontoVentaForm' type='insert'}}
+      {{> afQuickField name='semestre'}}
+      {{> afQuickField name='zona'}}
+      {{> afQuickField name='provinciaID'}}
+      {{> afQuickField name='cialcoID'}}
+      {{> afQuickField name='ventasSemestre'}}
+      {{> afQuickField name='metaSemestral'}}
+      <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
+    {{/autoForm}}
+  {{else}}
+    {{> spinner}}
+  {{/if}}
 </template>

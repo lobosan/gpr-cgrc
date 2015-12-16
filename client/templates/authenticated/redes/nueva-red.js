@@ -1,5 +1,6 @@
-Template.nuevaRed.onCreated(() => {
-  Template.instance().subscribe('provincias');
-  Template.instance().subscribe('organizaciones');
+Template.nuevaRed.onCreated(function () {
+  let self = this;
+  self.subscribe('provincias');
+  self.subscribe('organizaciones');
 });
 

@@ -1,4 +1,5 @@
-Template.nuevaOrganizacion.onCreated(() => {
-  Template.instance().subscribe('dpa');
-  Template.instance().subscribe('cialcos');
+Template.nuevaOrganizacion.onCreated(function () {
+  let self = this;
+  self.subscribe('dpa');
+  self.subscribe('cialcos');
 });

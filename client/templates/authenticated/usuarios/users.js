@@ -1,5 +1,6 @@
-Template.users.onCreated(() => {
-  Template.instance().subscribe('users');
+Template.users.onCreated(function () {
+  let self = this;
+  self.subscribe('users');
 });
 
 Template.users.helpers({

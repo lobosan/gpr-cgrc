@@ -1,3 +1,4 @@
-Template.nuevoCialco.onCreated(() => {
-  Template.instance().subscribe('dpa');
+Template.nuevoCialco.onCreated(function () {
+  let self = this;
+  self.subscribe('dpa');
 });

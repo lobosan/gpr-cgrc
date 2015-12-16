@@ -2,23 +2,26 @@
   <div class="page-header-2">
     <h3>Nuevo CIALCO</h3>
   </div>
-  {{#autoForm collection='Cialcos' id='insertCialcoForm' type='insert'}}
-    {{> afQuickField name='cuatrimestre'}}
-    {{> afQuickField name='zona'}}
-    {{> afQuickField name='provinciaID'}}
-    {{> afQuickField name='cantonID'}}
-    {{> afQuickField name='localidad'}}
-    {{> afQuickField name='nombreCialco'}}
-    {{> afQuickField name='modalidad'}}
-    {{> afQuickField name='estado'}}
-    {{> afQuickField name='nombreRepresentante'}}
-    {{> afQuickField name='telefonoFijoRepresentante'}}
-    {{> afQuickField name='celularRepresentante'}}
-    {{> afQuickField name='emailRepresentante'}}
-    {{> afQuickField name='hombresCialco'}}
-    {{> afQuickField name='mujeresCialco'}}
-    {{> afQuickField name='observaciones'}}
-
-    <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
-  {{/autoForm}}
+  {{#if Template.subscriptionsReady}}
+    {{#autoForm collection='Cialcos' id='insertCialcoForm' type='insert'}}
+      {{> afQuickField name='cuatrimestre'}}
+      {{> afQuickField name='zona'}}
+      {{> afQuickField name='provinciaID'}}
+      {{> afQuickField name='cantonID'}}
+      {{> afQuickField name='localidad'}}
+      {{> afQuickField name='nombreCialco'}}
+      {{> afQuickField name='modalidad'}}
+      {{> afQuickField name='estado'}}
+      {{> afQuickField name='nombreRepresentante'}}
+      {{> afQuickField name='telefonoFijoRepresentante'}}
+      {{> afQuickField name='celularRepresentante'}}
+      {{> afQuickField name='emailRepresentante'}}
+      {{> afQuickField name='hombresCialco'}}
+      {{> afQuickField name='mujeresCialco'}}
+      {{> afQuickField name='observaciones'}}
+      <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
+    {{/autoForm}}
+  {{else}}
+    {{> spinner}}
+  {{/if}}
 </template>

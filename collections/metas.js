@@ -1,19 +1,6 @@
-MontosVenta = new Meteor.Collection('montos-venta');
+Metas = new Meteor.Collection('metas');
 
-let MontosVentaSchema = new SimpleSchema({
-  semestre: {
-    type: String,
-    label: 'Semestre',
-    autoform: {
-      type: 'select-radio-inline',
-      options: function () {
-        return [
-          {label: '1', value: '1'},
-          {label: '2', value: '2'}
-        ];
-      }
-    }
-  },
+let MetasSchema = new SimpleSchema({
   zona: {
     type: String,
     label: 'Zona',
@@ -62,71 +49,104 @@ let MontosVentaSchema = new SimpleSchema({
     autoform: {
       type: 'hidden',
       label: false
-    },
-    optional: true
+    }
   },
-  cialcoID: {
+  anio: {
     type: String,
-    label: 'CIALCO',
-    optional: true,
+    label: 'Año',
     autoform: {
-      type: "select2",
+      type: 'select',
+      firstOption: '',
       options: function () {
-        return Cialcos.find().map(function (cialco) {
-          return {label: cialco.nombreCialco, value: cialco._id};
+        return _.map(_.range(2010, new Date().getFullYear() + 1), function (value) {
+          return {label: value, value: value};
         });
       }
     }
   },
-  cialcoNombre: {
-    type: String,
-    optional: true,
-    autoValue: function () {
-      let cialcoID = this.field("cialcoID").value;
-      if (cialcoID)
-        return Cialcos.findOne({_id: cialcoID}).nombreCialco;
-    },
-    autoform: {
-      type: 'hidden',
-      label: false
-    }
-  },
-  cialcoModalidad: {
-    type: String,
-    optional: true,
-    autoValue: function () {
-      let cialcoID = this.field("cialcoID").value;
-      if (cialcoID)
-        return Cialcos.findOne({_id: cialcoID}).modalidad;
-    },
-    autoform: {
-      type: 'hidden',
-      label: false
-    }
-  },
-  ventasSemestre: {
+  cialcoPrimerCuatrimestre: {
     type: Number,
     decimal: true,
     min: 1,
-    label: 'Total de ventas por semestre'
+    label: 'Primer cuatrimestre'
   },
-  anio: {
+  cialcoSegundoCuatrimestre: {
     type: Number,
-    autoValue: function () {
-      var currentDate = new Date();
-      var date = currentDate.getFullYear();
-      if (this.isInsert) {
-        return date;
-      } else if (this.isUpsert) {
-        return {$setOnInsert: date};
-      } else {
-        this.unset();
-      }
-    },
-    autoform: {
-      type: 'hidden',
-      label: false
-    }
+    decimal: true,
+    min: 1,
+    label: 'Segundo cuatrimestre'
+  },
+  cialcoTercerCuatrimestre: {
+    type: Number,
+    decimal: true,
+    min: 1,
+    label: 'Tercer cuatrimestre'
+  },
+  organizacionesPrimerCuatrimestre: {
+    type: Number,
+    decimal: true,
+    min: 1,
+    label: 'Primer cuatrimestre'
+  },
+  organizacionesSegundoCuatrimestre: {
+    type: Number,
+    decimal: true,
+    min: 1,
+    label: 'Segundo cuatrimestre'
+  },
+  organizacionesTercerCuatrimestre: {
+    type: Number,
+    decimal: true,
+    min: 1,
+    label: 'Tercer cuatrimestre'
+  },
+  redesPrimerCuatrimestre: {
+    type: Number,
+    decimal: true,
+    min: 1,
+    label: 'Primer cuatrimestre'
+  },
+  redesSegundoCuatrimestre: {
+    type: Number,
+    decimal: true,
+    min: 1,
+    label: 'Segundo cuatrimestre'
+  },
+  redesTercerCuatrimestre: {
+    type: Number,
+    decimal: true,
+    min: 1,
+    label: 'Tercer cuatrimestre'
+  },
+  productoresPrimerCuatrimestre: {
+    type: Number,
+    decimal: true,
+    min: 1,
+    label: 'Primer cuatrimestre'
+  },
+  productoresSegundoCuatrimestre: {
+    type: Number,
+    decimal: true,
+    min: 1,
+    label: 'Segundo cuatrimestre'
+  },
+  productoresTercerCuatrimestre: {
+    type: Number,
+    decimal: true,
+    min: 1,
+    label: 'Tercer cuatrimestre'
+  },
+  montoVentasPrimerSemestre: {
+    type: Number,
+    decimal: true,
+    min: 1,
+    label: 'Primer semestre'
+  },
+  montoVentasSegundoSemestre: {
+    type: Number,
+    decimal: true,
+    min: 1,
+    label: 'Segundo semestre'
   },
   createdAt: {
     type: String,
@@ -182,19 +202,4 @@ let MontosVentaSchema = new SimpleSchema({
   }
 });
 
-MontosVenta.attachSchema(MontosVentaSchema);
-
-TabularTables.MontosVenta = new Tabular.Table({
-  name: "Lista de montos de venta",
-  collection: MontosVenta,
-  columns: [
-    {data: "semestre", title: "Semestre"},
-    {data: "zona", title: "Zona"},
-    {data: "provinciaNombre", title: "Provincia"},
-    {data: "cialcoNombre", title: "CIALCO"},
-    {data: "cialcoModalidad", title: "Modalidad"},
-    {data: "ventasSemestre", title: "Venta semestral ($)"},
-    {data: "metaSemestral", title: "Meta semestral ($)"}
-  ],
-  sub: new SubsManager()
-});
+Metas.attachSchema(MetasSchema);

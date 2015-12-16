@@ -37,3 +37,20 @@ body {
 [data-required] label:not(.radio-inline):after {
   content: ' *'
 }
+.custom-fieldset {
+  border: 1px groove #ccc !important;
+  padding: 0 1.4em 1.4em 1.4em !important;
+  margin: 0 0 1.5em 0 !important;
+  border-radius: 5px !important;
+  -webkit-box-shadow: 0 0 0 0 #ccc !important;
+  box-shadow: 0 0 0 0 #ccc !important;
+}
+.custom-legend {
+  color: #676a6c;
+  font-size: 1.2em !important;
+  font-weight: bold !important;
+  text-align: left !important;
+  width:auto;
+  padding:0 10px;
+  border-bottom: none;
+}

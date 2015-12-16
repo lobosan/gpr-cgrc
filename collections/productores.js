@@ -139,7 +139,6 @@ let ProductoresSchema = new SimpleSchema({
   cialcos: {
     type: [String],
     label: 'CIALCOs a los que perntenece',
-    optional: true,
     autoform: {
       type: "select2",
       options: function () {
@@ -151,11 +150,6 @@ let ProductoresSchema = new SimpleSchema({
         multiple: true
       }
     }
-  },
-  respaldo: {
-    type: String,
-    label: 'Respaldo',
-    optional: true
   },
   anio: {
     type: Number,

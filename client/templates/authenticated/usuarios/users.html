@@ -4,31 +4,36 @@
     <div class="page-header-2">
       <h3>Usuarios</h3>
     </div>
-    <table class="table table-bordered">
-      <thead>
-      <tr>
-        <th>Usuario</th>
-        <th>Correo electrónico</th>
-        <th class="text-center">Rol</th>
-      </tr>
-      </thead>
-      <tbody>
-      {{#each users}}
+    {{#if Template.subscriptionsReady}}
+      <table class="table table-bordered">
+        <thead>
         <tr>
-          <td class="text-left text-middle">{{profile.name}}</td>
-          <td class="text-left text-middle">{{#if isCurrentUser _id}}<label
-            class="label label-success">Usted!</label>{{/if}} {{emails.[0].address}}</td>
-          <td>
-            <select {{disableIfAdmin _id}} name="userRole" class="form-control">
-              <option selected="{{selected roles.[0] 'admin'}}" value="admin">Administrador</option>
-              <option selected="{{selected roles.[0] 'manager'}}" value="manager">Director zonal</option>
-              <option selected="{{selected roles.[0] 'employee'}}" value="employee">Técnico provincial</option>
-            </select>
-          </td>
+          <th>Usuario</th>
+          <th>Correo electrónico</th>
+          <th class="text-center">Rol</th>
         </tr>
-      {{/each}}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+        {{#each users}}
+          <tr>
+            <td class="text-left text-middle">{{profile.name}}</td>
+            <td class="text-left text-middle">
+              {{#if isCurrentUser _id}}<label class="label label-success">Usted!</label>{{/if}} {{emails.[0].address}}
+            </td>
+            <td>
+              <select {{disableIfAdmin _id}} name="userRole" class="form-control">
+                <option selected="{{selected roles.[0] 'admin'}}" value="admin">Administrador</option>
+                <option selected="{{selected roles.[0] 'manager'}}" value="manager">Director zonal</option>
+                <option selected="{{selected roles.[0] 'employee'}}" value="employee">Técnico provincial</option>
+              </select>
+            </td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    {{else}}
+      {{> spinner}}
+    {{/if}}
 
     <div class="page-header clearfix">
       <h4 class="pull-left">Invitaciones</h4>

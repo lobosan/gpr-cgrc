@@ -221,6 +221,14 @@ let OrganizacionesSchema = new SimpleSchema({
       label: false
     }
   },
+  observaciones: {
+    type: String,
+    label: 'Observaciones',
+    optional: true,
+    autoform: {
+      rows: 4
+    }
+  },
   anio: {
     type: Number,
     autoValue: function () {

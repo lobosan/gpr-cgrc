@@ -12,5 +12,6 @@ AutoForm.addHooks([
   'insertOrganizacionForm',
   'insertRedForm',
   'insertProductorForm',
-  'insertMontoVentaForm'
+  'insertMontoVentaForm',
+  'insertMetasForm'
 ], hooksObject);

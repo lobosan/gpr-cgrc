@@ -1,8 +1,8 @@
 Template.metas.onCreated(function () {
   let self = this;
+  self.subscribe('provincias');
   self.anio = new ReactiveVar();
   self.provinciaID = new ReactiveVar();
-  self.subscribe('provincias');
 
   self.autorun(function() {
     let anio = self.anio.get();

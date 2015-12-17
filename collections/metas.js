@@ -58,7 +58,7 @@ let MetasSchema = new SimpleSchema({
       type: 'select',
       firstOption: '',
       options: function () {
-        return _.map(_.range(2010, new Date().getFullYear() + 1), function (value) {
+        return _.map(_.range(2011, new Date().getFullYear() + 1), function (value) {
           return {label: value, value: value};
         });
       }
@@ -66,73 +66,61 @@ let MetasSchema = new SimpleSchema({
   },
   cialcoPrimerCuatrimestre: {
     type: Number,
-    decimal: true,
     min: 1,
     label: 'Primer cuatrimestre'
   },
   cialcoSegundoCuatrimestre: {
     type: Number,
-    decimal: true,
     min: 1,
     label: 'Segundo cuatrimestre'
   },
   cialcoTercerCuatrimestre: {
     type: Number,
-    decimal: true,
     min: 1,
     label: 'Tercer cuatrimestre'
   },
   organizacionesPrimerCuatrimestre: {
     type: Number,
-    decimal: true,
     min: 1,
     label: 'Primer cuatrimestre'
   },
   organizacionesSegundoCuatrimestre: {
     type: Number,
-    decimal: true,
     min: 1,
     label: 'Segundo cuatrimestre'
   },
   organizacionesTercerCuatrimestre: {
     type: Number,
-    decimal: true,
     min: 1,
     label: 'Tercer cuatrimestre'
   },
   redesPrimerCuatrimestre: {
     type: Number,
-    decimal: true,
     min: 1,
     label: 'Primer cuatrimestre'
   },
   redesSegundoCuatrimestre: {
     type: Number,
-    decimal: true,
     min: 1,
     label: 'Segundo cuatrimestre'
   },
   redesTercerCuatrimestre: {
     type: Number,
-    decimal: true,
     min: 1,
     label: 'Tercer cuatrimestre'
   },
   productoresPrimerCuatrimestre: {
     type: Number,
-    decimal: true,
     min: 1,
     label: 'Primer cuatrimestre'
   },
   productoresSegundoCuatrimestre: {
     type: Number,
-    decimal: true,
     min: 1,
     label: 'Segundo cuatrimestre'
   },
   productoresTercerCuatrimestre: {
     type: Number,
-    decimal: true,
     min: 1,
     label: 'Tercer cuatrimestre'
   },
@@ -140,13 +128,13 @@ let MetasSchema = new SimpleSchema({
     type: Number,
     decimal: true,
     min: 1,
-    label: 'Primer semestre'
+    label: 'Primer semestre ($)'
   },
   montoVentasSegundoSemestre: {
     type: Number,
     decimal: true,
     min: 1,
-    label: 'Segundo semestre'
+    label: 'Segundo semestre ($)'
   },
   createdAt: {
     type: String,

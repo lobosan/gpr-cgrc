@@ -56,6 +56,7 @@
           Metas <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu">
+          <li><a href="{{pathFor 'metas'}}">Lista de metas</a></li>
           <li><a href="{{pathFor 'nuevas-metas'}}">Nuevas metas</a></li>
         </ul>
       </li>
@@ -67,7 +68,7 @@
     <li class="dropdown">
       <a href="#" title="{{currentUser.emails.[0].address}}" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
-        <li class="logout"><a href="#">Cerrar sesión - {{currentUser.emails.[0].address}}</a></li>
+        <li class="logout"><a href="#">Cerrar sesión ({{currentUser.emails.[0].address}})</a></li>
       </ul>
     </li>
   </ul>

@@ -164,7 +164,7 @@ let OrganizacionesSchema = new SimpleSchema({
   },
   productoresCialco: {
     type: Array,
-    label: 'Productores la la organización vinculados a CIALCOs',
+    label: 'Productores de la organización vinculados a CIALCOs',
     optional: true
   },
   'productoresCialco.$': {

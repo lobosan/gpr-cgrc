@@ -108,7 +108,7 @@ let MontosVentaSchema = new SimpleSchema({
     type: Number,
     decimal: true,
     min: 1,
-    label: 'Total de ventas por semestre'
+    label: 'Total de ventas por semestre ($)'
   },
   anio: {
     type: Number,

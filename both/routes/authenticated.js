@@ -119,3 +119,18 @@ authenticatedRoutes.route('/nuevas-metas', {
     BlazeLayout.render('default', {yield: 'nuevasMetas'});
   }
 });
+
+authenticatedRoutes.route('/respaldos', {
+  name: 'respaldos',
+  action() {
+    BlazeLayout.render('default', {yield: 'respaldos'});
+  }
+});
+
+authenticatedRoutes.route('/nuevo-respaldo', {
+  name: 'nuevo-respaldo',
+  triggersEnter: [blockUnauthorizedManager],
+  action() {
+    BlazeLayout.render('default', {yield: 'nuevoRespaldo'});
+  }
+});

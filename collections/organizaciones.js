@@ -1,6 +1,6 @@
 Organizaciones = new Meteor.Collection('organizaciones');
 
-let OrganizacionesSchema = new SimpleSchema({
+Organizaciones.attachSchema(new SimpleSchema({
   cuatrimestre: {
     type: String,
     label: 'Cuatrimestre',
@@ -299,9 +299,7 @@ let OrganizacionesSchema = new SimpleSchema({
     },
     optional: true
   }
-});
-
-Organizaciones.attachSchema(OrganizacionesSchema);
+}));
 
 TabularTables.Organizaciones = new Tabular.Table({
   name: "Lista de organizaciones",

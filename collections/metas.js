@@ -1,6 +1,6 @@
 Metas = new Meteor.Collection('metas');
 
-let MetasSchema = new SimpleSchema({
+Metas.attachSchema(new SimpleSchema({
   zona: {
     type: String,
     label: 'Zona',
@@ -188,6 +188,4 @@ let MetasSchema = new SimpleSchema({
     },
     optional: true
   }
-});
-
-Metas.attachSchema(MetasSchema);
+}));

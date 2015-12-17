@@ -1,6 +1,6 @@
 Productores = new Meteor.Collection('productores');
 
-let ProductoresSchema = new SimpleSchema({
+Productores.attachSchema(new SimpleSchema({
   cuatrimestre: {
     type: String,
     label: 'Cuatrimestre',
@@ -221,9 +221,7 @@ let ProductoresSchema = new SimpleSchema({
     },
     optional: true
   }
-});
-
-Productores.attachSchema(ProductoresSchema);
+}));
 
 TabularTables.Productores = new Tabular.Table({
   name: "Lista de productores",

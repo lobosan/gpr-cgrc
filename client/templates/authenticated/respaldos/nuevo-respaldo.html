@@ -1,0 +1,18 @@
+<template name="nuevoRespaldo">
+  <div class="page-header-2">
+    <h3>Nuevo respaldo</h3>
+  </div>
+  {{#if Template.subscriptionsReady}}
+    {{#autoForm collection='Respaldos' id='insertRespaldoForm' type='insert'}}
+      {{> afQuickField name='zona'}}
+      {{> afQuickField name='provinciaID'}}
+      {{> afQuickField name='anio'}}
+      {{> afQuickField name='periodo'}}
+      {{> afQuickField name='respaldo'}}
+      {{> afQuickField name='observaciones'}}
+      <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
+    {{/autoForm}}
+  {{else}}
+    {{> spinner}}
+  {{/if}}
+</template>

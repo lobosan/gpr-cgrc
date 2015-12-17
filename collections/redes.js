@@ -1,6 +1,6 @@
 Redes = new Meteor.Collection('redes');
 
-let RedesSchema = new SimpleSchema({
+Redes.attachSchema(new SimpleSchema({
   cuatrimestre: {
     type: String,
     label: 'Cuatrimestre',
@@ -204,9 +204,7 @@ let RedesSchema = new SimpleSchema({
     },
     optional: true
   }
-});
-
-Redes.attachSchema(RedesSchema);
+}));
 
 TabularTables.Redes = new Tabular.Table({
   name: "Lista de redes",

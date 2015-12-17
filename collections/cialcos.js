@@ -1,6 +1,6 @@
 Cialcos = new Meteor.Collection('cialcos');
 
-let CialcosSchema = new SimpleSchema({
+Cialcos.attachSchema(new SimpleSchema({
   cuatrimestre: {
     type: String,
     label: 'Cuatrimestre',
@@ -269,9 +269,7 @@ let CialcosSchema = new SimpleSchema({
     },
     optional: true
   }
-});
-
-Cialcos.attachSchema(CialcosSchema);
+}));
 
 TabularTables.Cialcos = new Tabular.Table({
   name: "Lista de cialcos",

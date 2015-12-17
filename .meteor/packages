@@ -45,3 +45,6 @@ rajit:bootstrap3-datepicker-es
 meteorhacks:subs-manager
 aldeed:template-extension
 sacha:spin
+cfs:gridfs
+cfs:standard-packages
+cfs:autoform

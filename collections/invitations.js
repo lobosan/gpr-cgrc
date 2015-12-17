@@ -12,7 +12,7 @@ Invitations.deny({
   remove: () => true
 });
 
-let InvitationsSchema = new SimpleSchema({
+Invitations.attachSchema(new SimpleSchema({
   name: {
     type: String,
     label: "User name."
@@ -33,6 +33,4 @@ let InvitationsSchema = new SimpleSchema({
     type: String,
     label: "Invitation Date"
   }
-});
-
-Invitations.attachSchema(InvitationsSchema);
+}));

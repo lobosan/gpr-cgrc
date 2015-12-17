@@ -1,19 +1,6 @@
-MontosVenta = new Meteor.Collection('montos-venta');
+Respaldos = new Meteor.Collection('respaldos');
 
-MontosVenta.attachSchema(new SimpleSchema({
-  semestre: {
-    type: String,
-    label: 'Semestre',
-    autoform: {
-      type: 'select-radio-inline',
-      options: function () {
-        return [
-          {label: '1', value: '1'},
-          {label: '2', value: '2'}
-        ];
-      }
-    }
-  },
+Respaldos.attachSchema(new SimpleSchema({
   zona: {
     type: String,
     label: 'Zona',
@@ -65,67 +52,51 @@ MontosVenta.attachSchema(new SimpleSchema({
     },
     optional: true
   },
-  cialcoID: {
+  anio: {
     type: String,
-    label: 'CIALCO',
-    optional: true,
+    label: 'Año',
     autoform: {
-      type: "select2",
+      type: 'select',
+      firstOption: '',
       options: function () {
-        return Cialcos.find().map(function (cialco) {
-          return {label: cialco.nombreCialco, value: cialco._id};
+        return _.map(_.range(2011, new Date().getFullYear() + 1), function (value) {
+          return {label: value, value: value};
         });
       }
     }
   },
-  cialcoNombre: {
+  periodo: {
     type: String,
-    optional: true,
-    autoValue: function () {
-      let cialcoID = this.field("cialcoID").value;
-      if (cialcoID)
-        return Cialcos.findOne({_id: cialcoID}).nombreCialco;
-    },
+    label: 'Período',
     autoform: {
-      type: 'hidden',
-      label: false
-    }
-  },
-  cialcoModalidad: {
-    type: String,
-    optional: true,
-    autoValue: function () {
-      let cialcoID = this.field("cialcoID").value;
-      if (cialcoID)
-        return Cialcos.findOne({_id: cialcoID}).modalidad;
-    },
-    autoform: {
-      type: 'hidden',
-      label: false
-    }
-  },
-  ventasSemestre: {
-    type: Number,
-    decimal: true,
-    min: 1,
-    label: 'Total de ventas por semestre ($)'
-  },
-  anio: {
-    type: Number,
-    autoValue: function () {
-      var currentDate = new Date();
-      var date = currentDate.getFullYear();
-      if (this.isInsert) {
-        return date;
-      } else if (this.isUpsert) {
-        return {$setOnInsert: date};
-      } else {
-        this.unset();
+      type: 'select-radio-inline',
+      options: function () {
+        return [
+          {label: 'Primer cuatrimestre', value: 'Primer cuatrimestre'},
+          {label: 'Segundo cuatrimestre', value: 'Segundo cuatrimestre'},
+          {label: 'Tercer cuatrimestre', value: 'Tercer cuatrimestre'},
+          {label: 'Primer semestre', value: 'Primer semestre'},
+          {label: 'Segundo semestre', value: 'Segundo semestre'}
+        ];
       }
-    },
+    }
+  },
+  respaldo: {
+    type: String,
+    label: 'Respaldo',
     autoform: {
-      type: 'hidden',
-      label: false
+      afFieldInput: {
+        type: "cfs-file",
+        collection: "files"
+      }
+    }
+  },
+  observaciones: {
+    type: String,
+    label: 'Observaciones',
+    optional: true,
+    autoform: {
+      rows: 4
     }
   },
   createdAt: {
@@ -182,17 +153,16 @@ MontosVenta.attachSchema(new SimpleSchema({
   }
 }));
 
-TabularTables.MontosVenta = new Tabular.Table({
-  name: "Lista de montos de venta",
-  collection: MontosVenta,
+TabularTables.Respaldos = new Tabular.Table({
+  name: "Lista de respaldos",
+  collection: Respaldos,
   columns: [
-    {data: "semestre", title: "Semestre"},
     {data: "zona", title: "Zona"},
     {data: "provinciaNombre", title: "Provincia"},
-    {data: "cialcoNombre", title: "CIALCO"},
-    {data: "cialcoModalidad", title: "Modalidad"},
-    {data: "ventasSemestre", title: "Venta semestral ($)"},
-    {data: "metaSemestral", title: "Meta semestral ($)"}
+    {data: "anio", title: "Año"},
+    {data: "periodo", title: "Período"},
+    {data: "respaldo", title: "Respaldo"},
+    {data: "observaciones", title: "Observaciones"}
   ],
   sub: new SubsManager()
 });

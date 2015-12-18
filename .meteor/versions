@@ -4,8 +4,8 @@ alanning:roles@1.2.14
 aldeed:autoform@5.8.1
 aldeed:autoform-bs-datepicker@1.1.1
 aldeed:autoform-select2@2.0.2
-aldeed:collection2@2.6.1
-aldeed:simple-schema@1.5.0
+aldeed:collection2@2.7.0
+aldeed:simple-schema@1.5.1
 aldeed:tabular@1.4.2
 aldeed:template-extension@3.4.3
 audit-argument-checks@1.0.4
@@ -81,7 +81,7 @@ meteorhacks:inject-data@1.4.1
 meteorhacks:npm@1.5.0
 meteorhacks:picker@1.0.3
 meteorhacks:ssr@2.2.0
-meteorhacks:subs-manager@1.6.2
+meteorhacks:subs-manager@1.6.3
 meteorspark:util@0.2.0
 meteortoys:toykit@2.2.1
 minifiers@1.1.7

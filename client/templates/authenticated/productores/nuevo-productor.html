@@ -4,10 +4,10 @@
   </div>
   {{#if Template.subscriptionsReady}}
     {{#autoForm collection='Productores' id='insertProductorForm' type='insert'}}
+      {{> afQuickField name='anio'}}
       {{> afQuickField name='cuatrimestre'}}
       {{> afQuickField name='zona'}}
       {{> afQuickField name='provinciaID'}}
-      {{> afQuickField name='anio'}}
       {{> afQuickField name='cedula'}}
       {{> afQuickField name='genero'}}
       {{> afQuickField name='apellidos'}}

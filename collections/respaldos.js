@@ -1,6 +1,35 @@
 Respaldos = new Meteor.Collection('respaldos');
 
 Respaldos.attachSchema(new SimpleSchema({
+  anio: {
+    type: String,
+    label: 'Año',
+    autoform: {
+      type: 'select',
+      firstOption: '',
+      options: function () {
+        return _.map(_.range(2011, new Date().getFullYear() + 1), function (value) {
+          return {label: value, value: value};
+        });
+      }
+    }
+  },
+  periodo: {
+    type: String,
+    label: 'Período',
+    autoform: {
+      type: 'select-radio-inline',
+      options: function () {
+        return [
+          {label: 'Primer cuatrimestre', value: 'Primer cuatrimestre'},
+          {label: 'Segundo cuatrimestre', value: 'Segundo cuatrimestre'},
+          {label: 'Tercer cuatrimestre', value: 'Tercer cuatrimestre'},
+          {label: 'Primer semestre', value: 'Primer semestre'},
+          {label: 'Segundo semestre', value: 'Segundo semestre'}
+        ];
+      }
+    }
+  },
   zona: {
     type: String,
     label: 'Zona',
@@ -51,35 +80,6 @@ Respaldos.attachSchema(new SimpleSchema({
       label: false
     },
     optional: true
-  },
-  anio: {
-    type: String,
-    label: 'Año',
-    autoform: {
-      type: 'select',
-      firstOption: '',
-      options: function () {
-        return _.map(_.range(2011, new Date().getFullYear() + 1), function (value) {
-          return {label: value, value: value};
-        });
-      }
-    }
-  },
-  periodo: {
-    type: String,
-    label: 'Período',
-    autoform: {
-      type: 'select-radio-inline',
-      options: function () {
-        return [
-          {label: 'Primer cuatrimestre', value: 'Primer cuatrimestre'},
-          {label: 'Segundo cuatrimestre', value: 'Segundo cuatrimestre'},
-          {label: 'Tercer cuatrimestre', value: 'Tercer cuatrimestre'},
-          {label: 'Primer semestre', value: 'Primer semestre'},
-          {label: 'Segundo semestre', value: 'Segundo semestre'}
-        ];
-      }
-    }
   },
   respaldo: {
     type: String,

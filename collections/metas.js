@@ -1,6 +1,20 @@
 Metas = new Meteor.Collection('metas');
 
 Metas.attachSchema(new SimpleSchema({
+  anio: {
+    type: String,
+    label: 'Año',
+    autoform: {
+      type: 'select',
+      defaultValue: 2015,
+      firstOption: 'Seleccione un año',
+      options: function () {
+        return _.map(_.range(2011, new Date().getFullYear() + 1), function (value) {
+          return {label: value, value: value};
+        });
+      }
+    }
+  },
   zona: {
     type: String,
     label: 'Zona',
@@ -25,7 +39,7 @@ Metas.attachSchema(new SimpleSchema({
     label: 'Provincia',
     autoform: {
       type: 'select',
-      firstOption: '',
+      firstOption: 'Seleccione una provincia',
       options: function () {
         return DPA.find({grupo: 'Provincia'}).map(function (dpa) {
           return {label: dpa.descripcion, value: dpa.codigo};
@@ -49,19 +63,6 @@ Metas.attachSchema(new SimpleSchema({
     autoform: {
       type: 'hidden',
       label: false
-    }
-  },
-  anio: {
-    type: String,
-    label: 'Año',
-    autoform: {
-      type: 'select',
-      firstOption: '',
-      options: function () {
-        return _.map(_.range(2011, new Date().getFullYear() + 1), function (value) {
-          return {label: value, value: value};
-        });
-      }
     }
   },
   cialcoPrimerCuatrimestre: {

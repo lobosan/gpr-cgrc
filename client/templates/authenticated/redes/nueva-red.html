@@ -4,6 +4,7 @@
   </div>
   {{#if Template.subscriptionsReady}}
     {{#autoForm collection='Redes' id='insertRedForm' type='insert'}}
+      {{> afQuickField name='anio'}}
       {{> afQuickField name='cuatrimestre'}}
       {{> afQuickField name='zona'}}
       {{> afQuickField name='provinciaID'}}

@@ -4,6 +4,7 @@
   </div>
   {{#if Template.subscriptionsReady}}
     {{#autoForm collection='MontosVenta' id='insertMontoVentaForm' type='insert'}}
+      {{> afQuickField name='anio'}}
       {{> afQuickField name='semestre'}}
       {{> afQuickField name='zona'}}
       {{> afQuickField name='provinciaID'}}

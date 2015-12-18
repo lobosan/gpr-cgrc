@@ -1,11 +1,26 @@
 MontosVenta = new Meteor.Collection('montos-venta');
 
 MontosVenta.attachSchema(new SimpleSchema({
+  anio: {
+    type: String,
+    label: 'Año',
+    autoform: {
+      type: 'select',
+      defaultValue: 2015,
+      firstOption: 'Seleccione un año',
+      options: function () {
+        return _.map(_.range(2011, new Date().getFullYear() + 1), function (value) {
+          return {label: value, value: value};
+        });
+      }
+    }
+  },
   semestre: {
     type: String,
     label: 'Semestre',
     autoform: {
       type: 'select-radio-inline',
+      defaultValue: '2',
       options: function () {
         return [
           {label: '1', value: '1'},
@@ -38,7 +53,7 @@ MontosVenta.attachSchema(new SimpleSchema({
     label: 'Provincia',
     autoform: {
       type: 'select',
-      firstOption: '',
+      firstOption: 'Seleccione una provincia',
       options: function () {
         return DPA.find({grupo: 'Provincia'}).map(function (dpa) {
           return {label: dpa.descripcion, value: dpa.codigo};
@@ -110,24 +125,6 @@ MontosVenta.attachSchema(new SimpleSchema({
     min: 1,
     label: 'Total de ventas por semestre ($)'
   },
-  anio: {
-    type: Number,
-    autoValue: function () {
-      var currentDate = new Date();
-      var date = currentDate.getFullYear();
-      if (this.isInsert) {
-        return date;
-      } else if (this.isUpsert) {
-        return {$setOnInsert: date};
-      } else {
-        this.unset();
-      }
-    },
-    autoform: {
-      type: 'hidden',
-      label: false
-    }
-  },
   createdAt: {
     type: String,
     autoValue: function () {
@@ -186,13 +183,13 @@ TabularTables.MontosVenta = new Tabular.Table({
   name: "Lista de montos de venta",
   collection: MontosVenta,
   columns: [
+    {data: "anio", title: "Año"},
     {data: "semestre", title: "Semestre"},
     {data: "zona", title: "Zona"},
     {data: "provinciaNombre", title: "Provincia"},
     {data: "cialcoNombre", title: "CIALCO"},
     {data: "cialcoModalidad", title: "Modalidad"},
-    {data: "ventasSemestre", title: "Venta semestral ($)"},
-    {data: "metaSemestral", title: "Meta semestral ($)"}
+    {data: "ventasSemestre", title: "Venta semestral ($)"}
   ],
   sub: new SubsManager()
 });

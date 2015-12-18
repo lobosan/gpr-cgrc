@@ -4,9 +4,9 @@
   </div>
   {{#if Template.subscriptionsReady}}
     {{#autoForm collection='Metas' id='insertMetasForm' type='insert'}}
+      {{> afQuickField name='anio'}}
       {{> afQuickField name='zona'}}
       {{> afQuickField name='provinciaID'}}
-      {{> afQuickField name='anio'}}
       <fieldset class="custom-fieldset">
         <legend class="custom-legend">CIALCOs</legend>
         {{> afQuickField name='cialcoPrimerCuatrimestre'}}

@@ -1,11 +1,26 @@
 Redes = new Meteor.Collection('redes');
 
 Redes.attachSchema(new SimpleSchema({
+  anio: {
+    type: String,
+    label: 'Año',
+    autoform: {
+      type: 'select',
+      defaultValue: 2015,
+      firstOption: 'Seleccione un año',
+      options: function () {
+        return _.map(_.range(2011, new Date().getFullYear() + 1), function (value) {
+          return {label: value, value: value};
+        });
+      }
+    }
+  },
   cuatrimestre: {
     type: String,
     label: 'Cuatrimestre',
     autoform: {
       type: 'select-radio-inline',
+      defaultValue: '3',
       options: function () {
         return [
           {label: '1', value: '1'},
@@ -39,7 +54,7 @@ Redes.attachSchema(new SimpleSchema({
     label: 'Provincia',
     autoform: {
       type: 'select',
-      firstOption: '',
+      firstOption: 'Seleccione una provincia',
       options: function () {
         return DPA.find({grupo: 'Provincia'}).map(function (dpa) {
           return {label: dpa.descripcion, value: dpa.codigo};
@@ -68,7 +83,9 @@ Redes.attachSchema(new SimpleSchema({
   },
   nombreRed: {
     type: String,
-    label: 'Nombre de la red'
+    label: 'Nombre de la red',
+    index: true,
+    unique: true
   },
   estado: {
     type: String,
@@ -134,24 +151,6 @@ Redes.attachSchema(new SimpleSchema({
       rows: 4
     }
   },
-  anio: {
-    type: Number,
-    autoValue: function () {
-      var currentDate = new Date();
-      var date = currentDate.getFullYear();
-      if (this.isInsert) {
-        return date;
-      } else if (this.isUpsert) {
-        return {$setOnInsert: date};
-      } else {
-        this.unset();
-      }
-    },
-    autoform: {
-      type: 'hidden',
-      label: false
-    }
-  },
   createdAt: {
     type: String,
     autoValue: function () {
@@ -210,6 +209,7 @@ TabularTables.Redes = new Tabular.Table({
   name: "Lista de redes",
   collection: Redes,
   columns: [
+    {data: "anio", title: "Año"},
     {data: "cuatrimestre", title: "Cuatrimestre"},
     {data: "zona", title: "Zona"},
     {data: "provinciaNombre", title: "Provincia"},

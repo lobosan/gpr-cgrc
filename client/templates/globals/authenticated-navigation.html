@@ -41,16 +41,6 @@
         </ul>
       </li>
 
-      <li class="dropdown {{currentRoute 'montos-venta'}} {{currentRoute 'nuevo-monto-venta'}}">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-          Montos de venta <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu" role="menu">
-          <li><a href="{{pathFor 'montos-venta'}}">Lista de montos de venta</a></li>
-          <li><a href="{{pathFor 'nuevo-monto-venta'}}">Nuevo monto de venta</a></li>
-        </ul>
-      </li>
-
       <li class="dropdown {{currentRoute 'metas'}} {{currentRoute 'nuevas-metas'}}">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
           Metas <span class="caret"></span>
@@ -58,6 +48,16 @@
         <ul class="dropdown-menu" role="menu">
           <li><a href="{{pathFor 'metas'}}">Lista de metas</a></li>
           <li><a href="{{pathFor 'nuevas-metas'}}">Nuevas metas</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown {{currentRoute 'montos-venta'}} {{currentRoute 'nuevo-monto-venta'}}">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+          Montos de venta <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="{{pathFor 'montos-venta'}}">Lista de montos de venta</a></li>
+          <li><a href="{{pathFor 'nuevo-monto-venta'}}">Nuevo monto de venta</a></li>
         </ul>
       </li>
 

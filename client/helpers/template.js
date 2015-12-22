@@ -1,3 +1,7 @@
+Template.registerHelper('appName', () => {
+  return Meteor.settings.public.app_name;
+});
+
 Template.registerHelper('isCurrentUser', (currentUser) => {
   return currentUser === Meteor.userId() ? true : false;
 });

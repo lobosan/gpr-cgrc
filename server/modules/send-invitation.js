@@ -17,7 +17,7 @@ let _sendInvitation = (email, content) => {
   Email.send({
     to: email,
     from: "Santiago Galindo <sgalindo@magap.gob.ec>",
-    subject: "Invitación para participar en el sistema GPR-CGRC",
+    subject: `Invitación para participar en el sistema ${Meteor.settings.public.app_name}`,
     html: content
   });
 };

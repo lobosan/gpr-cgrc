@@ -4,8 +4,8 @@
   </div>
   {{#if Template.subscriptionsReady}}
     {{#autoForm collection='Cialcos' id='insertCialcoForm' type='insert'}}
-      {{> afQuickField name='anio'}}
-      {{> afQuickField name='cuatrimestre'}}
+      {{> afQuickField name='periodo.0.anio'}}
+      {{> afQuickField name='periodo.0.cuatrimestre'}}
       {{> afQuickField name='zona'}}
       {{> afQuickField name='provinciaID'}}
       {{> afQuickField name='cantonID'}}

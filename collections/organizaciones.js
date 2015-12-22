@@ -1,7 +1,11 @@
 Organizaciones = new Meteor.Collection('organizaciones');
 
 Organizaciones.attachSchema(new SimpleSchema({
-  anio: {
+  periodo: {
+    type: [Object],
+    label: 'Periodo'
+  },
+  'periodo.$.anio': {
     type: String,
     label: 'Año',
     autoform: {
@@ -15,7 +19,7 @@ Organizaciones.attachSchema(new SimpleSchema({
       }
     }
   },
-  cuatrimestre: {
+  'periodo.$.cuatrimestre': {
     type: String,
     label: 'Cuatrimestre',
     autoform: {
@@ -304,8 +308,8 @@ TabularTables.Organizaciones = new Tabular.Table({
   name: "Lista de organizaciones",
   collection: Organizaciones,
   columns: [
-    {data: "anio", title: "Año"},
-    {data: "cuatrimestre", title: "Cuatrimestre"},
+    {data: "periodo.0.anio", title: "Año"},
+    {data: "periodo.0.cuatrimestre", title: "Cuatrimestre"},
     {data: "zona", title: "Zona"},
     {data: "provinciaNombre", title: "Provincia"},
     {data: "cantonNombre", title: "Cantón"},

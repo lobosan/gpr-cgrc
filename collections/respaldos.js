@@ -6,7 +6,8 @@ Respaldos.attachSchema(new SimpleSchema({
     label: 'Año',
     autoform: {
       type: 'select',
-      firstOption: '',
+      defaultValue: 2015,
+      firstOption: 'Seleccione un año',
       options: function () {
         return _.map(_.range(2011, new Date().getFullYear() + 1), function (value) {
           return {label: value, value: value};
@@ -19,6 +20,7 @@ Respaldos.attachSchema(new SimpleSchema({
     label: 'Período',
     autoform: {
       type: 'select-radio-inline',
+      defaultValue: 'Tercer cuatrimestre',
       options: function () {
         return [
           {label: 'Primer cuatrimestre', value: 'Primer cuatrimestre'},
@@ -54,7 +56,7 @@ Respaldos.attachSchema(new SimpleSchema({
     label: 'Provincia',
     autoform: {
       type: 'select',
-      firstOption: '',
+      firstOption: 'Seleccione una provincia',
       options: function () {
         return DPA.find({grupo: 'Provincia'}).map(function (dpa) {
           return {label: dpa.descripcion, value: dpa.codigo};
@@ -87,7 +89,7 @@ Respaldos.attachSchema(new SimpleSchema({
     autoform: {
       afFieldInput: {
         type: "cfs-file",
-        collection: "files"
+        collection: "uploads"
       }
     }
   },
@@ -161,7 +163,12 @@ TabularTables.Respaldos = new Tabular.Table({
     {data: "provinciaNombre", title: "Provincia"},
     {data: "anio", title: "Año"},
     {data: "periodo", title: "Período"},
-    {data: "respaldo", title: "Respaldo"},
+    {data: "respaldo", title: "Respaldo", render: function (val, type, doc) {
+      if (val) {
+        let upload  = Uploads.findOne({_id: val}).copies.uploads;
+        return `<a target="_blank" href="/cfs/files/uploads/${val}/${upload.name}">${upload.name}</a>`;
+      }
+    }},
     {data: "observaciones", title: "Observaciones"}
   ],
   sub: new SubsManager()

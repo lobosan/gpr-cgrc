@@ -1,7 +1,11 @@
 Cialcos = new Meteor.Collection('cialcos');
 
 Cialcos.attachSchema(new SimpleSchema({
-  anio: {
+  periodo: {
+    type: [Object],
+    label: 'Periodo'
+  },
+  'periodo.$.anio': {
     type: String,
     label: 'Año',
     autoform: {
@@ -15,7 +19,7 @@ Cialcos.attachSchema(new SimpleSchema({
       }
     }
   },
-  cuatrimestre: {
+  'periodo.$.cuatrimestre': {
     type: String,
     label: 'Cuatrimestre',
     autoform: {
@@ -274,8 +278,8 @@ TabularTables.Cialcos = new Tabular.Table({
   name: "Lista de cialcos",
   collection: Cialcos,
   columns: [
-    {data: "anio", title: "Año"},
-    {data: "cuatrimestre", title: "Cuatrimestre"},
+    {data: "periodo.0.anio", title: "Año"},
+    {data: "periodo.0.cuatrimestre", title: "Cuatrimestre"},
     {data: "zona", title: "Zona"},
     {data: "provinciaNombre", title: "Provincia"},
     {data: "cantonNombre", title: "Cantón"},

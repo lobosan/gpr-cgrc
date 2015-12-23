@@ -4,10 +4,12 @@
   </div>
   {{#if Template.subscriptionsReady}}
     {{#autoForm collection='Redes' id='insertRedForm' type='insert'}}
-      {{> afQuickField name='anio'}}
-      {{> afQuickField name='cuatrimestre'}}
-      {{> afQuickField name='zona'}}
+      {{> afQuickField name='periodo.0.anio'}}
+      {{> afQuickField name='periodo.0.cuatrimestre'}}
+      {{> afQuickField name='zonaID'}}
       {{> afQuickField name='provinciaID'}}
+      {{> afQuickField name='cantonID'}}
+      {{> afQuickField name='parroquiaID'}}
       {{> afQuickField name='nombreRed'}}
       {{> afQuickField name='estado'}}
       {{> afQuickField name='nombreOrganizaciones' class='s2b'}}

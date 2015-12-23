@@ -19,18 +19,12 @@ Metas.attachSchema(new SimpleSchema({
     type: String,
     label: 'Zona',
     autoform: {
-      type: 'select-radio-inline',
+      type: 'select',
+      firstOption: 'Seleccione una zona',
       options: function () {
-        return [
-          {label: '1', value: '1'},
-          {label: '2', value: '2'},
-          {label: '3', value: '3'},
-          {label: '4', value: '4'},
-          {label: '5', value: '5'},
-          {label: '6', value: '6'},
-          {label: '7', value: '7'},
-          {label: 'Insular', value: 'Insular'}
-        ];
+        return DPA.find({grupo: 'Zona'}).map(function (dpa) {
+          return {label: dpa.descripcion, value: dpa.codigo};
+        });
       }
     }
   },
@@ -41,7 +35,9 @@ Metas.attachSchema(new SimpleSchema({
       type: 'select',
       firstOption: 'Seleccione una provincia',
       options: function () {
-        return DPA.find({grupo: 'Provincia'}).map(function (dpa) {
+        var codigoZona = AutoForm.getFieldValue('zona');
+        var provincias = new RegExp('^' + codigoZona + '[\\d]{2}$');
+        return DPA.find({codigo: {$regex: provincias}}).map(function (dpa) {
           return {label: dpa.descripcion, value: dpa.codigo};
         });
       }

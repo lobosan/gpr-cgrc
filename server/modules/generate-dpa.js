@@ -2,5803 +2,1666 @@ let inicializarDPA = () => {
   var countDPA = DPA.find({}).count();
 
   if (countDPA === 0) {
-    var dpas = [
-      {
-        "codigo": "01",
-        "grupo": "Provincia",
-        "descripcion": "AZUAY"
-      },
-      {
-        "codigo": "0101",
-        "grupo": "Cantón",
-        "descripcion": "CUENCA"
-      },
-      {
-        "codigo": "010102",
-        "grupo": "Parroquia",
-        "descripcion": "CAÑARIBAMBA"
-      },
-      {
-        "codigo": "010103",
-        "grupo": "Parroquia",
-        "descripcion": "EL BATAN"
-      },
-      {
-        "codigo": "010105",
-        "grupo": "Parroquia",
-        "descripcion": "EL VECINO"
-      },
-      {
-        "codigo": "010107",
-        "grupo": "Parroquia",
-        "descripcion": "HUAYNACAPAC"
-      },
-      {
-        "codigo": "010109",
-        "grupo": "Parroquia",
-        "descripcion": "MONAY"
-      },
-      {
-        "codigo": "010110",
-        "grupo": "Parroquia",
-        "descripcion": "SAN BLAS (Cantón Cuenca)"
-      },
-      {
-        "codigo": "010111",
-        "grupo": "Parroquia",
-        "descripcion": "SAN SEBASTIAN (Cantón Cuenca)"
-      },
-      {
-        "codigo": "010112",
-        "grupo": "Parroquia",
-        "descripcion": "SUCRE (Cantón Cuenca)"
-      },
-      {
-        "codigo": "010114",
-        "grupo": "Parroquia",
-        "descripcion": "YANUNCAY"
-      },
-      {
-        "codigo": "010150",
-        "grupo": "Parroquia",
-        "descripcion": "CUENCA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"
-      },
-      {
-        "codigo": "010151",
-        "grupo": "Parroquia",
-        "descripcion": "BAÑOS (Cantón Cuenca)"
-      },
-      {
-        "codigo": "010152",
-        "grupo": "Parroquia",
-        "descripcion": "CUMBE"
-      },
-      {
-        "codigo": "010153",
-        "grupo": "Parroquia",
-        "descripcion": "CHAUCHA"
-      },
-      {
-        "codigo": "010154",
-        "grupo": "Parroquia",
-        "descripcion": "CHECA (JIDCAY) Cantón Cuenca"
-      },
-      {
-        "codigo": "010155",
-        "grupo": "Parroquia",
-        "descripcion": "CHIQUINTAD"
-      },
-      {
-        "codigo": "010156",
-        "grupo": "Parroquia",
-        "descripcion": "LLACAO"
-      },
-      {
-        "codigo": "010157",
-        "grupo": "Parroquia",
-        "descripcion": "MOLLETURO"
-      },
-      {
-        "codigo": "010158",
-        "grupo": "Parroquia",
-        "descripcion": "NULTI"
-      },
-      {
-        "codigo": "010159",
-        "grupo": "Parroquia",
-        "descripcion": "OCTAVIO CORDERO PALACIOS (SANTA ROSA)"
-      },
-      {
-        "codigo": "010160",
-        "grupo": "Parroquia",
-        "descripcion": "PACCHA (Cantón Cuenca)"
-      },
-      {
-        "codigo": "010161",
-        "grupo": "Parroquia",
-        "descripcion": "QUINGEO"
-      },
-      {
-        "codigo": "010162",
-        "grupo": "Parroquia",
-        "descripcion": "RICAURTE (Cantón Pucará)"
-      },
-      {
-        "codigo": "010163",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JOAQUIN"
-      },
-      {
-        "codigo": "010164",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA ANA (Cantón Cuenca)"
-      },
-      {
-        "codigo": "010165",
-        "grupo": "Parroquia",
-        "descripcion": "SAYAUSI"
-      },
-      {
-        "codigo": "010166",
-        "grupo": "Parroquia",
-        "descripcion": "SIDCAY"
-      },
-      {
-        "codigo": "010167",
-        "grupo": "Parroquia",
-        "descripcion": "SININCAY"
-      },
-      {
-        "codigo": "010168",
-        "grupo": "Parroquia",
-        "descripcion": "TARQUI (Cantón Cuenca)"
-      },
-      {
-        "codigo": "010169",
-        "grupo": "Parroquia",
-        "descripcion": "TURI"
-      },
-      {
-        "codigo": "010170",
-        "grupo": "Parroquia",
-        "descripcion": "VALLE (Cantón Cuenca)"
-      },
-      {
-        "codigo": "010171",
-        "grupo": "Parroquia",
-        "descripcion": "VICTORIA DEL PORTETE (IRQUIS)"
-      },
-      {
-        "codigo": "0102",
-        "grupo": "Cantón",
-        "descripcion": "GIRON"
-      },
-      {
-        "codigo": "010250",
-        "grupo": "Parroquia",
-        "descripcion": "GIRON, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "010251",
-        "grupo": "Parroquia",
-        "descripcion": "ASUNCION (Cantón Girón)"
-      },
-      {
-        "codigo": "010252",
-        "grupo": "Parroquia",
-        "descripcion": "SAN GERARDO (Cantón Girón)"
-      },
-      {
-        "codigo": "0103",
-        "grupo": "Cantón",
-        "descripcion": "GUALACEO"
-      },
-      {
-        "codigo": "010350",
-        "grupo": "Parroquia",
-        "descripcion": "GUALACEO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "010352",
-        "grupo": "Parroquia",
-        "descripcion": "DANIEL CORDOVA TORAL (EL ORIENTE)"
-      },
-      {
-        "codigo": "010353",
-        "grupo": "Parroquia",
-        "descripcion": "JADAN"
-      },
-      {
-        "codigo": "010354",
-        "grupo": "Parroquia",
-        "descripcion": "MARIANO MORENO"
-      },
-      {
-        "codigo": "010356",
-        "grupo": "Parroquia",
-        "descripcion": "REMIGIO CRESPO TORAL (GULAG)"
-      },
-      {
-        "codigo": "010357",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JUAN (Cantón Gualaceo)"
-      },
-      {
-        "codigo": "010358",
-        "grupo": "Parroquia",
-        "descripcion": "ZHIDMAD"
-      },
-      {
-        "codigo": "010359",
-        "grupo": "Parroquia",
-        "descripcion": "LUIS CORDERO VEGA (Cantón Gualaceo)"
-      },
-      {
-        "codigo": "0104",
-        "grupo": "Cantón",
-        "descripcion": "NABON"
-      },
-      {
-        "codigo": "010450",
-        "grupo": "Parroquia",
-        "descripcion": "NABON, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "010451",
-        "grupo": "Parroquia",
-        "descripcion": "COCHAPATA"
-      },
-      {
-        "codigo": "010452",
-        "grupo": "Parroquia",
-        "descripcion": "EL PROGRESO (CAB.EN ZHOTA) Cantón Nabón"
-      },
-      {
-        "codigo": "010453",
-        "grupo": "Parroquia",
-        "descripcion": "LAS NIEVES (CHAYA)"
-      },
-      {
-        "codigo": "0105",
-        "grupo": "Cantón",
-        "descripcion": "PAUTE"
-      },
-      {
-        "codigo": "010550",
-        "grupo": "Parroquia",
-        "descripcion": "PAUTE, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "010552",
-        "grupo": "Parroquia",
-        "descripcion": "BULAN (JOSE VICTOR IZQUIERDO)"
-      },
-      {
-        "codigo": "010553",
-        "grupo": "Parroquia",
-        "descripcion": "CHICAN (GUILLERMO ORTEGA)"
-      },
-      {
-        "codigo": "010554",
-        "grupo": "Parroquia",
-        "descripcion": "EL CABO"
-      },
-      {
-        "codigo": "010556",
-        "grupo": "Parroquia",
-        "descripcion": "GUARAINAG"
-      },
-      {
-        "codigo": "010559",
-        "grupo": "Parroquia",
-        "descripcion": "SAN CRISTOBAL (CARLOS ORDOÑEZ LAZO) Cantón Paute"
-      },
-      {
-        "codigo": "010561",
-        "grupo": "Parroquia",
-        "descripcion": "TOMEBAMBA"
-      },
-      {
-        "codigo": "010562",
-        "grupo": "Parroquia",
-        "descripcion": "DUG DUG"
-      },
-      {
-        "codigo": "0106",
-        "grupo": "Cantón",
-        "descripcion": "PUCARA"
-      },
-      {
-        "codigo": "010650",
-        "grupo": "Parroquia",
-        "descripcion": "PUCARA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "010652",
-        "grupo": "Parroquia",
-        "descripcion": "SAN RAFAEL DE SHARUG"
-      },
-      {
-        "codigo": "0107",
-        "grupo": "Cantón",
-        "descripcion": "SAN FERNANDO"
-      },
-      {
-        "codigo": "010701",
-        "grupo": "Parroquia",
-        "descripcion": "SAN FERNANDO (Cantón San Fernando - Azuay)"
-      },
-      {
-        "codigo": "010750",
-        "grupo": "Parroquia",
-        "descripcion": "SAN FERNANDO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "010751",
-        "grupo": "Parroquia",
-        "descripcion": "CHUMBLIN"
-      },
-      {
-        "codigo": "0108",
-        "grupo": "Cantón",
-        "descripcion": "SANTA ISABEL"
-      },
-      {
-        "codigo": "010850",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA ISABEL (CHAGUARURCO), CABECERA CANTONAL"
-      },
-      {
-        "codigo": "010851",
-        "grupo": "Parroquia",
-        "descripcion": "ABDON CALDERON (LA UNION)"
-      },
-      {
-        "codigo": "010853",
-        "grupo": "Parroquia",
-        "descripcion": "ZHAGLLI (SHAGLLI)"
-      },
-      {
-        "codigo": "0109",
-        "grupo": "Cantón",
-        "descripcion": "SIGSIG"
-      },
-      {
-        "codigo": "010950",
-        "grupo": "Parroquia",
-        "descripcion": "SIGSIG, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "010951",
-        "grupo": "Parroquia",
-        "descripcion": "CUCHIL (CUTCHIL) "
-      },
-      {
-        "codigo": "010952",
-        "grupo": "Parroquia",
-        "descripcion": "JIMA (GIMA)"
-      },
-      {
-        "codigo": "010953",
-        "grupo": "Parroquia",
-        "descripcion": "GUEL"
-      },
-      {
-        "codigo": "010954",
-        "grupo": "Parroquia",
-        "descripcion": "LUDO"
-      },
-      {
-        "codigo": "010955",
-        "grupo": "Parroquia",
-        "descripcion": "SAN BARTOLOME (Cantón Sigsig)"
-      },
-      {
-        "codigo": "010956",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JOSE DE RARANGA"
-      },
-      {
-        "codigo": "0110",
-        "grupo": "Cantón",
-        "descripcion": "OÑA"
-      },
-      {
-        "codigo": "011050",
-        "grupo": "Parroquia",
-        "descripcion": "SAN FELIPE DE OÑA CABECERA CANTONAL"
-      },
-      {
-        "codigo": "011051",
-        "grupo": "Parroquia",
-        "descripcion": "SUSUDEL"
-      },
-      {
-        "codigo": "0111",
-        "grupo": "Cantón",
-        "descripcion": "CHORDELEG"
-      },
-      {
-        "codigo": "011150",
-        "grupo": "Parroquia",
-        "descripcion": "CHORDELEG, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "011151",
-        "grupo": "Parroquia",
-        "descripcion": "PRINCIPAL"
-      },
-      {
-        "codigo": "011152",
-        "grupo": "Parroquia",
-        "descripcion": "LA UNION (Cantón Chordeleg)"
-      },
-      {
-        "codigo": "011153",
-        "grupo": "Parroquia",
-        "descripcion": "LUIS GALARZA ORELLANA (CAB.EN DELEGSOL)"
-      },
-      {
-        "codigo": "011154",
-        "grupo": "Parroquia",
-        "descripcion": "SAN MARTIN DE PUZHIO"
-      },
-      {
-        "codigo": "0112",
-        "grupo": "Cantón",
-        "descripcion": "EL PAN"
-      },
-      {
-        "codigo": "011250",
-        "grupo": "Parroquia",
-        "descripcion": "EL PAN, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "011253",
-        "grupo": "Parroquia",
-        "descripcion": "SAN VICENTE (Cantón El Pan)"
-      },
-      {
-        "codigo": "0113",
-        "grupo": "Cantón",
-        "descripcion": "SEVILLA DE ORO"
-      },
-      {
-        "codigo": "011350",
-        "grupo": "Parroquia",
-        "descripcion": "SEVILLA DE ORO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "011351",
-        "grupo": "Parroquia",
-        "descripcion": "AMALUZA (Cantón Sevilla de Oro)"
-      },
-      {
-        "codigo": "011352",
-        "grupo": "Parroquia",
-        "descripcion": "PALMAS"
-      },
-      {
-        "codigo": "0114",
-        "grupo": "Cantón",
-        "descripcion": "GUACHAPALA"
-      },
-      {
-        "codigo": "011450",
-        "grupo": "Parroquia",
-        "descripcion": "GUACHAPALA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0115",
-        "grupo": "Cantón",
-        "descripcion": "CAMILO PONCE ENRIQUEZ"
-      },
-      {
-        "codigo": "011550",
-        "grupo": "Parroquia",
-        "descripcion": "CAMILO PONCE ENRIQUEZ, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "011551",
-        "grupo": "Parroquia",
-        "descripcion": "EL CARMEN DE PIJILI"
-      },
-      {
-        "codigo": "02",
-        "grupo": "Provincia",
-        "descripcion": "BOLIVAR"
-      },
-      {
-        "codigo": "0201",
-        "grupo": "Cantón",
-        "descripcion": "GUARANDA"
-      },
-      {
-        "codigo": "020101",
-        "grupo": "Parroquia",
-        "descripcion": "ANGEL POLIBIO CHAVES"
-      },
-      {
-        "codigo": "020102",
-        "grupo": "Parroquia",
-        "descripcion": "GABRIEL IGNACIO VEINTIMILLA"
-      },
-      {
-        "codigo": "020103",
-        "grupo": "Parroquia",
-        "descripcion": "GUANUJO"
-      },
-      {
-        "codigo": "020150",
-        "grupo": "Parroquia",
-        "descripcion": "GUARANDA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"
-      },
-      {
-        "codigo": "020151",
-        "grupo": "Parroquia",
-        "descripcion": "FACUNDO VELA"
-      },
-      {
-        "codigo": "020153",
-        "grupo": "Parroquia",
-        "descripcion": "JULIO E. MORENO (CATANAHUAN GRANDE)"
-      },
-      {
-        "codigo": "020155",
-        "grupo": "Parroquia",
-        "descripcion": "SALINAS (Cantón Guaranda)"
-      },
-      {
-        "codigo": "020156",
-        "grupo": "Parroquia",
-        "descripcion": "SAN LORENZO (Cantón Guaranda)"
-      },
-      {
-        "codigo": "020157",
-        "grupo": "Parroquia",
-        "descripcion": "SAN SIMON (YACOTO)"
-      },
-      {
-        "codigo": "020158",
-        "grupo": "Parroquia",
-        "descripcion": "SANTAFE (SANTA FE)"
-      },
-      {
-        "codigo": "020159",
-        "grupo": "Parroquia",
-        "descripcion": "SIMIATUG"
-      },
-      {
-        "codigo": "020160",
-        "grupo": "Parroquia",
-        "descripcion": "SAN LUIS DE PAMBIL"
-      },
-      {
-        "codigo": "0202",
-        "grupo": "Cantón",
-        "descripcion": "CHILLANES"
-      },
-      {
-        "codigo": "020250",
-        "grupo": "Parroquia",
-        "descripcion": "CHILLANES, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "020251",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JOSE DEL TAMBO (TAMBOPAMBA)"
-      },
-      {
-        "codigo": "0203",
-        "grupo": "Cantón",
-        "descripcion": "CHIMBO"
-      },
-      {
-        "codigo": "020350",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JOSE DE CHIMBO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "020351",
-        "grupo": "Parroquia",
-        "descripcion": "ASUNCION (ASANCOTO)"
-      },
-      {
-        "codigo": "020353",
-        "grupo": "Parroquia",
-        "descripcion": "MAGDALENA (CHAPACOTO)"
-      },
-      {
-        "codigo": "020354",
-        "grupo": "Parroquia",
-        "descripcion": "SAN SEBASTIAN (Cantón Chimbo)"
-      },
-      {
-        "codigo": "020355",
-        "grupo": "Parroquia",
-        "descripcion": "TELIMBELA"
-      },
-      {
-        "codigo": "0204",
-        "grupo": "Cantón",
-        "descripcion": "ECHEANDIA"
-      },
-      {
-        "codigo": "020450",
-        "grupo": "Parroquia",
-        "descripcion": "ECHEANDIA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0205",
-        "grupo": "Cantón",
-        "descripcion": "SAN MIGUEL"
-      },
-      {
-        "codigo": "020550",
-        "grupo": "Parroquia",
-        "descripcion": "SAN MIGUEL, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "020551",
-        "grupo": "Parroquia",
-        "descripcion": "BALSAPAMBA"
-      },
-      {
-        "codigo": "020552",
-        "grupo": "Parroquia",
-        "descripcion": "BILOVAN"
-      },
-      {
-        "codigo": "020553",
-        "grupo": "Parroquia",
-        "descripcion": "REGULO DE MORA"
-      },
-      {
-        "codigo": "020554",
-        "grupo": "Parroquia",
-        "descripcion": "SAN PABLO  (SAN PABLO DE ATENAS)"
-      },
-      {
-        "codigo": "020555",
-        "grupo": "Parroquia",
-        "descripcion": "SANTIAGO (Cantón San Miguel)"
-      },
-      {
-        "codigo": "020556",
-        "grupo": "Parroquia",
-        "descripcion": "SAN VICENTE (Cantón San Miguel)"
-      },
-      {
-        "codigo": "0206",
-        "grupo": "Cantón",
-        "descripcion": "CALUMA"
-      },
-      {
-        "codigo": "020650",
-        "grupo": "Parroquia",
-        "descripcion": "CALUMA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0207",
-        "grupo": "Cantón",
-        "descripcion": "LAS NAVES"
-      },
-      {
-        "codigo": "020702",
-        "grupo": "Parroquia",
-        "descripcion": "LAS NAVES"
-      },
-      {
-        "codigo": "020750",
-        "grupo": "Parroquia",
-        "descripcion": "LAS NAVES, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "03",
-        "grupo": "Provincia",
-        "descripcion": "CAÑAR"
-      },
-      {
-        "codigo": "0301",
-        "grupo": "Cantón",
-        "descripcion": "AZOGUES"
-      },
-      {
-        "codigo": "030101",
-        "grupo": "Parroquia",
-        "descripcion": "AURELIO BAYAS MARTINEZ"
-      },
-      {
-        "codigo": "030103",
-        "grupo": "Parroquia",
-        "descripcion": "BORRERO"
-      },
-      {
-        "codigo": "030150",
-        "grupo": "Parroquia",
-        "descripcion": "AZOGUES, CABECERA CANTONAL Y CAPITAL PROVINCIAL"
-      },
-      {
-        "codigo": "030151",
-        "grupo": "Parroquia",
-        "descripcion": "COJITAMBO"
-      },
-      {
-        "codigo": "030153",
-        "grupo": "Parroquia",
-        "descripcion": "GUAPAN"
-      },
-      {
-        "codigo": "030154",
-        "grupo": "Parroquia",
-        "descripcion": "JAVIER LOYOLA (CHUQUIPATA)"
-      },
-      {
-        "codigo": "030155",
-        "grupo": "Parroquia",
-        "descripcion": "LUIS CORDERO (Cantón Azogues)"
-      },
-      {
-        "codigo": "030156",
-        "grupo": "Parroquia",
-        "descripcion": "PINDILIG"
-      },
-      {
-        "codigo": "030157",
-        "grupo": "Parroquia",
-        "descripcion": "RIVERA"
-      },
-      {
-        "codigo": "030158",
-        "grupo": "Parroquia",
-        "descripcion": "SAN MIGUEL (Cantón Azogues)"
-      },
-      {
-        "codigo": "030160",
-        "grupo": "Parroquia",
-        "descripcion": "TADAY"
-      },
-      {
-        "codigo": "0302",
-        "grupo": "Cantón",
-        "descripcion": "BIBLIAN"
-      },
-      {
-        "codigo": "030250",
-        "grupo": "Parroquia",
-        "descripcion": "BIBLIAN, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "030251",
-        "grupo": "Parroquia",
-        "descripcion": "NAZON (CAB. EN PAMPA DE DOMINGUEZ)"
-      },
-      {
-        "codigo": "030252",
-        "grupo": "Parroquia",
-        "descripcion": "SAN FRANCISCO DE SAGEO (Cantón Biblián)"
-      },
-      {
-        "codigo": "030253",
-        "grupo": "Parroquia",
-        "descripcion": "TURUPAMBA"
-      },
-      {
-        "codigo": "030254",
-        "grupo": "Parroquia",
-        "descripcion": "JERUSALEN"
-      },
-      {
-        "codigo": "0303",
-        "grupo": "Cantón",
-        "descripcion": "CAÑAR"
-      },
-      {
-        "codigo": "030350",
-        "grupo": "Parroquia",
-        "descripcion": "CAÑAR, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "030351",
-        "grupo": "Parroquia",
-        "descripcion": "CHONTAMARCA"
-      },
-      {
-        "codigo": "030352",
-        "grupo": "Parroquia",
-        "descripcion": "CHOROCOPTE"
-      },
-      {
-        "codigo": "030353",
-        "grupo": "Parroquia",
-        "descripcion": "GENERAL MORALES (SOCARTE)"
-      },
-      {
-        "codigo": "030354",
-        "grupo": "Parroquia",
-        "descripcion": "GUALLETURO"
-      },
-      {
-        "codigo": "030355",
-        "grupo": "Parroquia",
-        "descripcion": "HONORATO VASQUEZ (TAMBO VIEJO) Cantón Cañar"
-      },
-      {
-        "codigo": "030356",
-        "grupo": "Parroquia",
-        "descripcion": "INGAPIRCA"
-      },
-      {
-        "codigo": "030357",
-        "grupo": "Parroquia",
-        "descripcion": "JUNCAL"
-      },
-      {
-        "codigo": "030358",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ANTONIO (Cantón Cañar)"
-      },
-      {
-        "codigo": "030361",
-        "grupo": "Parroquia",
-        "descripcion": "ZHUD"
-      },
-      {
-        "codigo": "030362",
-        "grupo": "Parroquia",
-        "descripcion": "VENTURA"
-      },
-      {
-        "codigo": "030363",
-        "grupo": "Parroquia",
-        "descripcion": "DUCUR"
-      },
-      {
-        "codigo": "0304",
-        "grupo": "Cantón",
-        "descripcion": "LA TRONCAL"
-      },
-      {
-        "codigo": "030450",
-        "grupo": "Parroquia",
-        "descripcion": "LA TRONCAL, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "030451",
-        "grupo": "Parroquia",
-        "descripcion": "MANUEL J. CALLE"
-      },
-      {
-        "codigo": "030452",
-        "grupo": "Parroquia",
-        "descripcion": "PANCHO NEGRO"
-      },
-      {
-        "codigo": "0305",
-        "grupo": "Cantón",
-        "descripcion": "EL TAMBO"
-      },
-      {
-        "codigo": "030550",
-        "grupo": "Parroquia",
-        "descripcion": "EL TAMBO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0306",
-        "grupo": "Cantón",
-        "descripcion": "DELEG"
-      },
-      {
-        "codigo": "030650",
-        "grupo": "Parroquia",
-        "descripcion": "DELEG, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "030651",
-        "grupo": "Parroquia",
-        "descripcion": "SOLANO"
-      },
-      {
-        "codigo": "0307",
-        "grupo": "Cantón",
-        "descripcion": "SUSCAL"
-      },
-      {
-        "codigo": "030750",
-        "grupo": "Parroquia",
-        "descripcion": "SUSCAL, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "04",
-        "grupo": "Provincia",
-        "descripcion": "CARCHI"
-      },
-      {
-        "codigo": "0401",
-        "grupo": "Cantón",
-        "descripcion": "TULCAN"
-      },
-      {
-        "codigo": "040101",
-        "grupo": "Parroquia",
-        "descripcion": "GONZALEZ SUAREZ (Cantón Túlcan)"
-      },
-      {
-        "codigo": "040102",
-        "grupo": "Parroquia",
-        "descripcion": "TULCAN"
-      },
-      {
-        "codigo": "040150",
-        "grupo": "Parroquia",
-        "descripcion": "TULCAN, CABECERA CANTONAL Y CAPITAL PROVINCIAL"
-      },
-      {
-        "codigo": "040151",
-        "grupo": "Parroquia",
-        "descripcion": "EL CARMELO (EL PUN)"
-      },
-      {
-        "codigo": "040153",
-        "grupo": "Parroquia",
-        "descripcion": "JULIO ANDRADE (OREJUELA)"
-      },
-      {
-        "codigo": "040154",
-        "grupo": "Parroquia",
-        "descripcion": "MALDONADO (Cantón Tulcán)"
-      },
-      {
-        "codigo": "040155",
-        "grupo": "Parroquia",
-        "descripcion": "PIOTER"
-      },
-      {
-        "codigo": "040156",
-        "grupo": "Parroquia",
-        "descripcion": "TOBAR DONOSO (LA BOCANA DE CAMUMBI)"
-      },
-      {
-        "codigo": "040157",
-        "grupo": "Parroquia",
-        "descripcion": "TUFIÑO"
-      },
-      {
-        "codigo": "040158",
-        "grupo": "Parroquia",
-        "descripcion": "URBINA (TAYA)"
-      },
-      {
-        "codigo": "040161",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA MARTHA DE CUBA"
-      },
-      {
-        "codigo": "0402",
-        "grupo": "Cantón",
-        "descripcion": "BOLIVAR"
-      },
-      {
-        "codigo": "040250",
-        "grupo": "Parroquia",
-        "descripcion": "BOLIVAR, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "040251",
-        "grupo": "Parroquia",
-        "descripcion": "GARCIA MORENO (Cantón Bolívar - El Carchi)"
-      },
-      {
-        "codigo": "040252",
-        "grupo": "Parroquia",
-        "descripcion": "LOS ANDES"
-      },
-      {
-        "codigo": "040253",
-        "grupo": "Parroquia",
-        "descripcion": "MONTE OLIVO"
-      },
-      {
-        "codigo": "040254",
-        "grupo": "Parroquia",
-        "descripcion": "SAN VICENTE DE PUSIR"
-      },
-      {
-        "codigo": "040255",
-        "grupo": "Parroquia",
-        "descripcion": "SAN RAFAEL (Cantón Bolívar - El Carchi)"
-      },
-      {
-        "codigo": "0403",
-        "grupo": "Cantón",
-        "descripcion": "ESPEJO"
-      },
-      {
-        "codigo": "040301",
-        "grupo": "Parroquia",
-        "descripcion": "EL ANGEL"
-      },
-      {
-        "codigo": "040302",
-        "grupo": "Parroquia",
-        "descripcion": "27 DE SEPTIEMBRE"
-      },
-      {
-        "codigo": "040350",
-        "grupo": "Parroquia",
-        "descripcion": "EL ANGEL, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "040351",
-        "grupo": "Parroquia",
-        "descripcion": "EL GOALTAL"
-      },
-      {
-        "codigo": "040352",
-        "grupo": "Parroquia",
-        "descripcion": "LA LIBERTAD (ALIZO) Cantón Espejo - El Carchi"
-      },
-      {
-        "codigo": "040353",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ISIDRO (Cantón Espejo)"
-      },
-      {
-        "codigo": "0404",
-        "grupo": "Cantón",
-        "descripcion": "MIRA"
-      },
-      {
-        "codigo": "040450",
-        "grupo": "Parroquia",
-        "descripcion": "MIRA (CHONTAHUASI), CABECERA CANTONAL"
-      },
-      {
-        "codigo": "040451",
-        "grupo": "Parroquia",
-        "descripcion": "CONCEPCION (Cantón Mira)"
-      },
-      {
-        "codigo": "040452",
-        "grupo": "Parroquia",
-        "descripcion": "JIJON Y CAAMAÑO (CAB. EN RIO BLANCO)"
-      },
-      {
-        "codigo": "040453",
-        "grupo": "Parroquia",
-        "descripcion": "JUAN MONTALVO (SAN IGNACIO DE QUIL) Cantón Mira"
-      },
-      {
-        "codigo": "0405",
-        "grupo": "Cantón",
-        "descripcion": "MONTUFAR"
-      },
-      {
-        "codigo": "040501",
-        "grupo": "Parroquia",
-        "descripcion": "GONZALEZ SUAREZ (Cantón Montufar)"
-      },
-      {
-        "codigo": "040502",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JOSE (Cantón Montufar)"
-      },
-      {
-        "codigo": "040550",
-        "grupo": "Parroquia",
-        "descripcion": "SAN GABRIEL, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "040551",
-        "grupo": "Parroquia",
-        "descripcion": "CRISTOBAL COLON"
-      },
-      {
-        "codigo": "040552",
-        "grupo": "Parroquia",
-        "descripcion": "CHITAN DE NAVARRETE"
-      },
-      {
-        "codigo": "040553",
-        "grupo": "Parroquia",
-        "descripcion": "FERNANDEZ SALVADOR"
-      },
-      {
-        "codigo": "040554",
-        "grupo": "Parroquia",
-        "descripcion": "LA PAZ (Cantón Montúfar)"
-      },
-      {
-        "codigo": "040555",
-        "grupo": "Parroquia",
-        "descripcion": "PIARTAL"
-      },
-      {
-        "codigo": "0406",
-        "grupo": "Cantón",
-        "descripcion": "SAN PEDRO DE HUACA"
-      },
-      {
-        "codigo": "040650",
-        "grupo": "Parroquia",
-        "descripcion": "HUACA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "040651",
-        "grupo": "Parroquia",
-        "descripcion": "MARISCAL SUCRE (Cantón San Pedro de Huaca)"
-      },
-      {
-        "codigo": "05",
-        "grupo": "Provincia",
-        "descripcion": "COTOPAXI"
-      },
-      {
-        "codigo": "0501",
-        "grupo": "Cantón",
-        "descripcion": "LATACUNGA"
-      },
-      {
-        "codigo": "050101",
-        "grupo": "Parroquia",
-        "descripcion": "ELOY ALFARO  (SAN FELIPE) Cantón Latacunga"
-      },
-      {
-        "codigo": "050102",
-        "grupo": "Parroquia",
-        "descripcion": "IGNACIO FLORES (PARQUE FLORES) "
-      },
-      {
-        "codigo": "050103",
-        "grupo": "Parroquia",
-        "descripcion": "JUAN MONTALVO (SAN SEBASTIAN) Cantón Latacunga"
-      },
-      {
-        "codigo": "050104",
-        "grupo": "Parroquia",
-        "descripcion": "LA MATRIZ (Cantón Latacunga)"
-      },
-      {
-        "codigo": "050105",
-        "grupo": "Parroquia",
-        "descripcion": "SAN BUENAVENTURA"
-      },
-      {
-        "codigo": "050150",
-        "grupo": "Parroquia",
-        "descripcion": "LATACUNGA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"
-      },
-      {
-        "codigo": "050151",
-        "grupo": "Parroquia",
-        "descripcion": "ALAQUES (ALAQUEZ)"
-      },
-      {
-        "codigo": "050152",
-        "grupo": "Parroquia",
-        "descripcion": "BELISARIO QUEVEDO (GUANAILIN) Cantón Latacunga"
-      },
-      {
-        "codigo": "050153",
-        "grupo": "Parroquia",
-        "descripcion": "GUAITACAMA (GUAYTACAMA)"
-      },
-      {
-        "codigo": "050154",
-        "grupo": "Parroquia",
-        "descripcion": "JOSEGUANGO BAJO"
-      },
-      {
-        "codigo": "050156",
-        "grupo": "Parroquia",
-        "descripcion": "MULALO"
-      },
-      {
-        "codigo": "050157",
-        "grupo": "Parroquia",
-        "descripcion": "11 DE NOVIEMBRE (ILINCHISI)"
-      },
-      {
-        "codigo": "050158",
-        "grupo": "Parroquia",
-        "descripcion": "POALO"
-      },
-      {
-        "codigo": "050159",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JUAN DE PASTOCALLE"
-      },
-      {
-        "codigo": "050161",
-        "grupo": "Parroquia",
-        "descripcion": "TANICUCHI"
-      },
-      {
-        "codigo": "050162",
-        "grupo": "Parroquia",
-        "descripcion": "TOACASO"
-      },
-      {
-        "codigo": "0502",
-        "grupo": "Cantón",
-        "descripcion": "LA MANA"
-      },
-      {
-        "codigo": "050201",
-        "grupo": "Parroquia",
-        "descripcion": "EL CARMEN (Cantón La Maná)"
-      },
-      {
-        "codigo": "050250",
-        "grupo": "Parroquia",
-        "descripcion": "LA MANA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "050251",
-        "grupo": "Parroquia",
-        "descripcion": "GUASAGANDA (CAB. EN GUASAGANDA CENTRO)"
-      },
-      {
-        "codigo": "0503",
-        "grupo": "Cantón",
-        "descripcion": "PANGUA"
-      },
-      {
-        "codigo": "050301",
-        "grupo": "Parroquia",
-        "descripcion": "EL CORAZON"
-      },
-      {
-        "codigo": "050350",
-        "grupo": "Parroquia",
-        "descripcion": "EL CORAZON, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "050351",
-        "grupo": "Parroquia",
-        "descripcion": "MORASPUNGO"
-      },
-      {
-        "codigo": "050352",
-        "grupo": "Parroquia",
-        "descripcion": "PINLLOPATA"
-      },
-      {
-        "codigo": "050353",
-        "grupo": "Parroquia",
-        "descripcion": "RAMON CAMPAÑA"
-      },
-      {
-        "codigo": "0504",
-        "grupo": "Cantón",
-        "descripcion": "PUJILI"
-      },
-      {
-        "codigo": "050450",
-        "grupo": "Parroquia",
-        "descripcion": "PUJILI, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "050451",
-        "grupo": "Parroquia",
-        "descripcion": "ANGAMARCA"
-      },
-      {
-        "codigo": "050453",
-        "grupo": "Parroquia",
-        "descripcion": "GUANGAJE"
-      },
-      {
-        "codigo": "050455",
-        "grupo": "Parroquia",
-        "descripcion": "LA VICTORIA (Cantón Pujilí)"
-      },
-      {
-        "codigo": "050456",
-        "grupo": "Parroquia",
-        "descripcion": "PILALO"
-      },
-      {
-        "codigo": "050457",
-        "grupo": "Parroquia",
-        "descripcion": "TINGO"
-      },
-      {
-        "codigo": "050458",
-        "grupo": "Parroquia",
-        "descripcion": "ZUMBAHUA"
-      },
-      {
-        "codigo": "0505",
-        "grupo": "Cantón",
-        "descripcion": "SALCEDO"
-      },
-      {
-        "codigo": "050550",
-        "grupo": "Parroquia",
-        "descripcion": "SAN MIGUEL, CABECERA CANTONAL SALCEDO"
-      },
-      {
-        "codigo": "050551",
-        "grupo": "Parroquia",
-        "descripcion": "ANTONIO JOSE HOLGUIN  (SANTA LUCIA)"
-      },
-      {
-        "codigo": "050552",
-        "grupo": "Parroquia",
-        "descripcion": "CUSUBAMBA"
-      },
-      {
-        "codigo": "050553",
-        "grupo": "Parroquia",
-        "descripcion": "MULALILLO"
-      },
-      {
-        "codigo": "050554",
-        "grupo": "Parroquia",
-        "descripcion": "MULLIQUINDIL (SANTA ANA)"
-      },
-      {
-        "codigo": "050555",
-        "grupo": "Parroquia",
-        "descripcion": "PANSALEO"
-      },
-      {
-        "codigo": "0506",
-        "grupo": "Cantón",
-        "descripcion": "SAQUISILI"
-      },
-      {
-        "codigo": "050650",
-        "grupo": "Parroquia",
-        "descripcion": "SAQUISILI, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "050651",
-        "grupo": "Parroquia",
-        "descripcion": "CANCHAGUA"
-      },
-      {
-        "codigo": "050652",
-        "grupo": "Parroquia",
-        "descripcion": "CHANTILIN"
-      },
-      {
-        "codigo": "050653",
-        "grupo": "Parroquia",
-        "descripcion": "COCHAPAMBA (Cantón Saquisilí)"
-      },
-      {
-        "codigo": "0507",
-        "grupo": "Cantón",
-        "descripcion": "SIGCHOS"
-      },
-      {
-        "codigo": "050750",
-        "grupo": "Parroquia",
-        "descripcion": "SIGCHOS, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "050751",
-        "grupo": "Parroquia",
-        "descripcion": "CHUCCHILLAN (CHUGCHILLAN)"
-      },
-      {
-        "codigo": "050752",
-        "grupo": "Parroquia",
-        "descripcion": "ISINLIBI (INSILIVI)"
-      },
-      {
-        "codigo": "050753",
-        "grupo": "Parroquia",
-        "descripcion": "LAS PAMPAS"
-      },
-      {
-        "codigo": "050754",
-        "grupo": "Parroquia",
-        "descripcion": "PALO QUEMADO"
-      },
-      {
-        "codigo": "06",
-        "grupo": "Provincia",
-        "descripcion": "CHIMBORAZO"
-      },
-      {
-        "codigo": "0601",
-        "grupo": "Cantón",
-        "descripcion": "RIOBAMBA"
-      },
-      {
-        "codigo": "060101",
-        "grupo": "Parroquia",
-        "descripcion": "LIZARZABURU"
-      },
-      {
-        "codigo": "060103",
-        "grupo": "Parroquia",
-        "descripcion": "VELASCO"
-      },
-      {
-        "codigo": "060104",
-        "grupo": "Parroquia",
-        "descripcion": "VELOZ"
-      },
-      {
-        "codigo": "060105",
-        "grupo": "Parroquia",
-        "descripcion": "YARUQUIES"
-      },
-      {
-        "codigo": "060106",
-        "grupo": "Parroquia",
-        "descripcion": "LICAN"
-      },
-      {
-        "codigo": "060150",
-        "grupo": "Parroquia",
-        "descripcion": "RIOBAMBA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"
-      },
-      {
-        "codigo": "060151",
-        "grupo": "Parroquia",
-        "descripcion": "CACHA (CAB. EN MACHANGARA)"
-      },
-      {
-        "codigo": "060152",
-        "grupo": "Parroquia",
-        "descripcion": "CALPI"
-      },
-      {
-        "codigo": "060153",
-        "grupo": "Parroquia",
-        "descripcion": "CUBIJIES"
-      },
-      {
-        "codigo": "060154",
-        "grupo": "Parroquia",
-        "descripcion": "FLORES"
-      },
-      {
-        "codigo": "060156",
-        "grupo": "Parroquia",
-        "descripcion": "LICTO"
-      },
-      {
-        "codigo": "060157",
-        "grupo": "Parroquia",
-        "descripcion": "PUNGALA"
-      },
-      {
-        "codigo": "060158",
-        "grupo": "Parroquia",
-        "descripcion": "PUNIN"
-      },
-      {
-        "codigo": "060159",
-        "grupo": "Parroquia",
-        "descripcion": "QUIMIAG"
-      },
-      {
-        "codigo": "060160",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JUAN (Cantón Riobamba)"
-      },
-      {
-        "codigo": "060161",
-        "grupo": "Parroquia",
-        "descripcion": "SAN LUIS (Cantón Riobamba)"
-      },
-      {
-        "codigo": "0602",
-        "grupo": "Cantón",
-        "descripcion": "ALAUSI"
-      },
-      {
-        "codigo": "060250",
-        "grupo": "Parroquia",
-        "descripcion": "ALAUSI, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "060251",
-        "grupo": "Parroquia",
-        "descripcion": "ACHUPALLAS"
-      },
-      {
-        "codigo": "060253",
-        "grupo": "Parroquia",
-        "descripcion": "GUASUNTOS"
-      },
-      {
-        "codigo": "060254",
-        "grupo": "Parroquia",
-        "descripcion": "HUIGRA"
-      },
-      {
-        "codigo": "060255",
-        "grupo": "Parroquia",
-        "descripcion": "MULTITUD"
-      },
-      {
-        "codigo": "060256",
-        "grupo": "Parroquia",
-        "descripcion": "PISTISHI (NARIZ DEL DIABLO)"
-      },
-      {
-        "codigo": "060257",
-        "grupo": "Parroquia",
-        "descripcion": "PUMALLACTA"
-      },
-      {
-        "codigo": "060258",
-        "grupo": "Parroquia",
-        "descripcion": "SEVILLA (Cantón Alausí)"
-      },
-      {
-        "codigo": "060259",
-        "grupo": "Parroquia",
-        "descripcion": "SIBAMBE"
-      },
-      {
-        "codigo": "060260",
-        "grupo": "Parroquia",
-        "descripcion": "TIXAN"
-      },
-      {
-        "codigo": "0603",
-        "grupo": "Cantón",
-        "descripcion": "COLTA"
-      },
-      {
-        "codigo": "060301",
-        "grupo": "Parroquia",
-        "descripcion": "CAJABAMBA"
-      },
-      {
-        "codigo": "060302",
-        "grupo": "Parroquia",
-        "descripcion": "SICALPA"
-      },
-      {
-        "codigo": "060350",
-        "grupo": "Parroquia",
-        "descripcion": "VILLA LA UNION (CAJABAMBA), CABECERA CANTONAL"
-      },
-      {
-        "codigo": "060351",
-        "grupo": "Parroquia",
-        "descripcion": "CAÑI"
-      },
-      {
-        "codigo": "060352",
-        "grupo": "Parroquia",
-        "descripcion": "COLUMBE"
-      },
-      {
-        "codigo": "060353",
-        "grupo": "Parroquia",
-        "descripcion": "JUAN DE VELASCO (PANGOR)"
-      },
-      {
-        "codigo": "060354",
-        "grupo": "Parroquia",
-        "descripcion": "SANTIAGO DE QUITO (CAB. EN SAN ANTONIO DE QUITO)"
-      },
-      {
-        "codigo": "0604",
-        "grupo": "Cantón",
-        "descripcion": "CHAMBO"
-      },
-      {
-        "codigo": "060450",
-        "grupo": "Parroquia",
-        "descripcion": "CHAMBO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0605",
-        "grupo": "Cantón",
-        "descripcion": "CHUNCHI"
-      },
-      {
-        "codigo": "060550",
-        "grupo": "Parroquia",
-        "descripcion": "CHUNCHI, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "060551",
-        "grupo": "Parroquia",
-        "descripcion": "CAPZOL"
-      },
-      {
-        "codigo": "060552",
-        "grupo": "Parroquia",
-        "descripcion": "COMPUD"
-      },
-      {
-        "codigo": "060553",
-        "grupo": "Parroquia",
-        "descripcion": "GONZOL"
-      },
-      {
-        "codigo": "060554",
-        "grupo": "Parroquia",
-        "descripcion": "LLAGOS"
-      },
-      {
-        "codigo": "0606",
-        "grupo": "Cantón",
-        "descripcion": "GUAMOTE"
-      },
-      {
-        "codigo": "060650",
-        "grupo": "Parroquia",
-        "descripcion": "GUAMOTE, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "060651",
-        "grupo": "Parroquia",
-        "descripcion": "CEBADAS"
-      },
-      {
-        "codigo": "060652",
-        "grupo": "Parroquia",
-        "descripcion": "PALMIRA"
-      },
-      {
-        "codigo": "0607",
-        "grupo": "Cantón",
-        "descripcion": "GUANO"
-      },
-      {
-        "codigo": "060701",
-        "grupo": "Parroquia",
-        "descripcion": "EL ROSARIO (Cantón Guano)"
-      },
-      {
-        "codigo": "060702",
-        "grupo": "Parroquia",
-        "descripcion": "LA MATRIZ (Cantón Guano)"
-      },
-      {
-        "codigo": "060750",
-        "grupo": "Parroquia",
-        "descripcion": "GUANO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "060751",
-        "grupo": "Parroquia",
-        "descripcion": "GUANANDO"
-      },
-      {
-        "codigo": "060752",
-        "grupo": "Parroquia",
-        "descripcion": "ILAPO"
-      },
-      {
-        "codigo": "060753",
-        "grupo": "Parroquia",
-        "descripcion": "LA PROVIDENCIA (Cantón Guano)"
-      },
-      {
-        "codigo": "060754",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ANDRES (Cantón Guano)"
-      },
-      {
-        "codigo": "060755",
-        "grupo": "Parroquia",
-        "descripcion": "SAN GERARDO DE PACAICAGUAN (Cantón Guano)"
-      },
-      {
-        "codigo": "060756",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ISIDRO DE PATULU (Cantón Guano)"
-      },
-      {
-        "codigo": "060757",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JOSE DEL CHAZO"
-      },
-      {
-        "codigo": "060759",
-        "grupo": "Parroquia",
-        "descripcion": "VALPARAISO"
-      },
-      {
-        "codigo": "0608",
-        "grupo": "Cantón",
-        "descripcion": "PALLATANGA"
-      },
-      {
-        "codigo": "060850",
-        "grupo": "Parroquia",
-        "descripcion": "PALLATANGA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0609",
-        "grupo": "Cantón",
-        "descripcion": "PENIPE"
-      },
-      {
-        "codigo": "060950",
-        "grupo": "Parroquia",
-        "descripcion": "PENIPE, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "060951",
-        "grupo": "Parroquia",
-        "descripcion": "EL ALTAR"
-      },
-      {
-        "codigo": "060952",
-        "grupo": "Parroquia",
-        "descripcion": "MATUS"
-      },
-      {
-        "codigo": "060953",
-        "grupo": "Parroquia",
-        "descripcion": "PUELA"
-      },
-      {
-        "codigo": "060954",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ANTONIO DE BAYUSHIG (Cantón Penipe)"
-      },
-      {
-        "codigo": "060955",
-        "grupo": "Parroquia",
-        "descripcion": "LA CANDELARIA"
-      },
-      {
-        "codigo": "0610",
-        "grupo": "Cantón",
-        "descripcion": "CUMANDA"
-      },
-      {
-        "codigo": "061050",
-        "grupo": "Parroquia",
-        "descripcion": "CUMANDA, CABECERA CANTONAL Cantón Cumandá"
-      },
-      {
-        "codigo": "07",
-        "grupo": "Provincia",
-        "descripcion": "EL ORO"
-      },
-      {
-        "codigo": "0701",
-        "grupo": "Cantón",
-        "descripcion": "MACHALA"
-      },
-      {
-        "codigo": "070102",
-        "grupo": "Parroquia",
-        "descripcion": "MACHALA"
-      },
-      {
-        "codigo": "070103",
-        "grupo": "Parroquia",
-        "descripcion": "PUERTO BOLIVAR"
-      },
-      {
-        "codigo": "070105",
-        "grupo": "Parroquia",
-        "descripcion": "EL CAMBIO"
-      },
-      {
-        "codigo": "070150",
-        "grupo": "Parroquia",
-        "descripcion": "MACHALA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"
-      },
-      {
-        "codigo": "070152",
-        "grupo": "Parroquia",
-        "descripcion": "EL RETIRO"
-      },
-      {
-        "codigo": "0702",
-        "grupo": "Cantón",
-        "descripcion": "ARENILLAS"
-      },
-      {
-        "codigo": "070250",
-        "grupo": "Parroquia",
-        "descripcion": "ARENILLAS, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "070251",
-        "grupo": "Parroquia",
-        "descripcion": "CHACRAS"
-      },
-      {
-        "codigo": "070254",
-        "grupo": "Parroquia",
-        "descripcion": "PALMALES"
-      },
-      {
-        "codigo": "070255",
-        "grupo": "Parroquia",
-        "descripcion": "CARCABON"
-      },
-      {
-        "codigo": "0703",
-        "grupo": "Cantón",
-        "descripcion": "ATAHUALPA"
-      },
-      {
-        "codigo": "070350",
-        "grupo": "Parroquia",
-        "descripcion": "PACCHA, CABECERA CANTONAL (Cantón Atahualpa - El Oro)"
-      },
-      {
-        "codigo": "070351",
-        "grupo": "Parroquia",
-        "descripcion": "AYAPAMBA"
-      },
-      {
-        "codigo": "070352",
-        "grupo": "Parroquia",
-        "descripcion": "CORDONCILLO"
-      },
-      {
-        "codigo": "070353",
-        "grupo": "Parroquia",
-        "descripcion": "MILAGRO (Cantón Atahualpa)"
-      },
-      {
-        "codigo": "070354",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JOSE (Cantón Atahualpa)"
-      },
-      {
-        "codigo": "0704",
-        "grupo": "Cantón",
-        "descripcion": "BALSAS"
-      },
-      {
-        "codigo": "070450",
-        "grupo": "Parroquia",
-        "descripcion": "BALSAS, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "070451",
-        "grupo": "Parroquia",
-        "descripcion": "BELLAMARIA (Cantón Balsas)"
-      },
-      {
-        "codigo": "0705",
-        "grupo": "Cantón",
-        "descripcion": "CHILLA"
-      },
-      {
-        "codigo": "070550",
-        "grupo": "Parroquia",
-        "descripcion": "CHILLA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0706",
-        "grupo": "Cantón",
-        "descripcion": "EL GUABO"
-      },
-      {
-        "codigo": "070650",
-        "grupo": "Parroquia",
-        "descripcion": "EL GUABO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "070651",
-        "grupo": "Parroquia",
-        "descripcion": "BARBONES (SUCRE) "
-      },
-      {
-        "codigo": "070652",
-        "grupo": "Parroquia",
-        "descripcion": "LA IBERIA"
-      },
-      {
-        "codigo": "070653",
-        "grupo": "Parroquia",
-        "descripcion": "TENDALES (CAB.EN PUERTO TENDALES)"
-      },
-      {
-        "codigo": "070654",
-        "grupo": "Parroquia",
-        "descripcion": "RIO BONITO"
-      },
-      {
-        "codigo": "0707",
-        "grupo": "Cantón",
-        "descripcion": "HUAQUILLAS"
-      },
-      {
-        "codigo": "070703",
-        "grupo": "Parroquia",
-        "descripcion": "HUALTACO"
-      },
-      {
-        "codigo": "070750",
-        "grupo": "Parroquia",
-        "descripcion": "HUAQUILLAS, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0708",
-        "grupo": "Cantón",
-        "descripcion": "MARCABELI"
-      },
-      {
-        "codigo": "070850",
-        "grupo": "Parroquia",
-        "descripcion": "MARCABELI, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "070851",
-        "grupo": "Parroquia",
-        "descripcion": "EL INGENIO Cantón Marcabelí)"
-      },
-      {
-        "codigo": "0709",
-        "grupo": "Cantón",
-        "descripcion": "PASAJE"
-      },
-      {
-        "codigo": "070902",
-        "grupo": "Parroquia",
-        "descripcion": "LOMA DE FRANCO"
-      },
-      {
-        "codigo": "070904",
-        "grupo": "Parroquia",
-        "descripcion": "TRES CERRITOS"
-      },
-      {
-        "codigo": "070950",
-        "grupo": "Parroquia",
-        "descripcion": "PASAJE, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "070951",
-        "grupo": "Parroquia",
-        "descripcion": "BUENAVISTA (Cantón Pasaje)"
-      },
-      {
-        "codigo": "070952",
-        "grupo": "Parroquia",
-        "descripcion": "CASACAY"
-      },
-      {
-        "codigo": "070953",
-        "grupo": "Parroquia",
-        "descripcion": "LA PEAÑA"
-      },
-      {
-        "codigo": "070954",
-        "grupo": "Parroquia",
-        "descripcion": "PROGRESO"
-      },
-      {
-        "codigo": "070955",
-        "grupo": "Parroquia",
-        "descripcion": "UZHCURRUMI"
-      },
-      {
-        "codigo": "0710",
-        "grupo": "Cantón",
-        "descripcion": "PIÑAS"
-      },
-      {
-        "codigo": "071001",
-        "grupo": "Parroquia",
-        "descripcion": "LA MATRIZ (Cantón Piñas)"
-      },
-      {
-        "codigo": "071002",
-        "grupo": "Parroquia",
-        "descripcion": "LA SUSAYA"
-      },
-      {
-        "codigo": "071003",
-        "grupo": "Parroquia",
-        "descripcion": "PIÑAS GRANDE"
-      },
-      {
-        "codigo": "071050",
-        "grupo": "Parroquia",
-        "descripcion": "PIÑAS, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "071051",
-        "grupo": "Parroquia",
-        "descripcion": "CAPIRO (CAB. EN LA CAPILLA DE CAPIRO)"
-      },
-      {
-        "codigo": "071052",
-        "grupo": "Parroquia",
-        "descripcion": "LA BOCANA"
-      },
-      {
-        "codigo": "071053",
-        "grupo": "Parroquia",
-        "descripcion": "MOROMORO (CAB. EN EL VADO)"
-      },
-      {
-        "codigo": "071054",
-        "grupo": "Parroquia",
-        "descripcion": "PIEDRAS"
-      },
-      {
-        "codigo": "071055",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ROQUE (AMBROSIO MALDONADO) Cantón Piñas"
-      },
-      {
-        "codigo": "071056",
-        "grupo": "Parroquia",
-        "descripcion": "SARACAY"
-      },
-      {
-        "codigo": "0711",
-        "grupo": "Cantón",
-        "descripcion": "PORTOVELO"
-      },
-      {
-        "codigo": "071150",
-        "grupo": "Parroquia",
-        "descripcion": "PORTOVELO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "071151",
-        "grupo": "Parroquia",
-        "descripcion": "CURTINCAPA"
-      },
-      {
-        "codigo": "071152",
-        "grupo": "Parroquia",
-        "descripcion": "MORALES"
-      },
-      {
-        "codigo": "071153",
-        "grupo": "Parroquia",
-        "descripcion": "SALATI"
-      },
-      {
-        "codigo": "0712",
-        "grupo": "Cantón",
-        "descripcion": "SANTA ROSA"
-      },
-      {
-        "codigo": "071201",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA ROSA (Cantón Santa Rosa)"
-      },
-      {
-        "codigo": "071250",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA ROSA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "071251",
-        "grupo": "Parroquia",
-        "descripcion": "BELLAVISTA (Cantón Santa Rosa)"
-      },
-      {
-        "codigo": "071253",
-        "grupo": "Parroquia",
-        "descripcion": "LA AVANZADA"
-      },
-      {
-        "codigo": "071254",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ANTONIO (Cantón Santa Rosa)"
-      },
-      {
-        "codigo": "071255",
-        "grupo": "Parroquia",
-        "descripcion": "TORATA"
-      },
-      {
-        "codigo": "071256",
-        "grupo": "Parroquia",
-        "descripcion": "VICTORIA"
-      },
-      {
-        "codigo": "071257",
-        "grupo": "Parroquia",
-        "descripcion": "BELLAMARIA (Cantón Santa Rosa)"
-      },
-      {
-        "codigo": "0713",
-        "grupo": "Cantón",
-        "descripcion": "ZARUMA"
-      },
-      {
-        "codigo": "071350",
-        "grupo": "Parroquia",
-        "descripcion": "ZARUMA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "071351",
-        "grupo": "Parroquia",
-        "descripcion": "ABAÑIN"
-      },
-      {
-        "codigo": "071352",
-        "grupo": "Parroquia",
-        "descripcion": "ARCAPAMBA"
-      },
-      {
-        "codigo": "071353",
-        "grupo": "Parroquia",
-        "descripcion": "GUANAZAN"
-      },
-      {
-        "codigo": "071354",
-        "grupo": "Parroquia",
-        "descripcion": "GUIZHAGUIÑA"
-      },
-      {
-        "codigo": "071355",
-        "grupo": "Parroquia",
-        "descripcion": "HUERTAS"
-      },
-      {
-        "codigo": "071356",
-        "grupo": "Parroquia",
-        "descripcion": "MALVAS"
-      },
-      {
-        "codigo": "071357",
-        "grupo": "Parroquia",
-        "descripcion": "MULUNCAY GRANDE"
-      },
-      {
-        "codigo": "071358",
-        "grupo": "Parroquia",
-        "descripcion": "SINSAO"
-      },
-      {
-        "codigo": "071359",
-        "grupo": "Parroquia",
-        "descripcion": "SALVIAS"
-      },
-      {
-        "codigo": "0714",
-        "grupo": "Cantón",
-        "descripcion": "LAS LAJAS"
-      },
-      {
-        "codigo": "071401",
-        "grupo": "Parroquia",
-        "descripcion": "LA VICTORIA (Cantón Las Lajas)"
-      },
-      {
-        "codigo": "071450",
-        "grupo": "Parroquia",
-        "descripcion": "LA VICTORIA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "071451",
-        "grupo": "Parroquia",
-        "descripcion": "LA LIBERTAD (Cantón Las Lajas)"
-      },
-      {
-        "codigo": "071452",
-        "grupo": "Parroquia",
-        "descripcion": "EL PARAIS (Cantón Las Lajas)"
-      },
-      {
-        "codigo": "071453",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ISIDRO (Cantón Las Lajas)"
-      },
-      {
-        "codigo": "08",
-        "grupo": "Provincia",
-        "descripcion": "ESMERALDAS"
-      },
-      {
-        "codigo": "0801",
-        "grupo": "Cantón",
-        "descripcion": "ESMERALDAS"
-      },
-      {
-        "codigo": "080154",
-        "grupo": "Parroquia",
-        "descripcion": "CHINCA"
-      },
-      {
-        "codigo": "080159",
-        "grupo": "Parroquia",
-        "descripcion": "MAJUA"
-      },
-      {
-        "codigo": "080163",
-        "grupo": "Parroquia",
-        "descripcion": "SAN MATEO (Cantón Esmeraldas)"
-      },
-      {
-        "codigo": "080166",
-        "grupo": "Parroquia",
-        "descripcion": "TACHINA"
-      },
-      {
-        "codigo": "080168",
-        "grupo": "Parroquia",
-        "descripcion": "VUELTA LARGA"
-      },
-      {
-        "codigo": "0802",
-        "grupo": "Cantón",
-        "descripcion": "ELOY ALFARO"
-      },
-      {
-        "codigo": "080254",
-        "grupo": "Parroquia",
-        "descripcion": "LA TOLA"
-      },
-      {
-        "codigo": "0803",
-        "grupo": "Cantón",
-        "descripcion": "MUISNE"
-      },
-      {
-        "codigo": "080351",
-        "grupo": "Parroquia",
-        "descripcion": "BOLIVAR (Cantón Muisne)"
-      },
-      {
-        "codigo": "080358",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JOSE DE CHAMANGA (CAB. EN CHAMANGA) Cantón Muisne"
-      },
-      {
-        "codigo": "0804",
-        "grupo": "Cantón",
-        "descripcion": "QUININDE"
-      },
-      {
-        "codigo": "080450",
-        "grupo": "Parroquia",
-        "descripcion": "ROSA ZARATE (QUININDE), CABECERA CANTONAL"
-      },
-      {
-        "codigo": "080453",
-        "grupo": "Parroquia",
-        "descripcion": "MALIMPIA"
-      },
-      {
-        "codigo": "080454",
-        "grupo": "Parroquia",
-        "descripcion": "VICHE"
-      },
-      {
-        "codigo": "080455",
-        "grupo": "Parroquia",
-        "descripcion": "LA UNION (Cantón Quinindé)"
-      },
-      {
-        "codigo": "0805",
-        "grupo": "Cantón",
-        "descripcion": "SAN LORENZO"
-      },
-      {
-        "codigo": "080550",
-        "grupo": "Parroquia",
-        "descripcion": "SAN LORENZO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "080557",
-        "grupo": "Parroquia",
-        "descripcion": "MATAJE (CAB. EN SANTANDER)"
-      },
-      {
-        "codigo": "080559",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA RITA (Cantón San Lorenzo)"
-      },
-      {
-        "codigo": "0806",
-        "grupo": "Cantón",
-        "descripcion": "ATACAMES"
-      },
-      {
-        "codigo": "080650",
-        "grupo": "Parroquia",
-        "descripcion": "ATACAMES, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "080651",
-        "grupo": "Parroquia",
-        "descripcion": "LA UNION (Cantón Atacames)"
-      },
-      {
-        "codigo": "080652",
-        "grupo": "Parroquia",
-        "descripcion": "SUA (CAB. EN LA BOCANA) "
-      },
-      {
-        "codigo": "080653",
-        "grupo": "Parroquia",
-        "descripcion": "TONCHIGÜE"
-      },
-      {
-        "codigo": "080654",
-        "grupo": "Parroquia",
-        "descripcion": "TONSUPA"
-      },
-      {
-        "codigo": "0807",
-        "grupo": "Cantón",
-        "descripcion": "RIOVERDE"
-      },
-      {
-        "codigo": "080753",
-        "grupo": "Parroquia",
-        "descripcion": "LAGARTO"
-      },
-      {
-        "codigo": "080754",
-        "grupo": "Parroquia",
-        "descripcion": "MONTALVO (CAB. EN HORQUETA) Cantón Río Verde"
-      },
-      {
-        "codigo": "0808",
-        "grupo": "Cantón",
-        "descripcion": "LA CONCORDIA"
-      },
-      {
-        "codigo": "080850",
-        "grupo": "Parroquia",
-        "descripcion": "LA CONCORDIA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "09",
-        "grupo": "Provincia",
-        "descripcion": "GUAYAS"
-      },
-      {
-        "codigo": "0901",
-        "grupo": "Cantón",
-        "descripcion": "GUAYAQUIL"
-      },
-      {
-        "codigo": "090101",
-        "grupo": "Parroquia",
-        "descripcion": "AYACUCHO (Cantón Guayaquil)"
-      },
-      {
-        "codigo": "090112",
-        "grupo": "Parroquia",
-        "descripcion": "TARQUI (Cantón Guayaquil)"
-      },
-      {
-        "codigo": "090114",
-        "grupo": "Parroquia",
-        "descripcion": "XIMENA"
-      },
-      {
-        "codigo": "090150",
-        "grupo": "Parroquia",
-        "descripcion": "GUAYAQUIL, CABECERA CANTONAL Y CAPITAL PROVINCIAL"
-      },
-      {
-        "codigo": "090152",
-        "grupo": "Parroquia",
-        "descripcion": "JUAN GOMEZ RENDON (PROGRESO)"
-      },
-      {
-        "codigo": "090153",
-        "grupo": "Parroquia",
-        "descripcion": "MORRO"
-      },
-      {
-        "codigo": "090156",
-        "grupo": "Parroquia",
-        "descripcion": "POSORJA"
-      },
-      {
-        "codigo": "090157",
-        "grupo": "Parroquia",
-        "descripcion": "PUNA"
-      },
-      {
-        "codigo": "090158",
-        "grupo": "Parroquia",
-        "descripcion": "TENGUEL"
-      },
-      {
-        "codigo": "0902",
-        "grupo": "Cantón",
-        "descripcion": "ALFREDO BAQUERIZO MORENO (JUJAN)"
-      },
-      {
-        "codigo": "090250",
-        "grupo": "Parroquia",
-        "descripcion": "ALFREDO BAQUERIZO MORENO (JUJAN), CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0903",
-        "grupo": "Cantón",
-        "descripcion": "BALAO"
-      },
-      {
-        "codigo": "090350",
-        "grupo": "Parroquia",
-        "descripcion": "BALAO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0904",
-        "grupo": "Cantón",
-        "descripcion": "BALZAR"
-      },
-      {
-        "codigo": "090450",
-        "grupo": "Parroquia",
-        "descripcion": "BALZAR, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0905",
-        "grupo": "Cantón",
-        "descripcion": "COLIMES"
-      },
-      {
-        "codigo": "090550",
-        "grupo": "Parroquia",
-        "descripcion": "COLIMES, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0906",
-        "grupo": "Cantón",
-        "descripcion": "DAULE"
-      },
-      {
-        "codigo": "090650",
-        "grupo": "Parroquia",
-        "descripcion": "DAULE, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "090652",
-        "grupo": "Parroquia",
-        "descripcion": "JUAN BAUTISTA AGUIRRE (LOS TINTOS)"
-      },
-      {
-        "codigo": "090653",
-        "grupo": "Parroquia",
-        "descripcion": "LAUREL"
-      },
-      {
-        "codigo": "090654",
-        "grupo": "Parroquia",
-        "descripcion": "LIMONAL"
-      },
-      {
-        "codigo": "090656",
-        "grupo": "Parroquia",
-        "descripcion": "LOS LOJAS (ENRIQUE BAQUERIZO MORENO)"
-      },
-      {
-        "codigo": "0907",
-        "grupo": "Cantón",
-        "descripcion": "DURAN"
-      },
-      {
-        "codigo": "090750",
-        "grupo": "Parroquia",
-        "descripcion": "ELOY ALFARO (DURAN), CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0908",
-        "grupo": "Cantón",
-        "descripcion": "EL EMPALME"
-      },
-      {
-        "codigo": "090850",
-        "grupo": "Parroquia",
-        "descripcion": "VELASCO IBARRA (EL EMPALME), CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0909",
-        "grupo": "Cantón",
-        "descripcion": "EL TRIUNFO"
-      },
-      {
-        "codigo": "090950",
-        "grupo": "Parroquia",
-        "descripcion": "EL TRIUNFO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0910",
-        "grupo": "Cantón",
-        "descripcion": "MILAGRO"
-      },
-      {
-        "codigo": "091050",
-        "grupo": "Parroquia",
-        "descripcion": "MILAGRO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "091051",
-        "grupo": "Parroquia",
-        "descripcion": "CHOBO"
-      },
-      {
-        "codigo": "091054",
-        "grupo": "Parroquia",
-        "descripcion": "ROBERTO ASTUDILLO (CAB. EN CRUCE DE VENECIA)"
-      },
-      {
-        "codigo": "0911",
-        "grupo": "Cantón",
-        "descripcion": "NARANJAL"
-      },
-      {
-        "codigo": "091150",
-        "grupo": "Parroquia",
-        "descripcion": "NARANJAL, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "091151",
-        "grupo": "Parroquia",
-        "descripcion": "JESUS MARIA"
-      },
-      {
-        "codigo": "091152",
-        "grupo": "Parroquia",
-        "descripcion": "SAN CARLOS (Cantón Naranjal)"
-      },
-      {
-        "codigo": "091153",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA ROSA DE FLANDES"
-      },
-      {
-        "codigo": "091154",
-        "grupo": "Parroquia",
-        "descripcion": "TAURA"
-      },
-      {
-        "codigo": "0912",
-        "grupo": "Cantón",
-        "descripcion": "NARANJITO"
-      },
-      {
-        "codigo": "091250",
-        "grupo": "Parroquia",
-        "descripcion": "NARANJITO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0913",
-        "grupo": "Cantón",
-        "descripcion": "PALESTINA"
-      },
-      {
-        "codigo": "091350",
-        "grupo": "Parroquia",
-        "descripcion": "PALESTINA,CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0914",
-        "grupo": "Cantón",
-        "descripcion": "PEDRO CARBO"
-      },
-      {
-        "codigo": "091450",
-        "grupo": "Parroquia",
-        "descripcion": "PEDRO CARBO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0916",
-        "grupo": "Cantón",
-        "descripcion": "SAMBORONDON"
-      },
-      {
-        "codigo": "091650",
-        "grupo": "Parroquia",
-        "descripcion": "SAMBORONDON, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "091651",
-        "grupo": "Parroquia",
-        "descripcion": "TARIFA"
-      },
-      {
-        "codigo": "0918",
-        "grupo": "Cantón",
-        "descripcion": "SANTA LUCIA"
-      },
-      {
-        "codigo": "091850",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA LUCIA"
-      },
-      {
-        "codigo": "0919",
-        "grupo": "Cantón",
-        "descripcion": "SALITRE (URBINA JADO)"
-      },
-      {
-        "codigo": "091950",
-        "grupo": "Parroquia",
-        "descripcion": "EL SALITRE (LAS RAMAS), CABECERA CANTONAL"
-      },
-      {
-        "codigo": "091952",
-        "grupo": "Parroquia",
-        "descripcion": "LA VICTORIA (ÑAUZA) Cantón Salitre - Guayas"
-      },
-      {
-        "codigo": "0920",
-        "grupo": "Cantón",
-        "descripcion": "SAN JACINTO DE YAGUACHI"
-      },
-      {
-        "codigo": "092050",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JACINTO DE YAGUACHI,CABECERA CANTONAL"
-      },
-      {
-        "codigo": "092053",
-        "grupo": "Parroquia",
-        "descripcion": "GRAL. PEDRO J. MONTERO (BOLICHE)"
-      },
-      {
-        "codigo": "092055",
-        "grupo": "Parroquia",
-        "descripcion": "YAGUACHI VIEJO (CONE)"
-      },
-      {
-        "codigo": "0921",
-        "grupo": "Cantón",
-        "descripcion": "PLAYAS"
-      },
-      {
-        "codigo": "092150",
-        "grupo": "Parroquia",
-        "descripcion": "GENERAL VILLAMIL (PLAYAS), CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0922",
-        "grupo": "Cantón",
-        "descripcion": "SIMON BOLIVAR"
-      },
-      {
-        "codigo": "092250",
-        "grupo": "Parroquia",
-        "descripcion": "SIMON BOLIVAR, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "092251",
-        "grupo": "Parroquia",
-        "descripcion": "CRNEL.LORENZO DE GARAICOA (PEDREGAL)"
-      },
-      {
-        "codigo": "0923",
-        "grupo": "Cantón",
-        "descripcion": "CORONEL MARCELINO MARIDUEÑA"
-      },
-      {
-        "codigo": "092350",
-        "grupo": "Parroquia",
-        "descripcion": "CORONEL MARCELINO MARIDUEÑA (SAN CARLOS), CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0924",
-        "grupo": "Cantón",
-        "descripcion": "LOMAS DE SARGENTILLO"
-      },
-      {
-        "codigo": "092450",
-        "grupo": "Parroquia",
-        "descripcion": "LOMAS DE SARGENTILLO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0925",
-        "grupo": "Cantón",
-        "descripcion": "NOBOL"
-      },
-      {
-        "codigo": "092550",
-        "grupo": "Parroquia",
-        "descripcion": "NARCISA DE JESUS, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0927",
-        "grupo": "Cantón",
-        "descripcion": "GENERAL ANTONIO ELIZALDE (BUCAY)"
-      },
-      {
-        "codigo": "092750",
-        "grupo": "Parroquia",
-        "descripcion": "GENERAL ANTONIO ELIZALDE (BUCAY), CABECERA CANTONAL"
-      },
-      {
-        "codigo": "0928",
-        "grupo": "Cantón",
-        "descripcion": "ISIDRO AYORA"
-      },
-      {
-        "codigo": "092850",
-        "grupo": "Parroquia",
-        "descripcion": "ISIDRO AYORA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "10",
-        "grupo": "Provincia",
-        "descripcion": "IMBABURA"
-      },
-      {
-        "codigo": "1001",
-        "grupo": "Cantón",
-        "descripcion": "IBARRA"
-      },
-      {
-        "codigo": "100101",
-        "grupo": "Parroquia",
-        "descripcion": "CARANQUI"
-      },
-      {
-        "codigo": "100102",
-        "grupo": "Parroquia",
-        "descripcion": "GUAYAQUIL DE ALPACHACA (Cantón Ibarra)"
-      },
-      {
-        "codigo": "100103",
-        "grupo": "Parroquia",
-        "descripcion": "SAGRARIO (Cantón Ibarra)"
-      },
-      {
-        "codigo": "100104",
-        "grupo": "Parroquia",
-        "descripcion": "SAN FRANCISCO (Cantón Ibarra)"
-      },
-      {
-        "codigo": "100105",
-        "grupo": "Parroquia",
-        "descripcion": "LA DOLOROSA DEL PRIORATO"
-      },
-      {
-        "codigo": "100150",
-        "grupo": "Parroquia",
-        "descripcion": "SAN MIGUEL DE IBARRA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"
-      },
-      {
-        "codigo": "100151",
-        "grupo": "Parroquia",
-        "descripcion": "AMBUQUI"
-      },
-      {
-        "codigo": "100152",
-        "grupo": "Parroquia",
-        "descripcion": "ANGOCHAGUA"
-      },
-      {
-        "codigo": "100153",
-        "grupo": "Parroquia",
-        "descripcion": "CAROLINA"
-      },
-      {
-        "codigo": "100154",
-        "grupo": "Parroquia",
-        "descripcion": "LA ESPERANZA (Cantón Ibarra)"
-      },
-      {
-        "codigo": "100155",
-        "grupo": "Parroquia",
-        "descripcion": "LITA"
-      },
-      {
-        "codigo": "100156",
-        "grupo": "Parroquia",
-        "descripcion": "SALINAS (Cantón Ibarra)"
-      },
-      {
-        "codigo": "100157",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ANTONIO (Cantón Ibarra)"
-      },
-      {
-        "codigo": "1002",
-        "grupo": "Cantón",
-        "descripcion": "ANTONIO ANTE"
-      },
-      {
-        "codigo": "100201",
-        "grupo": "Parroquia",
-        "descripcion": "ANDRADE MARIN (LOURDES)"
-      },
-      {
-        "codigo": "100202",
-        "grupo": "Parroquia",
-        "descripcion": "ATUNTAQUI"
-      },
-      {
-        "codigo": "100250",
-        "grupo": "Parroquia",
-        "descripcion": "ATUNTAQUI, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "100251",
-        "grupo": "Parroquia",
-        "descripcion": "IMBAYA (SAN LUIS DE COBUENDO)"
-      },
-      {
-        "codigo": "100252",
-        "grupo": "Parroquia",
-        "descripcion": "SAN FRANCISCO DE NATABUELA (Cantón Antonio Ante)"
-      },
-      {
-        "codigo": "100253",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JOSE DE CHALTURA (Cantón Antonio Ante)"
-      },
-      {
-        "codigo": "100254",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ROQUE (Cantón Antonio Ante)"
-      },
-      {
-        "codigo": "1003",
-        "grupo": "Cantón",
-        "descripcion": "COTACACHI"
-      },
-      {
-        "codigo": "100301",
-        "grupo": "Parroquia",
-        "descripcion": "SAGRARIO (Cantón Cotacachi)"
-      },
-      {
-        "codigo": "100302",
-        "grupo": "Parroquia",
-        "descripcion": "SAN FRANCISCO (Cantón Cotacachi)"
-      },
-      {
-        "codigo": "100351",
-        "grupo": "Parroquia",
-        "descripcion": "APUELA"
-      },
-      {
-        "codigo": "100352",
-        "grupo": "Parroquia",
-        "descripcion": "GARCIA MORENO (LLURIMAGUA) Cantón Cotacachi"
-      },
-      {
-        "codigo": "100353",
-        "grupo": "Parroquia",
-        "descripcion": "IMANTAG"
-      },
-      {
-        "codigo": "100354",
-        "grupo": "Parroquia",
-        "descripcion": "PEÑAHERRERA"
-      },
-      {
-        "codigo": "100355",
-        "grupo": "Parroquia",
-        "descripcion": "PLAZA GUTIERREZ (CALVARIO)"
-      },
-      {
-        "codigo": "100356",
-        "grupo": "Parroquia",
-        "descripcion": "QUIROGA (Cantón Cotacachi)"
-      },
-      {
-        "codigo": "100357",
-        "grupo": "Parroquia",
-        "descripcion": "6 DE JULIO DE CUELLAJE (CAB. EN CUELLAJE)"
-      },
-      {
-        "codigo": "100358",
-        "grupo": "Parroquia",
-        "descripcion": "VACAS GALINDO (EL CHURO) (CAB.EN SAN MIGUEL ALTO)"
-      },
-      {
-        "codigo": "1004",
-        "grupo": "Cantón",
-        "descripcion": "OTAVALO"
-      },
-      {
-        "codigo": "100401",
-        "grupo": "Parroquia",
-        "descripcion": "JORDAN"
-      },
-      {
-        "codigo": "100402",
-        "grupo": "Parroquia",
-        "descripcion": "SAN LUIS (Cantón Otavalo)"
-      },
-      {
-        "codigo": "100450",
-        "grupo": "Parroquia",
-        "descripcion": "OTAVALO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "100451",
-        "grupo": "Parroquia",
-        "descripcion": "DR. MIGUEL EGAS CABEZAS (PEGUCHE)"
-      },
-      {
-        "codigo": "100452",
-        "grupo": "Parroquia",
-        "descripcion": "EUGENIO ESPEJO (CALPAQUI) "
-      },
-      {
-        "codigo": "100453",
-        "grupo": "Parroquia",
-        "descripcion": "GONZALEZ SUAREZ (Cantón Otavalo)"
-      },
-      {
-        "codigo": "100454",
-        "grupo": "Parroquia",
-        "descripcion": "PATAQUI"
-      },
-      {
-        "codigo": "100455",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JOSE DE QUICHINCHE"
-      },
-      {
-        "codigo": "100456",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JUAN DE ILUMAN"
-      },
-      {
-        "codigo": "100457",
-        "grupo": "Parroquia",
-        "descripcion": "SAN PABLO (Cantón Otavalo)"
-      },
-      {
-        "codigo": "100458",
-        "grupo": "Parroquia",
-        "descripcion": "SAN RAFAEL (Cantón Otavalo)"
-      },
-      {
-        "codigo": "100459",
-        "grupo": "Parroquia",
-        "descripcion": "SELVA ALEGRE (CAB.EN SAN MIGUEL DE PAMPLONA)"
-      },
-      {
-        "codigo": "1005",
-        "grupo": "Cantón",
-        "descripcion": "PIMAMPIRO"
-      },
-      {
-        "codigo": "100550",
-        "grupo": "Parroquia",
-        "descripcion": "PIMAMPIRO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "100551",
-        "grupo": "Parroquia",
-        "descripcion": "CHUGA"
-      },
-      {
-        "codigo": "100552",
-        "grupo": "Parroquia",
-        "descripcion": "MARIANO ACOSTA"
-      },
-      {
-        "codigo": "100553",
-        "grupo": "Parroquia",
-        "descripcion": "SAN FRANCISCO DE SIGSIPAMBA (Cantón Pimampiro)"
-      },
-      {
-        "codigo": "1006",
-        "grupo": "Cantón",
-        "descripcion": "SAN MIGUEL DE URCUQUI"
-      },
-      {
-        "codigo": "100650",
-        "grupo": "Parroquia",
-        "descripcion": "URCUQUI, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "100651",
-        "grupo": "Parroquia",
-        "descripcion": "CAHUASQUI"
-      },
-      {
-        "codigo": "100652",
-        "grupo": "Parroquia",
-        "descripcion": "LA MERCED DE BUENOS AIRES (Cantón San Miguel de Urcuquí)"
-      },
-      {
-        "codigo": "100653",
-        "grupo": "Parroquia",
-        "descripcion": "PABLO ARENAS"
-      },
-      {
-        "codigo": "100654",
-        "grupo": "Parroquia",
-        "descripcion": "SAN BLAS (Cantón San Miguel de Urcuquí)"
-      },
-      {
-        "codigo": "100655",
-        "grupo": "Parroquia",
-        "descripcion": "TUMBABIRO"
-      },
-      {
-        "codigo": "11",
-        "grupo": "Provincia",
-        "descripcion": "LOJA"
-      },
-      {
-        "codigo": "1101",
-        "grupo": "Cantón",
-        "descripcion": "LOJA"
-      },
-      {
-        "codigo": "110101",
-        "grupo": "Parroquia",
-        "descripcion": "EL SAGRARIO (Cantón Loja)"
-      },
-      {
-        "codigo": "110102",
-        "grupo": "Parroquia",
-        "descripcion": "SAN SEBASTIAN (Cantón Loja)"
-      },
-      {
-        "codigo": "110103",
-        "grupo": "Parroquia",
-        "descripcion": "SUCRE (Cantón Loja)"
-      },
-      {
-        "codigo": "110104",
-        "grupo": "Parroquia",
-        "descripcion": "VALLE (Cantón Loja)"
-      },
-      {
-        "codigo": "110151",
-        "grupo": "Parroquia",
-        "descripcion": "CHANTACO"
-      },
-      {
-        "codigo": "110152",
-        "grupo": "Parroquia",
-        "descripcion": "CHUQUIRIBAMBA"
-      },
-      {
-        "codigo": "110153",
-        "grupo": "Parroquia",
-        "descripcion": "EL CISNE"
-      },
-      {
-        "codigo": "110154",
-        "grupo": "Parroquia",
-        "descripcion": "GUALEL"
-      },
-      {
-        "codigo": "110155",
-        "grupo": "Parroquia",
-        "descripcion": "JIMBILLA (Cantón Loja)"
-      },
-      {
-        "codigo": "110156",
-        "grupo": "Parroquia",
-        "descripcion": "MALACATOS (VALLADOLID)"
-      },
-      {
-        "codigo": "110157",
-        "grupo": "Parroquia",
-        "descripcion": "SAN LUCAS"
-      },
-      {
-        "codigo": "110158",
-        "grupo": "Parroquia",
-        "descripcion": "SAN PEDRO DE VILCABAMBA"
-      },
-      {
-        "codigo": "110159",
-        "grupo": "Parroquia",
-        "descripcion": "SANTIAGO (Cantón Loja)"
-      },
-      {
-        "codigo": "110160",
-        "grupo": "Parroquia",
-        "descripcion": "TAQUIL (MIGUEL RIOFRIO)"
-      },
-      {
-        "codigo": "110161",
-        "grupo": "Parroquia",
-        "descripcion": "VILCABAMBA (VICTORIA)"
-      },
-      {
-        "codigo": "110162",
-        "grupo": "Parroquia",
-        "descripcion": "YANGANA (ARSENIO CASTILLO)"
-      },
-      {
-        "codigo": "110163",
-        "grupo": "Parroquia",
-        "descripcion": "QUINARA"
-      },
-      {
-        "codigo": "1102",
-        "grupo": "Cantón",
-        "descripcion": "CALVAS "
-      },
-      {
-        "codigo": "110201",
-        "grupo": "Parroquia",
-        "descripcion": "CARIAMANGA"
-      },
-      {
-        "codigo": "110202",
-        "grupo": "Parroquia",
-        "descripcion": "CHILE"
-      },
-      {
-        "codigo": "110203",
-        "grupo": "Parroquia",
-        "descripcion": "SAN VICENTE (Cantón Calvas)"
-      },
-      {
-        "codigo": "110250",
-        "grupo": "Parroquia",
-        "descripcion": "CARIAMANGA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "110251",
-        "grupo": "Parroquia",
-        "descripcion": "COLAISACA"
-      },
-      {
-        "codigo": "110252",
-        "grupo": "Parroquia",
-        "descripcion": "EL LUCERO"
-      },
-      {
-        "codigo": "110253",
-        "grupo": "Parroquia",
-        "descripcion": "UTUANA"
-      },
-      {
-        "codigo": "110254",
-        "grupo": "Parroquia",
-        "descripcion": "SANGUILLIN"
-      },
-      {
-        "codigo": "1103",
-        "grupo": "Cantón",
-        "descripcion": "CATAMAYO"
-      },
-      {
-        "codigo": "110301",
-        "grupo": "Parroquia",
-        "descripcion": "CATAMAYO"
-      },
-      {
-        "codigo": "110302",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JOSE (Cantón Catamayo)"
-      },
-      {
-        "codigo": "110350",
-        "grupo": "Parroquia",
-        "descripcion": "CATAMAYO (LA TOMA), CABECERA CANTONAL"
-      },
-      {
-        "codigo": "110351",
-        "grupo": "Parroquia",
-        "descripcion": "EL TAMBO (Cantón Catamayo)"
-      },
-      {
-        "codigo": "110352",
-        "grupo": "Parroquia",
-        "descripcion": "GUAYQUICHUMA"
-      },
-      {
-        "codigo": "110353",
-        "grupo": "Parroquia",
-        "descripcion": "SAN PEDRO DE LA BENDITA"
-      },
-      {
-        "codigo": "110354",
-        "grupo": "Parroquia",
-        "descripcion": "ZAMBI"
-      },
-      {
-        "codigo": "1104",
-        "grupo": "Cantón",
-        "descripcion": "CELICA"
-      },
-      {
-        "codigo": "110450",
-        "grupo": "Parroquia",
-        "descripcion": "CELICA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "110451",
-        "grupo": "Parroquia",
-        "descripcion": "CRUZPAMBA (CAB. EN CARLOS BUSTAMANTE)"
-      },
-      {
-        "codigo": "110455",
-        "grupo": "Parroquia",
-        "descripcion": "POZUL (SAN JUAN DE POZUL)"
-      },
-      {
-        "codigo": "110456",
-        "grupo": "Parroquia",
-        "descripcion": "SABANILLA (Cantón Celica)"
-      },
-      {
-        "codigo": "110457",
-        "grupo": "Parroquia",
-        "descripcion": "TNTE. MAXIMILIANO RODRIGUEZ LOAIZA"
-      },
-      {
-        "codigo": "1105",
-        "grupo": "Cantón",
-        "descripcion": "CHAGUARPAMBA"
-      },
-      {
-        "codigo": "110501",
-        "grupo": "Parroquia",
-        "descripcion": "CHAGUARPAMBA"
-      },
-      {
-        "codigo": "110550",
-        "grupo": "Parroquia",
-        "descripcion": "CHAGUARPAMBA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "110551",
-        "grupo": "Parroquia",
-        "descripcion": "BUENAVISTA (Cantón Chaguarpamba)"
-      },
-      {
-        "codigo": "110552",
-        "grupo": "Parroquia",
-        "descripcion": "EL ROSARIO (Cantón Chaguarpamba)"
-      },
-      {
-        "codigo": "110553",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA RUFINA"
-      },
-      {
-        "codigo": "110554",
-        "grupo": "Parroquia",
-        "descripcion": "AMARILLOS"
-      },
-      {
-        "codigo": "1106",
-        "grupo": "Cantón",
-        "descripcion": "ESPINDOLA"
-      },
-      {
-        "codigo": "110650",
-        "grupo": "Parroquia",
-        "descripcion": "AMALUZA, CABECERA CANTONAL Cantón Espíndola"
-      },
-      {
-        "codigo": "110651",
-        "grupo": "Parroquia",
-        "descripcion": "BELLAVISTA (Cantón Espíndola)"
-      },
-      {
-        "codigo": "110652",
-        "grupo": "Parroquia",
-        "descripcion": "JIMBURA (Cantón Espíndola)"
-      },
-      {
-        "codigo": "110653",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA TERESITA"
-      },
-      {
-        "codigo": "110654",
-        "grupo": "Parroquia",
-        "descripcion": "27 DE ABRIL (CAB. EN LA NARANJA) "
-      },
-      {
-        "codigo": "110655",
-        "grupo": "Parroquia",
-        "descripcion": "EL INGENIO (Cantón Espíndola)"
-      },
-      {
-        "codigo": "110656",
-        "grupo": "Parroquia",
-        "descripcion": "EL AIRO"
-      },
-      {
-        "codigo": "1107",
-        "grupo": "Cantón",
-        "descripcion": "GONZANAMA"
-      },
-      {
-        "codigo": "110750",
-        "grupo": "Parroquia",
-        "descripcion": "GONZANAMA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "110751",
-        "grupo": "Parroquia",
-        "descripcion": "CHANGAIMINA (LA LIBERTAD)"
-      },
-      {
-        "codigo": "110753",
-        "grupo": "Parroquia",
-        "descripcion": "NAMBACOLA"
-      },
-      {
-        "codigo": "110754",
-        "grupo": "Parroquia",
-        "descripcion": "PURUNUMA (EGUIGUREN)"
-      },
-      {
-        "codigo": "110756",
-        "grupo": "Parroquia",
-        "descripcion": "SACAPALCA"
-      },
-      {
-        "codigo": "1108",
-        "grupo": "Cantón",
-        "descripcion": "MACARA"
-      },
-      {
-        "codigo": "110801",
-        "grupo": "Parroquia",
-        "descripcion": "GENERAL ELOY ALFARO (SAN SEBASTIAN) Cantón Macará"
-      },
-      {
-        "codigo": "110802",
-        "grupo": "Parroquia",
-        "descripcion": "MACARA  (MANUEL ENRIQUE RENGEL SUQUILANDA)"
-      },
-      {
-        "codigo": "110850",
-        "grupo": "Parroquia",
-        "descripcion": "MACARA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "110851",
-        "grupo": "Parroquia",
-        "descripcion": "LARAMA"
-      },
-      {
-        "codigo": "110852",
-        "grupo": "Parroquia",
-        "descripcion": "LA VICTORIA (Cantón Macará)"
-      },
-      {
-        "codigo": "110853",
-        "grupo": "Parroquia",
-        "descripcion": "SABIANGO (LA CAPILLA)"
-      },
-      {
-        "codigo": "1109",
-        "grupo": "Cantón",
-        "descripcion": "PALTAS"
-      },
-      {
-        "codigo": "110901",
-        "grupo": "Parroquia",
-        "descripcion": "CATACOCHA"
-      },
-      {
-        "codigo": "110902",
-        "grupo": "Parroquia",
-        "descripcion": "LOURDES"
-      },
-      {
-        "codigo": "110950",
-        "grupo": "Parroquia",
-        "descripcion": "CATACOCHA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "110951",
-        "grupo": "Parroquia",
-        "descripcion": "CANGONAMA"
-      },
-      {
-        "codigo": "110952",
-        "grupo": "Parroquia",
-        "descripcion": "GUACHANAMA"
-      },
-      {
-        "codigo": "110954",
-        "grupo": "Parroquia",
-        "descripcion": "LAURO GUERRERO"
-      },
-      {
-        "codigo": "110956",
-        "grupo": "Parroquia",
-        "descripcion": "ORIANGA"
-      },
-      {
-        "codigo": "110957",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ANTONIO (Cantón Paltas)"
-      },
-      {
-        "codigo": "110958",
-        "grupo": "Parroquia",
-        "descripcion": "CASANGA"
-      },
-      {
-        "codigo": "110959",
-        "grupo": "Parroquia",
-        "descripcion": "YAMANA"
-      },
-      {
-        "codigo": "1110",
-        "grupo": "Cantón",
-        "descripcion": "PUYANGO"
-      },
-      {
-        "codigo": "111050",
-        "grupo": "Parroquia",
-        "descripcion": "ALAMOR, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "111051",
-        "grupo": "Parroquia",
-        "descripcion": "CIANO"
-      },
-      {
-        "codigo": "111052",
-        "grupo": "Parroquia",
-        "descripcion": "EL ARENAL"
-      },
-      {
-        "codigo": "111053",
-        "grupo": "Parroquia",
-        "descripcion": "EL LIMO (MARIANA DE JESUS)"
-      },
-      {
-        "codigo": "111054",
-        "grupo": "Parroquia",
-        "descripcion": "MERCADILLO"
-      },
-      {
-        "codigo": "111055",
-        "grupo": "Parroquia",
-        "descripcion": "VICENTINO"
-      },
-      {
-        "codigo": "1111",
-        "grupo": "Cantón",
-        "descripcion": "SARAGURO"
-      },
-      {
-        "codigo": "111101",
-        "grupo": "Parroquia",
-        "descripcion": "SARAGURO"
-      },
-      {
-        "codigo": "111150",
-        "grupo": "Parroquia",
-        "descripcion": "SARAGURO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "111151",
-        "grupo": "Parroquia",
-        "descripcion": "EL PARAISO DE CELEN"
-      },
-      {
-        "codigo": "111152",
-        "grupo": "Parroquia",
-        "descripcion": "EL TABLON  "
-      },
-      {
-        "codigo": "111153",
-        "grupo": "Parroquia",
-        "descripcion": "LLUZHAPA"
-      },
-      {
-        "codigo": "111154",
-        "grupo": "Parroquia",
-        "descripcion": "MANU"
-      },
-      {
-        "codigo": "111155",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ANTONIO DE QUMBE (CUMBE) Cantón Saraguro"
-      },
-      {
-        "codigo": "111156",
-        "grupo": "Parroquia",
-        "descripcion": "SAN PABLO DE TENTA"
-      },
-      {
-        "codigo": "111157",
-        "grupo": "Parroquia",
-        "descripcion": "SAN SEBASTIAN DE YULUC"
-      },
-      {
-        "codigo": "111158",
-        "grupo": "Parroquia",
-        "descripcion": "SELVA ALEGRE (Cantón Saraguro)"
-      },
-      {
-        "codigo": "111159",
-        "grupo": "Parroquia",
-        "descripcion": "URDANETA (PAQUISHAPA) Cantón Saraguro"
-      },
-      {
-        "codigo": "111160",
-        "grupo": "Parroquia",
-        "descripcion": "SUMAYPAMBA"
-      },
-      {
-        "codigo": "1112",
-        "grupo": "Cantón",
-        "descripcion": "SOZORANGA"
-      },
-      {
-        "codigo": "111250",
-        "grupo": "Parroquia",
-        "descripcion": "SOZORANGA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "111251",
-        "grupo": "Parroquia",
-        "descripcion": "NUEVA FATIMA"
-      },
-      {
-        "codigo": "111252",
-        "grupo": "Parroquia",
-        "descripcion": "TACAMOROS"
-      },
-      {
-        "codigo": "1113",
-        "grupo": "Cantón",
-        "descripcion": "ZAPOTILLO"
-      },
-      {
-        "codigo": "111350",
-        "grupo": "Parroquia",
-        "descripcion": "ZAPOTILLO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "111351",
-        "grupo": "Parroquia",
-        "descripcion": "CAZADEROS (CAB.EN MANGAURCO)"
-      },
-      {
-        "codigo": "111352",
-        "grupo": "Parroquia",
-        "descripcion": "GARZAREAL"
-      },
-      {
-        "codigo": "111353",
-        "grupo": "Parroquia",
-        "descripcion": "LIMONES"
-      },
-      {
-        "codigo": "111354",
-        "grupo": "Parroquia",
-        "descripcion": "PALETILLAS"
-      },
-      {
-        "codigo": "1114",
-        "grupo": "Cantón",
-        "descripcion": "PINDAL"
-      },
-      {
-        "codigo": "111450",
-        "grupo": "Parroquia",
-        "descripcion": "PINDAL, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "111451",
-        "grupo": "Parroquia",
-        "descripcion": "CHAQUINAL"
-      },
-      {
-        "codigo": "111452",
-        "grupo": "Parroquia",
-        "descripcion": "12 DE DICIEMBRE (CAB.EN ACHIOTES)"
-      },
-      {
-        "codigo": "1115",
-        "grupo": "Cantón",
-        "descripcion": "QUILANGA"
-      },
-      {
-        "codigo": "111550",
-        "grupo": "Parroquia",
-        "descripcion": "QUILANGA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "111551",
-        "grupo": "Parroquia",
-        "descripcion": "FUNDOCHAMBA"
-      },
-      {
-        "codigo": "111552",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ANTONIO DE LAS ARADAS (CAB. EN LAS ARADAS) Cantón Quilanga"
-      },
-      {
-        "codigo": "1116",
-        "grupo": "Cantón",
-        "descripcion": "OLMEDO (Loja)"
-      },
-      {
-        "codigo": "111650",
-        "grupo": "Parroquia",
-        "descripcion": "OLMEDO, CABECERA CANTONAL Cantón Olmedo - Loja"
-      },
-      {
-        "codigo": "111651",
-        "grupo": "Parroquia",
-        "descripcion": "LA TINGUE"
-      },
-      {
-        "codigo": "12",
-        "grupo": "Provincia",
-        "descripcion": "LOS RIOS"
-      },
-      {
-        "codigo": "1201",
-        "grupo": "Cantón",
-        "descripcion": "BABAHOYO "
-      },
-      {
-        "codigo": "120101",
-        "grupo": "Parroquia",
-        "descripcion": "CLEMENTE BAQUERIZO"
-      },
-      {
-        "codigo": "120103",
-        "grupo": "Parroquia",
-        "descripcion": "BARREIRO"
-      },
-      {
-        "codigo": "120104",
-        "grupo": "Parroquia",
-        "descripcion": "EL SALTO"
-      },
-      {
-        "codigo": "120150",
-        "grupo": "Parroquia",
-        "descripcion": "BABAHOYO, CABECERA CANTONAL Y CAPITAL PROVINCIAL"
-      },
-      {
-        "codigo": "120152",
-        "grupo": "Parroquia",
-        "descripcion": "CARACOL"
-      },
-      {
-        "codigo": "120153",
-        "grupo": "Parroquia",
-        "descripcion": "FEBRES CORDERO (LAS JUNTAS)(CAB. EN MATA DE CACAO)"
-      },
-      {
-        "codigo": "120154",
-        "grupo": "Parroquia",
-        "descripcion": "PIMOCHA"
-      },
-      {
-        "codigo": "120155",
-        "grupo": "Parroquia",
-        "descripcion": "LA UNION (Cantón Babahoyo)"
-      },
-      {
-        "codigo": "1202",
-        "grupo": "Cantón",
-        "descripcion": "BABA "
-      },
-      {
-        "codigo": "120250",
-        "grupo": "Parroquia",
-        "descripcion": "BABA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "120251",
-        "grupo": "Parroquia",
-        "descripcion": "GUARE"
-      },
-      {
-        "codigo": "120252",
-        "grupo": "Parroquia",
-        "descripcion": "ISLA DE BEJUCAL"
-      },
-      {
-        "codigo": "1203",
-        "grupo": "Cantón",
-        "descripcion": "MONTALVO "
-      },
-      {
-        "codigo": "120350",
-        "grupo": "Parroquia",
-        "descripcion": "MONTALVO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1204",
-        "grupo": "Cantón",
-        "descripcion": "PUEBLOVIEJO"
-      },
-      {
-        "codigo": "120450",
-        "grupo": "Parroquia",
-        "descripcion": "PUEBLOVIEJO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "120452",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JUAN (Cantón Pueblo Viejo)"
-      },
-      {
-        "codigo": "1205",
-        "grupo": "Cantón",
-        "descripcion": "QUEVEDO "
-      },
-      {
-        "codigo": "120550",
-        "grupo": "Parroquia",
-        "descripcion": "QUEVEDO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "120553",
-        "grupo": "Parroquia",
-        "descripcion": "SAN CARLOS (Cantón Quevedo)"
-      },
-      {
-        "codigo": "1206",
-        "grupo": "Cantón",
-        "descripcion": "URDANETA"
-      },
-      {
-        "codigo": "120651",
-        "grupo": "Parroquia",
-        "descripcion": "RICAURTE (Cantón Urdaneta)"
-      },
-      {
-        "codigo": "1207",
-        "grupo": "Cantón",
-        "descripcion": "VENTANAS"
-      },
-      {
-        "codigo": "120750",
-        "grupo": "Parroquia",
-        "descripcion": "VENTANAS, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "120752",
-        "grupo": "Parroquia",
-        "descripcion": "ZAPOTAL"
-      },
-      {
-        "codigo": "1208",
-        "grupo": "Cantón",
-        "descripcion": "VINCES"
-      },
-      {
-        "codigo": "120850",
-        "grupo": "Parroquia",
-        "descripcion": "VINCES, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "120851",
-        "grupo": "Parroquia",
-        "descripcion": "ANTONIO SOTOMAYOR (CAB. EN PLAYAS DE VINCES) "
-      },
-      {
-        "codigo": "1210",
-        "grupo": "Cantón",
-        "descripcion": "BUENA FE"
-      },
-      {
-        "codigo": "121001",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JACINTO DE BUENA FE (Cantón Buena Fe)"
-      },
-      {
-        "codigo": "121050",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JACINTO DE BUENA FE, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "121051",
-        "grupo": "Parroquia",
-        "descripcion": "PATRICIA PILAR"
-      },
-      {
-        "codigo": "1211",
-        "grupo": "Cantón",
-        "descripcion": "VALENCIA"
-      },
-      {
-        "codigo": "121150",
-        "grupo": "Parroquia",
-        "descripcion": "VALENCIA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1212",
-        "grupo": "Cantón",
-        "descripcion": "MOCACHE"
-      },
-      {
-        "codigo": "121250",
-        "grupo": "Parroquia",
-        "descripcion": "MOCACHE, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1213",
-        "grupo": "Cantón",
-        "descripcion": "QUINSALOMA"
-      },
-      {
-        "codigo": "121350",
-        "grupo": "Parroquia",
-        "descripcion": "QUINSALOMA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "13",
-        "grupo": "Provincia",
-        "descripcion": "MANABI"
-      },
-      {
-        "codigo": "1301",
-        "grupo": "Cantón",
-        "descripcion": "PORTOVIEJO "
-      },
-      {
-        "codigo": "130101",
-        "grupo": "Parroquia",
-        "descripcion": "PORTOVIEJO"
-      },
-      {
-        "codigo": "130102",
-        "grupo": "Parroquia",
-        "descripcion": "12 DE MARZO"
-      },
-      {
-        "codigo": "130103",
-        "grupo": "Parroquia",
-        "descripcion": "COLON"
-      },
-      {
-        "codigo": "130104",
-        "grupo": "Parroquia",
-        "descripcion": "PICOAZA"
-      },
-      {
-        "codigo": "130105",
-        "grupo": "Parroquia",
-        "descripcion": "SAN PABLO (Cantón Portoviejo)"
-      },
-      {
-        "codigo": "130151",
-        "grupo": "Parroquia",
-        "descripcion": "ABDON CALDERON (SAN FRANCISCO)"
-      },
-      {
-        "codigo": "130153",
-        "grupo": "Parroquia",
-        "descripcion": "CRUCITA"
-      },
-      {
-        "codigo": "130154",
-        "grupo": "Parroquia",
-        "descripcion": "PUEBLO NUEVO"
-      },
-      {
-        "codigo": "130155",
-        "grupo": "Parroquia",
-        "descripcion": "RIOCHICO (RIO CHICO)"
-      },
-      {
-        "codigo": "1302",
-        "grupo": "Cantón",
-        "descripcion": "BOLIVAR  (Prov. Manabí)"
-      },
-      {
-        "codigo": "130250",
-        "grupo": "Parroquia",
-        "descripcion": "CALCETA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "130252",
-        "grupo": "Parroquia",
-        "descripcion": "QUIROGA (Cantón Bolívar - Manabí)"
-      },
-      {
-        "codigo": "1303",
-        "grupo": "Cantón",
-        "descripcion": "CHONE "
-      },
-      {
-        "codigo": "130301",
-        "grupo": "Parroquia",
-        "descripcion": "CHONE"
-      },
-      {
-        "codigo": "130352",
-        "grupo": "Parroquia",
-        "descripcion": "CANUTO"
-      },
-      {
-        "codigo": "130355",
-        "grupo": "Parroquia",
-        "descripcion": "ELOY ALFARO (Cantón Chone)"
-      },
-      {
-        "codigo": "130356",
-        "grupo": "Parroquia",
-        "descripcion": "RICAURTE (Cantón Chone)"
-      },
-      {
-        "codigo": "130357",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ANTONIO (Cantón Chone)"
-      },
-      {
-        "codigo": "1304",
-        "grupo": "Cantón",
-        "descripcion": "EL CARMEN "
-      },
-      {
-        "codigo": "130450",
-        "grupo": "Parroquia",
-        "descripcion": "EL CARMEN, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1305",
-        "grupo": "Cantón",
-        "descripcion": "FLAVIO ALFARO "
-      },
-      {
-        "codigo": "130550",
-        "grupo": "Parroquia",
-        "descripcion": "FLAVIO ALFARO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "130551",
-        "grupo": "Parroquia",
-        "descripcion": "SAN FRANCISCO DE NOVILLO (CAB. EN NOVILLO) Cantón Flavio Alfaro"
-      },
-      {
-        "codigo": "1306",
-        "grupo": "Cantón",
-        "descripcion": "JIPIJAPA "
-      },
-      {
-        "codigo": "130601",
-        "grupo": "Parroquia",
-        "descripcion": "DR. MIGUEL MORAN LUCIO "
-      },
-      {
-        "codigo": "130650",
-        "grupo": "Parroquia",
-        "descripcion": "JIPIJAPA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "130651",
-        "grupo": "Parroquia",
-        "descripcion": "AMERICA"
-      },
-      {
-        "codigo": "130657",
-        "grupo": "Parroquia",
-        "descripcion": "PEDRO PABLO GOMEZ"
-      },
-      {
-        "codigo": "130658",
-        "grupo": "Parroquia",
-        "descripcion": "PUERTO DE CAYO"
-      },
-      {
-        "codigo": "1307",
-        "grupo": "Cantón",
-        "descripcion": "JUNIN "
-      },
-      {
-        "codigo": "130750",
-        "grupo": "Parroquia",
-        "descripcion": "JUNIN, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1308",
-        "grupo": "Cantón",
-        "descripcion": "MANTA "
-      },
-      {
-        "codigo": "130801",
-        "grupo": "Parroquia",
-        "descripcion": "LOS ESTEROS"
-      },
-      {
-        "codigo": "130803",
-        "grupo": "Parroquia",
-        "descripcion": "SAN MATEO (Cantón Manta)"
-      },
-      {
-        "codigo": "130804",
-        "grupo": "Parroquia",
-        "descripcion": "TARQUI (Cantón Manta)"
-      },
-      {
-        "codigo": "130805",
-        "grupo": "Parroquia",
-        "descripcion": "ELOY ALFARO (Cantón Manta)"
-      },
-      {
-        "codigo": "130850",
-        "grupo": "Parroquia",
-        "descripcion": "MANTA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "130851",
-        "grupo": "Parroquia",
-        "descripcion": "SAN LORENZO (Cantón Manta)"
-      },
-      {
-        "codigo": "130852",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA MARIANITA (BOCA DE PACOCHE) Cantón Manta"
-      },
-      {
-        "codigo": "1309",
-        "grupo": "Cantón",
-        "descripcion": "MONTECRISTI "
-      },
-      {
-        "codigo": "130902",
-        "grupo": "Parroquia",
-        "descripcion": "MONTECRISTI"
-      },
-      {
-        "codigo": "130950",
-        "grupo": "Parroquia",
-        "descripcion": "MONTECRISTI, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1310",
-        "grupo": "Cantón",
-        "descripcion": "PAJAN "
-      },
-      {
-        "codigo": "131050",
-        "grupo": "Parroquia",
-        "descripcion": "PAJAN, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1311",
-        "grupo": "Cantón",
-        "descripcion": "PICHINCHA "
-      },
-      {
-        "codigo": "131150",
-        "grupo": "Parroquia",
-        "descripcion": "PICHINCHA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1312",
-        "grupo": "Cantón",
-        "descripcion": "ROCAFUERTE"
-      },
-      {
-        "codigo": "131250",
-        "grupo": "Parroquia",
-        "descripcion": "ROCAFUERTE, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1313",
-        "grupo": "Cantón",
-        "descripcion": "SANTA ANA"
-      },
-      {
-        "codigo": "131301",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA ANA (Cantón Santa Ana)"
-      },
-      {
-        "codigo": "131302",
-        "grupo": "Parroquia",
-        "descripcion": "LODANA"
-      },
-      {
-        "codigo": "131350",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA ANA DE VUELTA LARGA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "131351",
-        "grupo": "Parroquia",
-        "descripcion": "AYACUCHO (Cantón Santa Ana)"
-      },
-      {
-        "codigo": "131352",
-        "grupo": "Parroquia",
-        "descripcion": "HONORATO VASQUEZ (CAB. EN VASQUEZ) Cantón Santa Ana"
-      },
-      {
-        "codigo": "131353",
-        "grupo": "Parroquia",
-        "descripcion": "LA UNION (Cantón Santa Ana)"
-      },
-      {
-        "codigo": "1314",
-        "grupo": "Cantón",
-        "descripcion": "SUCRE"
-      },
-      {
-        "codigo": "131402",
-        "grupo": "Parroquia",
-        "descripcion": "LEONIDAS PLAZA GUTIERREZ"
-      },
-      {
-        "codigo": "1315",
-        "grupo": "Cantón",
-        "descripcion": "TOSAGUA"
-      },
-      {
-        "codigo": "131550",
-        "grupo": "Parroquia",
-        "descripcion": "TOSAGUA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1316",
-        "grupo": "Cantón",
-        "descripcion": "24 DE MAYO"
-      },
-      {
-        "codigo": "131650",
-        "grupo": "Parroquia",
-        "descripcion": "SUCRE, CABECERA CANTONAL (Cantón 24 de Mayo)"
-      },
-      {
-        "codigo": "131651",
-        "grupo": "Parroquia",
-        "descripcion": "BELLAVISTA (Cantón 24 de mayo)"
-      },
-      {
-        "codigo": "1317",
-        "grupo": "Cantón",
-        "descripcion": "PEDERNALES"
-      },
-      {
-        "codigo": "131751",
-        "grupo": "Parroquia",
-        "descripcion": "COJIMIES"
-      },
-      {
-        "codigo": "1318",
-        "grupo": "Cantón",
-        "descripcion": "OLMEDO (Manabí)"
-      },
-      {
-        "codigo": "131850",
-        "grupo": "Parroquia",
-        "descripcion": "OLMEDO, CABECERA CANTONAL Cantón Olmedo - Manabí"
-      },
-      {
-        "codigo": "1319",
-        "grupo": "Cantón",
-        "descripcion": "PUERTO LOPEZ"
-      },
-      {
-        "codigo": "131952",
-        "grupo": "Parroquia",
-        "descripcion": "SALANGO"
-      },
-      {
-        "codigo": "1320",
-        "grupo": "Cantón",
-        "descripcion": "JAMA"
-      },
-      {
-        "codigo": "132050",
-        "grupo": "Parroquia",
-        "descripcion": "JAMA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1321",
-        "grupo": "Cantón",
-        "descripcion": "JARAMIJO"
-      },
-      {
-        "codigo": "132150",
-        "grupo": "Parroquia",
-        "descripcion": "JARAMIJO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1322",
-        "grupo": "Cantón",
-        "descripcion": "SAN VICENTE"
-      },
-      {
-        "codigo": "132250",
-        "grupo": "Parroquia",
-        "descripcion": "SAN VICENTE, CABECERA CANTONAL Cantón San Vicente"
-      },
-      {
-        "codigo": "132251",
-        "grupo": "Parroquia",
-        "descripcion": "CANOA"
-      },
-      {
-        "codigo": "14",
-        "grupo": "Provincia",
-        "descripcion": "MORONA SANTIAGO"
-      },
-      {
-        "codigo": "1401",
-        "grupo": "Cantón",
-        "descripcion": "MORONA "
-      },
-      {
-        "codigo": "140150",
-        "grupo": "Parroquia",
-        "descripcion": "MACAS, CABECERA CANTONAL Y CAPITAL PROVINCIAL "
-      },
-      {
-        "codigo": "140151",
-        "grupo": "Parroquia",
-        "descripcion": "ALSHI (CAB. EN 9 DE OCTUBRE) "
-      },
-      {
-        "codigo": "140153",
-        "grupo": "Parroquia",
-        "descripcion": "GENERAL PROAÑO"
-      },
-      {
-        "codigo": "140156",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ISIDRO (Cantón Morona)"
-      },
-      {
-        "codigo": "140157",
-        "grupo": "Parroquia",
-        "descripcion": "SEVILLA DON BOSCO"
-      },
-      {
-        "codigo": "140164",
-        "grupo": "Parroquia",
-        "descripcion": "RIO BLANCO"
-      },
-      {
-        "codigo": "1402",
-        "grupo": "Cantón",
-        "descripcion": "GUALAQUIZA "
-      },
-      {
-        "codigo": "140202",
-        "grupo": "Parroquia",
-        "descripcion": "MERCEDES MOLINA"
-      },
-      {
-        "codigo": "140250",
-        "grupo": "Parroquia",
-        "descripcion": "GUALAQUIZA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "140254",
-        "grupo": "Parroquia",
-        "descripcion": "CHIGÜINDA"
-      },
-      {
-        "codigo": "140256",
-        "grupo": "Parroquia",
-        "descripcion": "NUEVA TARQUI"
-      },
-      {
-        "codigo": "140257",
-        "grupo": "Parroquia",
-        "descripcion": "SAN MIGUEL DE CUYES"
-      },
-      {
-        "codigo": "1404",
-        "grupo": "Cantón",
-        "descripcion": "PALORA "
-      },
-      {
-        "codigo": "140455",
-        "grupo": "Parroquia",
-        "descripcion": "16 DE AGOSTO"
-      },
-      {
-        "codigo": "1405",
-        "grupo": "Cantón",
-        "descripcion": "SANTIAGO "
-      },
-      {
-        "codigo": "140550",
-        "grupo": "Parroquia",
-        "descripcion": "SANTIAGO DE MENDEZ, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "140553",
-        "grupo": "Parroquia",
-        "descripcion": "PATUCA"
-      },
-      {
-        "codigo": "140556",
-        "grupo": "Parroquia",
-        "descripcion": "TAYUZA"
-      },
-      {
-        "codigo": "1406",
-        "grupo": "Cantón",
-        "descripcion": "SUCUA "
-      },
-      {
-        "codigo": "140650",
-        "grupo": "Parroquia",
-        "descripcion": "SUCUA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "140652",
-        "grupo": "Parroquia",
-        "descripcion": "HUAMBI"
-      },
-      {
-        "codigo": "140655",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA MARIANITA DE JESUS (Cantón Sucúa)"
-      },
-      {
-        "codigo": "1408",
-        "grupo": "Cantón",
-        "descripcion": "SAN JUAN BOSCO"
-      },
-      {
-        "codigo": "140850",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JUAN BOSCO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "140852",
-        "grupo": "Parroquia",
-        "descripcion": "SAN CARLOS DE LIMON (Cantón San Juan Bosco)"
-      },
-      {
-        "codigo": "1410",
-        "grupo": "Cantón",
-        "descripcion": "LOGROÑO"
-      },
-      {
-        "codigo": "141050",
-        "grupo": "Parroquia",
-        "descripcion": "LOGROÑO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "15",
-        "grupo": "Provincia",
-        "descripcion": "NAPO"
-      },
-      {
-        "codigo": "1501",
-        "grupo": "Cantón",
-        "descripcion": "TENA  "
-      },
-      {
-        "codigo": "150150",
-        "grupo": "Parroquia",
-        "descripcion": "TENA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"
-      },
-      {
-        "codigo": "150154",
-        "grupo": "Parroquia",
-        "descripcion": "PANO"
-      },
-      {
-        "codigo": "150157",
-        "grupo": "Parroquia",
-        "descripcion": "TALAG"
-      },
-      {
-        "codigo": "1503",
-        "grupo": "Cantón",
-        "descripcion": "ARCHIDONA "
-      },
-      {
-        "codigo": "150350",
-        "grupo": "Parroquia",
-        "descripcion": "ARCHIDONA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "150352",
-        "grupo": "Parroquia",
-        "descripcion": "COTUNDO"
-      },
-      {
-        "codigo": "1504",
-        "grupo": "Cantón",
-        "descripcion": "EL CHACO"
-      },
-      {
-        "codigo": "150450",
-        "grupo": "Parroquia",
-        "descripcion": "EL CHACO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "150451",
-        "grupo": "Parroquia",
-        "descripcion": "GONZALO DIAZ DE PINEDA (EL BOMBON) Cantón El Chaco"
-      },
-      {
-        "codigo": "150452",
-        "grupo": "Parroquia",
-        "descripcion": "LINARES"
-      },
-      {
-        "codigo": "150453",
-        "grupo": "Parroquia",
-        "descripcion": "OYACACHI"
-      },
-      {
-        "codigo": "1507",
-        "grupo": "Cantón",
-        "descripcion": "QUIJOS"
-      },
-      {
-        "codigo": "150750",
-        "grupo": "Parroquia",
-        "descripcion": "BAEZA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "150751",
-        "grupo": "Parroquia",
-        "descripcion": "COSANGA"
-      },
-      {
-        "codigo": "150752",
-        "grupo": "Parroquia",
-        "descripcion": "CUYUJA"
-      },
-      {
-        "codigo": "150753",
-        "grupo": "Parroquia",
-        "descripcion": "PAPALLACTA"
-      },
-      {
-        "codigo": "150754",
-        "grupo": "Parroquia",
-        "descripcion": "SAN FRANCISCO DE BORJA (VIRGILIO DAVILA) Cantón Quijos"
-      },
-      {
-        "codigo": "1509",
-        "grupo": "Cantón",
-        "descripcion": "CARLOS JULIO AROSEMENA TOLA"
-      },
-      {
-        "codigo": "150950",
-        "grupo": "Parroquia",
-        "descripcion": "CARLOS JULIO AROSEMENA TOLA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "16",
-        "grupo": "Provincia",
-        "descripcion": "PASTAZA"
-      },
-      {
-        "codigo": "1601",
-        "grupo": "Cantón",
-        "descripcion": "PASTAZA"
-      },
-      {
-        "codigo": "160150",
-        "grupo": "Parroquia",
-        "descripcion": "PUYO CABECERA CANTONAL Y CAPITAL PROVINCIAL"
-      },
-      {
-        "codigo": "160166",
-        "grupo": "Parroquia",
-        "descripcion": "EL TRIUNFO (Cantón Pastaza)"
-      },
-      {
-        "codigo": "1602",
-        "grupo": "Cantón",
-        "descripcion": "MERA"
-      },
-      {
-        "codigo": "160250",
-        "grupo": "Parroquia",
-        "descripcion": "MERA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "160252",
-        "grupo": "Parroquia",
-        "descripcion": "SHELL"
-      },
-      {
-        "codigo": "1604",
-        "grupo": "Cantón",
-        "descripcion": "ARAJUNO"
-      },
-      {
-        "codigo": "160451",
-        "grupo": "Parroquia",
-        "descripcion": "CURARAY"
-      },
-      {
-        "codigo": "17",
-        "grupo": "Provincia",
-        "descripcion": "PICHINCHA"
-      },
-      {
-        "codigo": "1701",
-        "grupo": "Cantón",
-        "descripcion": "QUITO"
-      },
-      {
-        "codigo": "170101",
-        "grupo": "Parroquia",
-        "descripcion": "BELISARIO QUEVEDO (Cantón Quito)"
-      },
-      {
-        "codigo": "170102",
-        "grupo": "Parroquia",
-        "descripcion": "CARCELEN"
-      },
-      {
-        "codigo": "170103",
-        "grupo": "Parroquia",
-        "descripcion": "CENTRO HISTORICO (Cantón Quito)"
-      },
-      {
-        "codigo": "170104",
-        "grupo": "Parroquia",
-        "descripcion": "COCHAPAMBA (Cantón Quito)"
-      },
-      {
-        "codigo": "170105",
-        "grupo": "Parroquia",
-        "descripcion": "COMITE DEL PUEBLO"
-      },
-      {
-        "codigo": "170106",
-        "grupo": "Parroquia",
-        "descripcion": "COTOCOLLAO"
-      },
-      {
-        "codigo": "170107",
-        "grupo": "Parroquia",
-        "descripcion": "CHILIBULO"
-      },
-      {
-        "codigo": "170108",
-        "grupo": "Parroquia",
-        "descripcion": "CHILLOGALLO"
-      },
-      {
-        "codigo": "170109",
-        "grupo": "Parroquia",
-        "descripcion": "CHIMBACALLE"
-      },
-      {
-        "codigo": "170110",
-        "grupo": "Parroquia",
-        "descripcion": "EL CONDADO"
-      },
-      {
-        "codigo": "170111",
-        "grupo": "Parroquia",
-        "descripcion": "GUAMANI"
-      },
-      {
-        "codigo": "170112",
-        "grupo": "Parroquia",
-        "descripcion": "IÑAQUITO"
-      },
-      {
-        "codigo": "170113",
-        "grupo": "Parroquia",
-        "descripcion": "ITCHIMBIA"
-      },
-      {
-        "codigo": "170114",
-        "grupo": "Parroquia",
-        "descripcion": "JIPIJAPA (Cantón Quito)"
-      },
-      {
-        "codigo": "170115",
-        "grupo": "Parroquia",
-        "descripcion": "KENNEDY"
-      },
-      {
-        "codigo": "170116",
-        "grupo": "Parroquia",
-        "descripcion": "LA ARGELIA"
-      },
-      {
-        "codigo": "170117",
-        "grupo": "Parroquia",
-        "descripcion": "LA CONCEPCION"
-      },
-      {
-        "codigo": "170118",
-        "grupo": "Parroquia",
-        "descripcion": "LA ECUATORIANA"
-      },
-      {
-        "codigo": "170119",
-        "grupo": "Parroquia",
-        "descripcion": "LA FERROVIARIA"
-      },
-      {
-        "codigo": "170120",
-        "grupo": "Parroquia",
-        "descripcion": "LA LIBERTAD (Cantón Quito)"
-      },
-      {
-        "codigo": "170121",
-        "grupo": "Parroquia",
-        "descripcion": "LA MAGDALENA"
-      },
-      {
-        "codigo": "170124",
-        "grupo": "Parroquia",
-        "descripcion": "PONCEANO"
-      },
-      {
-        "codigo": "170125",
-        "grupo": "Parroquia",
-        "descripcion": "PUENGASI"
-      },
-      {
-        "codigo": "170126",
-        "grupo": "Parroquia",
-        "descripcion": "QUITUMBE"
-      },
-      {
-        "codigo": "170127",
-        "grupo": "Parroquia",
-        "descripcion": "RUMIPAMBA (Cantón Quito)"
-      },
-      {
-        "codigo": "170128",
-        "grupo": "Parroquia",
-        "descripcion": "SAN BARTOLO"
-      },
-      {
-        "codigo": "170129",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ISIDRO DEL INCA (Cantón Quito)"
-      },
-      {
-        "codigo": "170130",
-        "grupo": "Parroquia",
-        "descripcion": "SANJUAN"
-      },
-      {
-        "codigo": "170131",
-        "grupo": "Parroquia",
-        "descripcion": "SOLANDA"
-      },
-      {
-        "codigo": "170132",
-        "grupo": "Parroquia",
-        "descripcion": "TURUBAMBA"
-      },
-      {
-        "codigo": "170150",
-        "grupo": "Parroquia",
-        "descripcion": "QUITO DISTRITO METROPOLITANO, CABECERA CANTONAL, CAPITAL PROVINCIAL Y DE LA REPUBLICA DEL ECUADOR"
-      },
-      {
-        "codigo": "170151",
-        "grupo": "Parroquia",
-        "descripcion": "ALANGASI"
-      },
-      {
-        "codigo": "170152",
-        "grupo": "Parroquia",
-        "descripcion": "AMAGUAÑA"
-      },
-      {
-        "codigo": "170153",
-        "grupo": "Parroquia",
-        "descripcion": "ATAHUALPA (HABASPAMBA) Cantón Quito"
-      },
-      {
-        "codigo": "170154",
-        "grupo": "Parroquia",
-        "descripcion": "CALACALI"
-      },
-      {
-        "codigo": "170155",
-        "grupo": "Parroquia",
-        "descripcion": "CALDERON (CARAPUNGO) Cantón Quito"
-      },
-      {
-        "codigo": "170156",
-        "grupo": "Parroquia",
-        "descripcion": "CONOCOTO"
-      },
-      {
-        "codigo": "170157",
-        "grupo": "Parroquia",
-        "descripcion": "CUMBAYA"
-      },
-      {
-        "codigo": "170158",
-        "grupo": "Parroquia",
-        "descripcion": "CHAVEZPAMBA"
-      },
-      {
-        "codigo": "170159",
-        "grupo": "Parroquia",
-        "descripcion": "CHECA (CHILPA) Cantón Quito"
-      },
-      {
-        "codigo": "170160",
-        "grupo": "Parroquia",
-        "descripcion": "EL QUINCHE"
-      },
-      {
-        "codigo": "170161",
-        "grupo": "Parroquia",
-        "descripcion": "GUALEA"
-      },
-      {
-        "codigo": "170162",
-        "grupo": "Parroquia",
-        "descripcion": "GUANGOPOLO"
-      },
-      {
-        "codigo": "170163",
-        "grupo": "Parroquia",
-        "descripcion": "GUAYLLABAMBA"
-      },
-      {
-        "codigo": "170164",
-        "grupo": "Parroquia",
-        "descripcion": "LA MERCED (Cantón Quito)"
-      },
-      {
-        "codigo": "170165",
-        "grupo": "Parroquia",
-        "descripcion": "LLANO CHICO"
-      },
-      {
-        "codigo": "170166",
-        "grupo": "Parroquia",
-        "descripcion": "LLOA"
-      },
-      {
-        "codigo": "170168",
-        "grupo": "Parroquia",
-        "descripcion": "NANEGAL"
-      },
-      {
-        "codigo": "170169",
-        "grupo": "Parroquia",
-        "descripcion": "NANEGALITO"
-      },
-      {
-        "codigo": "170170",
-        "grupo": "Parroquia",
-        "descripcion": "NAYON"
-      },
-      {
-        "codigo": "170171",
-        "grupo": "Parroquia",
-        "descripcion": "NONO"
-      },
-      {
-        "codigo": "170172",
-        "grupo": "Parroquia",
-        "descripcion": "PACTO"
-      },
-      {
-        "codigo": "170174",
-        "grupo": "Parroquia",
-        "descripcion": "PERUCHO"
-      },
-      {
-        "codigo": "170175",
-        "grupo": "Parroquia",
-        "descripcion": "PIFO"
-      },
-      {
-        "codigo": "170176",
-        "grupo": "Parroquia",
-        "descripcion": "PINTAG"
-      },
-      {
-        "codigo": "170177",
-        "grupo": "Parroquia",
-        "descripcion": "POMASQUI"
-      },
-      {
-        "codigo": "170178",
-        "grupo": "Parroquia",
-        "descripcion": "PUELLARO"
-      },
-      {
-        "codigo": "170179",
-        "grupo": "Parroquia",
-        "descripcion": "PUEMBO"
-      },
-      {
-        "codigo": "170180",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ANTONIO (Cantón Quito)"
-      },
-      {
-        "codigo": "170181",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JOSE DE MINAS"
-      },
-      {
-        "codigo": "170183",
-        "grupo": "Parroquia",
-        "descripcion": "TABABELA"
-      },
-      {
-        "codigo": "170184",
-        "grupo": "Parroquia",
-        "descripcion": "TUMBACO"
-      },
-      {
-        "codigo": "170185",
-        "grupo": "Parroquia",
-        "descripcion": "YARUQUI"
-      },
-      {
-        "codigo": "170186",
-        "grupo": "Parroquia",
-        "descripcion": "ZAMBIZA"
-      },
-      {
-        "codigo": "1702",
-        "grupo": "Cantón",
-        "descripcion": "CAYAMBE"
-      },
-      {
-        "codigo": "170201",
-        "grupo": "Parroquia",
-        "descripcion": "AYORA"
-      },
-      {
-        "codigo": "170202",
-        "grupo": "Parroquia",
-        "descripcion": "CAYAMBE"
-      },
-      {
-        "codigo": "170203",
-        "grupo": "Parroquia",
-        "descripcion": "JUAN MONTALVO (Cantón Cayambe)"
-      },
-      {
-        "codigo": "170250",
-        "grupo": "Parroquia",
-        "descripcion": "CAYAMBE, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "170251",
-        "grupo": "Parroquia",
-        "descripcion": "ASCAZUBI"
-      },
-      {
-        "codigo": "170252",
-        "grupo": "Parroquia",
-        "descripcion": "CANGAHUA "
-      },
-      {
-        "codigo": "170253",
-        "grupo": "Parroquia",
-        "descripcion": "OLMEDO (PESILLO) Cantón Cayambe"
-      },
-      {
-        "codigo": "170254",
-        "grupo": "Parroquia",
-        "descripcion": "OTON"
-      },
-      {
-        "codigo": "170255",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA ROSA DE CUZUBAMBA (Cantón Cayambe)"
-      },
-      {
-        "codigo": "1703",
-        "grupo": "Cantón",
-        "descripcion": "MEJIA"
-      },
-      {
-        "codigo": "170350",
-        "grupo": "Parroquia",
-        "descripcion": "MACHACHI"
-      },
-      {
-        "codigo": "170351",
-        "grupo": "Parroquia",
-        "descripcion": "ALOAG"
-      },
-      {
-        "codigo": "170352",
-        "grupo": "Parroquia",
-        "descripcion": "ALOASI"
-      },
-      {
-        "codigo": "170353",
-        "grupo": "Parroquia",
-        "descripcion": "CUTUGLAHUA"
-      },
-      {
-        "codigo": "170354",
-        "grupo": "Parroquia",
-        "descripcion": "EL CHAUPI"
-      },
-      {
-        "codigo": "170355",
-        "grupo": "Parroquia",
-        "descripcion": "MANUEL CORNEJO ASTORGA (TANDAPI)"
-      },
-      {
-        "codigo": "170356",
-        "grupo": "Parroquia",
-        "descripcion": "TAMBILLO (Cantón Mejía)"
-      },
-      {
-        "codigo": "170357",
-        "grupo": "Parroquia",
-        "descripcion": "UYUMBICHO"
-      },
-      {
-        "codigo": "1704",
-        "grupo": "Cantón",
-        "descripcion": "PEDRO MONCAYO"
-      },
-      {
-        "codigo": "170450",
-        "grupo": "Parroquia",
-        "descripcion": "TABACUNDO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "170451",
-        "grupo": "Parroquia",
-        "descripcion": "LA ESPERANZA (Cantón Pedro Moncayo)"
-      },
-      {
-        "codigo": "170452",
-        "grupo": "Parroquia",
-        "descripcion": "MALCHINGUI"
-      },
-      {
-        "codigo": "170453",
-        "grupo": "Parroquia",
-        "descripcion": "TOCACHI"
-      },
-      {
-        "codigo": "170454",
-        "grupo": "Parroquia",
-        "descripcion": "TUPIGACHI"
-      },
-      {
-        "codigo": "1705",
-        "grupo": "Cantón",
-        "descripcion": "RUMIÑAHUI"
-      },
-      {
-        "codigo": "170501",
-        "grupo": "Parroquia",
-        "descripcion": "SANGOLQUI"
-      },
-      {
-        "codigo": "170502",
-        "grupo": "Parroquia",
-        "descripcion": "SAN PEDRO DE TABOADA"
-      },
-      {
-        "codigo": "170503",
-        "grupo": "Parroquia",
-        "descripcion": "SAN RAFAEL (Cantón Rumiñahui)"
-      },
-      {
-        "codigo": "170550",
-        "grupo": "Parroquia",
-        "descripcion": "SANGOLQUI, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "170551",
-        "grupo": "Parroquia",
-        "descripcion": "COTOGCHOA"
-      },
-      {
-        "codigo": "170552",
-        "grupo": "Parroquia",
-        "descripcion": "RUMIPAMBA (Cantón Rumiñahui)"
-      },
-      {
-        "codigo": "1707",
-        "grupo": "Cantón",
-        "descripcion": "SAN MIGUEL DE LOS BANCOS"
-      },
-      {
-        "codigo": "170750",
-        "grupo": "Parroquia",
-        "descripcion": "SAN MIGUEL DE LOS BANCOS , CABECERA CANTONAL"
-      },
-      {
-        "codigo": "170751",
-        "grupo": "Parroquia",
-        "descripcion": "MINDO"
-      },
-      {
-        "codigo": "1708",
-        "grupo": "Cantón",
-        "descripcion": "PEDRO VICENTE MALDONADO"
-      },
-      {
-        "codigo": "170850",
-        "grupo": "Parroquia",
-        "descripcion": "PEDRO VICENTE MALDONADO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1709",
-        "grupo": "Cantón",
-        "descripcion": "PUERTO QUITO"
-      },
-      {
-        "codigo": "170950",
-        "grupo": "Parroquia",
-        "descripcion": "PUERTO QUITO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "18",
-        "grupo": "Provincia",
-        "descripcion": "TUNGURAHUA"
-      },
-      {
-        "codigo": "1801",
-        "grupo": "Cantón",
-        "descripcion": "AMBATO"
-      },
-      {
-        "codigo": "180101",
-        "grupo": "Parroquia",
-        "descripcion": "ATOCHA – FICOA"
-      },
-      {
-        "codigo": "180104",
-        "grupo": "Parroquia",
-        "descripcion": "HUACHI LORETO"
-      },
-      {
-        "codigo": "180105",
-        "grupo": "Parroquia",
-        "descripcion": "LA MERCED (Cantón Ambato)"
-      },
-      {
-        "codigo": "180106",
-        "grupo": "Parroquia",
-        "descripcion": "LA PENINSULA"
-      },
-      {
-        "codigo": "180107",
-        "grupo": "Parroquia",
-        "descripcion": "MATRIZ (Cantón Ambato)"
-      },
-      {
-        "codigo": "180108",
-        "grupo": "Parroquia",
-        "descripcion": "PISHILATA"
-      },
-      {
-        "codigo": "180151",
-        "grupo": "Parroquia",
-        "descripcion": "AMBATILLO"
-      },
-      {
-        "codigo": "180153",
-        "grupo": "Parroquia",
-        "descripcion": "AUGUSTO N. MARTINEZ (MUNDUGLEO)"
-      },
-      {
-        "codigo": "180154",
-        "grupo": "Parroquia",
-        "descripcion": "CONSTANTINO FERNANDEZ (CAB. EN CULLITAHUA)"
-      },
-      {
-        "codigo": "180155",
-        "grupo": "Parroquia",
-        "descripcion": "HUACHI GRANDE"
-      },
-      {
-        "codigo": "180156",
-        "grupo": "Parroquia",
-        "descripcion": "IZAMBA"
-      },
-      {
-        "codigo": "180157",
-        "grupo": "Parroquia",
-        "descripcion": "JUAN BENIGNO VELA"
-      },
-      {
-        "codigo": "180158",
-        "grupo": "Parroquia",
-        "descripcion": "MONTALVO (Cantón Ambato)"
-      },
-      {
-        "codigo": "180159",
-        "grupo": "Parroquia",
-        "descripcion": "PASA"
-      },
-      {
-        "codigo": "180160",
-        "grupo": "Parroquia",
-        "descripcion": "PICAIGUA"
-      },
-      {
-        "codigo": "180161",
-        "grupo": "Parroquia",
-        "descripcion": "PILAGÜIN (PILAGÜIN)"
-      },
-      {
-        "codigo": "180162",
-        "grupo": "Parroquia",
-        "descripcion": "QUISAPINCHA (QUIZAPINCHA)"
-      },
-      {
-        "codigo": "180163",
-        "grupo": "Parroquia",
-        "descripcion": "SAN BARTOLOME DE PINLLOG (Cantón Amabto)"
-      },
-      {
-        "codigo": "180164",
-        "grupo": "Parroquia",
-        "descripcion": "SAN FERNANDO (PASA SAN FERNANDO) Cantón Ambato"
-      },
-      {
-        "codigo": "180165",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA ROSA (Cantón Ambato)"
-      },
-      {
-        "codigo": "180166",
-        "grupo": "Parroquia",
-        "descripcion": "TOTORAS"
-      },
-      {
-        "codigo": "180167",
-        "grupo": "Parroquia",
-        "descripcion": "CUNCHIBAMBA"
-      },
-      {
-        "codigo": "180168",
-        "grupo": "Parroquia",
-        "descripcion": "UNAMUNCHO"
-      },
-      {
-        "codigo": "1802",
-        "grupo": "Cantón",
-        "descripcion": "BAÑOS DE AGUA SANTA"
-      },
-      {
-        "codigo": "180250",
-        "grupo": "Parroquia",
-        "descripcion": "BAÑOS DE AGUA SANTA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "180251",
-        "grupo": "Parroquia",
-        "descripcion": "LLIGUA"
-      },
-      {
-        "codigo": "180252",
-        "grupo": "Parroquia",
-        "descripcion": "RIO NEGRO"
-      },
-      {
-        "codigo": "180253",
-        "grupo": "Parroquia",
-        "descripcion": "RIO VERDE (Cantón Baños de agua Santa)"
-      },
-      {
-        "codigo": "180254",
-        "grupo": "Parroquia",
-        "descripcion": "ULBA"
-      },
-      {
-        "codigo": "1803",
-        "grupo": "Cantón",
-        "descripcion": "CEVALLOS"
-      },
-      {
-        "codigo": "180350",
-        "grupo": "Parroquia",
-        "descripcion": "CEVALLOS, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1804",
-        "grupo": "Cantón",
-        "descripcion": "MOCHA"
-      },
-      {
-        "codigo": "180450",
-        "grupo": "Parroquia",
-        "descripcion": "MOCHA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1805",
-        "grupo": "Cantón",
-        "descripcion": "PATATE"
-      },
-      {
-        "codigo": "180550",
-        "grupo": "Parroquia",
-        "descripcion": "PATATE, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "180551",
-        "grupo": "Parroquia",
-        "descripcion": "EL TRIUNFO (Cantón Patate)"
-      },
-      {
-        "codigo": "180552",
-        "grupo": "Parroquia",
-        "descripcion": "LOS ANDES (CAB. EN POATUG)"
-      },
-      {
-        "codigo": "180553",
-        "grupo": "Parroquia",
-        "descripcion": "SUCRE (CAB. EN SUCRE-PATATE URCO) (Cantón Patate)"
-      },
-      {
-        "codigo": "1806",
-        "grupo": "Cantón",
-        "descripcion": "QUERO"
-      },
-      {
-        "codigo": "180650",
-        "grupo": "Parroquia",
-        "descripcion": "QUERO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "180651",
-        "grupo": "Parroquia",
-        "descripcion": "RUMIPAMBA (Cantón Quero)"
-      },
-      {
-        "codigo": "180652",
-        "grupo": "Parroquia",
-        "descripcion": "YANAYACU - MOCHAPATA (CAB. EN YANAYACU) "
-      },
-      {
-        "codigo": "1807",
-        "grupo": "Cantón",
-        "descripcion": "SAN PEDRO DE PELILEO"
-      },
-      {
-        "codigo": "180701",
-        "grupo": "Parroquia",
-        "descripcion": "PELILEO (Cantón San Pedro de Pelileo)"
-      },
-      {
-        "codigo": "180702",
-        "grupo": "Parroquia",
-        "descripcion": "PELILEO GRANDE (Cantón San Pedro de Pelileo)"
-      },
-      {
-        "codigo": "180750",
-        "grupo": "Parroquia",
-        "descripcion": "PELILEO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "180751",
-        "grupo": "Parroquia",
-        "descripcion": "BENITEZ (PACHANLICA) "
-      },
-      {
-        "codigo": "180752",
-        "grupo": "Parroquia",
-        "descripcion": "BOLIVAR (Cantón San Pedro de Pelileo)"
-      },
-      {
-        "codigo": "180753",
-        "grupo": "Parroquia",
-        "descripcion": "COTALO"
-      },
-      {
-        "codigo": "180754",
-        "grupo": "Parroquia",
-        "descripcion": "CHIQUICHA (CAB. EN CHIQUICHA GRANDE)"
-      },
-      {
-        "codigo": "180755",
-        "grupo": "Parroquia",
-        "descripcion": "EL ROSARIO (RUMICHACA) Cantón San Pedro de Pelileo"
-      },
-      {
-        "codigo": "180756",
-        "grupo": "Parroquia",
-        "descripcion": "GARCIA MORENO (CHUMAQUI) Cantón San Pedro de Pelileo"
-      },
-      {
-        "codigo": "180757",
-        "grupo": "Parroquia",
-        "descripcion": "GUAMBALO (HUAMBALO)"
-      },
-      {
-        "codigo": "180758",
-        "grupo": "Parroquia",
-        "descripcion": "SALASACA"
-      },
-      {
-        "codigo": "1808",
-        "grupo": "Cantón",
-        "descripcion": "SANTIAGO DE PILLARO"
-      },
-      {
-        "codigo": "180801",
-        "grupo": "Parroquia",
-        "descripcion": "CIUDAD NUEVA"
-      },
-      {
-        "codigo": "180802",
-        "grupo": "Parroquia",
-        "descripcion": "PILLARO"
-      },
-      {
-        "codigo": "180850",
-        "grupo": "Parroquia",
-        "descripcion": "PILLARO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "180851",
-        "grupo": "Parroquia",
-        "descripcion": "BAQUERIZO MORENO"
-      },
-      {
-        "codigo": "180852",
-        "grupo": "Parroquia",
-        "descripcion": "EMILIO MARIA TERAN (RUMIPAMBA)"
-      },
-      {
-        "codigo": "180853",
-        "grupo": "Parroquia",
-        "descripcion": "MARCOS ESPINEL (CHACATA)"
-      },
-      {
-        "codigo": "180854",
-        "grupo": "Parroquia",
-        "descripcion": "PRESIDENTE URBINA (CHAGRAPAMBA -PATZUCUL)"
-      },
-      {
-        "codigo": "180855",
-        "grupo": "Parroquia",
-        "descripcion": "SAN ANDRES (Cantón Santiago de Píllaro)"
-      },
-      {
-        "codigo": "180856",
-        "grupo": "Parroquia",
-        "descripcion": "SAN JOSE DE POALO"
-      },
-      {
-        "codigo": "180857",
-        "grupo": "Parroquia",
-        "descripcion": "SAN MIGUELITO"
-      },
-      {
-        "codigo": "1809",
-        "grupo": "Cantón",
-        "descripcion": "TISALEO"
-      },
-      {
-        "codigo": "180950",
-        "grupo": "Parroquia",
-        "descripcion": "TISALEO, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "19",
-        "grupo": "Provincia",
-        "descripcion": "ZAMORA CHINCHIPE"
-      },
-      {
-        "codigo": "1901",
-        "grupo": "Cantón",
-        "descripcion": "ZAMORA"
-      },
-      {
-        "codigo": "190101",
-        "grupo": "Parroquia",
-        "descripcion": "EL LIMON"
-      },
-      {
-        "codigo": "190102",
-        "grupo": "Parroquia",
-        "descripcion": "ZAMORA"
-      },
-      {
-        "codigo": "190150",
-        "grupo": "Parroquia",
-        "descripcion": "ZAMORA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"
-      },
-      {
-        "codigo": "190151",
-        "grupo": "Parroquia",
-        "descripcion": "CUMBARATZA"
-      },
-      {
-        "codigo": "190152",
-        "grupo": "Parroquia",
-        "descripcion": "GUADALUPE"
-      },
-      {
-        "codigo": "190153",
-        "grupo": "Parroquia",
-        "descripcion": "IMBANA (LA VICTORIA DE IMBANA)"
-      },
-      {
-        "codigo": "190155",
-        "grupo": "Parroquia",
-        "descripcion": "SABANILLA (Cantón Zamora)"
-      },
-      {
-        "codigo": "190156",
-        "grupo": "Parroquia",
-        "descripcion": "TIMBARA"
-      },
-      {
-        "codigo": "190158",
-        "grupo": "Parroquia",
-        "descripcion": "SAN CARLOS DE LAS MINAS (Cantón Zamora)"
-      },
-      {
-        "codigo": "1902",
-        "grupo": "Cantón",
-        "descripcion": "CHINCHIPE"
-      },
-      {
-        "codigo": "190250",
-        "grupo": "Parroquia",
-        "descripcion": "ZUMBA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1903",
-        "grupo": "Cantón",
-        "descripcion": "NANGARITZA"
-      },
-      {
-        "codigo": "190350",
-        "grupo": "Parroquia",
-        "descripcion": "GUAYZIMI, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "190351",
-        "grupo": "Parroquia",
-        "descripcion": "ZURMI"
-      },
-      {
-        "codigo": "1904",
-        "grupo": "Cantón",
-        "descripcion": "YACUAMBI"
-      },
-      {
-        "codigo": "190450",
-        "grupo": "Parroquia",
-        "descripcion": "28 DE MAYO (SAN JOSE DE YACUAMBI), CABECERA CANTONAL"
-      },
-      {
-        "codigo": "190451",
-        "grupo": "Parroquia",
-        "descripcion": "LA PAZ (Cantón Yacuambi)"
-      },
-      {
-        "codigo": "190452",
-        "grupo": "Parroquia",
-        "descripcion": "TUTUPALI"
-      },
-      {
-        "codigo": "1905",
-        "grupo": "Cantón",
-        "descripcion": "YANTZAZA"
-      },
-      {
-        "codigo": "190550",
-        "grupo": "Parroquia",
-        "descripcion": "YANTZAZA (YANZATZA), CABECERA CANTONAL"
-      },
-      {
-        "codigo": "190551",
-        "grupo": "Parroquia",
-        "descripcion": "CHICAÑA"
-      },
-      {
-        "codigo": "190553",
-        "grupo": "Parroquia",
-        "descripcion": "LOS ENCUENTROS"
-      },
-      {
-        "codigo": "1906",
-        "grupo": "Cantón",
-        "descripcion": "EL PANGUI"
-      },
-      {
-        "codigo": "190650",
-        "grupo": "Parroquia",
-        "descripcion": "EL PANGUI, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "190652",
-        "grupo": "Parroquia",
-        "descripcion": "PACHICUTZA"
-      },
-      {
-        "codigo": "190653",
-        "grupo": "Parroquia",
-        "descripcion": "TUNDAYME"
-      },
-      {
-        "codigo": "1907",
-        "grupo": "Cantón",
-        "descripcion": "CENTINELA DEL CONDOR"
-      },
-      {
-        "codigo": "190750",
-        "grupo": "Parroquia",
-        "descripcion": "ZUMBI, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "1908",
-        "grupo": "Cantón",
-        "descripcion": "PALANDA"
-      },
-      {
-        "codigo": "190850",
-        "grupo": "Parroquia",
-        "descripcion": "PALANDA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "190851",
-        "grupo": "Parroquia",
-        "descripcion": "EL PORVENIR DEL CARMEN"
-      },
-      {
-        "codigo": "190852",
-        "grupo": "Parroquia",
-        "descripcion": "SAN FRANCISCO DEL VERGEL (Cantón Palanda)"
-      },
-      {
-        "codigo": "190853",
-        "grupo": "Parroquia",
-        "descripcion": "VALLADOLID"
-      },
-      {
-        "codigo": "1909",
-        "grupo": "Cantón",
-        "descripcion": "PAQUISHA"
-      },
-      {
-        "codigo": "190901",
-        "grupo": "Parroquia",
-        "descripcion": "PAQUISHA"
-      },
-      {
-        "codigo": "190950",
-        "grupo": "Parroquia",
-        "descripcion": "PAQUISHA, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "190951",
-        "grupo": "Parroquia",
-        "descripcion": "BELLAVISTA (Cantón Paquisha)"
-      },
-      {
-        "codigo": "190952",
-        "grupo": "Parroquia",
-        "descripcion": "NUEVO QUITO"
-      },
-      {
-        "codigo": "21",
-        "grupo": "Provincia",
-        "descripcion": "SUCUMBIOS"
-      },
-      {
-        "codigo": "2101",
-        "grupo": "Cantón",
-        "descripcion": "LAGO AGRIO"
-      },
-      {
-        "codigo": "210150",
-        "grupo": "Parroquia",
-        "descripcion": "NUEVA LOJA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"
-      },
-      {
-        "codigo": "210158",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA CECILIA"
-      },
-      {
-        "codigo": "2102",
-        "grupo": "Cantón",
-        "descripcion": "GONZALO PIZARRO"
-      },
-      {
-        "codigo": "210252",
-        "grupo": "Parroquia",
-        "descripcion": "GONZALO PIZARRO"
-      },
-      {
-        "codigo": "2104",
-        "grupo": "Cantón",
-        "descripcion": "SHUSHUFINDI"
-      },
-      {
-        "codigo": "210450",
-        "grupo": "Parroquia",
-        "descripcion": "SHUSHUFINDI, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "2105",
-        "grupo": "Cantón",
-        "descripcion": "SUCUMBIOS"
-      },
-      {
-        "codigo": "210551",
-        "grupo": "Parroquia",
-        "descripcion": "EL PLAYON DE SAN FRANCISCO"
-      },
-      {
-        "codigo": "2107",
-        "grupo": "Cantón",
-        "descripcion": "CUYABENO"
-      },
-      {
-        "codigo": "210751",
-        "grupo": "Parroquia",
-        "descripcion": "CUYABENO"
-      },
-      {
-        "codigo": "22",
-        "grupo": "Provincia",
-        "descripcion": "ORELLANA"
-      },
-      {
-        "codigo": "2201",
-        "grupo": "Cantón",
-        "descripcion": "ORELLANA"
-      },
-      {
-        "codigo": "220101",
-        "grupo": "Parroquia",
-        "descripcion": "PUERTO FRANCISCO DE ORELLANA"
-      },
-      {
-        "codigo": "220150",
-        "grupo": "Parroquia",
-        "descripcion": "PUERTO FRANCISCO DE ORELLANA (COCA),CABECERA CANTONAL Y CAPITAL PROVINCIAL"
-      },
-      {
-        "codigo": "220159",
-        "grupo": "Parroquia",
-        "descripcion": "**NUEVO PARAISO"
-      },
-      {
-        "codigo": "2202",
-        "grupo": "Cantón",
-        "descripcion": "AGUARICO"
-      },
-      {
-        "codigo": "220251",
-        "grupo": "Parroquia",
-        "descripcion": "CAPITAN AUGUSTO RIVADENEYRA"
-      },
-      {
-        "codigo": "2203",
-        "grupo": "Cantón",
-        "descripcion": "LA JOYA DE LOS SACHAS"
-      },
-      {
-        "codigo": "220350",
-        "grupo": "Parroquia",
-        "descripcion": "LA JOYA DE LOS SACHAS, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "220353",
-        "grupo": "Parroquia",
-        "descripcion": "SAN CARLOS (Cantón La Joya de los Sachas)"
-      },
-      {
-        "codigo": "220354",
-        "grupo": "Parroquia",
-        "descripcion": "SAN SEBASTIAN DEL COCA"
-      },
-      {
-        "codigo": "220357",
-        "grupo": "Parroquia",
-        "descripcion": "TRES DE NOVIEMBRE"
-      },
-      {
-        "codigo": "220358",
-        "grupo": "Parroquia",
-        "descripcion": "UNION MILAGREÑA"
-      },
-      {
-        "codigo": "2204",
-        "grupo": "Cantón",
-        "descripcion": "LORETO"
-      },
-      {
-        "codigo": "220451",
-        "grupo": "Parroquia",
-        "descripcion": "AVILA (CAB. EN HUIRUNO) "
-      },
-      {
-        "codigo": "23",
-        "grupo": "Provincia",
-        "descripcion": "SANTO DOMINGO DE LOS TSACHILAS"
-      },
-      {
-        "codigo": "2301",
-        "grupo": "Cantón",
-        "descripcion": "SANTO DOMINGO"
-      },
-      {
-        "codigo": "230105",
-        "grupo": "Parroquia",
-        "descripcion": "RIO VERDE (Cantón Santo Domingo)"
-      },
-      {
-        "codigo": "230106",
-        "grupo": "Parroquia",
-        "descripcion": "SANTO DOMINGO DE LOS COLORADOS"
-      },
-      {
-        "codigo": "230150",
-        "grupo": "Parroquia",
-        "descripcion": "SANTO DOMINGO DE LOS COLORADOS, CABECERA CANTONAL"
-      },
-      {
-        "codigo": "230151",
-        "grupo": "Parroquia",
-        "descripcion": "ALLURIQUIN"
-      },
-      {
-        "codigo": "230152",
-        "grupo": "Parroquia",
-        "descripcion": "PUERTO LIMON"
-      },
-      {
-        "codigo": "230153",
-        "grupo": "Parroquia",
-        "descripcion": "LUZ DE AMERICA"
-      },
-      {
-        "codigo": "230155",
-        "grupo": "Parroquia",
-        "descripcion": "VALLE HERMOSO (Cantón Santo Domingo)"
-      },
-      {
-        "codigo": "230156",
-        "grupo": "Parroquia",
-        "descripcion": "EL ESFUERZO"
-      },
-      {
-        "codigo": "230157",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA MARIA DEL TOACHI"
-      },
-      {
-        "codigo": "24",
-        "grupo": "Provincia",
-        "descripcion": "SANTA ELENA"
-      },
-      {
-        "codigo": "2401",
-        "grupo": "Cantón",
-        "descripcion": "SANTA ELENA"
-      },
-      {
-        "codigo": "240150",
-        "grupo": "Parroquia",
-        "descripcion": "SANTA ELENA, CABECERA CANTONAL Cantón Santa Elena"
-      },
-      {
-        "codigo": "240152",
-        "grupo": "Parroquia",
-        "descripcion": "COLONCHE"
-      },
-      {
-        "codigo": "240153",
-        "grupo": "Parroquia",
-        "descripcion": "CHANDUY"
-      },
-      {
-        "codigo": "240154",
-        "grupo": "Parroquia",
-        "descripcion": "MANGLARALTO"
-      },
-      {
-        "codigo": "240155",
-        "grupo": "Parroquia",
-        "descripcion": "SIMON BOLIVAR (JULIO MORENO) Cantón Santa Elena"
-      }
-    ];
+    var dpas = [{"codigo":1,"grupo":"Zona","descripcion":"ZONA 1"},
+      {"codigo":104,"grupo":"Provincia","descripcion":"CARCHI"},
+      {"codigo":10401,"grupo":"Cantón","descripcion":"TULCAN"},
+      {"codigo":1040101,"grupo":"Parroquia","descripcion":"GONZALEZ SUAREZ (Cantón Túlcan)"},
+      {"codigo":1040102,"grupo":"Parroquia","descripcion":"TULCAN"},
+      {"codigo":1040150,"grupo":"Parroquia","descripcion":"TULCAN, CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":1040151,"grupo":"Parroquia","descripcion":"EL CARMELO (EL PUN)"},
+      {"codigo":1040152,"grupo":"Parroquia","descripcion":"*HUACA"},
+      {"codigo":1040153,"grupo":"Parroquia","descripcion":"JULIO ANDRADE (OREJUELA)"},
+      {"codigo":1040154,"grupo":"Parroquia","descripcion":"MALDONADO (Cantón Tulcán)"},
+      {"codigo":1040155,"grupo":"Parroquia","descripcion":"PIOTER"},
+      {"codigo":1040156,"grupo":"Parroquia","descripcion":"TOBAR DONOSO (LA BOCANA DE CAMUMBI)"},
+      {"codigo":1040157,"grupo":"Parroquia","descripcion":"TUFIÑO"},
+      {"codigo":1040158,"grupo":"Parroquia","descripcion":"URBINA (TAYA)"},
+      {"codigo":1040159,"grupo":"Parroquia","descripcion":"EL CHICAL"},
+      {"codigo":1040160,"grupo":"Parroquia","descripcion":"**MARISCAL SUCRE"},
+      {"codigo":1040161,"grupo":"Parroquia","descripcion":"SANTA MARTHA DE CUBA"},
+      {"codigo":10402,"grupo":"Cantón","descripcion":"BOLIVAR"},
+      {"codigo":1040250,"grupo":"Parroquia","descripcion":"BOLIVAR, CABECERA CANTONAL"},
+      {"codigo":1040251,"grupo":"Parroquia","descripcion":"GARCIA MORENO (Cantón Bolívar - El Carchi)"},
+      {"codigo":1040252,"grupo":"Parroquia","descripcion":"LOS ANDES"},
+      {"codigo":1040253,"grupo":"Parroquia","descripcion":"MONTE OLIVO"},
+      {"codigo":1040254,"grupo":"Parroquia","descripcion":"SAN VICENTE DE PUSIR"},
+      {"codigo":1040255,"grupo":"Parroquia","descripcion":"SAN RAFAEL (Cantón Bolívar - El Carchi)"},
+      {"codigo":10403,"grupo":"Cantón","descripcion":"ESPEJO"},
+      {"codigo":1040301,"grupo":"Parroquia","descripcion":"EL ANGEL"},
+      {"codigo":1040302,"grupo":"Parroquia","descripcion":"27 DE SEPTIEMBRE"},
+      {"codigo":1040350,"grupo":"Parroquia","descripcion":"EL ANGEL, CABECERA CANTONAL"},
+      {"codigo":1040351,"grupo":"Parroquia","descripcion":"EL GOALTAL"},
+      {"codigo":1040352,"grupo":"Parroquia","descripcion":"LA LIBERTAD (ALIZO) Cantón Espejo - El Carchi"},
+      {"codigo":1040353,"grupo":"Parroquia","descripcion":"SAN ISIDRO (Cantón Espejo)"},
+      {"codigo":10404,"grupo":"Cantón","descripcion":"MIRA"},
+      {"codigo":1040450,"grupo":"Parroquia","descripcion":"MIRA (CHONTAHUASI), CABECERA CANTONAL"},
+      {"codigo":1040451,"grupo":"Parroquia","descripcion":"CONCEPCION"},
+      {"codigo":1040452,"grupo":"Parroquia","descripcion":"JIJON Y CAAMAÑO (CAB. EN RIO BLANCO)"},
+      {"codigo":1040453,"grupo":"Parroquia","descripcion":"JUAN MONTALVO (SAN IGNACIO DE QUIL)"},
+      {"codigo":10405,"grupo":"Cantón","descripcion":"MONTUFAR"},
+      {"codigo":1040501,"grupo":"Parroquia","descripcion":"GONZALEZ SUAREZ"},
+      {"codigo":1040502,"grupo":"Parroquia","descripcion":"SAN JOSE"},
+      {"codigo":1040550,"grupo":"Parroquia","descripcion":"SAN GABRIEL, CABECERA CANTONAL"},
+      {"codigo":1040551,"grupo":"Parroquia","descripcion":"CRISTOBAL COLON"},
+      {"codigo":1040552,"grupo":"Parroquia","descripcion":"CHITAN DE NAVARRETE"},
+      {"codigo":1040553,"grupo":"Parroquia","descripcion":"FERNANDEZ SALVADOR"},
+      {"codigo":1040554,"grupo":"Parroquia","descripcion":"LA PAZ"},
+      {"codigo":1040555,"grupo":"Parroquia","descripcion":"PIARTAL"},
+      {"codigo":10406,"grupo":"Cantón","descripcion":"SAN PEDRO DE HUACA"},
+      {"codigo":1040650,"grupo":"Parroquia","descripcion":"HUACA, CABECERA CANTONAL"},
+      {"codigo":1040651,"grupo":"Parroquia","descripcion":"MARISCAL SUCRE"},
+      {"codigo":108,"grupo":"Provincia","descripcion":"ESMERALDAS"},
+      {"codigo":10801,"grupo":"Cantón","descripcion":"ESMERALDAS"},
+      {"codigo":1080101,"grupo":"Parroquia","descripcion":"BARTOLOME RUIZ (CESAR FRANCO CARRION)"},
+      {"codigo":1080102,"grupo":"Parroquia","descripcion":"5 DE AGOSTO"},
+      {"codigo":1080103,"grupo":"Parroquia","descripcion":"ESMERALDAS"},
+      {"codigo":1080104,"grupo":"Parroquia","descripcion":"LUIS TELLO (LAS PALMAS)"},
+      {"codigo":1080105,"grupo":"Parroquia","descripcion":"SIMÓN PLATA TORRES"},
+      {"codigo":1080151,"grupo":"Parroquia","descripcion":"*ATACAMES"},
+      {"codigo":1080152,"grupo":"Parroquia","descripcion":"CAMARONES (CAB.EN SAN VICENTE)"},
+      {"codigo":1080153,"grupo":"Parroquia","descripcion":"CORONEL CARLOS CONCHA TORRES (CAB. EN HORQUETA)"},
+      {"codigo":1080154,"grupo":"Parroquia","descripcion":"CHINCA"},
+      {"codigo":1080155,"grupo":"Parroquia","descripcion":"*CHONTADURO"},
+      {"codigo":1080156,"grupo":"Parroquia","descripcion":"*CHUMUNDÉ"},
+      {"codigo":1080157,"grupo":"Parroquia","descripcion":"*LAGARTO"},
+      {"codigo":1080158,"grupo":"Parroquia","descripcion":"*LA UNIÓN"},
+      {"codigo":1080159,"grupo":"Parroquia","descripcion":"MAJUA"},
+      {"codigo":1080160,"grupo":"Parroquia","descripcion":"*MONTALVO (CAB. EN HORQUETA)"},
+      {"codigo":1080161,"grupo":"Parroquia","descripcion":"*RIO VERDE"},
+      {"codigo":1080162,"grupo":"Parroquia","descripcion":"*ROCAFUERTE"},
+      {"codigo":1080163,"grupo":"Parroquia","descripcion":"SAN MATEO (Cantón Esmeraldas)"},
+      {"codigo":1080164,"grupo":"Parroquia","descripcion":"*SÚA (CAB.EN LA BOCANA)"},
+      {"codigo":1080165,"grupo":"Parroquia","descripcion":"TABIAZO"},
+      {"codigo":1080166,"grupo":"Parroquia","descripcion":"TACHINA"},
+      {"codigo":1080167,"grupo":"Parroquia","descripcion":"*TONCHIGÜE"},
+      {"codigo":1080168,"grupo":"Parroquia","descripcion":"VUELTA LARGA"},
+      {"codigo":10802,"grupo":"Cantón","descripcion":"ELOY ALFARO"},
+      {"codigo":1080250,"grupo":"Parroquia","descripcion":"VALDES (LIMONES) CABECERA CANTONAL"},
+      {"codigo":1080251,"grupo":"Parroquia","descripcion":"ANCHAYACU"},
+      {"codigo":1080252,"grupo":"Parroquia","descripcion":"ATAHUALPA"},
+      {"codigo":1080253,"grupo":"Parroquia","descripcion":"BORBÓN"},
+      {"codigo":1080254,"grupo":"Parroquia","descripcion":"LA TOLA"},
+      {"codigo":1080255,"grupo":"Parroquia","descripcion":"LUIS VARGAS TORRES"},
+      {"codigo":1080256,"grupo":"Parroquia","descripcion":"MALDONADO"},
+      {"codigo":1080257,"grupo":"Parroquia","descripcion":"PAMPANAL DE BOLÍVAR"},
+      {"codigo":1080258,"grupo":"Parroquia","descripcion":"SAN FRANCISCO DE ONZOLE"},
+      {"codigo":1080259,"grupo":"Parroquia","descripcion":"SANTO DOMINGO DE ONZOLE"},
+      {"codigo":1080260,"grupo":"Parroquia","descripcion":"SELVA ALEGRE"},
+      {"codigo":1080261,"grupo":"Parroquia","descripcion":"TELEMBI"},
+      {"codigo":1080262,"grupo":"Parroquia","descripcion":"COLÓN ELOY DEL MARÍA"},
+      {"codigo":1080263,"grupo":"Parroquia","descripcion":"SAN JOSE DE CAYAPAS"},
+      {"codigo":1080264,"grupo":"Parroquia","descripcion":"TIMBIRÉ"},
+      {"codigo":1080265,"grupo":"Parroquia","descripcion":"SANTA LUCIA DE LAS PEÑAS"},
+      {"codigo":10803,"grupo":"Cantón","descripcion":"MUISNE"},
+      {"codigo":1080351,"grupo":"Parroquia","descripcion":"BOLIVAR"},
+      {"codigo":1080352,"grupo":"Parroquia","descripcion":"DAULE"},
+      {"codigo":1080353,"grupo":"Parroquia","descripcion":"GALERA"},
+      {"codigo":1080354,"grupo":"Parroquia","descripcion":"QUINGUE (OLMEDO PERDOMO FRANCO)"},
+      {"codigo":1080355,"grupo":"Parroquia","descripcion":"SALIMA"},
+      {"codigo":1080356,"grupo":"Parroquia","descripcion":"SAN FRANCISCO"},
+      {"codigo":1080357,"grupo":"Parroquia","descripcion":"SAN GREGORIO"},
+      {"codigo":1080358,"grupo":"Parroquia","descripcion":"SAN JOSE DE CHAMANGA"},
+      {"codigo":10804,"grupo":"Cantón","descripcion":"QUININDE"},
+      {"codigo":1080450,"grupo":"Parroquia","descripcion":"ROSA ZARATE (QUININDE), CABECERA CANTONAL"},
+      {"codigo":1080451,"grupo":"Parroquia","descripcion":"CUBE"},
+      {"codigo":1080452,"grupo":"Parroquia","descripcion":"CHURA (CHANCAMA)"},
+      {"codigo":1080453,"grupo":"Parroquia","descripcion":"MALIMPIA"},
+      {"codigo":1080454,"grupo":"Parroquia","descripcion":"VICHE"},
+      {"codigo":1080455,"grupo":"Parroquia","descripcion":"LA UNION"},
+      {"codigo":10805,"grupo":"Cantón","descripcion":"SAN LORENZO"},
+      {"codigo":1080550,"grupo":"Parroquia","descripcion":"SAN LORENZO, CABECERA CANTONAL"},
+      {"codigo":1080551,"grupo":"Parroquia","descripcion":"ALTO TAMBO (CABECERA CANTONAL)"},
+      {"codigo":1080552,"grupo":"Parroquia","descripcion":"ANCÓN (PICHANGAL)"},
+      {"codigo":1080553,"grupo":"Parroquia","descripcion":"CALDERÓN"},
+      {"codigo":1080554,"grupo":"Parroquia","descripcion":"CARONDELET"},
+      {"codigo":1080555,"grupo":"Parroquia","descripcion":"5 DE JUNIO (CAB. EN UMBI)"},
+      {"codigo":1080556,"grupo":"Parroquia","descripcion":"CONCEPCIÓN"},
+      {"codigo":1080557,"grupo":"Parroquia","descripcion":"MATAJE (CAB. EN SANTANDER)"},
+      {"codigo":1080558,"grupo":"Parroquia","descripcion":"SAN JAVIER DE CACHAVÍ"},
+      {"codigo":1080559,"grupo":"Parroquia","descripcion":"SANTA RITA"},
+      {"codigo":1080560,"grupo":"Parroquia","descripcion":"TAMBILLO"},
+      {"codigo":1080561,"grupo":"Parroquia","descripcion":"TULULBI"},
+      {"codigo":1080562,"grupo":"Parroquia","descripcion":"URBINA"},
+      {"codigo":10806,"grupo":"Cantón","descripcion":"ATACAMES"},
+      {"codigo":1080650,"grupo":"Parroquia","descripcion":"ATACAMES, CABECERA CANTONAL"},
+      {"codigo":1080651,"grupo":"Parroquia","descripcion":"LA UNION (Cantón Atacames)"},
+      {"codigo":1080652,"grupo":"Parroquia","descripcion":"SUA (CAB. EN LA BOCANA)"},
+      {"codigo":1080653,"grupo":"Parroquia","descripcion":"TONCHIGÜE"},
+      {"codigo":1080654,"grupo":"Parroquia","descripcion":"TONSUPA"},
+      {"codigo":10807,"grupo":"Cantón","descripcion":"RIOVERDE"},
+      {"codigo":1080751,"grupo":"Parroquia","descripcion":"CHONTADURO"},
+      {"codigo":1080752,"grupo":"Parroquia","descripcion":"CHUMUNDÉ"},
+      {"codigo":1080753,"grupo":"Parroquia","descripcion":"LAGARTO"},
+      {"codigo":1080754,"grupo":"Parroquia","descripcion":"MONTALVO (CAB. EN HORQUETA) Cantón Río Verde"},
+      {"codigo":1080755,"grupo":"Parroquia","descripcion":"ROCAFUERTE"},
+      {"codigo":10808,"grupo":"Cantón","descripcion":"LA CONCORDIA"},
+      {"codigo":1080850,"grupo":"Parroquia","descripcion":"*LA CONCORDIA, CABECERA CANTONAL"},
+      {"codigo":1080851,"grupo":"Parroquia","descripcion":"*MONTERREY"},
+      {"codigo":1080852,"grupo":"Parroquia","descripcion":"*LA VILLEGA"},
+      {"codigo":1080853,"grupo":"Parroquia","descripcion":"*PLAN PILOTO"},
+      {"codigo":110,"grupo":"Provincia","descripcion":"IMBABURA"},
+      {"codigo":11001,"grupo":"Cantón","descripcion":"IBARRA"},
+      {"codigo":1100101,"grupo":"Parroquia","descripcion":"CARANQUI"},
+      {"codigo":1100102,"grupo":"Parroquia","descripcion":"GUAYAQUIL DE ALPACHACA"},
+      {"codigo":1100103,"grupo":"Parroquia","descripcion":"SAGRARIO"},
+      {"codigo":1100104,"grupo":"Parroquia","descripcion":"SAN FRANCISCO"},
+      {"codigo":1100105,"grupo":"Parroquia","descripcion":"LA DOLOROSA DEL PRIORATO"},
+      {"codigo":1100150,"grupo":"Parroquia","descripcion":"SAN MIGUEL DE IBARRA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":1100151,"grupo":"Parroquia","descripcion":"AMBUQUI"},
+      {"codigo":1100152,"grupo":"Parroquia","descripcion":"ANGOCHAGUA"},
+      {"codigo":1100153,"grupo":"Parroquia","descripcion":"CAROLINA"},
+      {"codigo":1100154,"grupo":"Parroquia","descripcion":"LA ESPERANZA"},
+      {"codigo":1100155,"grupo":"Parroquia","descripcion":"LITA"},
+      {"codigo":1100156,"grupo":"Parroquia","descripcion":"SALINAS"},
+      {"codigo":1100157,"grupo":"Parroquia","descripcion":"SAN ANTONIO"},
+      {"codigo":11002,"grupo":"Cantón","descripcion":"ANTONIO ANTE"},
+      {"codigo":1100201,"grupo":"Parroquia","descripcion":"ANDRADE MARIN (LOURDES)"},
+      {"codigo":1100202,"grupo":"Parroquia","descripcion":"ATUNTAQUI"},
+      {"codigo":1100250,"grupo":"Parroquia","descripcion":"ATUNTAQUI, CABECERA CANTONAL"},
+      {"codigo":1100251,"grupo":"Parroquia","descripcion":"IMBAYA (SAN LUIS DE COBUENDO)"},
+      {"codigo":1100252,"grupo":"Parroquia","descripcion":"SAN FRANCISCO DE NATABUELA"},
+      {"codigo":1100253,"grupo":"Parroquia","descripcion":"SAN JOSE DE CHALTURA"},
+      {"codigo":1100254,"grupo":"Parroquia","descripcion":"SAN ROQUE"},
+      {"codigo":11003,"grupo":"Cantón","descripcion":"COTACACHI"},
+      {"codigo":1100301,"grupo":"Parroquia","descripcion":"SAGRARIO"},
+      {"codigo":1100302,"grupo":"Parroquia","descripcion":"SAN FRANCISCO"},
+      {"codigo":1100351,"grupo":"Parroquia","descripcion":"APUELA"},
+      {"codigo":1100352,"grupo":"Parroquia","descripcion":"GARCIA MORENO (LLURIMAGUA) Cantón Cotacachi"},
+      {"codigo":1100353,"grupo":"Parroquia","descripcion":"IMANTAG"},
+      {"codigo":1100354,"grupo":"Parroquia","descripcion":"PEÑAHERRERA"},
+      {"codigo":1100355,"grupo":"Parroquia","descripcion":"PLAZA GUTIERREZ (CALVARIO)"},
+      {"codigo":1100356,"grupo":"Parroquia","descripcion":"QUIROGA"},
+      {"codigo":1100357,"grupo":"Parroquia","descripcion":"6 DE JULIO DE CUELLAJE (CAB. EN CUELLAJE)"},
+      {"codigo":1100358,"grupo":"Parroquia","descripcion":"VACAS GALINDO (EL CHURO) (CAB.EN SAN MIGUEL ALTO)"},
+      {"codigo":11004,"grupo":"Cantón","descripcion":"OTAVALO"},
+      {"codigo":1100401,"grupo":"Parroquia","descripcion":"JORDAN"},
+      {"codigo":1100402,"grupo":"Parroquia","descripcion":"SAN LUIS"},
+      {"codigo":1100450,"grupo":"Parroquia","descripcion":"OTAVALO, CABECERA CANTONAL"},
+      {"codigo":1100451,"grupo":"Parroquia","descripcion":"DR. MIGUEL EGAS CABEZAS (PEGUCHE)"},
+      {"codigo":1100452,"grupo":"Parroquia","descripcion":"EUGENIO ESPEJO (CALPAQUI)"},
+      {"codigo":1100453,"grupo":"Parroquia","descripcion":"GONZALEZ SUAREZ (Cantón Otavalo)"},
+      {"codigo":1100454,"grupo":"Parroquia","descripcion":"PATAQUI"},
+      {"codigo":1100455,"grupo":"Parroquia","descripcion":"SAN JOSE DE QUICHINCHE"},
+      {"codigo":1100456,"grupo":"Parroquia","descripcion":"SAN JUAN DE ILUMAN"},
+      {"codigo":1100457,"grupo":"Parroquia","descripcion":"SAN PABLO"},
+      {"codigo":1100458,"grupo":"Parroquia","descripcion":"SAN RAFAEL"},
+      {"codigo":1100459,"grupo":"Parroquia","descripcion":"SELVA ALEGRE (CAB.EN SAN MIGUEL DE PAMPLONA)"},
+      {"codigo":11005,"grupo":"Cantón","descripcion":"PIMAMPIRO"},
+      {"codigo":1100550,"grupo":"Parroquia","descripcion":"PIMAMPIRO, CABECERA CANTONAL"},
+      {"codigo":1100551,"grupo":"Parroquia","descripcion":"CHUGA"},
+      {"codigo":1100552,"grupo":"Parroquia","descripcion":"MARIANO ACOSTA"},
+      {"codigo":1100553,"grupo":"Parroquia","descripcion":"SAN FRANCISCO DE SIGSIPAMBA"},
+      {"codigo":11006,"grupo":"Cantón","descripcion":"SAN MIGUEL DE URCUQUI"},
+      {"codigo":1100650,"grupo":"Parroquia","descripcion":"URCUQUI, CABECERA CANTONAL"},
+      {"codigo":1100651,"grupo":"Parroquia","descripcion":"CAHUASQUI"},
+      {"codigo":1100652,"grupo":"Parroquia","descripcion":"LA MERCED DE BUENOS AIRES (Cantón San Miguel de Urcuquí)"},
+      {"codigo":1100653,"grupo":"Parroquia","descripcion":"PABLO ARENAS"},
+      {"codigo":1100654,"grupo":"Parroquia","descripcion":"SAN BLAS (Cantón San Miguel de Urcuquí)"},
+      {"codigo":1100655,"grupo":"Parroquia","descripcion":"TUMBABIRO"},
+      {"codigo":121,"grupo":"Provincia","descripcion":"SUCUMBIOS"},
+      {"codigo":12101,"grupo":"Cantón","descripcion":"LAGO AGRIO"},
+      {"codigo":1210150,"grupo":"Parroquia","descripcion":"NUEVA LOJA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":1210151,"grupo":"Parroquia","descripcion":"*CUYABENO"},
+      {"codigo":1210152,"grupo":"Parroquia","descripcion":"DURENO"},
+      {"codigo":1210153,"grupo":"Parroquia","descripcion":"GENERAL FARFÁN"},
+      {"codigo":1210154,"grupo":"Parroquia","descripcion":"*TARAPOA"},
+      {"codigo":1210155,"grupo":"Parroquia","descripcion":"EL ENO"},
+      {"codigo":1210156,"grupo":"Parroquia","descripcion":"PACAYACU"},
+      {"codigo":1210157,"grupo":"Parroquia","descripcion":"JAMBELÍ"},
+      {"codigo":1210158,"grupo":"Parroquia","descripcion":"SANTA CECILIA"},
+      {"codigo":1210159,"grupo":"Parroquia","descripcion":"*AGUAS NEGRAS"},
+      {"codigo":1210160,"grupo":"Parroquia","descripcion":"10 DE AGOSTO"},
+      {"codigo":12102,"grupo":"Cantón","descripcion":"GONZALO PIZARRO"},
+      {"codigo":1210250,"grupo":"Parroquia","descripcion":"LUMBAQUÍ, CABECERA CANTONA *EL DORADO DE CASCALES"},
+      {"codigo":1210251,"grupo":"Parroquia","descripcion":"EL REVENTADOR"},
+      {"codigo":1210252,"grupo":"Parroquia","descripcion":"GONZALO PIZARRO"},
+      {"codigo":1210253,"grupo":"Parroquia","descripcion":"*LUMBAQUI"},
+      {"codigo":1210254,"grupo":"Parroquia","descripcion":"PUERTO LIBRE"},
+      {"codigo":1210255,"grupo":"Parroquia","descripcion":"*SANTA ROSA DE SUCUMBÍOS"},
+      {"codigo":12103,"grupo":"Cantón","descripcion":"PUTUMAYO"},
+      {"codigo":1210350,"grupo":"Parroquia","descripcion":"PUERTO EL CARMEN DEL PUTUMAYO, CABECERA CANTONAL"},
+      {"codigo":1210351,"grupo":"Parroquia","descripcion":"PALMA ROJA"},
+      {"codigo":1210352,"grupo":"Parroquia","descripcion":"PUERTO BOLÍVAR (PUERTO MONTÚFAR)"},
+      {"codigo":1210353,"grupo":"Parroquia","descripcion":"PUERTO RODRÍGUEZ"},
+      {"codigo":1210354,"grupo":"Parroquia","descripcion":"SANTA ELENA"},
+      {"codigo":12104,"grupo":"Cantón","descripcion":"SHUSHUFINDI"},
+      {"codigo":1210450,"grupo":"Parroquia","descripcion":"SHUSHUFINDI, CABECERA CANTONAL"},
+      {"codigo":1210451,"grupo":"Parroquia","descripcion":"LIMONCOCHA"},
+      {"codigo":1210452,"grupo":"Parroquia","descripcion":"PAÑACOCHA"},
+      {"codigo":1210453,"grupo":"Parroquia","descripcion":"SAN ROQUE (CAB.EN SAN VICENTE)"},
+      {"codigo":1210454,"grupo":"Parroquia","descripcion":"SAN PEDRO DE LOS COFANES"},
+      {"codigo":1210455,"grupo":"Parroquia","descripcion":"SIETE DE JULIO"},
+      {"codigo":12105,"grupo":"Cantón","descripcion":"SUCUMBIOS"},
+      {"codigo":1210550,"grupo":"Parroquia","descripcion":"LA BONITA, CABECERA CANTONAL"},
+      {"codigo":1210551,"grupo":"Parroquia","descripcion":"EL PLAYON DE SAN FRANCISCO"},
+      {"codigo":1210552,"grupo":"Parroquia","descripcion":"LA SOFÍA"},
+      {"codigo":1210553,"grupo":"Parroquia","descripcion":"ROSA FLORIDA"},
+      {"codigo":1210554,"grupo":"Parroquia","descripcion":"SANTA BÁRBARA"},
+      {"codigo":12106,"grupo":"Cantón","descripcion":"CASCALES"},
+      {"codigo":1210650,"grupo":"Parroquia","descripcion":"EL DORADO DE CASCALES, CABECERA CANTONAL"},
+      {"codigo":1210651,"grupo":"Parroquia","descripcion":"SANTA ROSA DE SUCUMBÍOS"},
+      {"codigo":1210652,"grupo":"Parroquia","descripcion":"SEVILLA"},
+      {"codigo":12107,"grupo":"Cantón","descripcion":"CUYABENO"},
+      {"codigo":1210750,"grupo":"Parroquia","descripcion":"TARAPOA, CABECERA CANTONAL"},
+      {"codigo":1210751,"grupo":"Parroquia","descripcion":"CUYABENO"},
+      {"codigo":1210752,"grupo":"Parroquia","descripcion":"AGUAS NEGRAS"},
+      {"codigo":2,"grupo":"Zona","descripcion":"ZONA 2"},
+      {"codigo":215,"grupo":"Provincia","descripcion":"NAPO"},
+      {"codigo":21501,"grupo":"Cantón","descripcion":"TENA"},
+      {"codigo":2150150,"grupo":"Parroquia","descripcion":"TENA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":2150151,"grupo":"Parroquia","descripcion":"AHUANO"},
+      {"codigo":2150152,"grupo":"Parroquia","descripcion":"*CARLOS JULIO AROSEMENA TOLA (ZATZA-YACU)"},
+      {"codigo":2150153,"grupo":"Parroquia","descripcion":"CHONTAPUNTA"},
+      {"codigo":2150154,"grupo":"Parroquia","descripcion":"PANO"},
+      {"codigo":2150155,"grupo":"Parroquia","descripcion":"PUERTO MISHUALLI"},
+      {"codigo":2150156,"grupo":"Parroquia","descripcion":"PUERTO NAPO"},
+      {"codigo":2150157,"grupo":"Parroquia","descripcion":"TALAG"},
+      {"codigo":2150158,"grupo":"Parroquia","descripcion":"SAN JUAN DE MUYUNA"},
+      {"codigo":21502,"grupo":"Cantón","descripcion":"*CANTÓN AGUARICO"},
+      {"codigo":21503,"grupo":"Cantón","descripcion":"ARCHIDONA"},
+      {"codigo":2150350,"grupo":"Parroquia","descripcion":"ARCHIDONA, CABECERA CANTONAL"},
+      {"codigo":2150351,"grupo":"Parroquia","descripcion":"*ÁVILA"},
+      {"codigo":2150352,"grupo":"Parroquia","descripcion":"COTUNDO"},
+      {"codigo":2150353,"grupo":"Parroquia","descripcion":"*LORETO"},
+      {"codigo":2150354,"grupo":"Parroquia","descripcion":"SAN PABLO DE USHPAYACU"},
+      {"codigo":2150355,"grupo":"Parroquia","descripcion":"*PUERTO MURIALDO"},
+      {"codigo":2150356,"grupo":"Parroquia","descripcion":"HATUN SUMAKU"},
+      {"codigo":21504,"grupo":"Cantón","descripcion":"EL CHACO"},
+      {"codigo":2150450,"grupo":"Parroquia","descripcion":"EL CHACO, CABECERA CANTONAL"},
+      {"codigo":2150451,"grupo":"Parroquia","descripcion":"GONZALO DIAZ DE PINEDA (EL BOMBON) Cantón El Chaco"},
+      {"codigo":2150452,"grupo":"Parroquia","descripcion":"LINARES"},
+      {"codigo":2150453,"grupo":"Parroquia","descripcion":"OYACACHI"},
+      {"codigo":2150454,"grupo":"Parroquia","descripcion":"SANTA ROSA"},
+      {"codigo":2150455,"grupo":"Parroquia","descripcion":"SARDINAS"},
+      {"codigo":21505,"grupo":"Cantón","descripcion":"*LA JOYA DE LOS SACHAS"},
+      {"codigo":21506,"grupo":"Cantón","descripcion":"*ORELLANA"},
+      {"codigo":21507,"grupo":"Cantón","descripcion":"QUIJOS"},
+      {"codigo":2150750,"grupo":"Parroquia","descripcion":"BAEZA, CABECERA CANTONAL"},
+      {"codigo":2150751,"grupo":"Parroquia","descripcion":"COSANGA"},
+      {"codigo":2150752,"grupo":"Parroquia","descripcion":"CUYUJA"},
+      {"codigo":2150753,"grupo":"Parroquia","descripcion":"PAPALLACTA"},
+      {"codigo":2150754,"grupo":"Parroquia","descripcion":"SAN FRANCISCO DE BORJA (VIRGILIO DAVILA) Cantón Quijos"},
+      {"codigo":2150755,"grupo":"Parroquia","descripcion":"*SAN JOSÉ DEL PAYAMINO"},
+      {"codigo":2150756,"grupo":"Parroquia","descripcion":"SUMACO"},
+      {"codigo":21508,"grupo":"Cantón","descripcion":"*LORETO"},
+      {"codigo":21509,"grupo":"Cantón","descripcion":"CARLOS JULIO AROSEMENA TOLA"},
+      {"codigo":2150950,"grupo":"Parroquia","descripcion":"CARLOS JULIO AROSEMENA TOLA, CABECERA CANTONAL"},
+      {"codigo":217,"grupo":"Provincia","descripcion":"PICHINCHA"},
+      {"codigo":21701,"grupo":"Cantón","descripcion":"QUITO"},
+      {"codigo":2170101,"grupo":"Parroquia","descripcion":"BELISARIO QUEVEDO (Cantón Quito)"},
+      {"codigo":2170102,"grupo":"Parroquia","descripcion":"CARCELEN"},
+      {"codigo":2170103,"grupo":"Parroquia","descripcion":"CENTRO HISTORICO (Cantón Quito)"},
+      {"codigo":2170104,"grupo":"Parroquia","descripcion":"COCHAPAMBA (Cantón Quito)"},
+      {"codigo":2170105,"grupo":"Parroquia","descripcion":"COMITE DEL PUEBLO"},
+      {"codigo":2170106,"grupo":"Parroquia","descripcion":"COTOCOLLAO"},
+      {"codigo":2170107,"grupo":"Parroquia","descripcion":"CHILIBULO"},
+      {"codigo":2170108,"grupo":"Parroquia","descripcion":"CHILLOGALLO"},
+      {"codigo":2170109,"grupo":"Parroquia","descripcion":"CHIMBACALLE"},
+      {"codigo":2170110,"grupo":"Parroquia","descripcion":"EL CONDADO"},
+      {"codigo":2170111,"grupo":"Parroquia","descripcion":"GUAMANI"},
+      {"codigo":2170112,"grupo":"Parroquia","descripcion":"IÑAQUITO"},
+      {"codigo":2170113,"grupo":"Parroquia","descripcion":"ITCHIMBIA"},
+      {"codigo":2170114,"grupo":"Parroquia","descripcion":"JIPIJAPA (Cantón Quito)"},
+      {"codigo":2170115,"grupo":"Parroquia","descripcion":"KENNEDY"},
+      {"codigo":2170116,"grupo":"Parroquia","descripcion":"LA ARGELIA"},
+      {"codigo":2170117,"grupo":"Parroquia","descripcion":"LA CONCEPCION"},
+      {"codigo":2170118,"grupo":"Parroquia","descripcion":"LA ECUATORIANA"},
+      {"codigo":2170119,"grupo":"Parroquia","descripcion":"LA FERROVIARIA"},
+      {"codigo":2170120,"grupo":"Parroquia","descripcion":"LA LIBERTAD (Cantón Quito)"},
+      {"codigo":2170121,"grupo":"Parroquia","descripcion":"LA MAGDALENA"},
+      {"codigo":2170122,"grupo":"Parroquia","descripcion":"LA MENA"},
+      {"codigo":2170123,"grupo":"Parroquia","descripcion":"MARISCAL SUCRE"},
+      {"codigo":2170124,"grupo":"Parroquia","descripcion":"PONCEANO"},
+      {"codigo":2170125,"grupo":"Parroquia","descripcion":"PUENGASI"},
+      {"codigo":2170126,"grupo":"Parroquia","descripcion":"QUITUMBE"},
+      {"codigo":2170127,"grupo":"Parroquia","descripcion":"RUMIPAMBA (Cantón Quito)"},
+      {"codigo":2170128,"grupo":"Parroquia","descripcion":"SAN BARTOLO"},
+      {"codigo":2170129,"grupo":"Parroquia","descripcion":"SAN ISIDRO DEL INCA (Cantón Quito)"},
+      {"codigo":2170130,"grupo":"Parroquia","descripcion":"SANJUAN"},
+      {"codigo":2170131,"grupo":"Parroquia","descripcion":"SOLANDA"},
+      {"codigo":2170132,"grupo":"Parroquia","descripcion":"TURUBAMBA"},
+      {"codigo":2170150,"grupo":"Parroquia","descripcion":"QUITO DISTRITO METROPOLITANO, CABECERA CANTONAL, CAPITAL PROVINCIAL Y DE LA REPUBLICA DEL ECUADOR"},
+      {"codigo":2170151,"grupo":"Parroquia","descripcion":"ALANGASI"},
+      {"codigo":2170152,"grupo":"Parroquia","descripcion":"AMAGUAÑA"},
+      {"codigo":2170153,"grupo":"Parroquia","descripcion":"ATAHUALPA (HABASPAMBA) Cantón Quito"},
+      {"codigo":2170154,"grupo":"Parroquia","descripcion":"CALACALI"},
+      {"codigo":2170155,"grupo":"Parroquia","descripcion":"CALDERON (CARAPUNGO) Cantón Quito"},
+      {"codigo":2170156,"grupo":"Parroquia","descripcion":"CONOCOTO"},
+      {"codigo":2170157,"grupo":"Parroquia","descripcion":"CUMBAYA"},
+      {"codigo":2170158,"grupo":"Parroquia","descripcion":"CHAVEZPAMBA"},
+      {"codigo":2170159,"grupo":"Parroquia","descripcion":"CHECA (CHILPA) Cantón Quito"},
+      {"codigo":2170160,"grupo":"Parroquia","descripcion":"EL QUINCHE"},
+      {"codigo":2170161,"grupo":"Parroquia","descripcion":"GUALEA"},
+      {"codigo":2170162,"grupo":"Parroquia","descripcion":"GUANGOPOLO"},
+      {"codigo":2170163,"grupo":"Parroquia","descripcion":"GUAYLLABAMBA"},
+      {"codigo":2170164,"grupo":"Parroquia","descripcion":"LA MERCED (Cantón Quito)"},
+      {"codigo":2170165,"grupo":"Parroquia","descripcion":"LLANO CHICO"},
+      {"codigo":2170166,"grupo":"Parroquia","descripcion":"LLOA"},
+      {"codigo":2170167,"grupo":"Parroquia","descripcion":"*MINDO"},
+      {"codigo":2170168,"grupo":"Parroquia","descripcion":"NANEGAL"},
+      {"codigo":2170169,"grupo":"Parroquia","descripcion":"NANEGALITO"},
+      {"codigo":2170170,"grupo":"Parroquia","descripcion":"NAYON"},
+      {"codigo":2170171,"grupo":"Parroquia","descripcion":"NONO"},
+      {"codigo":2170172,"grupo":"Parroquia","descripcion":"PACTO"},
+      {"codigo":2170173,"grupo":"Parroquia","descripcion":"*PEDRO VICENTE MALDONADO"},
+      {"codigo":2170174,"grupo":"Parroquia","descripcion":"PERUCHO"},
+      {"codigo":2170175,"grupo":"Parroquia","descripcion":"PIFO"},
+      {"codigo":2170176,"grupo":"Parroquia","descripcion":"PINTAG"},
+      {"codigo":2170177,"grupo":"Parroquia","descripcion":"POMASQUI"},
+      {"codigo":2170178,"grupo":"Parroquia","descripcion":"PUELLARO"},
+      {"codigo":2170179,"grupo":"Parroquia","descripcion":"PUEMBO"},
+      {"codigo":2170180,"grupo":"Parroquia","descripcion":"SAN ANTONIO (Cantón Quito)"},
+      {"codigo":2170181,"grupo":"Parroquia","descripcion":"SAN JOSE DE MINAS"},
+      {"codigo":2170182,"grupo":"Parroquia","descripcion":"*SAN MIGUEL DE LOS BANCOS"},
+      {"codigo":2170183,"grupo":"Parroquia","descripcion":"TABABELA"},
+      {"codigo":2170184,"grupo":"Parroquia","descripcion":"TUMBACO"},
+      {"codigo":2170185,"grupo":"Parroquia","descripcion":"YARUQUI"},
+      {"codigo":2170186,"grupo":"Parroquia","descripcion":"ZAMBIZA"},
+      {"codigo":2170187,"grupo":"Parroquia","descripcion":"*PUERTO QUITO"},
+      {"codigo":21702,"grupo":"Cantón","descripcion":"CAYAMBE"},
+      {"codigo":2170201,"grupo":"Parroquia","descripcion":"*AYORA"},
+      {"codigo":2170202,"grupo":"Parroquia","descripcion":"CAYAMBE"},
+      {"codigo":2170203,"grupo":"Parroquia","descripcion":"JUAN MONTALVO"},
+      {"codigo":2170250,"grupo":"Parroquia","descripcion":"CAYAMBE, CABECERA CANTONAL"},
+      {"codigo":2170251,"grupo":"Parroquia","descripcion":"ASCAZUBI"},
+      {"codigo":2170252,"grupo":"Parroquia","descripcion":"CANGAHUA"},
+      {"codigo":2170253,"grupo":"Parroquia","descripcion":"OLMEDO (PESILLO) Cantón Cayambe"},
+      {"codigo":2170254,"grupo":"Parroquia","descripcion":"OTON"},
+      {"codigo":2170255,"grupo":"Parroquia","descripcion":"SANTA ROSA DE CUZUBAMBA"},
+      {"codigo":2170256,"grupo":"Parroquia","descripcion":"SAN JOSE DE AYORA"},
+      {"codigo":21703,"grupo":"Cantón","descripcion":"MEJIA"},
+      {"codigo":2170350,"grupo":"Parroquia","descripcion":"MACHACHI"},
+      {"codigo":2170351,"grupo":"Parroquia","descripcion":"ALOAG"},
+      {"codigo":2170352,"grupo":"Parroquia","descripcion":"ALOASI"},
+      {"codigo":2170353,"grupo":"Parroquia","descripcion":"CUTUGLAHUA"},
+      {"codigo":2170354,"grupo":"Parroquia","descripcion":"EL CHAUPI"},
+      {"codigo":2170355,"grupo":"Parroquia","descripcion":"MANUEL CORNEJO ASTORGA (TANDAPI)"},
+      {"codigo":2170356,"grupo":"Parroquia","descripcion":"TAMBILLO (Cantón Mejía)"},
+      {"codigo":2170357,"grupo":"Parroquia","descripcion":"UYUMBICHO"},
+      {"codigo":21704,"grupo":"Cantón","descripcion":"PEDRO MONCAYO"},
+      {"codigo":2170450,"grupo":"Parroquia","descripcion":"TABACUNDO, CABECERA CANTONAL"},
+      {"codigo":2170451,"grupo":"Parroquia","descripcion":"LA ESPERANZA (Cantón Pedro Moncayo)"},
+      {"codigo":2170452,"grupo":"Parroquia","descripcion":"MALCHINGUI"},
+      {"codigo":2170453,"grupo":"Parroquia","descripcion":"TOCACHI"},
+      {"codigo":2170454,"grupo":"Parroquia","descripcion":"TUPIGACHI"},
+      {"codigo":21705,"grupo":"Cantón","descripcion":"RUMIÑAHUI"},
+      {"codigo":2170501,"grupo":"Parroquia","descripcion":"SANGOLQUI"},
+      {"codigo":2170502,"grupo":"Parroquia","descripcion":"SAN PEDRO DE TABOADA"},
+      {"codigo":2170503,"grupo":"Parroquia","descripcion":"SAN RAFAEL"},
+      {"codigo":2170550,"grupo":"Parroquia","descripcion":"SANGOLQUI, CABECERA CANTONAL"},
+      {"codigo":2170551,"grupo":"Parroquia","descripcion":"COTOGCHOA"},
+      {"codigo":2170552,"grupo":"Parroquia","descripcion":"RUMIPAMBA (Cantón Rumiñahui)"},
+      {"codigo":21706,"grupo":"Cantón","descripcion":"*SANTO DOMINGO"},
+      {"codigo":21707,"grupo":"Cantón","descripcion":"SAN MIGUEL DE LOS BANCOS"},
+      {"codigo":2170750,"grupo":"Parroquia","descripcion":"SAN MIGUEL DE LOS BANCOS , CABECERA CANTONAL"},
+      {"codigo":2170751,"grupo":"Parroquia","descripcion":"MINDO"},
+      {"codigo":2170752,"grupo":"Parroquia","descripcion":"*PEDRO VICENTE MALDONADO"},
+      {"codigo":2170753,"grupo":"Parroquia","descripcion":"*PUERTO QUITO"},
+      {"codigo":21708,"grupo":"Cantón","descripcion":"PEDRO VICENTE MALDONADO"},
+      {"codigo":2170850,"grupo":"Parroquia","descripcion":"PEDRO VICENTE MALDONADO, CABECERA CANTONAL"},
+      {"codigo":21709,"grupo":"Cantón","descripcion":"PUERTO QUITO"},
+      {"codigo":2170950,"grupo":"Parroquia","descripcion":"PUERTO QUITO, CABECERA CANTONAL"},
+      {"codigo":222,"grupo":"Provincia","descripcion":"ORELLANA"},
+      {"codigo":22201,"grupo":"Cantón","descripcion":"ORELLANA"},
+      {"codigo":2220101,"grupo":"Parroquia","descripcion":"PUERTO FRANCISCO DE ORELLANA"},
+      {"codigo":2220150,"grupo":"Parroquia","descripcion":"PUERTO FRANCISCO DE ORELLANA (COCA),CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":2220151,"grupo":"Parroquia","descripcion":"DAYUMA"},
+      {"codigo":2220152,"grupo":"Parroquia","descripcion":"TARACOA (NUEVA ESPERANZA:YUCA)"},
+      {"codigo":2220153,"grupo":"Parroquia","descripcion":"ALEJANDRO LABAKA"},
+      {"codigo":2220154,"grupo":"Parroquia","descripcion":"EL DORADO"},
+      {"codigo":2220155,"grupo":"Parroquia","descripcion":"EL EDÉN"},
+      {"codigo":2220156,"grupo":"Parroquia","descripcion":"GARCIA MORENO"},
+      {"codigo":2220157,"grupo":"Parroquia","descripcion":"INÉS ARANGO (CAB. EN WESTERN)"},
+      {"codigo":2220158,"grupo":"Parroquia","descripcion":"LA BELLEZA"},
+      {"codigo":2220159,"grupo":"Parroquia","descripcion":"NUEVO PARAISO(CAB. EN UNIÓN CHIMBORAZO)"},
+      {"codigo":2220160,"grupo":"Parroquia","descripcion":"SAN JOSÉ DE GUAYUSA"},
+      {"codigo":2220161,"grupo":"Parroquia","descripcion":"SAN LUIS DE ARMENIA"},
+      {"codigo":22202,"grupo":"Cantón","descripcion":"AGUARICO"},
+      {"codigo":2220250,"grupo":"Parroquia","descripcion":"NUEVO ROCAFUERTE, CABECERA CANTONAL"},
+      {"codigo":2220251,"grupo":"Parroquia","descripcion":"CAPITAN AUGUSTO RIVADENEYRA"},
+      {"codigo":2220252,"grupo":"Parroquia","descripcion":"CONONACO"},
+      {"codigo":2220253,"grupo":"Parroquia","descripcion":"SANTA MARIA DE HUIRIRIMA"},
+      {"codigo":2220254,"grupo":"Parroquia","descripcion":"**TIPUTINI"},
+      {"codigo":2220255,"grupo":"Parroquia","descripcion":"YASUNÍ"},
+      {"codigo":22203,"grupo":"Cantón","descripcion":"LA JOYA DE LOS SACHAS"},
+      {"codigo":2220350,"grupo":"Parroquia","descripcion":"LA JOYA DE LOS SACHAS, CABECERA CANTONAL"},
+      {"codigo":2220351,"grupo":"Parroquia","descripcion":"ENOKANQUI"},
+      {"codigo":2220352,"grupo":"Parroquia","descripcion":"POMPEYA"},
+      {"codigo":2220353,"grupo":"Parroquia","descripcion":"SAN CARLOS"},
+      {"codigo":2220354,"grupo":"Parroquia","descripcion":"SAN SEBASTIÁN DEL COCA"},
+      {"codigo":2220355,"grupo":"Parroquia","descripcion":"LAGO SAN PEDRO"},
+      {"codigo":2220356,"grupo":"Parroquia","descripcion":"RUMIPAMBA"},
+      {"codigo":2220357,"grupo":"Parroquia","descripcion":"TRES DE NOVIEMBRE"},
+      {"codigo":2220358,"grupo":"Parroquia","descripcion":"UNIÓN MILAGREÑA"},
+      {"codigo":22204,"grupo":"Cantón","descripcion":"LORETO"},
+      {"codigo":2220450,"grupo":"Parroquia","descripcion":"LORETO, CABECERA CANTONAL"},
+      {"codigo":2220451,"grupo":"Parroquia","descripcion":"AVILA (CAB. EN HUIRUNO)"},
+      {"codigo":2220452,"grupo":"Parroquia","descripcion":"PUERTO MURIALDO"},
+      {"codigo":2220453,"grupo":"Parroquia","descripcion":"SAN JOSÉ DE PAYAMINO"},
+      {"codigo":2220454,"grupo":"Parroquia","descripcion":"SAN JOSÉ DE DAHUANO"},
+      {"codigo":2220455,"grupo":"Parroquia","descripcion":"SAN VICENTE DE HUATICOCHA"},
+      {"codigo":3,"grupo":"Zona","descripcion":"ZONA 3"},
+      {"codigo":305,"grupo":"Provincia","descripcion":"COTOPAXI"},
+      {"codigo":30501,"grupo":"Cantón","descripcion":"LATACUNGA"},
+      {"codigo":3050101,"grupo":"Parroquia","descripcion":"ELOY ALFARO  (SAN FELIPE)"},
+      {"codigo":3050102,"grupo":"Parroquia","descripcion":"IGNACIO FLORES (PARQUE FLORES)"},
+      {"codigo":3050103,"grupo":"Parroquia","descripcion":"JUAN MONTALVO (SAN SEBASTIAN) Cantón Latacunga"},
+      {"codigo":3050104,"grupo":"Parroquia","descripcion":"LA MATRIZ (Cantón Latacunga)"},
+      {"codigo":3050105,"grupo":"Parroquia","descripcion":"SAN BUENAVENTURA"},
+      {"codigo":3050150,"grupo":"Parroquia","descripcion":"LATACUNGA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":3050151,"grupo":"Parroquia","descripcion":"ALAQUES (ALAQUEZ)"},
+      {"codigo":3050152,"grupo":"Parroquia","descripcion":"BELISARIO QUEVEDO (GUANAILIN) Cantón Latacunga"},
+      {"codigo":3050153,"grupo":"Parroquia","descripcion":"GUAITACAMA (GUAYTACAMA)"},
+      {"codigo":3050154,"grupo":"Parroquia","descripcion":"JOSEGUANGO BAJO"},
+      {"codigo":3050155,"grupo":"Parroquia","descripcion":"*LAS PAMPAS"},
+      {"codigo":3050156,"grupo":"Parroquia","descripcion":"MULALO"},
+      {"codigo":3050157,"grupo":"Parroquia","descripcion":"11 DE NOVIEMBRE (ILINCHISI)"},
+      {"codigo":3050158,"grupo":"Parroquia","descripcion":"POALO"},
+      {"codigo":3050159,"grupo":"Parroquia","descripcion":"SAN JUAN DE PASTOCALLE"},
+      {"codigo":3050160,"grupo":"Parroquia","descripcion":"*SIGCHOS"},
+      {"codigo":3050161,"grupo":"Parroquia","descripcion":"TANICUCHI"},
+      {"codigo":3050162,"grupo":"Parroquia","descripcion":"TOACASO"},
+      {"codigo":3050163,"grupo":"Parroquia","descripcion":"*PALO QUEMADO"},
+      {"codigo":30502,"grupo":"Cantón","descripcion":"LA MANA"},
+      {"codigo":3050201,"grupo":"Parroquia","descripcion":"EL CARMEN (Cantón La Maná)"},
+      {"codigo":3050250,"grupo":"Parroquia","descripcion":"LA MANA, CABECERA CANTONAL"},
+      {"codigo":3050251,"grupo":"Parroquia","descripcion":"GUASAGANDA (CAB. EN GUASAGANDA CENTRO)"},
+      {"codigo":3050252,"grupo":"Parroquia","descripcion":"PUCAYACU"},
+      {"codigo":30503,"grupo":"Cantón","descripcion":"PANGUA"},
+      {"codigo":3050301,"grupo":"Parroquia","descripcion":"EL CORAZON"},
+      {"codigo":3050350,"grupo":"Parroquia","descripcion":"EL CORAZON, CABECERA CANTONAL"},
+      {"codigo":3050351,"grupo":"Parroquia","descripcion":"MORASPUNGO"},
+      {"codigo":3050352,"grupo":"Parroquia","descripcion":"PINLLOPATA"},
+      {"codigo":3050353,"grupo":"Parroquia","descripcion":"RAMON CAMPAÑA"},
+      {"codigo":30504,"grupo":"Cantón","descripcion":"PUJILI"},
+      {"codigo":3050450,"grupo":"Parroquia","descripcion":"PUJILI, CABECERA CANTONAL"},
+      {"codigo":3050451,"grupo":"Parroquia","descripcion":"ANGAMARCA"},
+      {"codigo":3050452,"grupo":"Parroquia","descripcion":"*CHUCCHILLAN (CHUGCHILLAN)"},
+      {"codigo":3050453,"grupo":"Parroquia","descripcion":"GUANGAJE"},
+      {"codigo":3050454,"grupo":"Parroquia","descripcion":"*ISINLIBI (INSILIVI)"},
+      {"codigo":3050455,"grupo":"Parroquia","descripcion":"LA VICTORIA (Cantón Pujilí)"},
+      {"codigo":3050456,"grupo":"Parroquia","descripcion":"PILALÓ"},
+      {"codigo":3050457,"grupo":"Parroquia","descripcion":"TINGO"},
+      {"codigo":3050458,"grupo":"Parroquia","descripcion":"ZUMBAHUA"},
+      {"codigo":30505,"grupo":"Cantón","descripcion":"SALCEDO"},
+      {"codigo":3050550,"grupo":"Parroquia","descripcion":"SAN MIGUEL, CABECERA CANTONAL SALCEDO"},
+      {"codigo":3050551,"grupo":"Parroquia","descripcion":"ANTONIO JOSE HOLGUIN  (SANTA LUCIA)"},
+      {"codigo":3050552,"grupo":"Parroquia","descripcion":"CUSUBAMBA"},
+      {"codigo":3050553,"grupo":"Parroquia","descripcion":"MULALILLO"},
+      {"codigo":3050554,"grupo":"Parroquia","descripcion":"MULLIQUINDIL (SANTA ANA)"},
+      {"codigo":3050555,"grupo":"Parroquia","descripcion":"PANSALEO"},
+      {"codigo":30506,"grupo":"Cantón","descripcion":"SAQUISILI"},
+      {"codigo":3050650,"grupo":"Parroquia","descripcion":"SAQUISILI, CABECERA CANTONAL"},
+      {"codigo":3050651,"grupo":"Parroquia","descripcion":"CANCHAGUA"},
+      {"codigo":3050652,"grupo":"Parroquia","descripcion":"CHANTILIN"},
+      {"codigo":3050653,"grupo":"Parroquia","descripcion":"COCHAPAMBA (Cantón Saquisilí)"},
+      {"codigo":30507,"grupo":"Cantón","descripcion":"SIGCHOS"},
+      {"codigo":3050750,"grupo":"Parroquia","descripcion":"SIGCHOS, CABECERA CANTONAL"},
+      {"codigo":3050751,"grupo":"Parroquia","descripcion":"CHUCCHILLAN (CHUGCHILLAN)"},
+      {"codigo":3050752,"grupo":"Parroquia","descripcion":"ISINLIBI (INSILIVI)"},
+      {"codigo":3050753,"grupo":"Parroquia","descripcion":"LAS PAMPAS"},
+      {"codigo":3050754,"grupo":"Parroquia","descripcion":"PALO QUEMADO"},
+      {"codigo":306,"grupo":"Provincia","descripcion":"CHIMBORAZO"},
+      {"codigo":30601,"grupo":"Cantón","descripcion":"RIOBAMBA"},
+      {"codigo":3060101,"grupo":"Parroquia","descripcion":"LIZARZABURU"},
+      {"codigo":3060102,"grupo":"Parroquia","descripcion":"MALDONADO"},
+      {"codigo":3060103,"grupo":"Parroquia","descripcion":"VELASCO"},
+      {"codigo":3060104,"grupo":"Parroquia","descripcion":"VELOZ"},
+      {"codigo":3060105,"grupo":"Parroquia","descripcion":"YARUQUIES"},
+      {"codigo":3060150,"grupo":"Parroquia","descripcion":"RIOBAMBA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":3060151,"grupo":"Parroquia","descripcion":"CACHA (CAB. EN MACHANGARA)"},
+      {"codigo":3060152,"grupo":"Parroquia","descripcion":"CALPI"},
+      {"codigo":3060153,"grupo":"Parroquia","descripcion":"CUBIJIES"},
+      {"codigo":3060154,"grupo":"Parroquia","descripcion":"FLORES"},
+      {"codigo":3060156,"grupo":"Parroquia","descripcion":"LICTO"},
+      {"codigo":3060157,"grupo":"Parroquia","descripcion":"PUNGALA"},
+      {"codigo":3060158,"grupo":"Parroquia","descripcion":"PUNIN"},
+      {"codigo":3060159,"grupo":"Parroquia","descripcion":"QUIMIAG"},
+      {"codigo":3060160,"grupo":"Parroquia","descripcion":"SAN JUAN"},
+      {"codigo":3060161,"grupo":"Parroquia","descripcion":"SAN LUIS"},
+      {"codigo":30602,"grupo":"Cantón","descripcion":"ALAUSI"},
+      {"codigo":3060250,"grupo":"Parroquia","descripcion":"ALAUSI, CABECERA CANTONAL"},
+      {"codigo":3060251,"grupo":"Parroquia","descripcion":"ACHUPALLAS"},
+      {"codigo":3060252,"grupo":"Parroquia","descripcion":"*CUMANDÁ"},
+      {"codigo":3060253,"grupo":"Parroquia","descripcion":"GUASUNTOS"},
+      {"codigo":3060254,"grupo":"Parroquia","descripcion":"HUIGRA"},
+      {"codigo":3060255,"grupo":"Parroquia","descripcion":"MULTITUD"},
+      {"codigo":3060256,"grupo":"Parroquia","descripcion":"PISTISHI (NARIZ DEL DIABLO)"},
+      {"codigo":3060257,"grupo":"Parroquia","descripcion":"PUMALLACTA"},
+      {"codigo":3060258,"grupo":"Parroquia","descripcion":"SEVILLA (Cantón Alausí)"},
+      {"codigo":3060259,"grupo":"Parroquia","descripcion":"SIBAMBE"},
+      {"codigo":3060260,"grupo":"Parroquia","descripcion":"TIXAN"},
+      {"codigo":30603,"grupo":"Cantón","descripcion":"COLTA"},
+      {"codigo":3060301,"grupo":"Parroquia","descripcion":"CAJABAMBA"},
+      {"codigo":3060302,"grupo":"Parroquia","descripcion":"SICALPA"},
+      {"codigo":3060350,"grupo":"Parroquia","descripcion":"VILLA LA UNION (CAJABAMBA), CABECERA CANTONAL"},
+      {"codigo":3060351,"grupo":"Parroquia","descripcion":"CAÑI"},
+      {"codigo":3060352,"grupo":"Parroquia","descripcion":"COLUMBE"},
+      {"codigo":3060353,"grupo":"Parroquia","descripcion":"JUAN DE VELASCO (PANGOR)"},
+      {"codigo":3060354,"grupo":"Parroquia","descripcion":"SANTIAGO DE QUITO (CAB. EN SAN ANTONIO DE QUITO)"},
+      {"codigo":30604,"grupo":"Cantón","descripcion":"CHAMBO"},
+      {"codigo":3060450,"grupo":"Parroquia","descripcion":"CHAMBO, CABECERA CANTONAL"},
+      {"codigo":30605,"grupo":"Cantón","descripcion":"CHUNCHI"},
+      {"codigo":3060550,"grupo":"Parroquia","descripcion":"CHUNCHI, CABECERA CANTONAL"},
+      {"codigo":3060551,"grupo":"Parroquia","descripcion":"CAPZOL"},
+      {"codigo":3060552,"grupo":"Parroquia","descripcion":"COMPUD"},
+      {"codigo":3060553,"grupo":"Parroquia","descripcion":"GONZOL"},
+      {"codigo":3060554,"grupo":"Parroquia","descripcion":"LLAGOS"},
+      {"codigo":30606,"grupo":"Cantón","descripcion":"GUAMOTE"},
+      {"codigo":3060650,"grupo":"Parroquia","descripcion":"GUAMOTE, CABECERA CANTONAL"},
+      {"codigo":3060651,"grupo":"Parroquia","descripcion":"CEBADAS"},
+      {"codigo":3060652,"grupo":"Parroquia","descripcion":"PALMIRA"},
+      {"codigo":30607,"grupo":"Cantón","descripcion":"GUANO"},
+      {"codigo":3060701,"grupo":"Parroquia","descripcion":"EL ROSARIO"},
+      {"codigo":3060702,"grupo":"Parroquia","descripcion":"LA MATRIZ"},
+      {"codigo":3060750,"grupo":"Parroquia","descripcion":"GUANO, CABECERA CANTONAL"},
+      {"codigo":3060751,"grupo":"Parroquia","descripcion":"GUANANDO"},
+      {"codigo":3060752,"grupo":"Parroquia","descripcion":"ILAPO"},
+      {"codigo":3060753,"grupo":"Parroquia","descripcion":"LA PROVIDENCIA (Cantón Guano)"},
+      {"codigo":3060754,"grupo":"Parroquia","descripcion":"SAN ANDRES (Cantón Guano)"},
+      {"codigo":3060755,"grupo":"Parroquia","descripcion":"SAN GERARDO DE PACAICAGUAN (Cantón Guano)"},
+      {"codigo":3060756,"grupo":"Parroquia","descripcion":"SAN ISIDRO DE PATULU (Cantón Guano)"},
+      {"codigo":3060757,"grupo":"Parroquia","descripcion":"SAN JOSE DEL CHAZO"},
+      {"codigo":3060758,"grupo":"Parroquia","descripcion":"SANTA FE DE GALÁN"},
+      {"codigo":3060759,"grupo":"Parroquia","descripcion":"VALPARAISO"},
+      {"codigo":30608,"grupo":"Cantón","descripcion":"PALLATANGA"},
+      {"codigo":3060850,"grupo":"Parroquia","descripcion":"PALLATANGA, CABECERA CANTONAL"},
+      {"codigo":30609,"grupo":"Cantón","descripcion":"PENIPE"},
+      {"codigo":3060950,"grupo":"Parroquia","descripcion":"PENIPE, CABECERA CANTONAL"},
+      {"codigo":3060951,"grupo":"Parroquia","descripcion":"EL ALTAR"},
+      {"codigo":3060952,"grupo":"Parroquia","descripcion":"MATUS"},
+      {"codigo":3060953,"grupo":"Parroquia","descripcion":"PUELA"},
+      {"codigo":3060954,"grupo":"Parroquia","descripcion":"SAN ANTONIO DE BAYUSHIG (Cantón Penipe)"},
+      {"codigo":3060955,"grupo":"Parroquia","descripcion":"LA CANDELARIA"},
+      {"codigo":3060956,"grupo":"Parroquia","descripcion":"BILBAO"},
+      {"codigo":30610,"grupo":"Cantón","descripcion":"CUMANDA"},
+      {"codigo":3061050,"grupo":"Parroquia","descripcion":"CUMANDA, CABECERA CANTONAL Cantón Cumandá"},
+      {"codigo":316,"grupo":"Provincia","descripcion":"PASTAZA"},
+      {"codigo":31601,"grupo":"Cantón","descripcion":"PASTAZA"},
+      {"codigo":3160150,"grupo":"Parroquia","descripcion":"PUYO CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":3160151,"grupo":"Parroquia","descripcion":"*ARAJUNO"},
+      {"codigo":3160152,"grupo":"Parroquia","descripcion":"CANELOS"},
+      {"codigo":3160153,"grupo":"Parroquia","descripcion":"*CURARAY"},
+      {"codigo":3160154,"grupo":"Parroquia","descripcion":"DIEZ DE AGOSTO"},
+      {"codigo":3160155,"grupo":"Parroquia","descripcion":"FÁTIMA"},
+      {"codigo":3160156,"grupo":"Parroquia","descripcion":"MONTALVO (ANDOAS)"},
+      {"codigo":3160157,"grupo":"Parroquia","descripcion":"POMONA"},
+      {"codigo":3160158,"grupo":"Parroquia","descripcion":"RÍO CORRIENTES"},
+      {"codigo":3160159,"grupo":"Parroquia","descripcion":"RÍO TIGRE"},
+      {"codigo":3160160,"grupo":"Parroquia","descripcion":"*SANTA CLARA"},
+      {"codigo":3160161,"grupo":"Parroquia","descripcion":"SARAYACU"},
+      {"codigo":3160162,"grupo":"Parroquia","descripcion":"SIMÓN BOLÍVAR"},
+      {"codigo":3160163,"grupo":"Parroquia","descripcion":"TARQUI"},
+      {"codigo":3160164,"grupo":"Parroquia","descripcion":"TENIENTE HUGO ORTIZ"},
+      {"codigo":3160165,"grupo":"Parroquia","descripcion":"VERACRUZ (CAB.EN INDILLAMA)"},
+      {"codigo":3160166,"grupo":"Parroquia","descripcion":"EL TRIUNFO"},
+      {"codigo":31602,"grupo":"Cantón","descripcion":"MERA"},
+      {"codigo":3160250,"grupo":"Parroquia","descripcion":"MERA, CABECERA CANTONAL"},
+      {"codigo":3160251,"grupo":"Parroquia","descripcion":"MADRE TIERRA"},
+      {"codigo":3160252,"grupo":"Parroquia","descripcion":"SHELL"},
+      {"codigo":31603,"grupo":"Cantón","descripcion":"SANTA CLARA"},
+      {"codigo":3160350,"grupo":"Parroquia","descripcion":"SANTA CLARA, CABECERA CANTONAL"},
+      {"codigo":3160351,"grupo":"Parroquia","descripcion":"SAN JOSÉ"},
+      {"codigo":31604,"grupo":"Cantón","descripcion":"ARAJUNO"},
+      {"codigo":3160450,"grupo":"Parroquia","descripcion":"ARAJUNO, CABECERA CANTONAL"},
+      {"codigo":3160451,"grupo":"Parroquia","descripcion":"CURARAY"},
+      {"codigo":318,"grupo":"Provincia","descripcion":"TUNGURAHUA"},
+      {"codigo":31801,"grupo":"Cantón","descripcion":"AMBATO"},
+      {"codigo":3180101,"grupo":"Parroquia","descripcion":"ATOCHA – FICOA"},
+      {"codigo":3180102,"grupo":"Parroquia","descripcion":"CELIANO MONGE"},
+      {"codigo":3180103,"grupo":"Parroquia","descripcion":"HUACHI CHICO"},
+      {"codigo":3180104,"grupo":"Parroquia","descripcion":"HUACHI LORETO"},
+      {"codigo":3180105,"grupo":"Parroquia","descripcion":"LA MERCED (Cantón Ambato)"},
+      {"codigo":3180106,"grupo":"Parroquia","descripcion":"LA PENINSULA"},
+      {"codigo":3180107,"grupo":"Parroquia","descripcion":"MATRIZ (Cantón Ambato)"},
+      {"codigo":3180108,"grupo":"Parroquia","descripcion":"PISHILATA"},
+      {"codigo":3180109,"grupo":"Parroquia","descripcion":"SAN FRANCISCO"},
+      {"codigo":3180151,"grupo":"Parroquia","descripcion":"AMBATILLO"},
+      {"codigo":3180152,"grupo":"Parroquia","descripcion":"ATAHUALPA (CHISALATA)"},
+      {"codigo":3180153,"grupo":"Parroquia","descripcion":"AUGUSTO N. MARTINEZ (MUNDUGLEO)"},
+      {"codigo":3180154,"grupo":"Parroquia","descripcion":"CONSTANTINO FERNANDEZ (CAB. EN CULLITAHUA)"},
+      {"codigo":3180155,"grupo":"Parroquia","descripcion":"HUACHI GRANDE"},
+      {"codigo":3180156,"grupo":"Parroquia","descripcion":"IZAMBA"},
+      {"codigo":3180157,"grupo":"Parroquia","descripcion":"JUAN BENIGNO VELA"},
+      {"codigo":3180158,"grupo":"Parroquia","descripcion":"MONTALVO (Cantón Ambato)"},
+      {"codigo":3180159,"grupo":"Parroquia","descripcion":"PASA"},
+      {"codigo":3180160,"grupo":"Parroquia","descripcion":"PICAIGUA"},
+      {"codigo":3180161,"grupo":"Parroquia","descripcion":"PILAGÜIN (PILAGÜIN)"},
+      {"codigo":3180162,"grupo":"Parroquia","descripcion":"QUISAPINCHA (QUIZAPINCHA)"},
+      {"codigo":3180163,"grupo":"Parroquia","descripcion":"SAN BARTOLOME DE PINLLOG (Cantón Amabto)"},
+      {"codigo":3180164,"grupo":"Parroquia","descripcion":"SAN FERNANDO (PASA SAN FERNANDO) Cantón Ambato"},
+      {"codigo":3180165,"grupo":"Parroquia","descripcion":"SANTA ROSA (Cantón Ambato)"},
+      {"codigo":3180166,"grupo":"Parroquia","descripcion":"TOTORAS"},
+      {"codigo":3180167,"grupo":"Parroquia","descripcion":"CUNCHIBAMBA"},
+      {"codigo":3180168,"grupo":"Parroquia","descripcion":"UNAMUNCHO"},
+      {"codigo":31802,"grupo":"Cantón","descripcion":"BAÑOS DE AGUA SANTA"},
+      {"codigo":3180250,"grupo":"Parroquia","descripcion":"BAÑOS DE AGUA SANTA, CABECERA CANTONAL"},
+      {"codigo":3180251,"grupo":"Parroquia","descripcion":"LLIGUA"},
+      {"codigo":3180252,"grupo":"Parroquia","descripcion":"RIO NEGRO"},
+      {"codigo":3180253,"grupo":"Parroquia","descripcion":"RIO VERDE"},
+      {"codigo":3180254,"grupo":"Parroquia","descripcion":"ULBA"},
+      {"codigo":31803,"grupo":"Cantón","descripcion":"CEVALLOS"},
+      {"codigo":3180350,"grupo":"Parroquia","descripcion":"CEVALLOS, CABECERA CANTONAL"},
+      {"codigo":31804,"grupo":"Cantón","descripcion":"MOCHA"},
+      {"codigo":3180450,"grupo":"Parroquia","descripcion":"MOCHA, CABECERA CANTONAL"},
+      {"codigo":3180451,"grupo":"Parroquia","descripcion":"PINGUILÍ"},
+      {"codigo":31805,"grupo":"Cantón","descripcion":"PATATE"},
+      {"codigo":3180550,"grupo":"Parroquia","descripcion":"PATATE, CABECERA CANTONAL"},
+      {"codigo":3180551,"grupo":"Parroquia","descripcion":"EL TRIUNFO (Cantón Patate)"},
+      {"codigo":3180552,"grupo":"Parroquia","descripcion":"LOS ANDES (CAB. EN POATUG)"},
+      {"codigo":3180553,"grupo":"Parroquia","descripcion":"SUCRE (CAB. EN SUCRE-PATATE URCO) (Cantón Patate)"},
+      {"codigo":31806,"grupo":"Cantón","descripcion":"QUERO"},
+      {"codigo":3180650,"grupo":"Parroquia","descripcion":"QUERO, CABECERA CANTONAL"},
+      {"codigo":3180651,"grupo":"Parroquia","descripcion":"RUMIPAMBA"},
+      {"codigo":3180652,"grupo":"Parroquia","descripcion":"YANAYACU - MOCHAPATA (CAB. EN YANAYACU)"},
+      {"codigo":31807,"grupo":"Cantón","descripcion":"SAN PEDRO DE PELILEO"},
+      {"codigo":3180701,"grupo":"Parroquia","descripcion":"PELILEO (Cantón San Pedro de Pelileo)"},
+      {"codigo":3180702,"grupo":"Parroquia","descripcion":"PELILEO GRANDE (Cantón San Pedro de Pelileo)"},
+      {"codigo":3180750,"grupo":"Parroquia","descripcion":"PELILEO, CABECERA CANTONAL"},
+      {"codigo":3180751,"grupo":"Parroquia","descripcion":"BENITEZ (PACHANLICA)"},
+      {"codigo":3180752,"grupo":"Parroquia","descripcion":"BOLIVAR (Cantón San Pedro de Pelileo)"},
+      {"codigo":3180753,"grupo":"Parroquia","descripcion":"COTALO"},
+      {"codigo":3180754,"grupo":"Parroquia","descripcion":"CHIQUICHA (CAB. EN CHIQUICHA GRANDE)"},
+      {"codigo":3180755,"grupo":"Parroquia","descripcion":"EL ROSARIO (RUMICHACA) Cantón San Pedro de Pelileo"},
+      {"codigo":3180756,"grupo":"Parroquia","descripcion":"GARCIA MORENO (CHUMAQUI) Cantón San Pedro de Pelileo"},
+      {"codigo":3180757,"grupo":"Parroquia","descripcion":"GUAMBALO (HUAMBALO)"},
+      {"codigo":3180758,"grupo":"Parroquia","descripcion":"SALASACA"},
+      {"codigo":31808,"grupo":"Cantón","descripcion":"SANTIAGO DE PILLARO"},
+      {"codigo":3180801,"grupo":"Parroquia","descripcion":"CIUDAD NUEVA"},
+      {"codigo":3180802,"grupo":"Parroquia","descripcion":"PILLARO"},
+      {"codigo":3180850,"grupo":"Parroquia","descripcion":"PILLARO, CABECERA CANTONAL"},
+      {"codigo":3180851,"grupo":"Parroquia","descripcion":"BAQUERIZO MORENO"},
+      {"codigo":3180852,"grupo":"Parroquia","descripcion":"EMILIO MARIA TERAN (RUMIPAMBA)"},
+      {"codigo":3180853,"grupo":"Parroquia","descripcion":"MARCOS ESPINEL (CHACATA)"},
+      {"codigo":3180854,"grupo":"Parroquia","descripcion":"PRESIDENTE URBINA (CHAGRAPAMBA -PATZUCUL)"},
+      {"codigo":3180855,"grupo":"Parroquia","descripcion":"SAN ANDRES (Cantón Santiago de Píllaro)"},
+      {"codigo":3180856,"grupo":"Parroquia","descripcion":"SAN JOSE DE POALO"},
+      {"codigo":3180857,"grupo":"Parroquia","descripcion":"SAN MIGUELITO"},
+      {"codigo":31809,"grupo":"Cantón","descripcion":"TISALEO"},
+      {"codigo":3180950,"grupo":"Parroquia","descripcion":"TISALEO, CABECERA CANTONAL"},
+      {"codigo":3180951,"grupo":"Parroquia","descripcion":"QUINCHICOTO"},
+      {"codigo":4,"grupo":"Zona","descripcion":"ZONA 4"},
+      {"codigo":413,"grupo":"Provincia","descripcion":"MANABI"},
+      {"codigo":41301,"grupo":"Cantón","descripcion":"PORTOVIEJO"},
+      {"codigo":4130101,"grupo":"Parroquia","descripcion":"PORTOVIEJO"},
+      {"codigo":4130102,"grupo":"Parroquia","descripcion":"12 DE MARZO"},
+      {"codigo":4130103,"grupo":"Parroquia","descripcion":"COLON"},
+      {"codigo":4130104,"grupo":"Parroquia","descripcion":"PICOAZA"},
+      {"codigo":4130105,"grupo":"Parroquia","descripcion":"SAN PABLO"},
+      {"codigo":4130106,"grupo":"Parroquia","descripcion":"ANDRÉS DE VERA"},
+      {"codigo":4130107,"grupo":"Parroquia","descripcion":"FRANCISCO PACHECO"},
+      {"codigo":4130108,"grupo":"Parroquia","descripcion":"18 DE OCTUBRE"},
+      {"codigo":4130109,"grupo":"Parroquia","descripcion":"SIMÓN BOLÍVAR"},
+      {"codigo":4130151,"grupo":"Parroquia","descripcion":"ABDON CALDERON (SAN FRANCISCO)"},
+      {"codigo":4130152,"grupo":"Parroquia","descripcion":"ALHAJUELA (BAJO GRANDE)"},
+      {"codigo":4130153,"grupo":"Parroquia","descripcion":"CRUCITA"},
+      {"codigo":4130154,"grupo":"Parroquia","descripcion":"PUEBLO NUEVO"},
+      {"codigo":4130155,"grupo":"Parroquia","descripcion":"RIOCHICO (RIO CHICO)"},
+      {"codigo":4130156,"grupo":"Parroquia","descripcion":"SAN PLÁCIDO"},
+      {"codigo":4130157,"grupo":"Parroquia","descripcion":"CHIRIJOS"},
+      {"codigo":41302,"grupo":"Cantón","descripcion":"BOLIVAR"},
+      {"codigo":4130250,"grupo":"Parroquia","descripcion":"CALCETA, CABECERA CANTONAL"},
+      {"codigo":4130251,"grupo":"Parroquia","descripcion":"MEMBRILLO"},
+      {"codigo":4130252,"grupo":"Parroquia","descripcion":"QUIROGA"},
+      {"codigo":41303,"grupo":"Cantón","descripcion":"CHONE"},
+      {"codigo":4130301,"grupo":"Parroquia","descripcion":"CHONE"},
+      {"codigo":4130302,"grupo":"Parroquia","descripcion":"SANTA RITA"},
+      {"codigo":4130351,"grupo":"Parroquia","descripcion":"BOYACÁ"},
+      {"codigo":4130352,"grupo":"Parroquia","descripcion":"CANUTO"},
+      {"codigo":4130353,"grupo":"Parroquia","descripcion":"CONVENTO"},
+      {"codigo":4130354,"grupo":"Parroquia","descripcion":"CHIBUNGA"},
+      {"codigo":4130355,"grupo":"Parroquia","descripcion":"ELOY ALFARO"},
+      {"codigo":4130356,"grupo":"Parroquia","descripcion":"RICAURTE"},
+      {"codigo":4130357,"grupo":"Parroquia","descripcion":"SAN ANTONIO"},
+      {"codigo":41304,"grupo":"Cantón","descripcion":"EL CARMEN"},
+      {"codigo":4130401,"grupo":"Parroquia","descripcion":"EL CARMEN"},
+      {"codigo":4130402,"grupo":"Parroquia","descripcion":"4 DE DICIEMBRE"},
+      {"codigo":4130450,"grupo":"Parroquia","descripcion":"EL CARMEN, CABECERA CANTONAL"},
+      {"codigo":4130451,"grupo":"Parroquia","descripcion":"WILFRIDO LOOR MOREIRA (MAICITO)"},
+      {"codigo":4130452,"grupo":"Parroquia","descripcion":"SAN PEDRO DE SUMA"},
+      {"codigo":41305,"grupo":"Cantón","descripcion":"FLAVIO ALFARO"},
+      {"codigo":4130550,"grupo":"Parroquia","descripcion":"FLAVIO ALFARO, CABECERA CANTONAL"},
+      {"codigo":4130551,"grupo":"Parroquia","descripcion":"SAN FRANCISCO DE NOVILLO (CAB. EN NOVILLO) Cantón Flavio Alfaro"},
+      {"codigo":4130552,"grupo":"Parroquia","descripcion":"ZAPALLO"},
+      {"codigo":41306,"grupo":"Cantón","descripcion":"JIPIJAPA"},
+      {"codigo":4130601,"grupo":"Parroquia","descripcion":"DR. MIGUEL MORAN LUCIO"},
+      {"codigo":4130602,"grupo":"Parroquia","descripcion":"MANUEL INOCENCIO PARRALES Y GUALE"},
+      {"codigo":4130603,"grupo":"Parroquia","descripcion":"SAN LORENZO DE JIPIJAPA"},
+      {"codigo":4130650,"grupo":"Parroquia","descripcion":"JIPIJAPA, CABECERA CANTONAL"},
+      {"codigo":4130651,"grupo":"Parroquia","descripcion":"AMERICA"},
+      {"codigo":4130652,"grupo":"Parroquia","descripcion":"EL ANEGADO"},
+      {"codigo":4130653,"grupo":"Parroquia","descripcion":"JULCUY"},
+      {"codigo":4130654,"grupo":"Parroquia","descripcion":"LA UNION"},
+      {"codigo":4130655,"grupo":"Parroquia","descripcion":"*MACHALILLA"},
+      {"codigo":4130656,"grupo":"Parroquia","descripcion":"MEMBRILLAL"},
+      {"codigo":4130657,"grupo":"Parroquia","descripcion":"PEDRO PABLO GOMEZ"},
+      {"codigo":4130658,"grupo":"Parroquia","descripcion":"PUERTO DE CAYO"},
+      {"codigo":4130659,"grupo":"Parroquia","descripcion":"*PUERTO LÓPEZ"},
+      {"codigo":41307,"grupo":"Cantón","descripcion":"JUNIN"},
+      {"codigo":4130750,"grupo":"Parroquia","descripcion":"JUNIN, CABECERA CANTONAL"},
+      {"codigo":41308,"grupo":"Cantón","descripcion":"MANTA"},
+      {"codigo":4130801,"grupo":"Parroquia","descripcion":"LOS ESTEROS"},
+      {"codigo":4130802,"grupo":"Parroquia","descripcion":"MANTA"},
+      {"codigo":4130803,"grupo":"Parroquia","descripcion":"SAN MATEO (Cantón Manta)"},
+      {"codigo":4130804,"grupo":"Parroquia","descripcion":"TARQUI (Cantón Manta)"},
+      {"codigo":4130805,"grupo":"Parroquia","descripcion":"ELOY ALFARO (Cantón Manta)"},
+      {"codigo":4130850,"grupo":"Parroquia","descripcion":"MANTA, CABECERA CANTONAL"},
+      {"codigo":4130851,"grupo":"Parroquia","descripcion":"SAN LORENZO (Cantón Manta)"},
+      {"codigo":4130852,"grupo":"Parroquia","descripcion":"SANTA MARIANITA (BOCA DE PACOCHE) Cantón Manta"},
+      {"codigo":41309,"grupo":"Cantón","descripcion":"MONTECRISTI"},
+      {"codigo":4130901,"grupo":"Parroquia","descripcion":"ANÍBAL SAN ANDRÉS"},
+      {"codigo":4130902,"grupo":"Parroquia","descripcion":"MONTECRISTI"},
+      {"codigo":4130903,"grupo":"Parroquia","descripcion":"EL COLORADO"},
+      {"codigo":4130904,"grupo":"Parroquia","descripcion":"GENERAL ELOY ALFARO"},
+      {"codigo":4130905,"grupo":"Parroquia","descripcion":"LEONIDAS PROAÑO"},
+      {"codigo":4130950,"grupo":"Parroquia","descripcion":"MONTECRISTI, CABECERA CANTONAL"},
+      {"codigo":4130951,"grupo":"Parroquia","descripcion":"*JARAMIJÓ"},
+      {"codigo":4130952,"grupo":"Parroquia","descripcion":"LA PILA"},
+      {"codigo":41310,"grupo":"Cantón","descripcion":"PAJAN"},
+      {"codigo":4131050,"grupo":"Parroquia","descripcion":"PAJAN, CABECERA CANTONAL"},
+      {"codigo":4131051,"grupo":"Parroquia","descripcion":"CAMPOZANO (LA PALMA DE PAJÁN)"},
+      {"codigo":4131052,"grupo":"Parroquia","descripcion":"CASCOL"},
+      {"codigo":4131053,"grupo":"Parroquia","descripcion":"GUALE"},
+      {"codigo":4131054,"grupo":"Parroquia","descripcion":"LASCANO"},
+      {"codigo":41311,"grupo":"Cantón","descripcion":"PICHINCHA"},
+      {"codigo":4131150,"grupo":"Parroquia","descripcion":"PICHINCHA, CABECERA CANTONAL"},
+      {"codigo":4131151,"grupo":"Parroquia","descripcion":"BARRAGANETE"},
+      {"codigo":4131152,"grupo":"Parroquia","descripcion":"SAN SEBASTIAN"},
+      {"codigo":41312,"grupo":"Cantón","descripcion":"ROCAFUERTE"},
+      {"codigo":4131250,"grupo":"Parroquia","descripcion":"ROCAFUERTE, CABECERA CANTONAL"},
+      {"codigo":41313,"grupo":"Cantón","descripcion":"SANTA ANA"},
+      {"codigo":4131301,"grupo":"Parroquia","descripcion":"SANTA ANA"},
+      {"codigo":4131302,"grupo":"Parroquia","descripcion":"LODANA"},
+      {"codigo":4131350,"grupo":"Parroquia","descripcion":"SANTA ANA DE VUELTA LARGA, CABECERA CANTONAL"},
+      {"codigo":4131351,"grupo":"Parroquia","descripcion":"AYACUCHO (Cantón Santa Ana)"},
+      {"codigo":4131352,"grupo":"Parroquia","descripcion":"HONORATO VASQUEZ (CAB. EN VASQUEZ) Cantón Santa Ana"},
+      {"codigo":4131353,"grupo":"Parroquia","descripcion":"LA UNION"},
+      {"codigo":4131354,"grupo":"Parroquia","descripcion":"*OLMEDO"},
+      {"codigo":4131355,"grupo":"Parroquia","descripcion":"SAN PABLO"},
+      {"codigo":41314,"grupo":"Cantón","descripcion":"SUCRE"},
+      {"codigo":4131401,"grupo":"Parroquia","descripcion":"BAHÍA DE CARAQUEZ"},
+      {"codigo":4131402,"grupo":"Parroquia","descripcion":"LEONIDAS PLAZA GUTIERREZ"},
+      {"codigo":4131450,"grupo":"Parroquia","descripcion":"BAHÍA DE CARAQUEZ, CABECERA CANTONAL"},
+      {"codigo":4131451,"grupo":"Parroquia","descripcion":"*CANOA"},
+      {"codigo":4131452,"grupo":"Parroquia","descripcion":"*COJIMÍES"},
+      {"codigo":4131453,"grupo":"Parroquia","descripcion":"CHARAPOTÓ"},
+      {"codigo":4131454,"grupo":"Parroquia","descripcion":"*10 DE AGOSTO"},
+      {"codigo":4131455,"grupo":"Parroquia","descripcion":"*JAMA"},
+      {"codigo":4131456,"grupo":"Parroquia","descripcion":"*PEDERNALES"},
+      {"codigo":4131457,"grupo":"Parroquia","descripcion":"SAN ISIDRO"},
+      {"codigo":4131458,"grupo":"Parroquia","descripcion":"*SAN VICENTE"},
+      {"codigo":41315,"grupo":"Cantón","descripcion":"TOSAGUA"},
+      {"codigo":4131550,"grupo":"Parroquia","descripcion":"TOSAGUA, CABECERA CANTONAL"},
+      {"codigo":4131551,"grupo":"Parroquia","descripcion":"BACHILLERO"},
+      {"codigo":4131552,"grupo":"Parroquia","descripcion":"ÁNGEL PEDRO GILER (LA ESTANCILLA)"},
+      {"codigo":41316,"grupo":"Cantón","descripcion":"24 DE MAYO"},
+      {"codigo":4131650,"grupo":"Parroquia","descripcion":"SUCRE, CABECERA CANTONAL"},
+      {"codigo":4131651,"grupo":"Parroquia","descripcion":"BELLAVISTA"},
+      {"codigo":4131652,"grupo":"Parroquia","descripcion":"NOBOA"},
+      {"codigo":4131653,"grupo":"Parroquia","descripcion":"ARQUITECTO SIXTO DURÁN BALLÉN"},
+      {"codigo":41317,"grupo":"Cantón","descripcion":"PEDERNALES"},
+      {"codigo":4131750,"grupo":"Parroquia","descripcion":"PEDERNALES, CABECERA CANTONAL"},
+      {"codigo":4131751,"grupo":"Parroquia","descripcion":"COJIMÍES"},
+      {"codigo":4131752,"grupo":"Parroquia","descripcion":"10 DE AGOSTO"},
+      {"codigo":4131753,"grupo":"Parroquia","descripcion":"ATAHUALPA"},
+      {"codigo":41318,"grupo":"Cantón","descripcion":"OLMEDO"},
+      {"codigo":4131850,"grupo":"Parroquia","descripcion":"OLMEDO, CABECERA CANTONAL"},
+      {"codigo":41319,"grupo":"Cantón","descripcion":"PUERTO LOPEZ"},
+      {"codigo":4131950,"grupo":"Parroquia","descripcion":"PUERTO LÓPEZ, CABECERA CANTONAL"},
+      {"codigo":4131951,"grupo":"Parroquia","descripcion":"MACHALILLA"},
+      {"codigo":4131952,"grupo":"Parroquia","descripcion":"SALANGO"},
+      {"codigo":41320,"grupo":"Cantón","descripcion":"JAMA"},
+      {"codigo":4132050,"grupo":"Parroquia","descripcion":"JAMA, CABECERA CANTONAL"},
+      {"codigo":41321,"grupo":"Cantón","descripcion":"JARAMIJO"},
+      {"codigo":4132150,"grupo":"Parroquia","descripcion":"JARAMIJO, CABECERA CANTONAL"},
+      {"codigo":41322,"grupo":"Cantón","descripcion":"SAN VICENTE"},
+      {"codigo":4132250,"grupo":"Parroquia","descripcion":"SAN VICENTE, CABECERA CANTONAL"},
+      {"codigo":4132251,"grupo":"Parroquia","descripcion":"CANOA"},
+      {"codigo":423,"grupo":"Provincia","descripcion":"SANTO DOMINGO DE LOS TSACHILAS"},
+      {"codigo":42301,"grupo":"Cantón","descripcion":"SANTO DOMINGO"},
+      {"codigo":4230101,"grupo":"Parroquia","descripcion":"ABRAHAM CALAZACÓN"},
+      {"codigo":4230102,"grupo":"Parroquia","descripcion":"BOMBOLÍ"},
+      {"codigo":4230103,"grupo":"Parroquia","descripcion":"CHIGUILPE"},
+      {"codigo":4230104,"grupo":"Parroquia","descripcion":"RÍO TOACHI"},
+      {"codigo":4230105,"grupo":"Parroquia","descripcion":"RIO VERDE"},
+      {"codigo":4230106,"grupo":"Parroquia","descripcion":"SANTO DOMINGO DE LOS COLORADOS"},
+      {"codigo":4230107,"grupo":"Parroquia","descripcion":"ZARACAY"},
+      {"codigo":4230150,"grupo":"Parroquia","descripcion":"SANTO DOMINGO DE LOS COLORADOS, CABECERA CANTONAL"},
+      {"codigo":4230151,"grupo":"Parroquia","descripcion":"ALLURIQUIN"},
+      {"codigo":4230152,"grupo":"Parroquia","descripcion":"PUERTO LIMON"},
+      {"codigo":4230153,"grupo":"Parroquia","descripcion":"LUZ DE AMERICA"},
+      {"codigo":4230154,"grupo":"Parroquia","descripcion":"SAN JACINTO DEL BÚA"},
+      {"codigo":4230155,"grupo":"Parroquia","descripcion":"VALLE HERMOSO"},
+      {"codigo":4230156,"grupo":"Parroquia","descripcion":"EL ESFUERZO"},
+      {"codigo":4230157,"grupo":"Parroquia","descripcion":"SANTA MARIA DEL TOACHI"},
+      {"codigo":42302,"grupo":"Cantón","descripcion":"LA CONCORDIA"},
+      {"codigo":4230250,"grupo":"Parroquia","descripcion":"LA CONCORDIA (CABECERA CANTONAL)"},
+      {"codigo":4230251,"grupo":"Parroquia","descripcion":"MONTERREY"},
+      {"codigo":4230252,"grupo":"Parroquia","descripcion":"LAS VILLEGAS"},
+      {"codigo":4230253,"grupo":"Parroquia","descripcion":"PLAN PILOTO"},
+      {"codigo":5,"grupo":"Zona","descripcion":"ZONA 5"},
+      {"codigo":502,"grupo":"Provincia","descripcion":"BOLIVAR"},
+      {"codigo":50201,"grupo":"Cantón","descripcion":"GUARANDA"},
+      {"codigo":5020101,"grupo":"Parroquia","descripcion":"ANGEL POLIBIO CHAVES"},
+      {"codigo":5020102,"grupo":"Parroquia","descripcion":"GABRIEL IGNACIO VEINTIMILLA"},
+      {"codigo":5020103,"grupo":"Parroquia","descripcion":"GUANUJO"},
+      {"codigo":5020150,"grupo":"Parroquia","descripcion":"GUARANDA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":5020151,"grupo":"Parroquia","descripcion":"FACUNDO VELA"},
+      {"codigo":5020152,"grupo":"Parroquia","descripcion":"*GUANUJO"},
+      {"codigo":5020153,"grupo":"Parroquia","descripcion":"JULIO E. MORENO (CATANAHUAN GRANDE)"},
+      {"codigo":5020154,"grupo":"Parroquia","descripcion":"*LAS NAVES"},
+      {"codigo":5020155,"grupo":"Parroquia","descripcion":"SALINAS (Cantón Guaranda)"},
+      {"codigo":5020156,"grupo":"Parroquia","descripcion":"SAN LORENZO (Cantón Guaranda)"},
+      {"codigo":5020157,"grupo":"Parroquia","descripcion":"SAN SIMON (YACOTO)"},
+      {"codigo":5020158,"grupo":"Parroquia","descripcion":"SANTAFE (SANTA FE)"},
+      {"codigo":5020159,"grupo":"Parroquia","descripcion":"SIMIATUG"},
+      {"codigo":5020160,"grupo":"Parroquia","descripcion":"SAN LUIS DE PAMBIL"},
+      {"codigo":50202,"grupo":"Cantón","descripcion":"CHILLANES"},
+      {"codigo":5020250,"grupo":"Parroquia","descripcion":"CHILLANES, CABECERA CANTONAL"},
+      {"codigo":5020251,"grupo":"Parroquia","descripcion":"SAN JOSE DEL TAMBO (TAMBOPAMBA)"},
+      {"codigo":50203,"grupo":"Cantón","descripcion":"CHIMBO"},
+      {"codigo":5020350,"grupo":"Parroquia","descripcion":"SAN JOSE DE CHIMBO, CABECERA CANTONAL"},
+      {"codigo":5020351,"grupo":"Parroquia","descripcion":"ASUNCION (ASANCOTO)"},
+      {"codigo":5020352,"grupo":"Parroquia","descripcion":"*CALUMA"},
+      {"codigo":5020353,"grupo":"Parroquia","descripcion":"MAGDALENA (CHAPACOTO)"},
+      {"codigo":5020354,"grupo":"Parroquia","descripcion":"SAN SEBASTIAN (Cantón Chimbo)"},
+      {"codigo":5020355,"grupo":"Parroquia","descripcion":"TELIMBELA"},
+      {"codigo":50204,"grupo":"Cantón","descripcion":"ECHEANDIA"},
+      {"codigo":5020450,"grupo":"Parroquia","descripcion":"ECHEANDIA, CABECERA CANTONAL"},
+      {"codigo":50205,"grupo":"Cantón","descripcion":"SAN MIGUEL"},
+      {"codigo":5020550,"grupo":"Parroquia","descripcion":"SAN MIGUEL, CABECERA CANTONAL"},
+      {"codigo":5020551,"grupo":"Parroquia","descripcion":"BALSAPAMBA"},
+      {"codigo":5020552,"grupo":"Parroquia","descripcion":"BILOVAN"},
+      {"codigo":5020553,"grupo":"Parroquia","descripcion":"REGULO DE MORA"},
+      {"codigo":5020554,"grupo":"Parroquia","descripcion":"SAN PABLO  (SAN PABLO DE ATENAS)"},
+      {"codigo":5020555,"grupo":"Parroquia","descripcion":"SANTIAGO (Cantón San Miguel)"},
+      {"codigo":5020556,"grupo":"Parroquia","descripcion":"SAN VICENTE (Cantón San Miguel)"},
+      {"codigo":50206,"grupo":"Cantón","descripcion":"CALUMA"},
+      {"codigo":5020650,"grupo":"Parroquia","descripcion":"CALUMA, CABECERA CANTONAL"},
+      {"codigo":50207,"grupo":"Cantón","descripcion":"LAS NAVES"},
+      {"codigo":5020702,"grupo":"Parroquia","descripcion":"LAS NAVES"},
+      {"codigo":5020750,"grupo":"Parroquia","descripcion":"LAS NAVES, CABECERA CANTONAL"},
+      {"codigo":509,"grupo":"Provincia","descripcion":"GUAYAS"},
+      {"codigo":50901,"grupo":"Cantón","descripcion":"GUAYAQUIL"},
+      {"codigo":5090101,"grupo":"Parroquia","descripcion":"AYACUCHO (Cantón Guayaquil)"},
+      {"codigo":5090102,"grupo":"Parroquia","descripcion":"BOLIVAR (SAGRARIO)"},
+      {"codigo":5090103,"grupo":"Parroquia","descripcion":"CARBO (CONCEPCIÓN)"},
+      {"codigo":5090104,"grupo":"Parroquia","descripcion":"FEBRES CORDERO"},
+      {"codigo":5090105,"grupo":"Parroquia","descripcion":"GARCIA MORENO"},
+      {"codigo":5090106,"grupo":"Parroquia","descripcion":"LETAMENDI"},
+      {"codigo":5090107,"grupo":"Parroquia","descripcion":"NUEVE DE OCTUBRE"},
+      {"codigo":5090108,"grupo":"Parroquia","descripcion":"OLMEDO (SAN ALEJO)"},
+      {"codigo":5090109,"grupo":"Parroquia","descripcion":"ROCA"},
+      {"codigo":5090110,"grupo":"Parroquia","descripcion":"ROCAFUERTE"},
+      {"codigo":5090111,"grupo":"Parroquia","descripcion":"SUCRE"},
+      {"codigo":5090112,"grupo":"Parroquia","descripcion":"TARQUI"},
+      {"codigo":5090113,"grupo":"Parroquia","descripcion":"URDANETA"},
+      {"codigo":5090114,"grupo":"Parroquia","descripcion":"XIMENA"},
+      {"codigo":5090115,"grupo":"Parroquia","descripcion":"PASCUALES"},
+      {"codigo":5090150,"grupo":"Parroquia","descripcion":"GUAYAQUIL, CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":5090151,"grupo":"Parroquia","descripcion":"*CHONGÓN"},
+      {"codigo":5090152,"grupo":"Parroquia","descripcion":"JUAN GOMEZ RENDON (PROGRESO)"},
+      {"codigo":5090153,"grupo":"Parroquia","descripcion":"MORRO"},
+      {"codigo":5090154,"grupo":"Parroquia","descripcion":"*PASCUALES"},
+      {"codigo":5090155,"grupo":"Parroquia","descripcion":"*PLAYAS (GRAL. VILLAMIL)"},
+      {"codigo":5090156,"grupo":"Parroquia","descripcion":"POSORJA"},
+      {"codigo":5090157,"grupo":"Parroquia","descripcion":"PUNÁ"},
+      {"codigo":5090158,"grupo":"Parroquia","descripcion":"TENGUEL"},
+      {"codigo":50902,"grupo":"Cantón","descripcion":"ALFREDO BAQUERIZO MORENO (JUJAN)"},
+      {"codigo":5090250,"grupo":"Parroquia","descripcion":"ALFREDO BAQUERIZO MORENO (JUJAN), CABECERA CANTONAL"},
+      {"codigo":50903,"grupo":"Cantón","descripcion":"BALAO"},
+      {"codigo":5090350,"grupo":"Parroquia","descripcion":"BALAO, CABECERA CANTONAL"},
+      {"codigo":50904,"grupo":"Cantón","descripcion":"BALZAR"},
+      {"codigo":5090450,"grupo":"Parroquia","descripcion":"BALZAR, CABECERA CANTONAL"},
+      {"codigo":50905,"grupo":"Cantón","descripcion":"COLIMES"},
+      {"codigo":5090550,"grupo":"Parroquia","descripcion":"COLIMES, CABECERA CANTONAL"},
+      {"codigo":50906,"grupo":"Cantón","descripcion":"DAULE"},
+      {"codigo":5090601,"grupo":"Parroquia","descripcion":"DAULE"},
+      {"codigo":5090602,"grupo":"Parroquia","descripcion":"LA AURORA (SATELITE)"},
+      {"codigo":5090603,"grupo":"Parroquia","descripcion":"BANIFE"},
+      {"codigo":5090604,"grupo":"Parroquia","descripcion":"EMILIANO CAICEDO MARCOS"},
+      {"codigo":5090605,"grupo":"Parroquia","descripcion":"MAGRO"},
+      {"codigo":5090606,"grupo":"Parroquia","descripcion":"PADRE JUAN BAUTISTA AGUIRRE"},
+      {"codigo":5090607,"grupo":"Parroquia","descripcion":"SANTA CLARA"},
+      {"codigo":5090608,"grupo":"Parroquia","descripcion":"VICENTE PIEDRAHITA"},
+      {"codigo":5090650,"grupo":"Parroquia","descripcion":"DAULE, CABECERA CANTONAL"},
+      {"codigo":5090651,"grupo":"Parroquia","descripcion":"*ISIDRO AYORA (SOLEDAD)"},
+      {"codigo":5090652,"grupo":"Parroquia","descripcion":"JUAN BAUTISTA AGUIRRE (LOS TINTOS)"},
+      {"codigo":5090653,"grupo":"Parroquia","descripcion":"LAUREL"},
+      {"codigo":5090654,"grupo":"Parroquia","descripcion":"LIMONAL"},
+      {"codigo":5090655,"grupo":"Parroquia","descripcion":"*LOMAS DE SARGENTILLO"},
+      {"codigo":5090656,"grupo":"Parroquia","descripcion":"LOS LOJAS (ENRIQUE BAQUERIZO MORENO)"},
+      {"codigo":5090657,"grupo":"Parroquia","descripcion":"*PIEDRAHITA (NOBOL)"},
+      {"codigo":50907,"grupo":"Cantón","descripcion":"DURAN"},
+      {"codigo":5090701,"grupo":"Parroquia","descripcion":"ELOY ALFARO"},
+      {"codigo":5090702,"grupo":"Parroquia","descripcion":"EL RECREO"},
+      {"codigo":5090750,"grupo":"Parroquia","descripcion":"ELOY ALFARO (DURAN), CABECERA CANTONAL"},
+      {"codigo":50908,"grupo":"Cantón","descripcion":"EL EMPALME"},
+      {"codigo":5090850,"grupo":"Parroquia","descripcion":"VELASCO IBARRA (EL EMPALME), CABECERA CANTONAL"},
+      {"codigo":5090851,"grupo":"Parroquia","descripcion":"GUAYAS (PUEBLO NUEVO)"},
+      {"codigo":5090852,"grupo":"Parroquia","descripcion":"EL ROSARIO"},
+      {"codigo":50909,"grupo":"Cantón","descripcion":"EL TRIUNFO"},
+      {"codigo":5090950,"grupo":"Parroquia","descripcion":"EL TRIUNFO, CABECERA CANTONAL"},
+      {"codigo":50910,"grupo":"Cantón","descripcion":"MILAGRO"},
+      {"codigo":5091050,"grupo":"Parroquia","descripcion":"MILAGRO, CABECERA CANTONAL"},
+      {"codigo":5091051,"grupo":"Parroquia","descripcion":"CHOBO"},
+      {"codigo":5091052,"grupo":"Parroquia","descripcion":"*GENERAL ELIZALDE (BUCAY)"},
+      {"codigo":5091053,"grupo":"Parroquia","descripcion":"MARISCAL SUCRE (HUAQUES)"},
+      {"codigo":5091054,"grupo":"Parroquia","descripcion":"ROBERTO ASTUDILLO (CAB. EN CRUCE DE VENECIA)"},
+      {"codigo":50911,"grupo":"Cantón","descripcion":"NARANJAL"},
+      {"codigo":5091150,"grupo":"Parroquia","descripcion":"NARANJAL, CABECERA CANTONAL"},
+      {"codigo":5091151,"grupo":"Parroquia","descripcion":"JESUS MARIA"},
+      {"codigo":5091152,"grupo":"Parroquia","descripcion":"SAN CARLOS"},
+      {"codigo":5091153,"grupo":"Parroquia","descripcion":"SANTA ROSA DE FLANDES"},
+      {"codigo":5091154,"grupo":"Parroquia","descripcion":"TAURA"},
+      {"codigo":50912,"grupo":"Cantón","descripcion":"NARANJITO"},
+      {"codigo":5091250,"grupo":"Parroquia","descripcion":"NARANJITO, CABECERA CANTONAL"},
+      {"codigo":50913,"grupo":"Cantón","descripcion":"PALESTINA"},
+      {"codigo":5091350,"grupo":"Parroquia","descripcion":"PALESTINA,CABECERA CANTONAL"},
+      {"codigo":50914,"grupo":"Cantón","descripcion":"PEDRO CARBO"},
+      {"codigo":5091450,"grupo":"Parroquia","descripcion":"PEDRO CARBO, CABECERA CANTONAL"},
+      {"codigo":5091451,"grupo":"Parroquia","descripcion":"VALLE DE LA VIRGEN"},
+      {"codigo":5091452,"grupo":"Parroquia","descripcion":"SABANILLA"},
+      {"codigo":50915,"grupo":"Cantón","descripcion":"*SALINAS"},
+      {"codigo":50916,"grupo":"Cantón","descripcion":"SAMBORONDON"},
+      {"codigo":5091601,"grupo":"Parroquia","descripcion":"SAMBORONDÓN"},
+      {"codigo":5091602,"grupo":"Parroquia","descripcion":"LA PUNTILLA (SATELITE)"},
+      {"codigo":5091650,"grupo":"Parroquia","descripcion":"SAMBORONDON, CABECERA CANTONAL"},
+      {"codigo":5091651,"grupo":"Parroquia","descripcion":"TARIFA"},
+      {"codigo":50917,"grupo":"Cantón","descripcion":"*SANTA ELENA"},
+      {"codigo":50918,"grupo":"Cantón","descripcion":"SANTA LUCIA"},
+      {"codigo":5091850,"grupo":"Parroquia","descripcion":"SANTA LUCIA"},
+      {"codigo":50919,"grupo":"Cantón","descripcion":"SALITRE (URBINA JADO)"},
+      {"codigo":5091901,"grupo":"Parroquia","descripcion":"BOCANA"},
+      {"codigo":5091902,"grupo":"Parroquia","descripcion":"CANDILEJOS"},
+      {"codigo":5091903,"grupo":"Parroquia","descripcion":"CENTRAL"},
+      {"codigo":5091904,"grupo":"Parroquia","descripcion":"PARAISO"},
+      {"codigo":5091905,"grupo":"Parroquia","descripcion":"SAN MATEO"},
+      {"codigo":5091950,"grupo":"Parroquia","descripcion":"EL SALITRE (LAS RAMAS), CABECERA CANTONAL"},
+      {"codigo":5091951,"grupo":"Parroquia","descripcion":"GENERAL VERNAZA (DOS ESTEROS)"},
+      {"codigo":5091952,"grupo":"Parroquia","descripcion":"LA VICTORIA (ÑAUZA) Cantón Salitre - Guayas"},
+      {"codigo":5091953,"grupo":"Parroquia","descripcion":"JUNQUILLAL"},
+      {"codigo":50920,"grupo":"Cantón","descripcion":"SAN JACINTO DE YAGUACHI"},
+      {"codigo":5092050,"grupo":"Parroquia","descripcion":"SAN JACINTO DE YAGUACHI,CABECERA CANTONAL"},
+      {"codigo":5092051,"grupo":"Parroquia","descripcion":"*CORONEL LORENZO DE GARAICOA (PEDREGAL)"},
+      {"codigo":5092052,"grupo":"Parroquia","descripcion":"*CORONEL MARCELINO MARIDUEÑA (SAN CARLOS)"},
+      {"codigo":5092053,"grupo":"Parroquia","descripcion":"GRAL. PEDRO J. MONTERO (BOLICHE)"},
+      {"codigo":5092054,"grupo":"Parroquia","descripcion":"*SIMÓN BOLÍVAR"},
+      {"codigo":5092055,"grupo":"Parroquia","descripcion":"YAGUACHI VIEJO (CONE)"},
+      {"codigo":5092056,"grupo":"Parroquia","descripcion":"VIRGEN DE FATIMA"},
+      {"codigo":50921,"grupo":"Cantón","descripcion":"PLAYAS"},
+      {"codigo":5092150,"grupo":"Parroquia","descripcion":"GENERAL VILLAMIL (PLAYAS), CABECERA CANTONAL"},
+      {"codigo":50922,"grupo":"Cantón","descripcion":"SIMON BOLIVAR"},
+      {"codigo":5092250,"grupo":"Parroquia","descripcion":"SIMON BOLIVAR, CABECERA CANTONAL"},
+      {"codigo":5092251,"grupo":"Parroquia","descripcion":"CRNEL.LORENZO DE GARAICOA (PEDREGAL)"},
+      {"codigo":50923,"grupo":"Cantón","descripcion":"CORONEL MARCELINO MARIDUEÑA"},
+      {"codigo":5092350,"grupo":"Parroquia","descripcion":"CORONEL MARCELINO MARIDUEÑA (SAN CARLOS), CABECERA CANTONAL"},
+      {"codigo":50924,"grupo":"Cantón","descripcion":"LOMAS DE SARGENTILLO"},
+      {"codigo":5092450,"grupo":"Parroquia","descripcion":"LOMAS DE SARGENTILLO, CABECERA CANTONAL"},
+      {"codigo":5092451,"grupo":"Parroquia","descripcion":"*ISIDRO AYORA (SOLEDAD)"},
+      {"codigo":50925,"grupo":"Cantón","descripcion":"NOBOL"},
+      {"codigo":5092550,"grupo":"Parroquia","descripcion":"NARCISA DE JESUS, CABECERA CANTONAL"},
+      {"codigo":50926,"grupo":"Cantón","descripcion":"*LA LIBERTAD"},
+      {"codigo":50927,"grupo":"Cantón","descripcion":"GENERAL ANTONIO ELIZALDE"},
+      {"codigo":5092750,"grupo":"Parroquia","descripcion":"GENERAL ANTONIO ELIZALDE , CABECERA CANTONAL"},
+      {"codigo":50928,"grupo":"Cantón","descripcion":"ISIDRO AYORA"},
+      {"codigo":5092850,"grupo":"Parroquia","descripcion":"ISIDRO AYORA, CABECERA CANTONAL"},
+      {"codigo":512,"grupo":"Provincia","descripcion":"LOS RIOS"},
+      {"codigo":51201,"grupo":"Cantón","descripcion":"BABAHOYO"},
+      {"codigo":5120101,"grupo":"Parroquia","descripcion":"CLEMENTE BAQUERIZO"},
+      {"codigo":5120102,"grupo":"Parroquia","descripcion":"DOCTOR CAMILO PONCE"},
+      {"codigo":5120103,"grupo":"Parroquia","descripcion":"BARREIRO"},
+      {"codigo":5120104,"grupo":"Parroquia","descripcion":"EL SALTO"},
+      {"codigo":5120150,"grupo":"Parroquia","descripcion":"BABAHOYO, CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":5120151,"grupo":"Parroquia","descripcion":"*BARREIRO (SANTA RITA)"},
+      {"codigo":5120152,"grupo":"Parroquia","descripcion":"CARACOL"},
+      {"codigo":5120153,"grupo":"Parroquia","descripcion":"FEBRES CORDERO (LAS JUNTAS)(CAB. EN MATA DE CACAO)"},
+      {"codigo":5120154,"grupo":"Parroquia","descripcion":"PIMOCHA"},
+      {"codigo":5120155,"grupo":"Parroquia","descripcion":"LA UNION"},
+      {"codigo":51202,"grupo":"Cantón","descripcion":"BABA"},
+      {"codigo":5120250,"grupo":"Parroquia","descripcion":"BABA, CABECERA CANTONAL"},
+      {"codigo":5120251,"grupo":"Parroquia","descripcion":"GUARE"},
+      {"codigo":5120252,"grupo":"Parroquia","descripcion":"ISLA DE BEJUCAL"},
+      {"codigo":51203,"grupo":"Cantón","descripcion":"MONTALVO"},
+      {"codigo":5120350,"grupo":"Parroquia","descripcion":"MONTALVO, CABECERA CANTONAL"},
+      {"codigo":5120351,"grupo":"Parroquia","descripcion":"LA ESMERALDA"},
+      {"codigo":51204,"grupo":"Cantón","descripcion":"PUEBLOVIEJO"},
+      {"codigo":5120450,"grupo":"Parroquia","descripcion":"PUEBLOVIEJO, CABECERA CANTONAL"},
+      {"codigo":5120451,"grupo":"Parroquia","descripcion":"PUERTO PECHICHE"},
+      {"codigo":5120452,"grupo":"Parroquia","descripcion":"SAN JUAN (Cantón Pueblo Viejo)"},
+      {"codigo":51205,"grupo":"Cantón","descripcion":"QUEVEDO"},
+      {"codigo":5120501,"grupo":"Parroquia","descripcion":"QUEVEDO"},
+      {"codigo":5120502,"grupo":"Parroquia","descripcion":"SAN CAMILO"},
+      {"codigo":5120503,"grupo":"Parroquia","descripcion":"*SAN JOSÉ"},
+      {"codigo":5120504,"grupo":"Parroquia","descripcion":"GUAYACÁN"},
+      {"codigo":5120505,"grupo":"Parroquia","descripcion":"NICOLÁS INFANTE DÍAZ"},
+      {"codigo":5120506,"grupo":"Parroquia","descripcion":"SAN CHISTÓBAL"},
+      {"codigo":5120507,"grupo":"Parroquia","descripcion":"SIETE DE OCTUBRE"},
+      {"codigo":5120508,"grupo":"Parroquia","descripcion":"24 DE MAYO"},
+      {"codigo":5120509,"grupo":"Parroquia","descripcion":"VENUS DEL RÍO QUEVEDO"},
+      {"codigo":5120510,"grupo":"Parroquia","descripcion":"VIVA ALFARO"},
+      {"codigo":5120550,"grupo":"Parroquia","descripcion":"QUEVEDO, CABECERA CANTONAL"},
+      {"codigo":5120551,"grupo":"Parroquia","descripcion":"*BUENA FÉ"},
+      {"codigo":5120552,"grupo":"Parroquia","descripcion":"*MOCACHE"},
+      {"codigo":5120553,"grupo":"Parroquia","descripcion":"SAN CARLOS"},
+      {"codigo":5120554,"grupo":"Parroquia","descripcion":"*VALENCIA"},
+      {"codigo":5120555,"grupo":"Parroquia","descripcion":"LA ESPERANZA"},
+      {"codigo":51206,"grupo":"Cantón","descripcion":"URDANETA"},
+      {"codigo":5120650,"grupo":"Parroquia","descripcion":"CATARAMA, CABECERA CANTONAL"},
+      {"codigo":5120651,"grupo":"Parroquia","descripcion":"RICAURTE"},
+      {"codigo":51207,"grupo":"Cantón","descripcion":"VENTANAS"},
+      {"codigo":5120701,"grupo":"Parroquia","descripcion":"10 DE NOVIEMBRE"},
+      {"codigo":5120750,"grupo":"Parroquia","descripcion":"VENTANAS, CABECERA CANTONAL"},
+      {"codigo":5120751,"grupo":"Parroquia","descripcion":"*QUINSALOMA"},
+      {"codigo":5120752,"grupo":"Parroquia","descripcion":"ZAPOTAL"},
+      {"codigo":5120753,"grupo":"Parroquia","descripcion":"CHACARITA"},
+      {"codigo":5120754,"grupo":"Parroquia","descripcion":"LOS ANGELES"},
+      {"codigo":51208,"grupo":"Cantón","descripcion":"VINCES"},
+      {"codigo":5120850,"grupo":"Parroquia","descripcion":"VINCES, CABECERA CANTONAL"},
+      {"codigo":5120851,"grupo":"Parroquia","descripcion":"ANTONIO SOTOMAYOR (CAB. EN PLAYAS DE VINCES)"},
+      {"codigo":5120852,"grupo":"Parroquia","descripcion":"*PALENQUE"},
+      {"codigo":51209,"grupo":"Cantón","descripcion":"CANTÓN PALENQUE"},
+      {"codigo":5120950,"grupo":"Parroquia","descripcion":"PALENQUE, CABECERA CANTONAL"},
+      {"codigo":51210,"grupo":"Cantón","descripcion":"BUENA FE"},
+      {"codigo":5121001,"grupo":"Parroquia","descripcion":"SAN JACINTO DE BUENA FE"},
+      {"codigo":5121002,"grupo":"Parroquia","descripcion":"7 DE AGOSTO"},
+      {"codigo":5121003,"grupo":"Parroquia","descripcion":"11 DE OCTUBRE"},
+      {"codigo":5121050,"grupo":"Parroquia","descripcion":"SAN JACINTO DE BUENA FE, CABECERA CANTONAL"},
+      {"codigo":5121051,"grupo":"Parroquia","descripcion":"PATRICIA PILAR"},
+      {"codigo":51211,"grupo":"Cantón","descripcion":"VALENCIA"},
+      {"codigo":5121150,"grupo":"Parroquia","descripcion":"VALENCIA, CABECERA CANTONAL"},
+      {"codigo":51212,"grupo":"Cantón","descripcion":"MOCACHE"},
+      {"codigo":5121250,"grupo":"Parroquia","descripcion":"MOCACHE, CABECERA CANTONAL"},
+      {"codigo":51213,"grupo":"Cantón","descripcion":"QUINSALOMA"},
+      {"codigo":5121350,"grupo":"Parroquia","descripcion":"QUINSALOMA, CABECERA CANTONAL"},
+      {"codigo":524,"grupo":"Provincia","descripcion":"SANTA ELENA"},
+      {"codigo":52401,"grupo":"Cantón","descripcion":"SANTA ELENA"},
+      {"codigo":5240101,"grupo":"Parroquia","descripcion":"BALLENITA"},
+      {"codigo":5240102,"grupo":"Parroquia","descripcion":"SANTA ELENA"},
+      {"codigo":5240150,"grupo":"Parroquia","descripcion":"SANTA ELENA, CABECERA CANTONAL"},
+      {"codigo":5240151,"grupo":"Parroquia","descripcion":"ATAHUALPA"},
+      {"codigo":5240152,"grupo":"Parroquia","descripcion":"COLONCHE"},
+      {"codigo":5240153,"grupo":"Parroquia","descripcion":"CHANDUY"},
+      {"codigo":5240154,"grupo":"Parroquia","descripcion":"MANGLARALTO"},
+      {"codigo":5240155,"grupo":"Parroquia","descripcion":"SIMON BOLIVAR (JULIO MORENO)"},
+      {"codigo":5240156,"grupo":"Parroquia","descripcion":"SAN JOSÉ DE ANCÓN"},
+      {"codigo":52402,"grupo":"Cantón","descripcion":"LA LIBERTAD"},
+      {"codigo":5240250,"grupo":"Parroquia","descripcion":"LA LIBERTAD, CABECERA CANTONAL"},
+      {"codigo":52403,"grupo":"Cantón","descripcion":"SALINAS"},
+      {"codigo":5240301,"grupo":"Parroquia","descripcion":"CARLOS ESPINOZA LARREA"},
+      {"codigo":5240302,"grupo":"Parroquia","descripcion":"GENERAL ALBERTO ENRÍQUEZ GALLO"},
+      {"codigo":5240303,"grupo":"Parroquia","descripcion":"VICENTE ROCAFUERTE"},
+      {"codigo":5240304,"grupo":"Parroquia","descripcion":"SANTA ROSA"},
+      {"codigo":5240350,"grupo":"Parroquia","descripcion":"SALINAS (CABECERA CANTONAL)"},
+      {"codigo":5240351,"grupo":"Parroquia","descripcion":"ANCONCITO"},
+      {"codigo":5240352,"grupo":"Parroquia","descripcion":"JOSÉ LUIS TAMAYO (MUEY)"},
+      {"codigo":6,"grupo":"Zona","descripcion":"ZONA 6"},
+      {"codigo":601,"grupo":"Provincia","descripcion":"AZUAY"},
+      {"codigo":60101,"grupo":"Cantón","descripcion":"CUENCA"},
+      {"codigo":6010102,"grupo":"Parroquia","descripcion":"CAÑARIBAMBA"},
+      {"codigo":6010103,"grupo":"Parroquia","descripcion":"EL BATAN"},
+      {"codigo":6010104,"grupo":"Parroquia","descripcion":"EL SAGRARIO"},
+      {"codigo":6010105,"grupo":"Parroquia","descripcion":"EL VECINO"},
+      {"codigo":6010106,"grupo":"Parroquia","descripcion":"GIL RAMIREZ DÁVALOS"},
+      {"codigo":6010107,"grupo":"Parroquia","descripcion":"HUAYNACAPAC"},
+      {"codigo":6010108,"grupo":"Parroquia","descripcion":"MACHANGARA"},
+      {"codigo":6010109,"grupo":"Parroquia","descripcion":"MONAY"},
+      {"codigo":6010110,"grupo":"Parroquia","descripcion":"SAN BLAS"},
+      {"codigo":6010111,"grupo":"Parroquia","descripcion":"SAN SEBASTIAN (Cantón Cuenca)"},
+      {"codigo":6010112,"grupo":"Parroquia","descripcion":"SUCRE (Cantón Cuenca)"},
+      {"codigo":6010113,"grupo":"Parroquia","descripcion":"TOTORACOCHA"},
+      {"codigo":6010114,"grupo":"Parroquia","descripcion":"YANUNCAY"},
+      {"codigo":6010115,"grupo":"Parroquia","descripcion":"HERMANO MIGUEL"},
+      {"codigo":6010150,"grupo":"Parroquia","descripcion":"CUENCA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":6010151,"grupo":"Parroquia","descripcion":"BAÑOS"},
+      {"codigo":6010152,"grupo":"Parroquia","descripcion":"CUMBE"},
+      {"codigo":6010153,"grupo":"Parroquia","descripcion":"CHAUCHA"},
+      {"codigo":6010154,"grupo":"Parroquia","descripcion":"CHECA (JIDCAY) Cantón Cuenca"},
+      {"codigo":6010155,"grupo":"Parroquia","descripcion":"CHIQUINTAD"},
+      {"codigo":6010156,"grupo":"Parroquia","descripcion":"LLACAO"},
+      {"codigo":6010157,"grupo":"Parroquia","descripcion":"MOLLETURO"},
+      {"codigo":6010158,"grupo":"Parroquia","descripcion":"NULTI"},
+      {"codigo":6010159,"grupo":"Parroquia","descripcion":"OCTAVIO CORDERO PALACIOS (SANTA ROSA)"},
+      {"codigo":6010160,"grupo":"Parroquia","descripcion":"PACCHA"},
+      {"codigo":6010161,"grupo":"Parroquia","descripcion":"QUINGEO"},
+      {"codigo":6010162,"grupo":"Parroquia","descripcion":"RICAURTE"},
+      {"codigo":6010163,"grupo":"Parroquia","descripcion":"SAN JOAQUIN"},
+      {"codigo":6010164,"grupo":"Parroquia","descripcion":"SANTA ANA"},
+      {"codigo":6010165,"grupo":"Parroquia","descripcion":"SAYAUSI"},
+      {"codigo":6010166,"grupo":"Parroquia","descripcion":"SIDCAY"},
+      {"codigo":6010167,"grupo":"Parroquia","descripcion":"SININCAY"},
+      {"codigo":6010168,"grupo":"Parroquia","descripcion":"TARQUI"},
+      {"codigo":6010169,"grupo":"Parroquia","descripcion":"TURI"},
+      {"codigo":6010170,"grupo":"Parroquia","descripcion":"VALLE"},
+      {"codigo":6010171,"grupo":"Parroquia","descripcion":"VICTORIA DEL PORTETE (IRQUIS)"},
+      {"codigo":60102,"grupo":"Cantón","descripcion":"GIRON"},
+      {"codigo":6010250,"grupo":"Parroquia","descripcion":"GIRON, CABECERA CANTONAL"},
+      {"codigo":6010251,"grupo":"Parroquia","descripcion":"ASUNCION"},
+      {"codigo":6010252,"grupo":"Parroquia","descripcion":"SAN GERARDO"},
+      {"codigo":60103,"grupo":"Cantón","descripcion":"GUALACEO"},
+      {"codigo":6010350,"grupo":"Parroquia","descripcion":"GUALACEO, CABECERA CANTONAL"},
+      {"codigo":6010351,"grupo":"Parroquia","descripcion":"*CHORDELEC"},
+      {"codigo":6010352,"grupo":"Parroquia","descripcion":"DANIEL CORDOVA TORAL (EL ORIENTE)"},
+      {"codigo":6010353,"grupo":"Parroquia","descripcion":"JADAN"},
+      {"codigo":6010354,"grupo":"Parroquia","descripcion":"MARIANO MORENO"},
+      {"codigo":6010355,"grupo":"Parroquia","descripcion":"*PRINCIPAL"},
+      {"codigo":6010356,"grupo":"Parroquia","descripcion":"REMIGIO CRESPO TORAL (GULAG)"},
+      {"codigo":6010357,"grupo":"Parroquia","descripcion":"SAN JUAN"},
+      {"codigo":6010358,"grupo":"Parroquia","descripcion":"ZHIDMAD"},
+      {"codigo":6010359,"grupo":"Parroquia","descripcion":"LUIS CORDERO VEGA"},
+      {"codigo":6010360,"grupo":"Parroquia","descripcion":"SIMON BOLIVAR (CAB. EN GAÑANZOL)"},
+      {"codigo":60104,"grupo":"Cantón","descripcion":"NABON"},
+      {"codigo":6010450,"grupo":"Parroquia","descripcion":"NABON, CABECERA CANTONAL"},
+      {"codigo":6010451,"grupo":"Parroquia","descripcion":"COCHAPATA"},
+      {"codigo":6010452,"grupo":"Parroquia","descripcion":"EL PROGRESO (CAB.EN ZHOTA) Cantón Nabón"},
+      {"codigo":6010453,"grupo":"Parroquia","descripcion":"LAS NIEVES (CHAYA)"},
+      {"codigo":6010454,"grupo":"Parroquia","descripcion":"*OÑA"},
+      {"codigo":6010455,"grupo":"Parroquia","descripcion":"*LA PAZ"},
+      {"codigo":60105,"grupo":"Cantón","descripcion":"PAUTE"},
+      {"codigo":6010550,"grupo":"Parroquia","descripcion":"PAUTE, CABECERA CANTONAL"},
+      {"codigo":6010551,"grupo":"Parroquia","descripcion":"*AMALUZA"},
+      {"codigo":6010552,"grupo":"Parroquia","descripcion":"BULAN (JOSE VICTOR IZQUIERDO)"},
+      {"codigo":6010553,"grupo":"Parroquia","descripcion":"CHICAN (GUILLERMO ORTEGA)"},
+      {"codigo":6010554,"grupo":"Parroquia","descripcion":"EL CABO"},
+      {"codigo":6010555,"grupo":"Parroquia","descripcion":"*GUACHAPALA"},
+      {"codigo":6010556,"grupo":"Parroquia","descripcion":"GUARAINAG"},
+      {"codigo":6010557,"grupo":"Parroquia","descripcion":"*PALMAS"},
+      {"codigo":6010558,"grupo":"Parroquia","descripcion":"*PAN"},
+      {"codigo":6010559,"grupo":"Parroquia","descripcion":"SAN CRISTOBAL (CARLOS ORDOÑEZ LAZO)"},
+      {"codigo":6010561,"grupo":"Parroquia","descripcion":"*TOMEBAMBA"},
+      {"codigo":6010562,"grupo":"Parroquia","descripcion":"DUG DUG"},
+      {"codigo":60106,"grupo":"Cantón","descripcion":"PUCARA"},
+      {"codigo":6010650,"grupo":"Parroquia","descripcion":"PUCARA, CABECERA CANTONAL"},
+      {"codigo":6010651,"grupo":"Parroquia","descripcion":"*CAMILO PONCE ENRIQUEZ (CAB. EN RIO 7 DE MOLLEPONGO)"},
+      {"codigo":6010652,"grupo":"Parroquia","descripcion":"SAN RAFAEL DE SHARUG"},
+      {"codigo":60107,"grupo":"Cantón","descripcion":"SAN FERNANDO"},
+      {"codigo":6010701,"grupo":"Parroquia","descripcion":"SAN FERNANDO (Cantón San Fernando - Azuay)"},
+      {"codigo":6010750,"grupo":"Parroquia","descripcion":"SAN FERNANDO, CABECERA CANTONAL"},
+      {"codigo":6010751,"grupo":"Parroquia","descripcion":"CHUMBLIN"},
+      {"codigo":60108,"grupo":"Cantón","descripcion":"SANTA ISABEL"},
+      {"codigo":6010850,"grupo":"Parroquia","descripcion":"SANTA ISABEL (CHAGUARURCO), CABECERA CANTONAL"},
+      {"codigo":6010851,"grupo":"Parroquia","descripcion":"ABDON CALDERON (LA UNION)"},
+      {"codigo":6010852,"grupo":"Parroquia","descripcion":"**EL CARMEN DE PIJILI"},
+      {"codigo":6010853,"grupo":"Parroquia","descripcion":"ZHAGLLI (SHAGLLI)"},
+      {"codigo":6010854,"grupo":"Parroquia","descripcion":"SAN SALVADOR DE CAÑARIBAMBA"},
+      {"codigo":60109,"grupo":"Cantón","descripcion":"SIGSIG"},
+      {"codigo":6010950,"grupo":"Parroquia","descripcion":"SIGSIG, CABECERA CANTONAL"},
+      {"codigo":6010951,"grupo":"Parroquia","descripcion":"CUCHIL (CUTCHIL)"},
+      {"codigo":6010952,"grupo":"Parroquia","descripcion":"JIMA (GIMA)"},
+      {"codigo":6010953,"grupo":"Parroquia","descripcion":"GUEL"},
+      {"codigo":6010954,"grupo":"Parroquia","descripcion":"LUDO"},
+      {"codigo":6010955,"grupo":"Parroquia","descripcion":"SAN BARTOLOME (Cantón Sigsig)"},
+      {"codigo":6010956,"grupo":"Parroquia","descripcion":"SAN JOSE DE RARANGA"},
+      {"codigo":60110,"grupo":"Cantón","descripcion":"OÑA"},
+      {"codigo":6011050,"grupo":"Parroquia","descripcion":"SAN FELIPE DE OÑA CABECERA CANTONAL"},
+      {"codigo":6011051,"grupo":"Parroquia","descripcion":"SUSUDEL"},
+      {"codigo":60111,"grupo":"Cantón","descripcion":"CHORDELEG"},
+      {"codigo":6011150,"grupo":"Parroquia","descripcion":"CHORDELEG, CABECERA CANTONAL"},
+      {"codigo":6011151,"grupo":"Parroquia","descripcion":"PRINCIPAL"},
+      {"codigo":6011152,"grupo":"Parroquia","descripcion":"LA UNION (Cantón Chordeleg)"},
+      {"codigo":6011153,"grupo":"Parroquia","descripcion":"LUIS GALARZA ORELLANA (CAB.EN DELEGSOL)"},
+      {"codigo":6011154,"grupo":"Parroquia","descripcion":"SAN MARTIN DE PUZHIO"},
+      {"codigo":60112,"grupo":"Cantón","descripcion":"EL PAN"},
+      {"codigo":6011250,"grupo":"Parroquia","descripcion":"EL PAN, CABECERA CANTONAL"},
+      {"codigo":6011251,"grupo":"Parroquia","descripcion":"*AMALUZA"},
+      {"codigo":6011252,"grupo":"Parroquia","descripcion":"*PALMAS"},
+      {"codigo":6011253,"grupo":"Parroquia","descripcion":"SAN VICENTE (Cantón El Pan)"},
+      {"codigo":60113,"grupo":"Cantón","descripcion":"SEVILLA DE ORO"},
+      {"codigo":6011350,"grupo":"Parroquia","descripcion":"SEVILLA DE ORO, CABECERA CANTONAL"},
+      {"codigo":6011351,"grupo":"Parroquia","descripcion":"AMALUZA"},
+      {"codigo":6011352,"grupo":"Parroquia","descripcion":"PALMAS"},
+      {"codigo":60114,"grupo":"Cantón","descripcion":"GUACHAPALA"},
+      {"codigo":6011450,"grupo":"Parroquia","descripcion":"GUACHAPALA, CABECERA CANTONAL"},
+      {"codigo":60115,"grupo":"Cantón","descripcion":"CAMILO PONCE ENRIQUEZ"},
+      {"codigo":6011550,"grupo":"Parroquia","descripcion":"CAMILO PONCE ENRIQUEZ, CABECERA CANTONAL"},
+      {"codigo":6011551,"grupo":"Parroquia","descripcion":"EL CARMEN DE PIJILI"},
+      {"codigo":603,"grupo":"Provincia","descripcion":"CAÑAR"},
+      {"codigo":60301,"grupo":"Cantón","descripcion":"AZOGUES"},
+      {"codigo":6030101,"grupo":"Parroquia","descripcion":"AURELIO BAYAS MARTINEZ"},
+      {"codigo":6030102,"grupo":"Parroquia","descripcion":"AZOGUES"},
+      {"codigo":6030103,"grupo":"Parroquia","descripcion":"BORRERO"},
+      {"codigo":6030104,"grupo":"Parroquia","descripcion":"SAN FRANCISCO"},
+      {"codigo":6030150,"grupo":"Parroquia","descripcion":"AZOGUES, CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":6030151,"grupo":"Parroquia","descripcion":"COJITAMBO"},
+      {"codigo":6030152,"grupo":"Parroquia","descripcion":"*DÉLEG"},
+      {"codigo":6030153,"grupo":"Parroquia","descripcion":"GUAPAN"},
+      {"codigo":6030154,"grupo":"Parroquia","descripcion":"JAVIER LOYOLA (CHUQUIPATA)"},
+      {"codigo":6030155,"grupo":"Parroquia","descripcion":"LUIS CORDERO (Cantón Azogues)"},
+      {"codigo":6030156,"grupo":"Parroquia","descripcion":"PINDILIG"},
+      {"codigo":6030157,"grupo":"Parroquia","descripcion":"RIVERA"},
+      {"codigo":6030158,"grupo":"Parroquia","descripcion":"SAN MIGUEL (Cantón Azogues)"},
+      {"codigo":6030159,"grupo":"Parroquia","descripcion":"*SOLANO"},
+      {"codigo":6030160,"grupo":"Parroquia","descripcion":"TADAY"},
+      {"codigo":60302,"grupo":"Cantón","descripcion":"BIBLIAN"},
+      {"codigo":6030250,"grupo":"Parroquia","descripcion":"BIBLIAN, CABECERA CANTONAL"},
+      {"codigo":6030251,"grupo":"Parroquia","descripcion":"NAZON (CAB. EN PAMPA DE DOMINGUEZ)"},
+      {"codigo":6030252,"grupo":"Parroquia","descripcion":"SAN FRANCISCO DE SAGEO (Cantón Biblián)"},
+      {"codigo":6030253,"grupo":"Parroquia","descripcion":"TURUPAMBA"},
+      {"codigo":6030254,"grupo":"Parroquia","descripcion":"JERUSALEN"},
+      {"codigo":60303,"grupo":"Cantón","descripcion":"CAÑAR"},
+      {"codigo":6030350,"grupo":"Parroquia","descripcion":"CAÑAR, CABECERA CANTONAL"},
+      {"codigo":6030351,"grupo":"Parroquia","descripcion":"CHONTAMARCA"},
+      {"codigo":6030352,"grupo":"Parroquia","descripcion":"CHOROCOPTE"},
+      {"codigo":6030353,"grupo":"Parroquia","descripcion":"GENERAL MORALES (SOCARTE)"},
+      {"codigo":6030354,"grupo":"Parroquia","descripcion":"GUALLETURO"},
+      {"codigo":6030355,"grupo":"Parroquia","descripcion":"HONORATO VASQUEZ (TAMBO VIEJO) Cantón Cañar"},
+      {"codigo":6030356,"grupo":"Parroquia","descripcion":"INGAPIRCA"},
+      {"codigo":6030357,"grupo":"Parroquia","descripcion":"JUNCAL"},
+      {"codigo":6030358,"grupo":"Parroquia","descripcion":"SAN ANTONIO (Cantón Cañar)"},
+      {"codigo":6030359,"grupo":"Parroquia","descripcion":"*SUSCAL"},
+      {"codigo":6030360,"grupo":"Parroquia","descripcion":"*TAMBO"},
+      {"codigo":6030361,"grupo":"Parroquia","descripcion":"ZHUD"},
+      {"codigo":6030362,"grupo":"Parroquia","descripcion":"VENTURA"},
+      {"codigo":6030363,"grupo":"Parroquia","descripcion":"DUCUR"},
+      {"codigo":60304,"grupo":"Cantón","descripcion":"LA TRONCAL"},
+      {"codigo":6030450,"grupo":"Parroquia","descripcion":"LA TRONCAL, CABECERA CANTONAL"},
+      {"codigo":6030451,"grupo":"Parroquia","descripcion":"MANUEL J. CALLE"},
+      {"codigo":6030452,"grupo":"Parroquia","descripcion":"PANCHO NEGRO"},
+      {"codigo":60305,"grupo":"Cantón","descripcion":"EL TAMBO"},
+      {"codigo":6030550,"grupo":"Parroquia","descripcion":"EL TAMBO, CABECERA CANTONAL"},
+      {"codigo":60306,"grupo":"Cantón","descripcion":"DELEG"},
+      {"codigo":6030650,"grupo":"Parroquia","descripcion":"DELEG, CABECERA CANTONAL"},
+      {"codigo":6030651,"grupo":"Parroquia","descripcion":"SOLANO"},
+      {"codigo":60307,"grupo":"Cantón","descripcion":"SUSCAL"},
+      {"codigo":6030750,"grupo":"Parroquia","descripcion":"SUSCAL, CABECERA CANTONAL"},
+      {"codigo":614,"grupo":"Provincia","descripcion":"MORONA SANTIAGO"},
+      {"codigo":61401,"grupo":"Cantón","descripcion":"MORONA"},
+      {"codigo":6140150,"grupo":"Parroquia","descripcion":"MACAS, CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":6140151,"grupo":"Parroquia","descripcion":"ALSHI (CAB. EN 9 DE OCTUBRE)"},
+      {"codigo":6140152,"grupo":"Parroquia","descripcion":"*CHIGUAZA"},
+      {"codigo":6140153,"grupo":"Parroquia","descripcion":"GENERAL PROAÑO"},
+      {"codigo":6140154,"grupo":"Parroquia","descripcion":"*HUASAGA (CAB. EN VAMPUIK)"},
+      {"codigo":6140155,"grupo":"Parroquia","descripcion":"*MACUMA"},
+      {"codigo":6140156,"grupo":"Parroquia","descripcion":"SAN ISIDRO"},
+      {"codigo":6140157,"grupo":"Parroquia","descripcion":"SEVILLA DON BOSCO"},
+      {"codigo":6140158,"grupo":"Parroquia","descripcion":"SINAÍ"},
+      {"codigo":6140159,"grupo":"Parroquia","descripcion":"*TAISHA"},
+      {"codigo":6140160,"grupo":"Parroquia","descripcion":"ZUÑA(ZÚNAC)"},
+      {"codigo":6140161,"grupo":"Parroquia","descripcion":"*TUUTINENTZ"},
+      {"codigo":6140162,"grupo":"Parroquia","descripcion":"CUCHAENTZA"},
+      {"codigo":6140163,"grupo":"Parroquia","descripcion":"*SAN JOSÉ DE MORONA"},
+      {"codigo":6140164,"grupo":"Parroquia","descripcion":"RIO BLANCO"},
+      {"codigo":61402,"grupo":"Cantón","descripcion":"GUALAQUIZA"},
+      {"codigo":6140201,"grupo":"Parroquia","descripcion":"GUALAQUIZA"},
+      {"codigo":6140202,"grupo":"Parroquia","descripcion":"MERCEDES MOLINA"},
+      {"codigo":6140250,"grupo":"Parroquia","descripcion":"GUALAQUIZA, CABECERA CANTONAL"},
+      {"codigo":6140251,"grupo":"Parroquia","descripcion":"AMAZONAS (ROSARIO DE CUYES)"},
+      {"codigo":6140252,"grupo":"Parroquia","descripcion":"BERMEJOS"},
+      {"codigo":6140253,"grupo":"Parroquia","descripcion":"BOMBOIZA"},
+      {"codigo":6140254,"grupo":"Parroquia","descripcion":"CHIGÜINDA"},
+      {"codigo":6140255,"grupo":"Parroquia","descripcion":"EL ROSARIO"},
+      {"codigo":6140256,"grupo":"Parroquia","descripcion":"NUEVA TARQUI"},
+      {"codigo":6140257,"grupo":"Parroquia","descripcion":"SAN MIGUEL DE CUYES"},
+      {"codigo":6140258,"grupo":"Parroquia","descripcion":"EL IDEAL"},
+      {"codigo":61403,"grupo":"Cantón","descripcion":"LIMÓN INDANZA"},
+      {"codigo":6140350,"grupo":"Parroquia","descripcion":"GENERAL LEONIDAS PLAZA GUTIERREZ (LIMÓN), CABECERA CANTONAL"},
+      {"codigo":6140351,"grupo":"Parroquia","descripcion":"INDANZA"},
+      {"codigo":6140352,"grupo":"Parroquia","descripcion":"*PAN DE AZÚCAR"},
+      {"codigo":6140353,"grupo":"Parroquia","descripcion":"SAN ANTONIO (CAB. EN SAN ANTONIO CENTRO)"},
+      {"codigo":6140354,"grupo":"Parroquia","descripcion":"*SAN CARLOS DE LIMÓN (SAN CARLOS DEL ZAMORA)"},
+      {"codigo":6140355,"grupo":"Parroquia","descripcion":"*SAN JUAN BOSCO"},
+      {"codigo":6140356,"grupo":"Parroquia","descripcion":"SAN MIGUEL DE CONCHAY"},
+      {"codigo":6140357,"grupo":"Parroquia","descripcion":"SANTA SUSANA DE CHIVIAZA (CAB. EN CHIVIAZA)"},
+      {"codigo":6140358,"grupo":"Parroquia","descripcion":"YUNGANZA (CAB. EN EL ROSARIO)"},
+      {"codigo":61404,"grupo":"Cantón","descripcion":"PALORA"},
+      {"codigo":6140450,"grupo":"Parroquia","descripcion":"PALORA (METZERA), CABECERA CANTONAL"},
+      {"codigo":6140451,"grupo":"Parroquia","descripcion":"ARAPICOS"},
+      {"codigo":6140452,"grupo":"Parroquia","descripcion":"CUMANDÁ (CAB. EN COLONIA AGRICOLA SEVILLA DEL ORO)"},
+      {"codigo":6140453,"grupo":"Parroquia","descripcion":"*HUAMBOYA"},
+      {"codigo":6140454,"grupo":"Parroquia","descripcion":"SANGAY (CAB. EN NAYAMANACA)"},
+      {"codigo":6140455,"grupo":"Parroquia","descripcion":"16 DE AGOSTO"},
+      {"codigo":61405,"grupo":"Cantón","descripcion":"SANTIAGO"},
+      {"codigo":6140550,"grupo":"Parroquia","descripcion":"SANTIAGO DE MENDEZ, CABECERA CANTONAL"},
+      {"codigo":6140551,"grupo":"Parroquia","descripcion":"COPAL"},
+      {"codigo":6140552,"grupo":"Parroquia","descripcion":"CHUPIANZA"},
+      {"codigo":6140553,"grupo":"Parroquia","descripcion":"PATUCA"},
+      {"codigo":6140554,"grupo":"Parroquia","descripcion":"SAN LUIS DE EL ACHO (CAB. EN EL ACHO)"},
+      {"codigo":6140555,"grupo":"Parroquia","descripcion":"*SANTIAGO"},
+      {"codigo":6140556,"grupo":"Parroquia","descripcion":"TAYUZA"},
+      {"codigo":6140557,"grupo":"Parroquia","descripcion":"SAN FRANCISCO DE CHINIMBIMI"},
+      {"codigo":61406,"grupo":"Cantón","descripcion":"SUCÚA"},
+      {"codigo":6140650,"grupo":"Parroquia","descripcion":"SUCUA, CABECERA CANTONAL"},
+      {"codigo":6140651,"grupo":"Parroquia","descripcion":"ASUNCIÓN"},
+      {"codigo":6140652,"grupo":"Parroquia","descripcion":"HUAMBI"},
+      {"codigo":6140653,"grupo":"Parroquia","descripcion":"*LOGROÑO"},
+      {"codigo":6140654,"grupo":"Parroquia","descripcion":"*YAUPI"},
+      {"codigo":6140655,"grupo":"Parroquia","descripcion":"SANTA MARIANITA DE JESUS"},
+      {"codigo":61407,"grupo":"Cantón","descripcion":"HUAMBOYA"},
+      {"codigo":6140750,"grupo":"Parroquia","descripcion":"HUAMBOYA"},
+      {"codigo":6140751,"grupo":"Parroquia","descripcion":"CHIGUAZA"},
+      {"codigo":6140752,"grupo":"Parroquia","descripcion":"*PABLO SEXTO"},
+      {"codigo":61408,"grupo":"Cantón","descripcion":"SAN JUAN BOSCO"},
+      {"codigo":6140850,"grupo":"Parroquia","descripcion":"SAN JUAN BOSCO, CABECERA CANTONAL"},
+      {"codigo":6140851,"grupo":"Parroquia","descripcion":"PAN DE AZÚCAR"},
+      {"codigo":6140852,"grupo":"Parroquia","descripcion":"SAN CARLOS DE LIMON"},
+      {"codigo":6140853,"grupo":"Parroquia","descripcion":"SAN JACINTO DE WAKAMBEIS"},
+      {"codigo":6140854,"grupo":"Parroquia","descripcion":"SANTIAGO DE PANANZA"},
+      {"codigo":61409,"grupo":"Cantón","descripcion":"TAISHA"},
+      {"codigo":6140950,"grupo":"Parroquia","descripcion":"TAISHA, CABECERA CANTONAL"},
+      {"codigo":6140951,"grupo":"Parroquia","descripcion":"HUASAGA (CAB. EN WAMPUK)"},
+      {"codigo":6140952,"grupo":"Parroquia","descripcion":"MACUMA"},
+      {"codigo":6140953,"grupo":"Parroquia","descripcion":"TUUTINENTZA"},
+      {"codigo":6140954,"grupo":"Parroquia","descripcion":"PUMPUENTSA"},
+      {"codigo":61410,"grupo":"Cantón","descripcion":"LOGROÑO"},
+      {"codigo":6141050,"grupo":"Parroquia","descripcion":"LOGROÑO, CABECERA CANTONAL"},
+      {"codigo":6141051,"grupo":"Parroquia","descripcion":"YAUPI"},
+      {"codigo":6141052,"grupo":"Parroquia","descripcion":"SHIMPIS"},
+      {"codigo":61411,"grupo":"Cantón","descripcion":"PABLO SEXTO"},
+      {"codigo":6141150,"grupo":"Parroquia","descripcion":"PABLO SEXTO, CABECERA CANTONAL"},
+      {"codigo":61412,"grupo":"Cantón","descripcion":"TIWINTZA"},
+      {"codigo":6141250,"grupo":"Parroquia","descripcion":"SANTIAGO, CABECERA CANTONAL"},
+      {"codigo":6141251,"grupo":"Parroquia","descripcion":"SAN JOSÉ DE MORONA"},
+      {"codigo":7,"grupo":"Zona","descripcion":"ZONA 7"},
+      {"codigo":707,"grupo":"Provincia","descripcion":"EL ORO"},
+      {"codigo":70701,"grupo":"Cantón","descripcion":"MACHALA"},
+      {"codigo":7070101,"grupo":"Parroquia","descripcion":"LA PROVIDENCIA"},
+      {"codigo":7070102,"grupo":"Parroquia","descripcion":"MACHALA"},
+      {"codigo":7070103,"grupo":"Parroquia","descripcion":"PUERTO BOLIVAR"},
+      {"codigo":7070104,"grupo":"Parroquia","descripcion":"NUEVE DE MAYO"},
+      {"codigo":7070105,"grupo":"Parroquia","descripcion":"EL CAMBIO"},
+      {"codigo":7070150,"grupo":"Parroquia","descripcion":"MACHALA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":7070151,"grupo":"Parroquia","descripcion":"*EL CAMBIO"},
+      {"codigo":7070152,"grupo":"Parroquia","descripcion":"EL RETIRO"},
+      {"codigo":70702,"grupo":"Cantón","descripcion":"ARENILLAS"},
+      {"codigo":7070250,"grupo":"Parroquia","descripcion":"ARENILLAS, CABECERA CANTONAL"},
+      {"codigo":7070251,"grupo":"Parroquia","descripcion":"CHACRAS"},
+      {"codigo":7070252,"grupo":"Parroquia","descripcion":"*LA LIBERTAD"},
+      {"codigo":7070253,"grupo":"Parroquia","descripcion":"*LAS LAJAS"},
+      {"codigo":7070254,"grupo":"Parroquia","descripcion":"PALMALES"},
+      {"codigo":7070255,"grupo":"Parroquia","descripcion":"CARCABON"},
+      {"codigo":70703,"grupo":"Cantón","descripcion":"ATAHUALPA"},
+      {"codigo":7070350,"grupo":"Parroquia","descripcion":"PACCHA, CABECERA CANTONAL (Cantón Atahualpa - El Oro)"},
+      {"codigo":7070351,"grupo":"Parroquia","descripcion":"AYAPAMBA"},
+      {"codigo":7070352,"grupo":"Parroquia","descripcion":"CORDONCILLO"},
+      {"codigo":7070353,"grupo":"Parroquia","descripcion":"MILAGRO (Cantón Atahualpa)"},
+      {"codigo":7070354,"grupo":"Parroquia","descripcion":"SAN JOSE (Cantón Atahualpa)"},
+      {"codigo":7070355,"grupo":"Parroquia","descripcion":"SAN JUAN DE CERRO AZUL"},
+      {"codigo":70704,"grupo":"Cantón","descripcion":"BALSAS"},
+      {"codigo":7070450,"grupo":"Parroquia","descripcion":"BALSAS, CABECERA CANTONAL"},
+      {"codigo":7070451,"grupo":"Parroquia","descripcion":"BELLAMARIA"},
+      {"codigo":70705,"grupo":"Cantón","descripcion":"CHILLA"},
+      {"codigo":7070550,"grupo":"Parroquia","descripcion":"CHILLA, CABECERA CANTONAL"},
+      {"codigo":70706,"grupo":"Cantón","descripcion":"EL GUABO"},
+      {"codigo":7070650,"grupo":"Parroquia","descripcion":"EL GUABO, CABECERA CANTONAL"},
+      {"codigo":7070651,"grupo":"Parroquia","descripcion":"BARBONES (SUCRE)"},
+      {"codigo":7070652,"grupo":"Parroquia","descripcion":"LA IBERIA"},
+      {"codigo":7070653,"grupo":"Parroquia","descripcion":"TENDALES (CAB.EN PUERTO TENDALES)"},
+      {"codigo":7070654,"grupo":"Parroquia","descripcion":"RIO BONITO"},
+      {"codigo":70707,"grupo":"Cantón","descripcion":"HUAQUILLAS"},
+      {"codigo":7070701,"grupo":"Parroquia","descripcion":"ECUADOR"},
+      {"codigo":7070702,"grupo":"Parroquia","descripcion":"EL PARAISO"},
+      {"codigo":7070703,"grupo":"Parroquia","descripcion":"HUALTACO"},
+      {"codigo":7070704,"grupo":"Parroquia","descripcion":"MILTON REYES"},
+      {"codigo":7070705,"grupo":"Parroquia","descripcion":"UNION LOJANA"},
+      {"codigo":7070750,"grupo":"Parroquia","descripcion":"HUAQUILLAS, CABECERA CANTONAL"},
+      {"codigo":70708,"grupo":"Cantón","descripcion":"MARCABELI"},
+      {"codigo":7070850,"grupo":"Parroquia","descripcion":"MARCABELI, CABECERA CANTONAL"},
+      {"codigo":7070851,"grupo":"Parroquia","descripcion":"EL INGENIO Cantón Marcabelí)"},
+      {"codigo":70709,"grupo":"Cantón","descripcion":"PASAJE"},
+      {"codigo":7070901,"grupo":"Parroquia","descripcion":"BOLIVAR"},
+      {"codigo":7070902,"grupo":"Parroquia","descripcion":"LOMA DE FRANCO"},
+      {"codigo":7070903,"grupo":"Parroquia","descripcion":"OCHOA LEON"},
+      {"codigo":7070904,"grupo":"Parroquia","descripcion":"TRES CERRITOS"},
+      {"codigo":7070950,"grupo":"Parroquia","descripcion":"PASAJE, CABECERA CANTONAL"},
+      {"codigo":7070951,"grupo":"Parroquia","descripcion":"BUENAVISTA"},
+      {"codigo":7070952,"grupo":"Parroquia","descripcion":"CASACAY"},
+      {"codigo":7070953,"grupo":"Parroquia","descripcion":"LA PEAÑA"},
+      {"codigo":7070954,"grupo":"Parroquia","descripcion":"PROGRESO"},
+      {"codigo":7070955,"grupo":"Parroquia","descripcion":"UZHCURRUMI"},
+      {"codigo":7070956,"grupo":"Parroquia","descripcion":"CAÑAQUEMADA"},
+      {"codigo":70710,"grupo":"Cantón","descripcion":"PIÑAS"},
+      {"codigo":7071001,"grupo":"Parroquia","descripcion":"LA MATRIZ (Cantón Piñas)"},
+      {"codigo":7071002,"grupo":"Parroquia","descripcion":"LA SUSAYA"},
+      {"codigo":7071003,"grupo":"Parroquia","descripcion":"PIÑAS GRANDE"},
+      {"codigo":7071050,"grupo":"Parroquia","descripcion":"PIÑAS, CABECERA CANTONAL"},
+      {"codigo":7071051,"grupo":"Parroquia","descripcion":"CAPIRO (CAB. EN LA CAPILLA DE CAPIRO)"},
+      {"codigo":7071052,"grupo":"Parroquia","descripcion":"LA BOCANA"},
+      {"codigo":7071053,"grupo":"Parroquia","descripcion":"MOROMORO (CAB. EN EL VADO)"},
+      {"codigo":7071054,"grupo":"Parroquia","descripcion":"PIEDRAS"},
+      {"codigo":7071055,"grupo":"Parroquia","descripcion":"SAN ROQUE (AMBROSIO MALDONADO) Cantón Piñas"},
+      {"codigo":7071056,"grupo":"Parroquia","descripcion":"SARACAY"},
+      {"codigo":70711,"grupo":"Cantón","descripcion":"PORTOVELO"},
+      {"codigo":7071150,"grupo":"Parroquia","descripcion":"PORTOVELO, CABECERA CANTONAL"},
+      {"codigo":7071151,"grupo":"Parroquia","descripcion":"CURTINCAPA"},
+      {"codigo":7071152,"grupo":"Parroquia","descripcion":"MORALES"},
+      {"codigo":7071153,"grupo":"Parroquia","descripcion":"SALATI"},
+      {"codigo":70712,"grupo":"Cantón","descripcion":"SANTA ROSA"},
+      {"codigo":7071201,"grupo":"Parroquia","descripcion":"SANTA ROSA"},
+      {"codigo":7071202,"grupo":"Parroquia","descripcion":"PUERTO JELI"},
+      {"codigo":7071203,"grupo":"Parroquia","descripcion":"BALNEARIO JAMBELÍ (SATÉLITE)"},
+      {"codigo":7071204,"grupo":"Parroquia","descripcion":"JUMÓN (SATELITE)"},
+      {"codigo":7071205,"grupo":"Parroquia","descripcion":"NUEVO SANTA ROSA"},
+      {"codigo":7071250,"grupo":"Parroquia","descripcion":"SANTA ROSA, CABECERA CANTONAL"},
+      {"codigo":7071251,"grupo":"Parroquia","descripcion":"BELLAVISTA"},
+      {"codigo":7071252,"grupo":"Parroquia","descripcion":"JAMBELÍ"},
+      {"codigo":7071253,"grupo":"Parroquia","descripcion":"LA AVANZADA"},
+      {"codigo":7071254,"grupo":"Parroquia","descripcion":"SAN ANTONIO (Cantón Santa Rosa)"},
+      {"codigo":7071255,"grupo":"Parroquia","descripcion":"TORATA"},
+      {"codigo":7071256,"grupo":"Parroquia","descripcion":"VICTORIA"},
+      {"codigo":7071257,"grupo":"Parroquia","descripcion":"BELLAMARIA"},
+      {"codigo":70713,"grupo":"Cantón","descripcion":"ZARUMA"},
+      {"codigo":7071350,"grupo":"Parroquia","descripcion":"ZARUMA, CABECERA CANTONAL"},
+      {"codigo":7071351,"grupo":"Parroquia","descripcion":"ABAÑIN"},
+      {"codigo":7071352,"grupo":"Parroquia","descripcion":"ARCAPAMBA"},
+      {"codigo":7071353,"grupo":"Parroquia","descripcion":"GUANAZAN"},
+      {"codigo":7071354,"grupo":"Parroquia","descripcion":"GUIZHAGUIÑA"},
+      {"codigo":7071355,"grupo":"Parroquia","descripcion":"HUERTAS"},
+      {"codigo":7071356,"grupo":"Parroquia","descripcion":"MALVAS"},
+      {"codigo":7071357,"grupo":"Parroquia","descripcion":"MULUNCAY GRANDE"},
+      {"codigo":7071358,"grupo":"Parroquia","descripcion":"SINSAO"},
+      {"codigo":7071359,"grupo":"Parroquia","descripcion":"SALVIAS"},
+      {"codigo":70714,"grupo":"Cantón","descripcion":"LAS LAJAS"},
+      {"codigo":7071401,"grupo":"Parroquia","descripcion":"LA VICTORIA"},
+      {"codigo":7071402,"grupo":"Parroquia","descripcion":"PLATANILLOS"},
+      {"codigo":7071403,"grupo":"Parroquia","descripcion":"VALLE HERMOSO"},
+      {"codigo":7071450,"grupo":"Parroquia","descripcion":"LA VICTORIA, CABECERA CANTONAL"},
+      {"codigo":7071451,"grupo":"Parroquia","descripcion":"LA LIBERTAD"},
+      {"codigo":7071452,"grupo":"Parroquia","descripcion":"EL PARAISO"},
+      {"codigo":7071453,"grupo":"Parroquia","descripcion":"SAN ISIDRO"},
+      {"codigo":711,"grupo":"Provincia","descripcion":"LOJA"},
+      {"codigo":71101,"grupo":"Cantón","descripcion":"LOJA"},
+      {"codigo":7110101,"grupo":"Parroquia","descripcion":"EL SAGRARIO"},
+      {"codigo":7110102,"grupo":"Parroquia","descripcion":"SAN SEBASTIAN"},
+      {"codigo":7110103,"grupo":"Parroquia","descripcion":"SUCRE"},
+      {"codigo":7110104,"grupo":"Parroquia","descripcion":"VALLE"},
+      {"codigo":7110151,"grupo":"Parroquia","descripcion":"CHANTACO"},
+      {"codigo":7110152,"grupo":"Parroquia","descripcion":"CHUQUIRIBAMBA"},
+      {"codigo":7110153,"grupo":"Parroquia","descripcion":"EL CISNE"},
+      {"codigo":7110154,"grupo":"Parroquia","descripcion":"GUALEL"},
+      {"codigo":7110155,"grupo":"Parroquia","descripcion":"JIMBILLA (Cantón Loja)"},
+      {"codigo":7110156,"grupo":"Parroquia","descripcion":"MALACATOS (VALLADOLID)"},
+      {"codigo":7110157,"grupo":"Parroquia","descripcion":"SAN LUCAS"},
+      {"codigo":7110158,"grupo":"Parroquia","descripcion":"SAN PEDRO DE VILCABAMBA"},
+      {"codigo":7110159,"grupo":"Parroquia","descripcion":"SANTIAGO (Cantón Loja)"},
+      {"codigo":7110160,"grupo":"Parroquia","descripcion":"TAQUIL (MIGUEL RIOFRIO)"},
+      {"codigo":7110161,"grupo":"Parroquia","descripcion":"VILCABAMBA (VICTORIA)"},
+      {"codigo":7110162,"grupo":"Parroquia","descripcion":"YANGANA (ARSENIO CASTILLO)"},
+      {"codigo":7110163,"grupo":"Parroquia","descripcion":"QUINARA"},
+      {"codigo":71102,"grupo":"Cantón","descripcion":"CALVAS"},
+      {"codigo":7110201,"grupo":"Parroquia","descripcion":"CARIAMANGA"},
+      {"codigo":7110202,"grupo":"Parroquia","descripcion":"CHILE"},
+      {"codigo":7110203,"grupo":"Parroquia","descripcion":"SAN VICENTE"},
+      {"codigo":7110250,"grupo":"Parroquia","descripcion":"CARIAMANGA, CABECERA CANTONAL"},
+      {"codigo":7110251,"grupo":"Parroquia","descripcion":"COLAISACA"},
+      {"codigo":7110252,"grupo":"Parroquia","descripcion":"EL LUCERO"},
+      {"codigo":7110253,"grupo":"Parroquia","descripcion":"UTUANA"},
+      {"codigo":7110254,"grupo":"Parroquia","descripcion":"SANGUILLIN"},
+      {"codigo":71103,"grupo":"Cantón","descripcion":"CATAMAYO"},
+      {"codigo":7110301,"grupo":"Parroquia","descripcion":"CATAMAYO"},
+      {"codigo":7110302,"grupo":"Parroquia","descripcion":"SAN JOSE"},
+      {"codigo":7110350,"grupo":"Parroquia","descripcion":"CATAMAYO (LA TOMA), CABECERA CANTONAL"},
+      {"codigo":7110351,"grupo":"Parroquia","descripcion":"EL TAMBO"},
+      {"codigo":7110352,"grupo":"Parroquia","descripcion":"GUAYQUICHUMA"},
+      {"codigo":7110353,"grupo":"Parroquia","descripcion":"SAN PEDRO DE LA BENDITA"},
+      {"codigo":7110354,"grupo":"Parroquia","descripcion":"ZAMBI"},
+      {"codigo":71104,"grupo":"Cantón","descripcion":"CELICA"},
+      {"codigo":7110450,"grupo":"Parroquia","descripcion":"CELICA, CABECERA CANTONAL"},
+      {"codigo":7110451,"grupo":"Parroquia","descripcion":"CRUZPAMBA (CAB. EN CARLOS BUSTAMANTE)"},
+      {"codigo":7110452,"grupo":"Parroquia","descripcion":"*CHAQUINAL"},
+      {"codigo":7110453,"grupo":"Parroquia","descripcion":"*12 DE DICIEMBRE (CAB.EN ACHIOTES)"},
+      {"codigo":7110454,"grupo":"Parroquia","descripcion":"*PINDAL (FEDERICO PÁEZ)"},
+      {"codigo":7110455,"grupo":"Parroquia","descripcion":"POZUL (SAN JUAN DE POZUL)"},
+      {"codigo":7110456,"grupo":"Parroquia","descripcion":"SABANILLA (Cantón Celica)"},
+      {"codigo":7110457,"grupo":"Parroquia","descripcion":"TNTE. MAXIMILIANO RODRIGUEZ LOAIZA"},
+      {"codigo":71105,"grupo":"Cantón","descripcion":"CHAGUARPAMBA"},
+      {"codigo":7110501,"grupo":"Parroquia","descripcion":"CHAGUARPAMBA"},
+      {"codigo":7110550,"grupo":"Parroquia","descripcion":"CHAGUARPAMBA, CABECERA CANTONAL"},
+      {"codigo":7110551,"grupo":"Parroquia","descripcion":"BUENAVISTA"},
+      {"codigo":7110552,"grupo":"Parroquia","descripcion":"EL ROSARIO"},
+      {"codigo":7110553,"grupo":"Parroquia","descripcion":"SANTA RUFINA"},
+      {"codigo":7110554,"grupo":"Parroquia","descripcion":"AMARILLOS"},
+      {"codigo":71106,"grupo":"Cantón","descripcion":"ESPINDOLA"},
+      {"codigo":7110650,"grupo":"Parroquia","descripcion":"AMALUZA, CABECERA CANTONAL Cantón Espíndola"},
+      {"codigo":7110651,"grupo":"Parroquia","descripcion":"BELLAVISTA"},
+      {"codigo":7110652,"grupo":"Parroquia","descripcion":"JIMBURA"},
+      {"codigo":7110653,"grupo":"Parroquia","descripcion":"SANTA TERESITA"},
+      {"codigo":7110654,"grupo":"Parroquia","descripcion":"27 DE ABRIL (CAB. EN LA NARANJA)"},
+      {"codigo":7110655,"grupo":"Parroquia","descripcion":"EL INGENIO"},
+      {"codigo":7110656,"grupo":"Parroquia","descripcion":"EL AIRO"},
+      {"codigo":71107,"grupo":"Cantón","descripcion":"GONZANAMA"},
+      {"codigo":7110750,"grupo":"Parroquia","descripcion":"GONZANAMA, CABECERA CANTONAL"},
+      {"codigo":7110751,"grupo":"Parroquia","descripcion":"CHANGAIMINA (LA LIBERTAD)"},
+      {"codigo":7110752,"grupo":"Parroquia","descripcion":"*FUNDOCHAMBA"},
+      {"codigo":7110753,"grupo":"Parroquia","descripcion":"NAMBACOLA"},
+      {"codigo":7110754,"grupo":"Parroquia","descripcion":"PURUNUMA (EGUIGUREN)"},
+      {"codigo":7110755,"grupo":"Parroquia","descripcion":"*QUILANGA"},
+      {"codigo":7110756,"grupo":"Parroquia","descripcion":"SACAPALCA"},
+      {"codigo":7110757,"grupo":"Parroquia","descripcion":"*SAN ANTONIO DE LAS ARADAS (CAB. EN LAS ARADAS) Cantón Quilanga"},
+      {"codigo":71108,"grupo":"Cantón","descripcion":"MACARA"},
+      {"codigo":7110801,"grupo":"Parroquia","descripcion":"GENERAL ELOY ALFARO (SAN SEBASTIAN) Cantón Macará"},
+      {"codigo":7110802,"grupo":"Parroquia","descripcion":"MACARA  (MANUEL ENRIQUE RENGEL SUQUILANDA)"},
+      {"codigo":7110850,"grupo":"Parroquia","descripcion":"MACARA, CABECERA CANTONAL"},
+      {"codigo":7110851,"grupo":"Parroquia","descripcion":"LARAMA"},
+      {"codigo":7110852,"grupo":"Parroquia","descripcion":"LA VICTORIA"},
+      {"codigo":7110853,"grupo":"Parroquia","descripcion":"SABIANGO (LA CAPILLA)"},
+      {"codigo":71109,"grupo":"Cantón","descripcion":"PALTAS"},
+      {"codigo":7110901,"grupo":"Parroquia","descripcion":"CATACOCHA"},
+      {"codigo":7110902,"grupo":"Parroquia","descripcion":"LOURDES"},
+      {"codigo":7110950,"grupo":"Parroquia","descripcion":"CATACOCHA, CABECERA CANTONAL"},
+      {"codigo":7110951,"grupo":"Parroquia","descripcion":"CANGONAMA"},
+      {"codigo":7110952,"grupo":"Parroquia","descripcion":"GUACHANAMA"},
+      {"codigo":7110953,"grupo":"Parroquia","descripcion":"*LA TINGUE"},
+      {"codigo":7110954,"grupo":"Parroquia","descripcion":"LAURO GUERRERO"},
+      {"codigo":7110955,"grupo":"Parroquia","descripcion":"*OLMEDO (SANTA BÁRBARA)"},
+      {"codigo":7110956,"grupo":"Parroquia","descripcion":"ORIANGA"},
+      {"codigo":7110957,"grupo":"Parroquia","descripcion":"SAN ANTONIO (Cantón Paltas)"},
+      {"codigo":7110958,"grupo":"Parroquia","descripcion":"CASANGA"},
+      {"codigo":7110959,"grupo":"Parroquia","descripcion":"YAMANA"},
+      {"codigo":71110,"grupo":"Cantón","descripcion":"PUYANGO"},
+      {"codigo":7111050,"grupo":"Parroquia","descripcion":"ALAMOR, CABECERA CANTONAL"},
+      {"codigo":7111051,"grupo":"Parroquia","descripcion":"CIANO"},
+      {"codigo":7111052,"grupo":"Parroquia","descripcion":"EL ARENAL"},
+      {"codigo":7111053,"grupo":"Parroquia","descripcion":"EL LIMO (MARIANA DE JESUS)"},
+      {"codigo":7111054,"grupo":"Parroquia","descripcion":"MERCADILLO"},
+      {"codigo":7111055,"grupo":"Parroquia","descripcion":"VICENTINO"},
+      {"codigo":71111,"grupo":"Cantón","descripcion":"SARAGURO"},
+      {"codigo":7111101,"grupo":"Parroquia","descripcion":"SARAGURO"},
+      {"codigo":7111150,"grupo":"Parroquia","descripcion":"SARAGURO, CABECERA CANTONAL"},
+      {"codigo":7111151,"grupo":"Parroquia","descripcion":"EL PARAISO DE CELEN"},
+      {"codigo":7111152,"grupo":"Parroquia","descripcion":"EL TABLON"},
+      {"codigo":7111153,"grupo":"Parroquia","descripcion":"LLUZHAPA"},
+      {"codigo":7111154,"grupo":"Parroquia","descripcion":"MANU"},
+      {"codigo":7111155,"grupo":"Parroquia","descripcion":"SAN ANTONIO DE QUMBE (CUMBE)"},
+      {"codigo":7111156,"grupo":"Parroquia","descripcion":"SAN PABLO DE TENTA"},
+      {"codigo":7111157,"grupo":"Parroquia","descripcion":"SAN SEBASTIAN DE YULUC"},
+      {"codigo":7111158,"grupo":"Parroquia","descripcion":"SELVA ALEGRE (Cantón Saraguro)"},
+      {"codigo":7111159,"grupo":"Parroquia","descripcion":"URDANETA (PAQUISHAPA)"},
+      {"codigo":7111160,"grupo":"Parroquia","descripcion":"SUMAYPAMBA"},
+      {"codigo":71112,"grupo":"Cantón","descripcion":"SOZORANGA"},
+      {"codigo":7111250,"grupo":"Parroquia","descripcion":"SOZORANGA, CABECERA CANTONAL"},
+      {"codigo":7111251,"grupo":"Parroquia","descripcion":"NUEVA FATIMA"},
+      {"codigo":7111252,"grupo":"Parroquia","descripcion":"TACAMOROS"},
+      {"codigo":71113,"grupo":"Cantón","descripcion":"ZAPOTILLO"},
+      {"codigo":7111350,"grupo":"Parroquia","descripcion":"ZAPOTILLO, CABECERA CANTONAL"},
+      {"codigo":7111351,"grupo":"Parroquia","descripcion":"CAZADEROS (CAB.EN MANGAURCO)"},
+      {"codigo":7111352,"grupo":"Parroquia","descripcion":"GARZAREAL"},
+      {"codigo":7111353,"grupo":"Parroquia","descripcion":"LIMONES"},
+      {"codigo":7111354,"grupo":"Parroquia","descripcion":"PALETILLAS"},
+      {"codigo":7111355,"grupo":"Parroquia","descripcion":"BOLASPAMBA"},
+      {"codigo":7111356,"grupo":"Parroquia","descripcion":"CAZADEROS"},
+      {"codigo":71114,"grupo":"Cantón","descripcion":"PINDAL"},
+      {"codigo":7111450,"grupo":"Parroquia","descripcion":"PINDAL, CABECERA CANTONAL"},
+      {"codigo":7111451,"grupo":"Parroquia","descripcion":"CHAQUINAL"},
+      {"codigo":7111452,"grupo":"Parroquia","descripcion":"12 DE DICIEMBRE (CAB.EN ACHIOTES)"},
+      {"codigo":7111453,"grupo":"Parroquia","descripcion":"MILAGROS"},
+      {"codigo":71115,"grupo":"Cantón","descripcion":"QUILANGA"},
+      {"codigo":7111550,"grupo":"Parroquia","descripcion":"QUILANGA, CABECERA CANTONAL"},
+      {"codigo":7111551,"grupo":"Parroquia","descripcion":"FUNDOCHAMBA"},
+      {"codigo":7111552,"grupo":"Parroquia","descripcion":"SAN ANTONIO DE LAS ARADAS (CAB. EN LAS ARADAS) Cantón Quilanga"},
+      {"codigo":71116,"grupo":"Cantón","descripcion":"OLMEDO"},
+      {"codigo":7111650,"grupo":"Parroquia","descripcion":"OLMEDO, CABECERA CANTONAL Cantón Olmedo - Loja"},
+      {"codigo":7111651,"grupo":"Parroquia","descripcion":"LA TINGUE"},
+      {"codigo":719,"grupo":"Provincia","descripcion":"ZAMORA CHINCHIPE"},
+      {"codigo":71901,"grupo":"Cantón","descripcion":"ZAMORA"},
+      {"codigo":7190101,"grupo":"Parroquia","descripcion":"EL LIMON"},
+      {"codigo":7190102,"grupo":"Parroquia","descripcion":"ZAMORA"},
+      {"codigo":7190150,"grupo":"Parroquia","descripcion":"ZAMORA, CABECERA CANTONAL Y CAPITAL PROVINCIAL"},
+      {"codigo":7190151,"grupo":"Parroquia","descripcion":"CUMBARATZA"},
+      {"codigo":7190152,"grupo":"Parroquia","descripcion":"GUADALUPE"},
+      {"codigo":7190153,"grupo":"Parroquia","descripcion":"IMBANA (LA VICTORIA DE IMBANA)"},
+      {"codigo":7190154,"grupo":"Parroquia","descripcion":"*PAQUISHA"},
+      {"codigo":7190155,"grupo":"Parroquia","descripcion":"SABANILLA"},
+      {"codigo":7190156,"grupo":"Parroquia","descripcion":"TIMBARA"},
+      {"codigo":7190157,"grupo":"Parroquia","descripcion":"*ZUMBI"},
+      {"codigo":7190158,"grupo":"Parroquia","descripcion":"SAN CARLOS DE LAS MINAS"},
+      {"codigo":71902,"grupo":"Cantón","descripcion":"CHINCHIPE"},
+      {"codigo":7190250,"grupo":"Parroquia","descripcion":"ZUMBA, CABECERA CANTONAL"},
+      {"codigo":7190251,"grupo":"Parroquia","descripcion":"CHITO"},
+      {"codigo":7190252,"grupo":"Parroquia","descripcion":"EL CHORRO"},
+      {"codigo":7190253,"grupo":"Parroquia","descripcion":"*EL PORVENIR DEL CARMEN"},
+      {"codigo":7190254,"grupo":"Parroquia","descripcion":"LA CHONTA"},
+      {"codigo":7190255,"grupo":"Parroquia","descripcion":"*PALANDA"},
+      {"codigo":7190256,"grupo":"Parroquia","descripcion":"PUCAPAMBA"},
+      {"codigo":7190257,"grupo":"Parroquia","descripcion":"*SAN FRANCISCO DEL VERGEL"},
+      {"codigo":7190258,"grupo":"Parroquia","descripcion":"*VALLADOLID"},
+      {"codigo":7190259,"grupo":"Parroquia","descripcion":"SAN ANDRÉS"},
+      {"codigo":71903,"grupo":"Cantón","descripcion":"NANGARITZA"},
+      {"codigo":7190350,"grupo":"Parroquia","descripcion":"GUAYZIMI, CABECERA CANTONAL"},
+      {"codigo":7190351,"grupo":"Parroquia","descripcion":"ZURMI"},
+      {"codigo":7190352,"grupo":"Parroquia","descripcion":"NUEVO PARAÍSO"},
+      {"codigo":71904,"grupo":"Cantón","descripcion":"YACUAMBI"},
+      {"codigo":7190450,"grupo":"Parroquia","descripcion":"28 DE MAYO (SAN JOSE DE YACUAMBI), CABECERA CANTONAL"},
+      {"codigo":7190451,"grupo":"Parroquia","descripcion":"LA PAZ (Cantón Yacuambi)"},
+      {"codigo":7190452,"grupo":"Parroquia","descripcion":"TUTUPALI"},
+      {"codigo":71905,"grupo":"Cantón","descripcion":"YANTZAZA"},
+      {"codigo":7190550,"grupo":"Parroquia","descripcion":"YANTZAZA (YANZATZA), CABECERA CANTONAL"},
+      {"codigo":7190551,"grupo":"Parroquia","descripcion":"CHICAÑA"},
+      {"codigo":7190552,"grupo":"Parroquia","descripcion":"*EL PANGUI"},
+      {"codigo":7190553,"grupo":"Parroquia","descripcion":"LOS ENCUENTROS"},
+      {"codigo":71906,"grupo":"Cantón","descripcion":"EL PANGUI"},
+      {"codigo":7190650,"grupo":"Parroquia","descripcion":"EL PANGUI, CABECERA CANTONAL"},
+      {"codigo":7190651,"grupo":"Parroquia","descripcion":"EL GUISME"},
+      {"codigo":7190652,"grupo":"Parroquia","descripcion":"PACHICUTZA"},
+      {"codigo":7190653,"grupo":"Parroquia","descripcion":"TUNDAYME"},
+      {"codigo":71907,"grupo":"Cantón","descripcion":"CENTINELA DEL CONDOR"},
+      {"codigo":7190750,"grupo":"Parroquia","descripcion":"ZUMBI, CABECERA CANTONAL"},
+      {"codigo":7190751,"grupo":"Parroquia","descripcion":"*PAQUISHA"},
+      {"codigo":7190752,"grupo":"Parroquia","descripcion":"TRIUNFO-DORADO"},
+      {"codigo":7190753,"grupo":"Parroquia","descripcion":"PANGUINTZA"},
+      {"codigo":71908,"grupo":"Cantón","descripcion":"PALANDA"},
+      {"codigo":7190850,"grupo":"Parroquia","descripcion":"PALANDA, CABECERA CANTONAL"},
+      {"codigo":7190851,"grupo":"Parroquia","descripcion":"EL PORVENIR DEL CARMEN"},
+      {"codigo":7190852,"grupo":"Parroquia","descripcion":"SAN FRANCISCO DEL VERGEL )"},
+      {"codigo":7190853,"grupo":"Parroquia","descripcion":"VALLADOLID"},
+      {"codigo":7190854,"grupo":"Parroquia","descripcion":"LA CANELA"},
+      {"codigo":71909,"grupo":"Cantón","descripcion":"PAQUISHA"},
+      {"codigo":7190901,"grupo":"Parroquia","descripcion":"PAQUISHA"},
+      {"codigo":7190950,"grupo":"Parroquia","descripcion":"PAQUISHA, CABECERA CANTONAL"},
+      {"codigo":7190951,"grupo":"Parroquia","descripcion":"BELLAVISTA"},
+      {"codigo":7190952,"grupo":"Parroquia","descripcion":"NUEVO QUITO"},
+      {"codigo":8,"grupo":"Zona","descripcion":"ZONA GALÁPAGOS"},
+      {"codigo":820,"grupo":"Provincia","descripcion":"GALÁPAGOS"},
+      {"codigo":82001,"grupo":"Cantón","descripcion":"SAN CRISTÓBAL"},
+      {"codigo":8200150,"grupo":"Parroquia","descripcion":"PUERTO BAQUERIZO MORENO,CABECERA CANTONAL"},
+      {"codigo":8200151,"grupo":"Parroquia","descripcion":"EL PROGRESO"},
+      {"codigo":8200152,"grupo":"Parroquia","descripcion":"ISLA SANTA MARÍA (FLOREANA) (CAB. EN PTO. VELASCO IBARRA) ESPAÑOLA, GENOVESA, SANTA FÉ E ISLOTES"},
+      {"codigo":82002,"grupo":"Cantón","descripcion":"ISABELA"},
+      {"codigo":8200250,"grupo":"Parroquia","descripcion":"PUERTO VILLAMIL, CABECERA CANTONAL"},
+      {"codigo":8200251,"grupo":"Parroquia","descripcion":"TOMÁS DE BERLANGA (SANTO TOMÁS) CHARLES DARWIN, TEODORO WOLF, FERNANDINA E ISLOTES"},
+      {"codigo":82003,"grupo":"Cantón","descripcion":"SANTA CRUZ"},
+      {"codigo":8200350,"grupo":"Parroquia","descripcion":"PUERTO AYORA, CABECERA CANTONAL"},
+      {"codigo":8200351,"grupo":"Parroquia","descripcion":"BELLAVISTA"},
+      {"codigo":8200352,"grupo":"Parroquia","descripcion":"SANTA ROSA (INCLUYE LA ISLA BALTRA)ISLAS MARCHENA, PINTA,PINZÓN,RÁBIDA, SANTIAGO, *BALTRA, SEYMUR E ISLOTES"}];
 
     _.each(dpas, function (dpa) {
       DPA.insert(dpa);

@@ -34,24 +34,37 @@ Cialcos.attachSchema(new SimpleSchema({
       }
     }
   },
-  zona: {
+  zonaID: {
     type: String,
     label: 'Zona',
     autoform: {
-      type: 'select-radio-inline',
+      type: 'select',
+      firstOption: 'Seleccione una zona',
       options: function () {
-        return [
-          {label: '1', value: '1'},
-          {label: '2', value: '2'},
-          {label: '3', value: '3'},
-          {label: '4', value: '4'},
-          {label: '5', value: '5'},
-          {label: '6', value: '6'},
-          {label: '7', value: '7'},
-          {label: 'Insular', value: 'Insular'}
-        ];
+        return DPA.find({grupo: 'Zona'}).map(function (dpa) {
+          return {label: dpa.descripcion, value: dpa.codigo};
+        });
       }
     }
+  },
+  zonaNombre: {
+    type: String,
+    autoValue: function () {
+      if (this.isInsert) {
+        let codigoZona = this.field('zonaID').value;
+        if (codigoZona)
+          return DPA.findOne({codigo: codigoZona}).descripcion;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: DPA.findOne({codigo: codigoZona}).descripcion};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    },
+    optional: true
   },
   provinciaID: {
     type: String,
@@ -60,7 +73,9 @@ Cialcos.attachSchema(new SimpleSchema({
       type: 'select',
       firstOption: 'Seleccione una provincia',
       options: function () {
-        return DPA.find({grupo: 'Provincia'}).map(function (dpa) {
+        var codigoZona = AutoForm.getFieldValue('zonaID');
+        var provincias = new RegExp('^' + codigoZona + '[\\d]{2}$');
+        return DPA.find({codigo: {$regex: provincias}}).map(function (dpa) {
           return {label: dpa.descripcion, value: dpa.codigo};
         });
       }
@@ -109,6 +124,47 @@ Cialcos.attachSchema(new SimpleSchema({
           return DPA.findOne({codigo: codigoCanton}).descripcion;
       } else if (this.isUpsert) {
         return {$setOnInsert: DPA.findOne({codigo: codigoCanton}).descripcion};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    },
+    optional: true
+  },
+  parroquiaID: {
+    type: String,
+    label: 'Parroquia',
+    optional: true,
+    autoform: {
+      type: 'select',
+      firstOption: 'Seleccione una parroquia',
+      options: function () {
+        $("[name='zona']").change(function() {
+          $("[name='parroquiaID'] option[value!='']").remove();
+        });
+        $("[name='provinciaID']").change(function() {
+          $("[name='parroquiaID'] option[value!='']").remove();
+        });
+        var codigoCanton = AutoForm.getFieldValue('cantonID');
+        var parroquias = new RegExp('^' + codigoCanton + '[\\d]{2}$');
+        return DPA.find({codigo: {$regex: parroquias}}).map(function (dpa) {
+          return {label: dpa.descripcion, value: dpa.codigo};
+        });
+      }
+    }
+  },
+  parroquiaNombre: {
+    type: String,
+    autoValue: function () {
+      if (this.isInsert) {
+        let codigoParroquia = this.field('parroquiaID').value;
+        if (codigoParroquia)
+          return DPA.findOne({codigo: codigoParroquia}).descripcion;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: DPA.findOne({codigo: codigoParroquia}).descripcion};
       } else {
         this.unset();
       }
@@ -280,12 +336,13 @@ TabularTables.Cialcos = new Tabular.Table({
   columns: [
     {data: "periodo.0.anio", title: "Año"},
     {data: "periodo.0.cuatrimestre", title: "Cuatrimestre"},
-    {data: "zona", title: "Zona"},
+    {data: "zonaNombre", title: "Zona"},
     {data: "provinciaNombre", title: "Provincia"},
     {data: "cantonNombre", title: "Cantón"},
     {data: "nombreCialco", title: "CIALCO"},
     {data: "modalidad", title: "Modalidad"},
-    {data: "nombreRepresentante", title: "Representante"}
+    {data: "nombreRepresentante", title: "Representante"},
+    {data: "responsable", title: "Responsable"}
   ],
   sub: new SubsManager()
 });

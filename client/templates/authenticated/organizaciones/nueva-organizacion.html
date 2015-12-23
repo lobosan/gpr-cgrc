@@ -4,11 +4,12 @@
   </div>
   {{#if Template.subscriptionsReady}}
     {{#autoForm collection='Organizaciones' id='insertOrganizacionForm' type='insert'}}
-      {{> afQuickField name='anio'}}
-      {{> afQuickField name='cuatrimestre'}}
-      {{> afQuickField name='zona'}}
+      {{> afQuickField name='periodo.0.anio'}}
+      {{> afQuickField name='periodo.0.cuatrimestre'}}
+      {{> afQuickField name='zonaID'}}
       {{> afQuickField name='provinciaID'}}
       {{> afQuickField name='cantonID'}}
+      {{> afQuickField name='parroquiaID'}}
       {{> afQuickField name='localidad'}}
       {{> afQuickField name='nombreOrganizacion'}}
       {{> afQuickField name='seps' datePickerOptions=datePickerOptions}}

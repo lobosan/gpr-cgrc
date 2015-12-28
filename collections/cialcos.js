@@ -220,17 +220,16 @@ Cialcos.attachSchema(new SimpleSchema({
   },
   hombresCialco: {
     type: Number,
-    label: 'Número de hombres vinculados al CIALCO',
+    label: 'Número de hombres vinculados al circuito',
     min: 0
   },
   mujeresCialco: {
     type: Number,
-    label: 'Número de mujeres vinculadas al CIALCO',
+    label: 'Número de mujeres vinculadas al circuito',
     min: 0
   },
   totalProductoresCialco: {
     type: Number,
-    label: 'Total de productores vinculados al CIALCO',
     optional: true,
     autoValue: function () {
       return this.field("hombresCialco").value + this.field("mujeresCialco").value;
@@ -239,6 +238,14 @@ Cialcos.attachSchema(new SimpleSchema({
       type: 'hidden',
       label: false
     }
+  },
+  cedulaRepresentante: {
+    type: String,
+    label: 'Cédula',
+    regEx: /^[0-9]{10}$/,
+    min: 10,
+    max: 10,
+    optional: true
   },
   nombreRepresentante: {
     type: String,

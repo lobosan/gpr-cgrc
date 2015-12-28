@@ -6,10 +6,11 @@
     {{#autoForm collection='MontosVenta' id='insertMontoVentaForm' type='insert'}}
       {{> afQuickField name='anio'}}
       {{> afQuickField name='semestre'}}
-      {{> afQuickField name='zona'}}
+      {{> afQuickField name='zonaID'}}
       {{> afQuickField name='provinciaID'}}
-      {{> afQuickField name='cialcoID'}}
-      {{> afQuickField name='ventasSemestre'}}
+      {{> afQuickField name='cantonID'}}
+      {{> afQuickField name='parroquiaID'}}
+      {{> afQuickField name='cialcos'}}
       <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
     {{/autoForm}}
   {{else}}

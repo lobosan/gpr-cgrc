@@ -29,24 +29,37 @@ MontosVenta.attachSchema(new SimpleSchema({
       }
     }
   },
-  zona: {
+  zonaID: {
     type: String,
     label: 'Zona',
     autoform: {
-      type: 'select-radio-inline',
+      type: 'select',
+      firstOption: 'Seleccione una zona',
       options: function () {
-        return [
-          {label: '1', value: '1'},
-          {label: '2', value: '2'},
-          {label: '3', value: '3'},
-          {label: '4', value: '4'},
-          {label: '5', value: '5'},
-          {label: '6', value: '6'},
-          {label: '7', value: '7'},
-          {label: 'Insular', value: 'Insular'}
-        ];
+        return DPA.find({grupo: 'Zona'}).map(function (dpa) {
+          return {label: dpa.descripcion, value: dpa.codigo};
+        });
       }
     }
+  },
+  zonaNombre: {
+    type: String,
+    autoValue: function () {
+      if (this.isInsert) {
+        let codigoZona = this.field('zonaID').value;
+        if (codigoZona)
+          return DPA.findOne({codigo: codigoZona}).descripcion;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: DPA.findOne({codigo: codigoZona}).descripcion};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    },
+    optional: true
   },
   provinciaID: {
     type: String,
@@ -55,7 +68,9 @@ MontosVenta.attachSchema(new SimpleSchema({
       type: 'select',
       firstOption: 'Seleccione una provincia',
       options: function () {
-        return DPA.find({grupo: 'Provincia'}).map(function (dpa) {
+        var codigoZona = AutoForm.getFieldValue('zonaID');
+        var provincias = new RegExp('^' + codigoZona + '[\\d]{2}$');
+        return DPA.find({codigo: {$regex: provincias}}).map(function (dpa) {
           return {label: dpa.descripcion, value: dpa.codigo};
         });
       }
@@ -80,7 +95,87 @@ MontosVenta.attachSchema(new SimpleSchema({
     },
     optional: true
   },
-  cialcoID: {
+  cantonID: {
+    type: String,
+    label: 'Cantón',
+    optional: true,
+    autoform: {
+      type: 'select',
+      firstOption: 'Seleccione un cantón',
+      options: function () {
+        var codigoProvincia = AutoForm.getFieldValue('provinciaID');
+        var cantones = new RegExp('^' + codigoProvincia + '[\\d]{2}$');
+        return DPA.find({codigo: {$regex: cantones}}).map(function (dpa) {
+          return {label: dpa.descripcion, value: dpa.codigo};
+        });
+      }
+    }
+  },
+  cantonNombre: {
+    type: String,
+    autoValue: function () {
+      if (this.isInsert) {
+        let codigoCanton = this.field('cantonID').value;
+        if (codigoCanton)
+          return DPA.findOne({codigo: codigoCanton}).descripcion;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: DPA.findOne({codigo: codigoCanton}).descripcion};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    },
+    optional: true
+  },
+  parroquiaID: {
+    type: String,
+    label: 'Parroquia',
+    optional: true,
+    autoform: {
+      type: 'select',
+      firstOption: 'Seleccione una parroquia',
+      options: function () {
+        $("[name='zona']").change(function () {
+          $("[name='parroquiaID'] option[value!='']").remove();
+        });
+        $("[name='provinciaID']").change(function () {
+          $("[name='parroquiaID'] option[value!='']").remove();
+        });
+        var codigoCanton = AutoForm.getFieldValue('cantonID');
+        var parroquias = new RegExp('^' + codigoCanton + '[\\d]{2}$');
+        return DPA.find({codigo: {$regex: parroquias}}).map(function (dpa) {
+          return {label: dpa.descripcion, value: dpa.codigo};
+        });
+      }
+    }
+  },
+  parroquiaNombre: {
+    type: String,
+    autoValue: function () {
+      if (this.isInsert) {
+        let codigoParroquia = this.field('parroquiaID').value;
+        if (codigoParroquia)
+          return DPA.findOne({codigo: codigoParroquia}).descripcion;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: DPA.findOne({codigo: codigoParroquia}).descripcion};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    },
+    optional: true
+  },
+  cialcos: {
+    type: [Object],
+    label: 'CIALCOs'
+  },
+  'cialcos.$.cialcoID': {
     type: String,
     label: 'CIALCO',
     optional: true,
@@ -93,11 +188,11 @@ MontosVenta.attachSchema(new SimpleSchema({
       }
     }
   },
-  cialcoNombre: {
+  'cialcos.$.cialcoNombre': {
     type: String,
     optional: true,
     autoValue: function () {
-      let cialcoID = this.field("cialcoID").value;
+      let cialcoID = this.siblingField("cialcoID").value;
       if (cialcoID)
         return Cialcos.findOne({_id: cialcoID}).nombreCialco;
     },
@@ -106,11 +201,11 @@ MontosVenta.attachSchema(new SimpleSchema({
       label: false
     }
   },
-  cialcoModalidad: {
+  'cialcos.$.cialcoModalidad': {
     type: String,
     optional: true,
     autoValue: function () {
-      let cialcoID = this.field("cialcoID").value;
+      let cialcoID = this.siblingField("cialcoID").value;
       if (cialcoID)
         return Cialcos.findOne({_id: cialcoID}).modalidad;
     },
@@ -119,7 +214,7 @@ MontosVenta.attachSchema(new SimpleSchema({
       label: false
     }
   },
-  ventasSemestre: {
+  'cialcos.$.ventasSemestre': {
     type: Number,
     decimal: true,
     min: 1,
@@ -185,11 +280,11 @@ TabularTables.MontosVenta = new Tabular.Table({
   columns: [
     {data: "anio", title: "Año"},
     {data: "semestre", title: "Semestre"},
-    {data: "zona", title: "Zona"},
+    {data: "zonaNombre", title: "Zona"},
     {data: "provinciaNombre", title: "Provincia"},
-    {data: "cialcoNombre", title: "CIALCO"},
-    {data: "cialcoModalidad", title: "Modalidad"},
-    {data: "ventasSemestre", title: "Venta semestral ($)"}
+    {data: "cialcos.0.cialcoNombre", title: "CIALCO"},
+    {data: "cialcos.0.cialcoModalidad", title: "Modalidad"},
+    {data: "cialcos.0.ventasSemestre", title: "Venta semestral ($)"}
   ],
   sub: new SubsManager()
 });

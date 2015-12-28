@@ -32,7 +32,7 @@ Respaldos.attachSchema(new SimpleSchema({
       }
     }
   },
-  zona: {
+  zonaID: {
     type: String,
     label: 'Zona',
     autoform: {
@@ -45,6 +45,25 @@ Respaldos.attachSchema(new SimpleSchema({
       }
     }
   },
+  zonaNombre: {
+    type: String,
+    autoValue: function () {
+      if (this.isInsert) {
+        let codigoZona = this.field('zonaID').value;
+        if (codigoZona)
+          return DPA.findOne({codigo: codigoZona}).descripcion;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: DPA.findOne({codigo: codigoZona}).descripcion};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    },
+    optional: true
+  },
   provinciaID: {
     type: String,
     label: 'Provincia',
@@ -52,7 +71,7 @@ Respaldos.attachSchema(new SimpleSchema({
       type: 'select',
       firstOption: 'Seleccione una provincia',
       options: function () {
-        var codigoZona = AutoForm.getFieldValue('zona');
+        var codigoZona = AutoForm.getFieldValue('zonaID');
         var provincias = new RegExp('^' + codigoZona + '[\\d]{2}$');
         return DPA.find({codigo: {$regex: provincias}}).map(function (dpa) {
           return {label: dpa.descripcion, value: dpa.codigo};
@@ -79,9 +98,13 @@ Respaldos.attachSchema(new SimpleSchema({
     },
     optional: true
   },
-  respaldo: {
+  respaldos: {
+    type: [Object],
+    label: 'Respaldos'
+  },
+  'respaldos.$.archivo': {
     type: String,
-    label: 'Respaldo',
+    label: 'Archivo',
     autoform: {
       afFieldInput: {
         type: "cfs-file",
@@ -89,7 +112,7 @@ Respaldos.attachSchema(new SimpleSchema({
       }
     }
   },
-  descripcion: {
+  'respaldos.$.descripcion': {
     type: String,
     label: 'Descripción (explique el contenido del respaldo)',
     autoform: {
@@ -154,17 +177,17 @@ TabularTables.Respaldos = new Tabular.Table({
   name: "Lista de respaldos",
   collection: Respaldos,
   columns: [
-    {data: "zona", title: "Zona"},
+    {data: "zonaNombre", title: "Zona"},
     {data: "provinciaNombre", title: "Provincia"},
     {data: "anio", title: "Año"},
     {data: "periodo", title: "Período"},
-    {data: "respaldo", title: "Respaldo", render: function (val, type, doc) {
+    {data: "respaldos.0.archivo", title: "Respaldo", render: function (val, type, doc) {
       if (val) {
         let upload  = Uploads.findOne({_id: val}).copies.uploads;
         return `<a target="_blank" href="/cfs/files/uploads/${val}/${upload.name}">${upload.name}</a>`;
       }
     }},
-    {data: "descripcion", title: "Descripción"}
+    {data: "respaldos.0.descripcion", title: "Descripción"}
   ],
   sub: new SubsManager()
 });

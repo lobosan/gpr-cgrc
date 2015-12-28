@@ -210,6 +210,14 @@ Redes.attachSchema(new SimpleSchema({
       }
     }
   },
+  cedulaRepresentante: {
+    type: String,
+    label: 'Cédula',
+    regEx: /^[0-9]{10}$/,
+    min: 10,
+    max: 10,
+    optional: true
+  },
   nombreRepresentante: {
     type: String,
     label: 'Nombre del representante'

@@ -206,6 +206,14 @@ Organizaciones.attachSchema(new SimpleSchema({
       }
     }
   },
+  cedulaRepresentante: {
+    type: String,
+    label: 'Cédula',
+    regEx: /^[0-9]{10}$/,
+    min: 10,
+    max: 10,
+    optional: true
+  },
   nombreRepresentante: {
     type: String,
     label: 'Nombre del representante'
@@ -272,13 +280,13 @@ Organizaciones.attachSchema(new SimpleSchema({
   },
   'productoresCialco.$.hombres': {
     type: Number,
-    label: 'Número de hombres en el CIALCO',
+    label: 'Número de hombres en el circuito',
     min: 0,
     optional: true
   },
   'productoresCialco.$.mujeres': {
     type: Number,
-    label: 'Número de mujeres en el CIALCO',
+    label: 'Número de mujeres en el circuito',
     min: 0,
     optional: true
   },

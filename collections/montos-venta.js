@@ -85,7 +85,7 @@ MontosVenta.attachSchema(new SimpleSchema({
     label: 'CIALCO',
     optional: true,
     autoform: {
-      type: "select2",
+      type: 'select2',
       options: function () {
         return Cialcos.find().map(function (cialco) {
           return {label: cialco.nombreCialco, value: cialco._id};
@@ -123,7 +123,7 @@ MontosVenta.attachSchema(new SimpleSchema({
     type: Number,
     decimal: true,
     min: 1,
-    label: 'Total de ventas por semestre ($)'
+    label: 'Total de ventas del CIALCO por semestre ($)'
   },
   createdAt: {
     type: String,

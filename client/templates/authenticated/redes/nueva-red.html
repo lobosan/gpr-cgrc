@@ -6,17 +6,23 @@
     {{#autoForm collection='Redes' id='insertRedForm' type='insert'}}
       {{> afQuickField name='periodo.0.anio'}}
       {{> afQuickField name='periodo.0.cuatrimestre'}}
-      {{> afQuickField name='zonaID'}}
-      {{> afQuickField name='provinciaID'}}
-      {{> afQuickField name='cantonID'}}
-      {{> afQuickField name='parroquiaID'}}
+      <fieldset class="custom-fieldset">
+        <legend class="custom-legend">Ubicación</legend>
+        {{> afQuickField name='zonaID'}}
+        {{> afQuickField name='provinciaID'}}
+        {{> afQuickField name='cantonID'}}
+        {{> afQuickField name='parroquiaID'}}
+      </fieldset>
       {{> afQuickField name='nombreRed'}}
       {{> afQuickField name='estado'}}
       {{> afQuickField name='nombreOrganizaciones' class='s2b'}}
-      {{> afQuickField name='nombreRepresentante'}}
-      {{> afQuickField name='telefonoFijoRepresentante'}}
-      {{> afQuickField name='celularRepresentante'}}
-      {{> afQuickField name='emailRepresentante'}}
+      <fieldset class="custom-fieldset">
+        <legend class="custom-legend">Datos del representante de la red</legend>
+        {{> afQuickField name='nombreRepresentante'}}
+        {{> afQuickField name='telefonoFijoRepresentante'}}
+        {{> afQuickField name='celularRepresentante'}}
+        {{> afQuickField name='emailRepresentante'}}
+      </fieldset>
       {{> afQuickField name='observaciones'}}
       <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
     {{/autoForm}}

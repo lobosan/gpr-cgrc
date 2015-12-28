@@ -15,7 +15,7 @@ Metas.attachSchema(new SimpleSchema({
       }
     }
   },
-  zona: {
+  zonaID: {
     type: String,
     label: 'Zona',
     autoform: {
@@ -28,6 +28,25 @@ Metas.attachSchema(new SimpleSchema({
       }
     }
   },
+  zonaNombre: {
+    type: String,
+    autoValue: function () {
+      if (this.isInsert) {
+        let codigoZona = this.field('zonaID').value;
+        if (codigoZona)
+          return DPA.findOne({codigo: codigoZona}).descripcion;
+      } else if (this.isUpsert) {
+        return {$setOnInsert: DPA.findOne({codigo: codigoZona}).descripcion};
+      } else {
+        this.unset();
+      }
+    },
+    autoform: {
+      type: 'hidden',
+      label: false
+    },
+    optional: true
+  },
   provinciaID: {
     type: String,
     label: 'Provincia',
@@ -35,7 +54,7 @@ Metas.attachSchema(new SimpleSchema({
       type: 'select',
       firstOption: 'Seleccione una provincia',
       options: function () {
-        var codigoZona = AutoForm.getFieldValue('zona');
+        var codigoZona = AutoForm.getFieldValue('zonaID');
         var provincias = new RegExp('^' + codigoZona + '[\\d]{2}$');
         return DPA.find({codigo: {$regex: provincias}}).map(function (dpa) {
           return {label: dpa.descripcion, value: dpa.codigo};
@@ -59,7 +78,8 @@ Metas.attachSchema(new SimpleSchema({
     autoform: {
       type: 'hidden',
       label: false
-    }
+    },
+    optional: true
   },
   cialcoPrimerCuatrimestre: {
     type: Number,

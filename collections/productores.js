@@ -251,7 +251,7 @@ Productores.attachSchema(new SimpleSchema({
     label: 'Organizaciones a las que pertenece',
     optional: true,
     autoform: {
-      type: "select2",
+      type: 'select2',
       options: function () {
         return Organizaciones.find().map(function (organizacion) {
           return {label: organizacion.nombreOrganizacion, value: organizacion._id};
@@ -266,7 +266,7 @@ Productores.attachSchema(new SimpleSchema({
     type: [String],
     label: 'CIALCOs a los que perntenece',
     autoform: {
-      type: "select2",
+      type: 'select2',
       options: function () {
         return Cialcos.find().map(function (cialco) {
           return {label: cialco.nombreCialco, value: cialco._id};

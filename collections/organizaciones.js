@@ -212,7 +212,7 @@ Organizaciones.attachSchema(new SimpleSchema({
   },
   telefonoFijoRepresentante: {
     type: String,
-    label: 'Teléfono fijo del representante',
+    label: 'Teléfono fijo',
     regEx: /^0[2-7]{1}-?\d{3}-?\d{4}$/,
     autoform: {
       placeholder: '02-000-0000'
@@ -221,7 +221,7 @@ Organizaciones.attachSchema(new SimpleSchema({
   },
   celularRepresentante: {
     type: String,
-    label: 'Teléfono celular del representante',
+    label: 'Teléfono celular',
     regEx: /^0[8-9]{1}\d{1}-?\d{3}-?\d{4}$/,
     autoform: {
       placeholder: '090-000-0000'
@@ -230,7 +230,7 @@ Organizaciones.attachSchema(new SimpleSchema({
   },
   emailRepresentante: {
     type: String,
-    label: 'Correo electrónico del representante',
+    label: 'Correo electrónico',
     regEx: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
     optional: true
   },
@@ -240,19 +240,16 @@ Organizaciones.attachSchema(new SimpleSchema({
     min: 1
   },
   productoresCialco: {
-    type: Array,
+    type: [Object],
     label: 'Productores de la organización vinculados a CIALCOs',
     optional: true
-  },
-  'productoresCialco.$': {
-    type: Object
   },
   'productoresCialco.$.cialcoID': {
     type: String,
     label: 'Nombre del CIALCO',
     optional: true,
     autoform: {
-      type: "select2",
+      type: 'select2',
       options: function () {
         return Cialcos.find().map(function (cialco) {
           return {label: cialco.nombreCialco, value: cialco._id};

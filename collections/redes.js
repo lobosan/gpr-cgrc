@@ -199,7 +199,7 @@ Redes.attachSchema(new SimpleSchema({
     type: [String],
     label: 'Organizaciones que conforman la red',
     autoform: {
-      type: "select2",
+      type: 'select2',
       options: function () {
         return Organizaciones.find().map(function (organizacion) {
           return {label: organizacion.nombreOrganizacion, value: organizacion._id};
@@ -212,11 +212,11 @@ Redes.attachSchema(new SimpleSchema({
   },
   nombreRepresentante: {
     type: String,
-    label: 'Representante de la red'
+    label: 'Nombre del representante'
   },
   telefonoFijoRepresentante: {
     type: String,
-    label: 'Teléfono fijo del representante',
+    label: 'Teléfono fijo',
     regEx: /^0[2-7]{1}-?\d{3}-?\d{4}$/,
     autoform: {
       placeholder: '02-000-0000'
@@ -225,7 +225,7 @@ Redes.attachSchema(new SimpleSchema({
   },
   celularRepresentante: {
     type: String,
-    label: 'Teléfono celular del representante',
+    label: 'Teléfono celular',
     regEx: /^0[8-9]{1}\d{1}-?\d{3}-?\d{4}$/,
     autoform: {
       placeholder: '090-000-0000'
@@ -234,7 +234,7 @@ Redes.attachSchema(new SimpleSchema({
   },
   emailRepresentante: {
     type: String,
-    label: 'Correo electrónico del representante',
+    label: 'Correo electrónico',
     regEx: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
     optional: true
   },

@@ -91,8 +91,7 @@ Respaldos.attachSchema(new SimpleSchema({
   },
   descripcion: {
     type: String,
-    label: 'Descripción',
-    optional: true,
+    label: 'Descripción (explique el contenido del respaldo)',
     autoform: {
       rows: 4
     }

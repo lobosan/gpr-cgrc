@@ -6,10 +6,13 @@
     {{#autoForm collection='Productores' id='insertProductorForm' type='insert'}}
       {{> afQuickField name='anio'}}
       {{> afQuickField name='cuatrimestre'}}
-      {{> afQuickField name='zonaID'}}
-      {{> afQuickField name='provinciaID'}}
-      {{> afQuickField name='cantonID'}}
-      {{> afQuickField name='parroquiaID'}}
+      <fieldset class="custom-fieldset">
+        <legend class="custom-legend">Ubicación</legend>
+        {{> afQuickField name='zonaID'}}
+        {{> afQuickField name='provinciaID'}}
+        {{> afQuickField name='cantonID'}}
+        {{> afQuickField name='parroquiaID'}}
+      </fieldset>
       {{> afQuickField name='cedula'}}
       {{> afQuickField name='apellidos'}}
       {{> afQuickField name='nombres'}}

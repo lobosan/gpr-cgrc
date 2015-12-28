@@ -218,34 +218,6 @@ Cialcos.attachSchema(new SimpleSchema({
       }
     }
   },
-  nombreRepresentante: {
-    type: String,
-    label: 'Representante del circuito'
-  },
-  telefonoFijoRepresentante: {
-    type: String,
-    label: 'Teléfono fijo del representante',
-    regEx: /^0[2-7]{1}-?\d{3}-?\d{4}$/,
-    autoform: {
-      placeholder: '02-000-0000'
-    },
-    optional: true
-  },
-  celularRepresentante: {
-    type: String,
-    label: 'Teléfono celular del representante',
-    regEx: /^0[8-9]{1}\d{1}-?\d{3}-?\d{4}$/,
-    autoform: {
-      placeholder: '090-000-0000'
-    },
-    optional: true
-  },
-  emailRepresentante: {
-    type: String,
-    label: 'Correo electrónico del representante',
-    regEx: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
-    optional: true
-  },
   hombresCialco: {
     type: Number,
     label: 'Número de hombres vinculados al CIALCO',
@@ -267,6 +239,34 @@ Cialcos.attachSchema(new SimpleSchema({
       type: 'hidden',
       label: false
     }
+  },
+  nombreRepresentante: {
+    type: String,
+    label: 'Nombre del representante'
+  },
+  telefonoFijoRepresentante: {
+    type: String,
+    label: 'Teléfono fijo',
+    regEx: /^0[2-7]{1}-?\d{3}-?\d{4}$/,
+    autoform: {
+      placeholder: '02-000-0000'
+    },
+    optional: true
+  },
+  celularRepresentante: {
+    type: String,
+    label: 'Teléfono celular',
+    regEx: /^0[8-9]{1}\d{1}-?\d{3}-?\d{4}$/,
+    autoform: {
+      placeholder: '090-000-0000'
+    },
+    optional: true
+  },
+  emailRepresentante: {
+    type: String,
+    label: 'Correo electrónico',
+    regEx: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
+    optional: true
   },
   observaciones: {
     type: String,

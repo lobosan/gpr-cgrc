@@ -6,18 +6,24 @@
     {{#autoForm collection='Organizaciones' id='insertOrganizacionForm' type='insert'}}
       {{> afQuickField name='periodo.0.anio'}}
       {{> afQuickField name='periodo.0.cuatrimestre'}}
-      {{> afQuickField name='zonaID'}}
-      {{> afQuickField name='provinciaID'}}
-      {{> afQuickField name='cantonID'}}
-      {{> afQuickField name='parroquiaID'}}
-      {{> afQuickField name='localidad'}}
+      <fieldset class="custom-fieldset">
+        <legend class="custom-legend">Ubicación</legend>
+        {{> afQuickField name='zonaID'}}
+        {{> afQuickField name='provinciaID'}}
+        {{> afQuickField name='cantonID'}}
+        {{> afQuickField name='parroquiaID'}}
+        {{> afQuickField name='localidad'}}
+      </fieldset>
       {{> afQuickField name='nombreOrganizacion'}}
       {{> afQuickField name='seps' datePickerOptions=datePickerOptions}}
       {{> afQuickField name='acreditacionMagap' datePickerOptions=datePickerOptions}}
-      {{> afQuickField name='nombreRepresentante'}}
-      {{> afQuickField name='telefonoFijoRepresentante'}}
-      {{> afQuickField name='celularRepresentante'}}
-      {{> afQuickField name='emailRepresentante'}}
+      <fieldset class="custom-fieldset">
+        <legend class="custom-legend">Datos del representante de la organización</legend>
+        {{> afQuickField name='nombreRepresentante'}}
+        {{> afQuickField name='telefonoFijoRepresentante'}}
+        {{> afQuickField name='celularRepresentante'}}
+        {{> afQuickField name='emailRepresentante'}}
+      </fieldset>
       {{> afQuickField name='productoresOrganizacion'}}
       {{> afQuickField name='productoresCialco'}}
       {{> afQuickField name='observaciones'}}

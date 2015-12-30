@@ -183,6 +183,8 @@ Organizaciones.attachSchema(new SimpleSchema({
   ruc: {
     type: String,
     label: 'RUC de la organización',
+    index: true,
+    unique: true,
     regEx: /^[0-9]{13}$/,
     min: 13,
     max: 13,
@@ -214,7 +216,10 @@ Organizaciones.attachSchema(new SimpleSchema({
   direccion: {
     type: String,
     label: 'Dirección de la organización',
-    optional: true
+    optional: true,
+    autoform: {
+      rows: 2
+    }
   },
   telefonoFijo1: {
     type: String,

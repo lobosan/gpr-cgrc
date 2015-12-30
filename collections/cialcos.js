@@ -175,14 +175,14 @@ Cialcos.attachSchema(new SimpleSchema({
     },
     optional: true
   },
-  localidad: {
+  sectorComunidad: {
     type: String,
-    label: 'Localidad',
+    label: 'Sector o comunidad',
     optional: true
   },
   nombreCialco: {
     type: String,
-    label: 'Nombre del CIALCO',
+    label: 'Nombre del circuito',
     index: true,
     unique: true
   },
@@ -198,6 +198,7 @@ Cialcos.attachSchema(new SimpleSchema({
           {label: 'Pie de finca', value: 'Pie de finca'},
           {label: 'Tienda', value: 'Tienda'},
           {label: 'Compra pública', value: 'Compra pública'},
+          {label: 'Exportación campesina', value: 'Exportación campesina'},
           {label: 'Abastecimiento a pequeñas industrias', value: 'Abastecimiento a pequeñas industrias'},
           {label: 'Catering/restaurantes', value: 'Catering/restaurantes'},
           {label: 'Otro', value: 'Otro'}

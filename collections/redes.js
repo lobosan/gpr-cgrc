@@ -195,7 +195,7 @@ Redes.attachSchema(new SimpleSchema({
       }
     }
   },
-  nombreOrganizaciones: {
+  organizaciones: {
     type: [String],
     label: 'Organizaciones que conforman la red',
     autoform: {
@@ -203,6 +203,21 @@ Redes.attachSchema(new SimpleSchema({
       options: function () {
         return Organizaciones.find().map(function (organizacion) {
           return {label: organizacion.nombreOrganizacion, value: organizacion._id};
+        });
+      },
+      afFieldInput: {
+        multiple: true
+      }
+    }
+  },
+  cialcos: {
+    type: [String],
+    label: 'CIALCOs en los que perticipa la red',
+    autoform: {
+      type: 'select2',
+      options: function () {
+        return Cialcos.find().map(function (cialco) {
+          return {label: cialco.nombreCialco, value: cialco._id};
         });
       },
       afFieldInput: {

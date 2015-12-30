@@ -175,9 +175,17 @@ Organizaciones.attachSchema(new SimpleSchema({
     },
     optional: true
   },
-  localidad: {
+  sectorComunidad: {
     type: String,
-    label: 'Localidad',
+    label: 'Sector o comunidad',
+    optional: true
+  },
+  ruc: {
+    type: String,
+    label: 'RUC de la organización',
+    regEx: /^[0-9]{13}$/,
+    min: 13,
+    max: 13,
     optional: true
   },
   nombreOrganizacion: {
@@ -185,6 +193,97 @@ Organizaciones.attachSchema(new SimpleSchema({
     label: 'Nombre de la organización',
     index: true,
     unique: true
+  },
+  actividadEconomica: {
+    type: String,
+    label: 'Actividad económica',
+    optional: true
+  },
+  cedulaRepresentante: {
+    type: String,
+    label: 'Cédula del representante',
+    regEx: /^[0-9]{10}$/,
+    min: 10,
+    max: 10,
+    optional: true
+  },
+  nombreRepresentante: {
+    type: String,
+    label: 'Nombre del representante'
+  },
+  direccion: {
+    type: String,
+    label: 'Dirección de la organización',
+    optional: true
+  },
+  telefonoFijo1: {
+    type: String,
+    label: 'Teléfono fijo 1',
+    regEx: /^0[2-7]{1}-?\d{3}-?\d{4}$/,
+    autoform: {
+      placeholder: '02-000-0000'
+    },
+    optional: true
+  },
+  telefonoFijo2: {
+    type: String,
+    label: 'Teléfono fijo 2',
+    regEx: /^0[2-7]{1}-?\d{3}-?\d{4}$/,
+    autoform: {
+      placeholder: '02-000-0000'
+    },
+    optional: true
+  },
+  telefonoFijo3: {
+    type: String,
+    label: 'Teléfono fijo 3',
+    regEx: /^0[2-7]{1}-?\d{3}-?\d{4}$/,
+    autoform: {
+      placeholder: '02-000-0000'
+    },
+    optional: true
+  },
+  celular1: {
+    type: String,
+    label: 'Teléfono celular 1',
+    regEx: /^0[8-9]{1}\d{1}-?\d{3}-?\d{4}$/,
+    autoform: {
+      placeholder: '090-000-0000'
+    },
+    optional: true
+  },
+  celular2: {
+    type: String,
+    label: 'Teléfono celular 2',
+    regEx: /^0[8-9]{1}\d{1}-?\d{3}-?\d{4}$/,
+    autoform: {
+      placeholder: '090-000-0000'
+    },
+    optional: true
+  },
+  email: {
+    type: String,
+    label: 'Correo electrónico',
+    regEx: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
+    optional: true
+  },
+  paginaWeb: {
+    type: String,
+    label: 'Página Web',
+    regEx: /^(http\:\/\/|https\:\/\/)?([a-z0-9][a-z0-9\-]*\.)+[a-z0-9][a-z0-9\-]*$/,
+    optional: true
+  },
+  facebook: {
+    type: String,
+    label: 'Facebook',
+    optional: true
+  },
+  twitter: {
+    type: String,
+    label: 'Twitter',
+    regEx: /@([A-Za-z0-9_]+)/,
+    min: 6,
+    optional: true
   },
   seps: {
     type: String,
@@ -206,42 +305,6 @@ Organizaciones.attachSchema(new SimpleSchema({
       }
     }
   },
-  cedulaRepresentante: {
-    type: String,
-    label: 'Cédula',
-    regEx: /^[0-9]{10}$/,
-    min: 10,
-    max: 10,
-    optional: true
-  },
-  nombreRepresentante: {
-    type: String,
-    label: 'Nombre del representante'
-  },
-  telefonoFijoRepresentante: {
-    type: String,
-    label: 'Teléfono fijo',
-    regEx: /^0[2-7]{1}-?\d{3}-?\d{4}$/,
-    autoform: {
-      placeholder: '02-000-0000'
-    },
-    optional: true
-  },
-  celularRepresentante: {
-    type: String,
-    label: 'Teléfono celular',
-    regEx: /^0[8-9]{1}\d{1}-?\d{3}-?\d{4}$/,
-    autoform: {
-      placeholder: '090-000-0000'
-    },
-    optional: true
-  },
-  emailRepresentante: {
-    type: String,
-    label: 'Correo electrónico',
-    regEx: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
-    optional: true
-  },
   productoresOrganizacion: {
     type: Number,
     label: 'Número de productores de la organización',
@@ -254,7 +317,7 @@ Organizaciones.attachSchema(new SimpleSchema({
   },
   'productoresCialco.$.cialcoID': {
     type: String,
-    label: 'Nombre del CIALCO',
+    label: 'Nombre del circuito',
     optional: true,
     autoform: {
       type: 'select2',

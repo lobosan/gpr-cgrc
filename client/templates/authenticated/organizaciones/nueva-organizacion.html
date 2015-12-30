@@ -12,19 +12,32 @@
         {{> afQuickField name='provinciaID'}}
         {{> afQuickField name='cantonID'}}
         {{> afQuickField name='parroquiaID'}}
-        {{> afQuickField name='localidad'}}
+        {{> afQuickField name='sectorComunidad'}}
       </fieldset>
+      {{> afQuickField name='ruc'}}
       {{> afQuickField name='nombreOrganizacion'}}
-      {{> afQuickField name='seps' datePickerOptions=datePickerOptions}}
-      {{> afQuickField name='acreditacionMagap' datePickerOptions=datePickerOptions}}
+      {{> afQuickField name='actividadEconomica'}}
       <fieldset class="custom-fieldset">
-        <legend class="custom-legend">Datos del representante de la organización</legend>
+        <legend class="custom-legend">Datos de contacto de la organización</legend>
         {{> afQuickField name='cedulaRepresentante'}}
         {{> afQuickField name='nombreRepresentante'}}
-        {{> afQuickField name='telefonoFijoRepresentante'}}
-        {{> afQuickField name='celularRepresentante'}}
-        {{> afQuickField name='emailRepresentante'}}
+        {{> afQuickField name='direccion'}}
+        <div class="row">
+          <div class="col-md-4">{{> afQuickField name='telefonoFijo1'}}</div>
+          <div class="col-md-4">{{> afQuickField name='telefonoFijo2'}}</div>
+          <div class="col-md-4">{{> afQuickField name='telefonoFijo3'}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">{{> afQuickField name='celular1'}}</div>
+            <div class="col-md-4">{{> afQuickField name='celular2'}}</div>
+        </div>
+        {{> afQuickField name='email'}}
+        {{> afQuickField name='paginaWeb'}}
+        {{> afQuickField name='facebook'}}
+        {{> afQuickField name='twitter'}}
       </fieldset>
+      {{> afQuickField name='seps' datePickerOptions=datePickerOptions}}
+      {{> afQuickField name='acreditacionMagap' datePickerOptions=datePickerOptions}}
       {{> afQuickField name='productoresOrganizacion'}}
       {{> afQuickField name='productoresCialco'}}
       {{> afQuickField name='observaciones'}}

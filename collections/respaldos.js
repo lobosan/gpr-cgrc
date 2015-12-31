@@ -106,6 +106,7 @@ Respaldos.attachSchema(new SimpleSchema({
     type: String,
     label: 'Archivo',
     autoform: {
+      placeholder: 'Haga clic para subir un archivo o arrástrelo hasta aquí',
       afFieldInput: {
         type: "cfs-file",
         collection: "uploads"

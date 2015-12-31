@@ -242,7 +242,7 @@ Cialcos.attachSchema(new SimpleSchema({
   },
   cedulaRepresentante: {
     type: String,
-    label: 'Cédula',
+    label: 'Cédula del representante',
     regEx: /^[0-9]{10}$/,
     min: 10,
     max: 10,

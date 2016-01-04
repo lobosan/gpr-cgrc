@@ -1,60 +1,68 @@
 <template name="metas">
-  <div class="page-header-2 clearfix">
-    <h3 class="pull-left">Metas GPR</h3>
-    <a class="btn btn-success pull-right btn-top-buffer" title="Nuevas metas" href="{{pathFor 'nuevas-metas'}}">Nuevas metas</a>
-  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card card-top-buffer">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="title">Metas GPR</div>
+          </div>
+          <a class="btn btn-success pull-right btn-top-buffer" title="Nuevas metas" href="{{pathFor 'nuevas-metas'}}">Nuevas metas</a>
+        </div>
+        <div class="card-body">
+          <form role="form">
+            <div class="form-group">
+              <label for="anioMetas">Año</label>
+              <select class="form-control" name="anioMetas">
+                <option selected>Seleccione un año</option>
+                {{#each anios}}
+                  <option>{{value}}</option>
+                {{/each}}
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="provinciaMetas">Provincia</label>
+              <select class="form-control" name="provinciaMetas">
+                <option selected>Seleccione una provincia</option>
+                {{#each provincias}}
+                  <option value="{{value}}">{{label}}</option>
+                {{/each}}
+              </select>
+            </div>
+          </form>
 
-  <form role="form">
-    <div class="form-group">
-      <label for="anioMetas">Año</label>
-      <select class="form-control" name="anioMetas">
-        <option selected>Seleccione un año</option>
-        {{#each anios}}
-          <option>{{value}}</option>
-        {{/each}}
-      </select>
+          {{#with metasAnualesPorProvincia}}
+          <div class="row bottom-buffer">
+            <div class="col-md-12"><h4>CIALCOs</h4></div>
+            <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{cialcoPrimerCuatrimestre}}</div>
+            <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{cialcoSegundoCuatrimestre}}</div>
+            <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10">{{cialcoTercerCuatrimestre}}</div>
+          </div>
+          <div class="row bottom-buffer">
+            <div class="col-md-12"><h4>Organizaciones</h4></div>
+            <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{organizacionesPrimerCuatrimestre}}</div>
+            <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{organizacionesSegundoCuatrimestre}}</div>
+            <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10">{{organizacionesTercerCuatrimestre}}</div>
+          </div>
+          <div class="row bottom-buffer">
+            <div class="col-md-12"><h4>Redes</h4></div>
+            <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{redesPrimerCuatrimestre}}</div>
+            <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{redesSegundoCuatrimestre}}</div>
+            <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10">{{redesTercerCuatrimestre}}</div>
+          </div>
+          <div class="row bottom-buffer">
+            <div class="col-md-12"><h4>Productores</h4></div>
+            <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{productoresPrimerCuatrimestre}}</div>
+            <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{productoresSegundoCuatrimestre}}</div>
+            <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10">{{productoresTercerCuatrimestre}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-12"><h4>Montos de venta</h4></div>
+            <div class="col-md-2">Primer semestre</div><div class="col-md-10">{{montoVentasPrimerSemestre}} USD</div>
+            <div class="col-md-2">Segundo semestre</div><div class="col-md-10">{{montoVentasSegundoSemestre}} USD</div>
+          </div>
+          {{/with}}
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="provinciaMetas">Provincia</label>
-      <select class="form-control" name="provinciaMetas">
-        <option selected>Seleccione una provincia</option>
-        {{#each provincias}}
-          <option value="{{value}}">{{label}}</option>
-        {{/each}}
-      </select>
-    </div>
-  </form>
-
-  {{#with metasAnualesPorProvincia}}
-  <div class="row bottom-buffer">
-    <div class="col-md-12"><h4>CIALCOs</h4></div>
-    <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{cialcoPrimerCuatrimestre}}</div>
-    <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{cialcoSegundoCuatrimestre}}</div>
-    <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10">{{cialcoTercerCuatrimestre}}</div>
   </div>
-  <div class="row bottom-buffer">
-    <div class="col-md-12"><h4>Organizaciones</h4></div>
-    <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{organizacionesPrimerCuatrimestre}}</div>
-    <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{organizacionesSegundoCuatrimestre}}</div>
-    <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10">{{organizacionesTercerCuatrimestre}}</div>
-  </div>
-  <div class="row bottom-buffer">
-    <div class="col-md-12"><h4>Redes</h4></div>
-    <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{redesPrimerCuatrimestre}}</div>
-    <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{redesSegundoCuatrimestre}}</div>
-    <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10">{{redesTercerCuatrimestre}}</div>
-  </div>
-  <div class="row bottom-buffer">
-    <div class="col-md-12"><h4>Productores</h4></div>
-    <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{productoresPrimerCuatrimestre}}</div>
-    <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{productoresSegundoCuatrimestre}}</div>
-    <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10">{{productoresTercerCuatrimestre}}</div>
-  </div>
-  <div class="row btn-bottom-buffer">
-    <div class="col-md-12"><h4>Montos de venta</h4></div>
-    <div class="col-md-2">Primer semestre</div><div class="col-md-10">{{montoVentasPrimerSemestre}} USD</div>
-    <div class="col-md-2">Segundo semestre</div><div class="col-md-10">{{montoVentasSegundoSemestre}} USD</div>
-  </div>
-  {{/with}}
-
 </template>

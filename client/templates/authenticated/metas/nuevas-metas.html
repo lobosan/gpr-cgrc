@@ -1,44 +1,54 @@
 <template name="nuevasMetas">
-  <div class="page-header-2">
-    <h3>Nuevas metas</h3>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card card-top-buffer">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="title">Nuevas metas</div>
+          </div>
+        </div>
+        <div class="card-body">
+          {{#if Template.subscriptionsReady}}
+            {{#autoForm collection='Metas' id='insertMetasForm' type='insert'}}
+              {{> afQuickField name='anio'}}
+              {{> afQuickField name='zonaID'}}
+              {{> afQuickField name='provinciaID'}}
+              <fieldset class="custom-fieldset">
+                <legend class="custom-legend">CIALCOs</legend>
+                {{> afQuickField name='cialcoPrimerCuatrimestre'}}
+                {{> afQuickField name='cialcoSegundoCuatrimestre'}}
+                {{> afQuickField name='cialcoTercerCuatrimestre'}}
+              </fieldset>
+              <fieldset class="custom-fieldset">
+                <legend class="custom-legend">Organizaciones</legend>
+                {{> afQuickField name='organizacionesPrimerCuatrimestre'}}
+                {{> afQuickField name='organizacionesSegundoCuatrimestre'}}
+                {{> afQuickField name='organizacionesTercerCuatrimestre'}}
+              </fieldset>
+              <fieldset class="custom-fieldset">
+                <legend class="custom-legend">Redes</legend>
+                {{> afQuickField name='redesPrimerCuatrimestre'}}
+                {{> afQuickField name='redesSegundoCuatrimestre'}}
+                {{> afQuickField name='redesTercerCuatrimestre'}}
+              </fieldset>
+              <fieldset class="custom-fieldset">
+                <legend class="custom-legend">Productores</legend>
+                {{> afQuickField name='productoresPrimerCuatrimestre'}}
+                {{> afQuickField name='productoresSegundoCuatrimestre'}}
+                {{> afQuickField name='productoresTercerCuatrimestre'}}
+              </fieldset>
+              <fieldset class="custom-fieldset">
+                <legend class="custom-legend">Montos de venta</legend>
+                {{> afQuickField name='montoVentasPrimerSemestre'}}
+                {{> afQuickField name='montoVentasSegundoSemestre'}}
+              </fieldset>
+              <button type='submit' class='btn btn-success'>GUARDAR</button>
+            {{/autoForm}}
+          {{else}}
+            {{> spinner}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
   </div>
-  {{#if Template.subscriptionsReady}}
-    {{#autoForm collection='Metas' id='insertMetasForm' type='insert'}}
-      {{> afQuickField name='anio'}}
-      {{> afQuickField name='zonaID'}}
-      {{> afQuickField name='provinciaID'}}
-      <fieldset class="custom-fieldset">
-        <legend class="custom-legend">CIALCOs</legend>
-        {{> afQuickField name='cialcoPrimerCuatrimestre'}}
-        {{> afQuickField name='cialcoSegundoCuatrimestre'}}
-        {{> afQuickField name='cialcoTercerCuatrimestre'}}
-      </fieldset>
-      <fieldset class="custom-fieldset">
-        <legend class="custom-legend">Organizaciones</legend>
-        {{> afQuickField name='organizacionesPrimerCuatrimestre'}}
-        {{> afQuickField name='organizacionesSegundoCuatrimestre'}}
-        {{> afQuickField name='organizacionesTercerCuatrimestre'}}
-      </fieldset>
-      <fieldset class="custom-fieldset">
-        <legend class="custom-legend">Redes</legend>
-        {{> afQuickField name='redesPrimerCuatrimestre'}}
-        {{> afQuickField name='redesSegundoCuatrimestre'}}
-        {{> afQuickField name='redesTercerCuatrimestre'}}
-      </fieldset>
-      <fieldset class="custom-fieldset">
-        <legend class="custom-legend">Productores</legend>
-        {{> afQuickField name='productoresPrimerCuatrimestre'}}
-        {{> afQuickField name='productoresSegundoCuatrimestre'}}
-        {{> afQuickField name='productoresTercerCuatrimestre'}}
-      </fieldset>
-      <fieldset class="custom-fieldset">
-        <legend class="custom-legend">Montos de venta</legend>
-        {{> afQuickField name='montoVentasPrimerSemestre'}}
-        {{> afQuickField name='montoVentasSegundoSemestre'}}
-      </fieldset>
-      <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
-    {{/autoForm}}
-  {{else}}
-    {{> spinner}}
-  {{/if}}
 </template>

@@ -1,36 +1,46 @@
-<template name="nuevoCialco" xmlns="http://www.w3.org/1999/html">
-  <div class="page-header-2">
-    <h3>Nuevo CIALCO</h3>
+<template name="nuevoCialco">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card card-top-buffer">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="title">Nuevo CIALCO</div>
+          </div>
+        </div>
+        <div class="card-body">
+          {{#if Template.subscriptionsReady}}
+            {{#autoForm collection='Cialcos' id='insertCialcoForm' type='insert'}}
+              {{> afQuickField name='periodo.0.anio'}}
+              {{> afQuickField name='periodo.0.cuatrimestre'}}
+              <fieldset class="custom-fieldset">
+                <legend class="custom-legend">Ubicación</legend>
+                {{> afQuickField name='zonaID'}}
+                {{> afQuickField name='provinciaID'}}
+                {{> afQuickField name='cantonID'}}
+                {{> afQuickField name='parroquiaID'}}
+                {{> afQuickField name='sectorComunidad'}}
+              </fieldset>
+              {{> afQuickField name='nombreCialco'}}
+              {{> afQuickField name='modalidad'}}
+              {{> afQuickField name='estado'}}
+              {{> afQuickField name='hombresCialco'}}
+              {{> afQuickField name='mujeresCialco'}}
+              <fieldset class="custom-fieldset">
+                <legend class="custom-legend">Datos del representante del circuito</legend>
+                {{> afQuickField name='cedulaRepresentante'}}
+                {{> afQuickField name='nombreRepresentante'}}
+                {{> afQuickField name='telefonoFijoRepresentante'}}
+                {{> afQuickField name='celularRepresentante'}}
+                {{> afQuickField name='emailRepresentante'}}
+              </fieldset>
+              {{> afQuickField name='observaciones'}}
+              <button type='submit' class='btn btn-success'>GUARDAR</button>
+            {{/autoForm}}
+          {{else}}
+            {{> spinner}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
   </div>
-  {{#if Template.subscriptionsReady}}
-    {{#autoForm collection='Cialcos' id='insertCialcoForm' type='insert'}}
-      {{> afQuickField name='periodo.0.anio'}}
-      {{> afQuickField name='periodo.0.cuatrimestre'}}
-      <fieldset class="custom-fieldset">
-        <legend class="custom-legend">Ubicación</legend>
-        {{> afQuickField name='zonaID'}}
-        {{> afQuickField name='provinciaID'}}
-        {{> afQuickField name='cantonID'}}
-        {{> afQuickField name='parroquiaID'}}
-        {{> afQuickField name='sectorComunidad'}}
-      </fieldset>
-      {{> afQuickField name='nombreCialco'}}
-      {{> afQuickField name='modalidad'}}
-      {{> afQuickField name='estado'}}
-      {{> afQuickField name='hombresCialco'}}
-      {{> afQuickField name='mujeresCialco'}}
-      <fieldset class="custom-fieldset">
-        <legend class="custom-legend">Datos del representante del circuito</legend>
-        {{> afQuickField name='cedulaRepresentante'}}
-        {{> afQuickField name='nombreRepresentante'}}
-        {{> afQuickField name='telefonoFijoRepresentante'}}
-        {{> afQuickField name='celularRepresentante'}}
-        {{> afQuickField name='emailRepresentante'}}
-      </fieldset>
-      {{> afQuickField name='observaciones'}}
-      <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
-    {{/autoForm}}
-  {{else}}
-    {{> spinner}}
-  {{/if}}
 </template>

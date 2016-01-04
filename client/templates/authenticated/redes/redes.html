@@ -1,7 +1,17 @@
 <template name="redes">
-  <div class="page-header-2 clearfix">
-    <h3 class="pull-left">Lista de redes</h3>
-    <a class="btn btn-success pull-right btn-top-buffer" title="Nueva Red" href="{{pathFor 'nueva-red'}}">Nueva red</a>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card card-top-buffer">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="title">Lista de redes</div>
+          </div>
+          <a class="btn btn-success pull-right btn-top-buffer" title="Nueva Red" href="{{pathFor 'nueva-red'}}">Nueva red</a>
+        </div>
+        <div class="card-body">
+          {{> tabular table=TabularTables.Redes class="table table-striped table-bordered table-condensed"}}
+        </div>
+      </div>
+    </div>
   </div>
-  {{> tabular table=TabularTables.Redes class="table table-striped table-bordered table-condensed"}}
 </template>

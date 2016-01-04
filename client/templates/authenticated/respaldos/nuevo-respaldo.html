@@ -1,17 +1,27 @@
 <template name="nuevoRespaldo">
-  <div class="page-header-2">
-    <h3>Nuevo respaldo</h3>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card card-top-buffer">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="title">Nuevo respaldo</div>
+          </div>
+        </div>
+        <div class="card-body">
+          {{#if Template.subscriptionsReady}}
+            {{#autoForm collection='Respaldos' id='insertRespaldoForm' type='insert'}}
+              {{> afQuickField name='anio'}}
+              {{> afQuickField name='periodo'}}
+              {{> afQuickField name='zonaID'}}
+              {{> afQuickField name='provinciaID'}}
+              {{> afQuickField name='respaldos'}}
+              <button type='submit' class='btn btn-success'>GUARDAR</button>
+            {{/autoForm}}
+          {{else}}
+            {{> spinner}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
   </div>
-  {{#if Template.subscriptionsReady}}
-    {{#autoForm collection='Respaldos' id='insertRespaldoForm' type='insert'}}
-      {{> afQuickField name='anio'}}
-      {{> afQuickField name='periodo'}}
-      {{> afQuickField name='zonaID'}}
-      {{> afQuickField name='provinciaID'}}
-      {{> afQuickField name='respaldos'}}
-      <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
-    {{/autoForm}}
-  {{else}}
-    {{> spinner}}
-  {{/if}}
 </template>

@@ -1,50 +1,60 @@
 <template name="nuevaOrganizacion">
-  <div class="page-header-2">
-    <h3>Nueva organización</h3>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card card-top-buffer">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="title">Nueva organización</div>
+          </div>
+        </div>
+        <div class="card-body">
+          {{#if Template.subscriptionsReady}}
+            {{#autoForm collection='Organizaciones' id='insertOrganizacionForm' type='insert'}}
+              {{> afQuickField name='periodo.0.anio'}}
+              {{> afQuickField name='periodo.0.cuatrimestre'}}
+              <fieldset class="custom-fieldset">
+                <legend class="custom-legend">Ubicación</legend>
+                {{> afQuickField name='zonaID'}}
+                {{> afQuickField name='provinciaID'}}
+                {{> afQuickField name='cantonID'}}
+                {{> afQuickField name='parroquiaID'}}
+                {{> afQuickField name='sectorComunidad'}}
+              </fieldset>
+              {{> afQuickField name='ruc'}}
+              {{> afQuickField name='nombreOrganizacion'}}
+              {{> afQuickField name='actividadEconomica'}}
+              <fieldset class="custom-fieldset">
+                <legend class="custom-legend">Datos de contacto de la organización</legend>
+                {{> afQuickField name='cedulaRepresentante'}}
+                {{> afQuickField name='nombreRepresentante'}}
+                {{> afQuickField name='direccion'}}
+                <div class="row">
+                  <div class="col-md-4">{{> afQuickField name='telefonoFijo1'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='telefonoFijo2'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='telefonoFijo3'}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">{{> afQuickField name='celular1'}}</div>
+                    <div class="col-md-4">{{> afQuickField name='celular2'}}</div>
+                </div>
+                {{> afQuickField name='email'}}
+                {{> afQuickField name='paginaWeb'}}
+                {{> afQuickField name='facebook'}}
+                {{> afQuickField name='twitter'}}
+              </fieldset>
+              {{> afQuickField name='seps' datePickerOptions=datePickerOptions}}
+              {{> afQuickField name='acreditacionMagap' datePickerOptions=datePickerOptions}}
+              {{> afQuickField name='hombresOrganizacion'}}
+              {{> afQuickField name='mujeresOrganizacion'}}
+              {{> afQuickField name='productoresCialco'}}
+              {{> afQuickField name='observaciones'}}
+              <button type='submit' class='btn btn-success'>GUARDAR</button>
+            {{/autoForm}}
+          {{else}}
+            {{> spinner}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
   </div>
-  {{#if Template.subscriptionsReady}}
-    {{#autoForm collection='Organizaciones' id='insertOrganizacionForm' type='insert'}}
-      {{> afQuickField name='periodo.0.anio'}}
-      {{> afQuickField name='periodo.0.cuatrimestre'}}
-      <fieldset class="custom-fieldset">
-        <legend class="custom-legend">Ubicación</legend>
-        {{> afQuickField name='zonaID'}}
-        {{> afQuickField name='provinciaID'}}
-        {{> afQuickField name='cantonID'}}
-        {{> afQuickField name='parroquiaID'}}
-        {{> afQuickField name='sectorComunidad'}}
-      </fieldset>
-      {{> afQuickField name='ruc'}}
-      {{> afQuickField name='nombreOrganizacion'}}
-      {{> afQuickField name='actividadEconomica'}}
-      <fieldset class="custom-fieldset">
-        <legend class="custom-legend">Datos de contacto de la organización</legend>
-        {{> afQuickField name='cedulaRepresentante'}}
-        {{> afQuickField name='nombreRepresentante'}}
-        {{> afQuickField name='direccion'}}
-        <div class="row">
-          <div class="col-md-4">{{> afQuickField name='telefonoFijo1'}}</div>
-          <div class="col-md-4">{{> afQuickField name='telefonoFijo2'}}</div>
-          <div class="col-md-4">{{> afQuickField name='telefonoFijo3'}}</div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">{{> afQuickField name='celular1'}}</div>
-            <div class="col-md-4">{{> afQuickField name='celular2'}}</div>
-        </div>
-        {{> afQuickField name='email'}}
-        {{> afQuickField name='paginaWeb'}}
-        {{> afQuickField name='facebook'}}
-        {{> afQuickField name='twitter'}}
-      </fieldset>
-      {{> afQuickField name='seps' datePickerOptions=datePickerOptions}}
-      {{> afQuickField name='acreditacionMagap' datePickerOptions=datePickerOptions}}
-      {{> afQuickField name='hombresOrganizacion'}}
-      {{> afQuickField name='mujeresOrganizacion'}}
-      {{> afQuickField name='productoresCialco'}}
-      {{> afQuickField name='observaciones'}}
-      <button type='submit' class='btn btn-success btn-bottom-buffer'>GUARDAR</button>
-    {{/autoForm}}
-  {{else}}
-    {{> spinner}}
-  {{/if}}
 </template>

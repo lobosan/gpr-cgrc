@@ -1,5 +1,5 @@
-Accounts.emailTemplates.resetPassword.siteName = () => Meteor.settings.public.app_name;
-Accounts.emailTemplates.resetPassword.from     = () => `${Meteor.settings.public.app_name} <sgalindo@magap.gob.ec>`;
+Accounts.emailTemplates.resetPassword.siteName = () => Meteor.settings.public.appName;
+Accounts.emailTemplates.resetPassword.from     = () => `${Meteor.settings.public.appName} <sgalindo@magap.gob.ec>`;
 Accounts.emailTemplates.resetPassword.subject  = () => 'Restablecimiento de contraseña';
 
 Accounts.emailTemplates.resetPassword.text = ( user, url ) => {

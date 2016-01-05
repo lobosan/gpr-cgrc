@@ -1,14 +1,14 @@
 <template name="nuevaRed">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="card card-top-buffer">
-        <div class="card-header">
-          <div class="card-title">
-            <div class="title">Nueva red</div>
+  {{#if Template.subscriptionsReady}}
+    <div class="row animated fadeIn">
+      <div class="col-xs-12">
+        <div class="card card-top-buffer">
+          <div class="card-header">
+            <div class="card-title">
+              <div class="title">Nueva red</div>
+            </div>
           </div>
-        </div>
-        <div class="card-body">
-          {{#if Template.subscriptionsReady}}
+          <div class="card-body">
             {{#autoForm collection='Redes' id='insertRedForm' type='insert'}}
               {{> afQuickField name='periodo.0.anio'}}
               {{> afQuickField name='periodo.0.cuatrimestre'}}
@@ -34,11 +34,11 @@
               {{> afQuickField name='observaciones'}}
               <button type='submit' class='btn btn-success'>GUARDAR</button>
             {{/autoForm}}
-          {{else}}
-            {{> spinner}}
-          {{/if}}
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  {{else}}
+    {{> spinner}}
+  {{/if}}
 </template>

@@ -1,14 +1,14 @@
 <template name="nuevoMontoVenta">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="card card-top-buffer">
-        <div class="card-header">
-          <div class="card-title">
-            <div class="title">Nuevo monto de venta</div>
+  {{#if Template.subscriptionsReady}}
+    <div class="row animated fadeIn">
+      <div class="col-xs-12">
+        <div class="card card-top-buffer">
+          <div class="card-header">
+            <div class="card-title">
+              <div class="title">Nuevo monto de venta</div>
+            </div>
           </div>
-        </div>
-        <div class="card-body">
-          {{#if Template.subscriptionsReady}}
+          <div class="card-body">
             {{#autoForm collection='MontosVenta' id='insertMontoVentaForm' type='insert'}}
               {{> afQuickField name='anio'}}
               {{> afQuickField name='semestre'}}
@@ -17,11 +17,11 @@
               {{> afQuickField name='cialcos'}}
               <button type='submit' class='btn btn-success'>GUARDAR</button>
             {{/autoForm}}
-          {{else}}
-            {{> spinner}}
-          {{/if}}
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  {{else}}
+    {{> spinner}}
+  {{/if}}
 </template>

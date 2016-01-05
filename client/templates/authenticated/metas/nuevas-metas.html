@@ -1,14 +1,14 @@
 <template name="nuevasMetas">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="card card-top-buffer">
-        <div class="card-header">
-          <div class="card-title">
-            <div class="title">Nuevas metas</div>
+  {{#if Template.subscriptionsReady}}
+    <div class="row animated fadeIn">
+      <div class="col-xs-12">
+        <div class="card card-top-buffer">
+          <div class="card-header">
+            <div class="card-title">
+              <div class="title">Nuevas metas</div>
+            </div>
           </div>
-        </div>
-        <div class="card-body">
-          {{#if Template.subscriptionsReady}}
+          <div class="card-body">
             {{#autoForm collection='Metas' id='insertMetasForm' type='insert'}}
               {{> afQuickField name='anio'}}
               {{> afQuickField name='zonaID'}}
@@ -44,11 +44,11 @@
               </fieldset>
               <button type='submit' class='btn btn-success'>GUARDAR</button>
             {{/autoForm}}
-          {{else}}
-            {{> spinner}}
-          {{/if}}
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  {{else}}
+    {{> spinner}}
+  {{/if}}
 </template>

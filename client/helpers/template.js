@@ -1,5 +1,5 @@
 Template.registerHelper('appName', () => {
-  return Meteor.settings.public.app_name;
+  return Meteor.settings.public.appName;
 });
 
 Template.registerHelper('isCurrentUser', (currentUser) => {

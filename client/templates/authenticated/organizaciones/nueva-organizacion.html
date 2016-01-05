@@ -1,14 +1,14 @@
 <template name="nuevaOrganizacion">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="card card-top-buffer">
-        <div class="card-header">
-          <div class="card-title">
-            <div class="title">Nueva organización</div>
+  {{#if Template.subscriptionsReady}}
+    <div class="row animated fadeIn">
+      <div class="col-xs-12">
+        <div class="card card-top-buffer">
+          <div class="card-header">
+            <div class="card-title">
+              <div class="title">Nueva organización</div>
+            </div>
           </div>
-        </div>
-        <div class="card-body">
-          {{#if Template.subscriptionsReady}}
+          <div class="card-body">
             {{#autoForm collection='Organizaciones' id='insertOrganizacionForm' type='insert'}}
               {{> afQuickField name='periodo.0.anio'}}
               {{> afQuickField name='periodo.0.cuatrimestre'}}
@@ -34,8 +34,8 @@
                   <div class="col-md-4">{{> afQuickField name='telefonoFijo3'}}</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">{{> afQuickField name='celular1'}}</div>
-                    <div class="col-md-4">{{> afQuickField name='celular2'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='celular1'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='celular2'}}</div>
                 </div>
                 {{> afQuickField name='email'}}
                 {{> afQuickField name='paginaWeb'}}
@@ -51,11 +51,11 @@
               {{> afQuickField name='observaciones'}}
               <button type='submit' class='btn btn-success'>GUARDAR</button>
             {{/autoForm}}
-          {{else}}
-            {{> spinner}}
-          {{/if}}
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  {{else}}
+    {{> spinner}}
+  {{/if}}
 </template>

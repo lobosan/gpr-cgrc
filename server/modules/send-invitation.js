@@ -4,8 +4,8 @@ let _insertInvitation = (invite) => {
 };
 
 let _prepareEmail = (options) => {
-  let domain = Meteor.settings.private.domain;
-  let url = `http://${ domain }/invite/${ options.token }`;
+  let siteDomain = Meteor.settings.private.siteDomain;
+  let url = `http://${ siteDomain }/invite/${ options.token }`;
 
   SSR.compileTemplate('invitation', Assets.getText('email/templates/invitation.html'));
   let html = SSR.render('invitation', {url: url, name: options.name});
@@ -17,7 +17,7 @@ let _sendInvitation = (email, content) => {
   Email.send({
     to: email,
     from: "Santiago Galindo <sgalindo@magap.gob.ec>",
-    subject: `Invitación para participar en el sistema ${Meteor.settings.public.app_name}`,
+    subject: `Invitación para participar en el sistema ${Meteor.settings.public.appName}`,
     html: content
   });
 };

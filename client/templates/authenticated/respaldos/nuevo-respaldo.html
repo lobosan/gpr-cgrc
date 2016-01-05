@@ -1,5 +1,6 @@
 <template name="nuevoRespaldo">
-  <div class="row">
+  {{#if Template.subscriptionsReady}}
+  <div class="row animated fadeIn">
     <div class="col-xs-12">
       <div class="card card-top-buffer">
         <div class="card-header">
@@ -8,7 +9,6 @@
           </div>
         </div>
         <div class="card-body">
-          {{#if Template.subscriptionsReady}}
             {{#autoForm collection='Respaldos' id='insertRespaldoForm' type='insert'}}
               {{> afQuickField name='anio'}}
               {{> afQuickField name='periodo'}}
@@ -17,11 +17,11 @@
               {{> afQuickField name='respaldos'}}
               <button type='submit' class='btn btn-success'>GUARDAR</button>
             {{/autoForm}}
-          {{else}}
-            {{> spinner}}
-          {{/if}}
         </div>
       </div>
     </div>
   </div>
+  {{else}}
+    {{> spinner}}
+  {{/if}}
 </template>

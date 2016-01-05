@@ -27,6 +27,10 @@
   color: #2C3E50; }
 .flat-green .navbar .navbar-nav > li:hover > a, .flat-green .navbar.navbar-default .navbar-nav > li:hover > a {
   color: #16A085; }
+.flat-green .navbar .navbar-nav > li:hover > a, .flat-green .navbar.navbar-default .navbar-nav > li:hover > a > .title {
+  color: #FFF; }
+.flat-green .navbar .navbar-nav > li:hover > a, .flat-green .navbar.navbar-default .navbar-nav > li:hover > a > .icon {
+  color: #FFF; }
 .flat-green .navbar .navbar-nav > li.open > a, .flat-green .navbar.navbar-default .navbar-nav > li.open > a {
   background-color: transparent;
   color: #006551; }

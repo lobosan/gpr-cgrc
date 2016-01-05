@@ -77,7 +77,7 @@ a:hover {
   margin-left: 5px;
   margin-right: 5px; }
 .navbar > .container .navbar-expand-toggle, .navbar > .container-fluid .navbar-expand-toggle {
-  width: 35px;
+  width: 36px;
   height: 35px;
   font-size: 10px;
   color: #FFF;
@@ -113,11 +113,16 @@ a:hover {
   vertical-align: middle;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 1.5em; }
+.nav .navbar-nav > li > a {
+  background-color: #293846 !important;
+}
 .navbar .navbar-nav > li > a {
   font-family: 'Roboto Condensed', sans-serif;
   height: 60px;
   line-height: 60px;
   padding: 0px 20px 0px 20px; }
+.side-menu > .navbar .navbar-nav > li > a:hover {
+  color: #FFF !important; }
 .navbar .dropdown-menu {
   padding: 0;
   border: 0;
@@ -1268,6 +1273,9 @@ body.login-page .login-footer {
 }
 .bottom-buffer {
   margin-bottom: 10px;
+}
+.bottom-buffer-md {
+  margin-bottom: 30px;
 }
 .card-top-buffer {
   margin-top: 30px;

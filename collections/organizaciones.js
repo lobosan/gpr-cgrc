@@ -313,25 +313,19 @@ Organizaciones.attachSchema(new SimpleSchema({
   hombresOrganizacion: {
     type: Number,
     label: 'Número de hombres en la organización',
-    min: 0
+    min: 0,
+    optional: true
   },
   mujeresOrganizacion: {
     type: Number,
     label: 'Número de mujeres en la organización',
-    min: 0
+    min: 0,
+    optional: true
   },
   totalProductoresOrganizacion: {
     type: Number,
-    label: 'Número de hombres en la organización',
-    autoValue: function () {
-      let hombres = this.field("hombresOrganizacion").value;
-      let mujeres = this.field("mujeresOrganizacion").value;
-      return hombres + mujeres;
-    },
-    autoform: {
-      type: 'hidden',
-      label: false
-    }
+    label: 'Total de productores en la organización',
+    min: 0
   },
   productoresCialco: {
     type: [Object],

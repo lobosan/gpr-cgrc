@@ -31,35 +31,29 @@
           </form>
 
           {{#with metasAnualesPorProvincia}}
-          <div class="row bottom-buffer">
-            <div class="col-md-12"><h4>CIALCOs</h4></div>
-            <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{cialcoPrimerCuatrimestre}}</div>
-            <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{cialcoSegundoCuatrimestre}}</div>
-            <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10">{{cialcoTercerCuatrimestre}}</div>
-          </div>
-          <div class="row bottom-buffer">
-            <div class="col-md-12"><h4>Organizaciones</h4></div>
-            <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{organizacionesPrimerCuatrimestre}}</div>
-            <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{organizacionesSegundoCuatrimestre}}</div>
-            <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10">{{organizacionesTercerCuatrimestre}}</div>
-          </div>
-          <div class="row bottom-buffer">
-            <div class="col-md-12"><h4>Redes</h4></div>
-            <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{redesPrimerCuatrimestre}}</div>
-            <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{redesSegundoCuatrimestre}}</div>
-            <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10">{{redesTercerCuatrimestre}}</div>
-          </div>
-          <div class="row bottom-buffer">
-            <div class="col-md-12"><h4>Productores</h4></div>
-            <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{productoresPrimerCuatrimestre}}</div>
-            <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{productoresSegundoCuatrimestre}}</div>
-            <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10">{{productoresTercerCuatrimestre}}</div>
-          </div>
-          <div class="row">
-            <div class="col-md-12"><h4>Montos de venta</h4></div>
-            <div class="col-md-2">Primer semestre</div><div class="col-md-10">{{montoVentasPrimerSemestre}} USD</div>
-            <div class="col-md-2">Segundo semestre</div><div class="col-md-10">{{montoVentasSegundoSemestre}} USD</div>
-          </div>
+          <div class="sub-title">CIALCOs</div>
+          <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{cialcoPrimerCuatrimestre}}</div>
+          <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{cialcoSegundoCuatrimestre}}</div>
+          <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10 bottom-buffer-md">{{cialcoTercerCuatrimestre}}</div>
+
+          <div class="sub-title">Organizaciones</div>
+          <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{organizacionesPrimerCuatrimestre}}</div>
+          <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{organizacionesSegundoCuatrimestre}}</div>
+          <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10 bottom-buffer-md">{{organizacionesTercerCuatrimestre}}</div>
+
+          <div class="sub-title">Redes</div>
+          <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{redesPrimerCuatrimestre}}</div>
+          <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{redesSegundoCuatrimestre}}</div>
+          <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10 bottom-buffer-md">{{redesTercerCuatrimestre}}</div>
+
+          <div class="sub-title">Productores</div>
+          <div class="col-md-2">Primer cuatrimestre</div><div class="col-md-10">{{productoresPrimerCuatrimestre}}</div>
+          <div class="col-md-2">Segundo cuatrimestre</div><div class="col-md-10">{{productoresSegundoCuatrimestre}}</div>
+          <div class="col-md-2">Tercer cuatrimestre</div><div class="col-md-10 bottom-buffer-md">{{productoresTercerCuatrimestre}}</div>
+
+          <div class="sub-title">Montos de venta</div>
+          <div class="col-md-2">Primer semestre</div><div class="col-md-10">{{montoVentasPrimerSemestre}} USD</div>
+          <div class="col-md-2">Segundo semestre</div><div class="col-md-10 bottom-buffer-md">{{montoVentasSegundoSemestre}} USD</div>
           {{/with}}
         </div>
       </div>

@@ -1,7 +1,6 @@
 <template name="authenticatedNavigation">
   <ul class="nav navbar-nav">
     {{#if isInRole 'admin'}}
-
       <!--CIALCOs-->
       <li class="dropdown {{currentRoute 'cialcos'}} {{currentRoute 'nuevo-cialco'}}">
         <a data-toggle="collapse" href="#dropdown-cialcos">
@@ -14,7 +13,6 @@
           </ul>
         </div>
       </li>
-
       <!--Organizaciones-->
       <li class="dropdown {{currentRoute 'organizaciones'}} {{currentRoute 'nueva-organizacion'}}">
         <a data-toggle="collapse" href="#dropdown-organizaciones">
@@ -27,7 +25,6 @@
           </ul>
         </div>
       </li>
-
       <!--Redes-->
       <li class="dropdown {{currentRoute 'redes'}} {{currentRoute 'nueva-red'}}">
         <a data-toggle="collapse" href="#dropdown-redes">
@@ -40,7 +37,6 @@
           </ul>
         </div>
       </li>
-
       <!--Productores-->
       <li class="dropdown {{currentRoute 'productores'}} {{currentRoute 'nuevo-productor'}}">
         <a data-toggle="collapse" href="#dropdown-productores">
@@ -53,7 +49,6 @@
           </ul>
         </div>
       </li>
-
       <!--Metas-->
       <li class="dropdown {{currentRoute 'metas'}} {{currentRoute 'nuevas-metas'}}">
         <a data-toggle="collapse" href="#dropdown-metas">
@@ -66,7 +61,6 @@
           </ul>
         </div>
       </li>
-
       <!--Montos de venta-->
       <li class="dropdown {{currentRoute 'montos-venta'}} {{currentRoute 'nuevo-monto-venta'}}">
         <a data-toggle="collapse" href="#dropdown-montos-venta">
@@ -79,7 +73,6 @@
           </ul>
         </div>
       </li>
-
       <!--Respaldos-->
       <li class="dropdown {{currentRoute 'respaldos'}} {{currentRoute 'nuevo-respaldo'}}">
         <a data-toggle="collapse" href="#dropdown-respaldos">
@@ -92,11 +85,10 @@
           </ul>
         </div>
       </li>
-
       <!--Usuarios-->
       <li class="{{currentRoute 'users'}}">
         <a href="{{pathFor 'users'}}">
-          <span class="icon fa fa-user-secret "></span><span class="title">Usuarios</span>
+          <span class="icon fa fa-user-secret"></span><span class="title">Usuarios</span>
         </a>
       </li>
     {{/if}}

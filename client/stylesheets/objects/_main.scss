@@ -123,6 +123,27 @@ a:hover {
   padding: 0px 20px 0px 20px; }
 .side-menu > .navbar .navbar-nav > li > a:hover {
   color: #FFF !important; }
+.panel-collapse ul.nav.navbar-nav li:before {
+  background: #425668;
+  bottom: auto;
+  content: "";
+  height: 8px;
+  left: 23px;
+  margin-top: 17px;
+  position: absolute;
+  right: auto;
+  width: 8px;
+  z-index: 1;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%; }
+.panel-collapse ul.nav.navbar-nav li:after {
+  border-left: 1px solid #425668;
+  bottom: 0;
+  content: "";
+  left: 27px;
+  position: absolute;
+  top: 0; }
 .navbar .dropdown-menu {
   padding: 0;
   border: 0;
@@ -280,7 +301,7 @@ a:hover {
   color: #a7b1c2;
   line-height: 44px;
   vertical-align: middle;
-  padding: 0em 1.2em; }
+  padding: 0 0 0 40px; }
 .app-container .content-container .side-menu .navbar-nav li.dropdown > a:after {
   content: "";
   position: absolute;
@@ -326,6 +347,7 @@ a:hover {
   font-family: FontAwesome;
   content: "\f107";
   position: absolute;
+  color: #a7b1c2;
   right: 1em; }
 
 .container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header {

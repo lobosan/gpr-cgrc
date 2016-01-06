@@ -31,7 +31,8 @@ let _handleRecovery = (template) => {
 
   Accounts.forgotPassword({email: email}, (error) => {
     if (error) {
-      Bert.alert(error.reason, 'warning');
+      if (error.reason === 'User not found') Bert.alert('Usuario no encontrado', 'warning');
+      else Bert.alert(error.reason, 'warning');
     } else {
       Bert.alert('El enlace para crear una nueva contraseña ha sido enviado a su dirección de correo electrónico', 'success');
     }

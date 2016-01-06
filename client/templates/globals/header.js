@@ -11,8 +11,6 @@ Template.header.events({
     Meteor.logout((error) => {
       if (error) {
         Bert.alert(error.reason, 'warning');
-      } else {
-        Bert.alert('Sesión cerrada!', 'success');
       }
     });
   }

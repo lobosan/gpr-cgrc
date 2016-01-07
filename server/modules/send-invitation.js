@@ -14,11 +14,13 @@ let _prepareEmail = (options) => {
 };
 
 let _sendInvitation = (email, content) => {
-  Email.send({
-    to: email,
-    from: "Santiago Galindo <sgalindo@magap.gob.ec>",
-    subject: `Invitación para participar en el sistema ${Meteor.settings.public.appName}`,
-    html: content
+  Meteor.defer(function () {
+    Email.send({
+      to: email,
+      from: "Santiago Galindo <sgalindo@magap.gob.ec>",
+      subject: `Invitación para participar en el sistema ${Meteor.settings.public.appName}`,
+      html: content
+    });
   });
 };
 

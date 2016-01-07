@@ -354,6 +354,15 @@ a:hover {
   margin-left: -15px;
   margin-right: -15px; }
 
+.side-menu-container > .navbar-collapse {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.container-fluid > .navbar-collapse {
+  padding-right: 15px;
+}
+
 .page-title {
   font-family: 'Roboto Condensed', sans-serif;
   margin-left: -10px;

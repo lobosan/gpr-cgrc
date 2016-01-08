@@ -43,7 +43,6 @@ aldeed:autoform-select2
 aldeed:autoform-bs-datepicker
 rajit:bootstrap3-datepicker-es
 meteorhacks:subs-manager
-aldeed:template-extension
 sacha:spin
 cfs:gridfs
 cfs:standard-packages
@@ -51,3 +50,4 @@ cfs:autoform
 zardak:soap
 underscorestring:underscore.string
 natestrauser:animate-css
+aldeed:template-extension

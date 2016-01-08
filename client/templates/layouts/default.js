@@ -3,7 +3,7 @@ Template.default.onRendered( () => {
     return $(".side-menu .nav .dropdown").on('show.bs.collapse', function() {
       return $(".side-menu .nav .dropdown .collapse").collapse('hide');
     });
-  }, 1000);
+  }, 1500);
 });
 
 Template.default.events({

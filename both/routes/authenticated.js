@@ -21,8 +21,8 @@ const authenticatedRoutes = FlowRouter.group({
   triggersEnter: [authenticatedRedirect]
 });
 
-authenticatedRoutes.route('/users', {
-  name: 'users',
+authenticatedRoutes.route('/administración-de-usuarios', {
+  name: 'administración-de-usuarios',
   triggersEnter: [blockUnauthorizedAdmin],
   action() {
     BlazeLayout.render('default', {yield: 'users'});
@@ -90,8 +90,8 @@ authenticatedRoutes.route('/nueva-red', {
   }
 });
 
-authenticatedRoutes.route('/montos-venta', {
-  name: 'montos-venta',
+authenticatedRoutes.route('/montos-de-venta', {
+  name: 'montos-de-venta',
   action() {
     BlazeLayout.render('default', {yield: 'montosVenta'});
   }
@@ -105,30 +105,30 @@ authenticatedRoutes.route('/nuevo-monto-venta', {
   }
 });
 
-authenticatedRoutes.route('/metas', {
-  name: 'metas',
+authenticatedRoutes.route('/metas-gpr', {
+  name: 'metas-gpr',
   action() {
-    BlazeLayout.render('default', {yield: 'metas'});
+    BlazeLayout.render('default', {yield: 'metas-gpr'});
   }
 });
 
-authenticatedRoutes.route('/nuevas-metas', {
-  name: 'nuevas-metas',
+authenticatedRoutes.route('/nuevas-metas-gpr', {
+  name: 'nuevas-metas-gpr',
   triggersEnter: [blockUnauthorizedManager],
   action() {
     BlazeLayout.render('default', {yield: 'nuevasMetas'});
   }
 });
 
-authenticatedRoutes.route('/respaldos', {
-  name: 'respaldos',
+authenticatedRoutes.route('/respaldos-gpr', {
+  name: 'respaldos-gpr',
   action() {
     BlazeLayout.render('default', {yield: 'respaldos'});
   }
 });
 
-authenticatedRoutes.route('/nuevo-respaldo', {
-  name: 'nuevo-respaldo',
+authenticatedRoutes.route('/nuevo-respaldo-gpr', {
+  name: 'nuevo-respaldo-gpr',
   triggersEnter: [blockUnauthorizedManager],
   action() {
     BlazeLayout.render('default', {yield: 'nuevoRespaldo'});

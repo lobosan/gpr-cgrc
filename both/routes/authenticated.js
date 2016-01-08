@@ -21,8 +21,8 @@ const authenticatedRoutes = FlowRouter.group({
   triggersEnter: [authenticatedRedirect]
 });
 
-authenticatedRoutes.route('/administración-de-usuarios', {
-  name: 'administración-de-usuarios',
+authenticatedRoutes.route('/administracion-de-usuarios', {
+  name: 'administracion-de-usuarios',
   triggersEnter: [blockUnauthorizedAdmin],
   action() {
     BlazeLayout.render('default', {yield: 'users'});

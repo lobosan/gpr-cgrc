@@ -4,7 +4,7 @@
       <div class="col-xs-12">
         <div class="card card-top-buffer">
           <div class="card-body">
-            {{#autoForm collection='Metas' id='insertMetasForm' type='insert'}}
+            {{#autoForm collection='Metas' id='insertMetasForm' type='insert' validation='keyup'}}
               {{> afQuickField name='anio'}}
               {{> afQuickField name='zonaID'}}
               {{> afQuickField name='provinciaID'}}

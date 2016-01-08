@@ -7,6 +7,7 @@ Template.header.onCreated(function () {
     title = title.replace('Cialcos', 'CIALCOs');
     title = title.replace('gpr', 'GPR');
     title = title.replace('organizacion', 'organización');
+    title = title.replace('Administracion', 'Administración');
     self.opcionSeleccionada.set(title);
   });
 });
@@ -14,7 +15,7 @@ Template.header.onCreated(function () {
 Template.header.helpers({
   brandLink: () => {
     let login = FlowRouter.path('login');
-    let index = FlowRouter.path('administración-de-usuarios');
+    let index = FlowRouter.path('administracion-de-usuarios');
     return !Meteor.loggingIn() && !Meteor.userId() ? login : index;
   },
   opcionSeleccionada: () => {

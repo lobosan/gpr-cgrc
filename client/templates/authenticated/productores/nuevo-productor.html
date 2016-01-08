@@ -4,7 +4,7 @@
       <div class="col-xs-12">
         <div class="card card-top-buffer">
           <div class="card-body">
-            {{#autoForm collection='Productores' id='insertProductorForm' type='insert'}}
+            {{#autoForm collection='Productores' id='insertProductorForm' type='insert' validation='keyup'}}
               {{> afQuickField name='anio'}}
               {{> afQuickField name='cuatrimestre'}}
               <fieldset class="custom-fieldset">

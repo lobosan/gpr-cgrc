@@ -631,7 +631,6 @@ a:hover {
 
 .card .card-header .card-title {
   padding: 1.2em 25px;
-  float: left;
 }
 
 .card .card-header .card-title .title {
@@ -830,6 +829,7 @@ a:hover {
 
 .checkbox3 label, .radio3 label, .checkbox-inline, .radio-inline {
   font-weight: normal;
+  color: #555;
 }
 
 .bootstrap-switch {
@@ -1742,6 +1742,13 @@ body.login-page .login-footer {
   width: 35px;
   float: left;
   margin: -8px 7px -11px 11px;
+}
+
+.authentication-logo {
+  background: url("logo.png") no-repeat;
+  background-size: 35px;
+  height: 35px;
+  width: 35px;
 }
 
 .bert-alert {

@@ -49,10 +49,6 @@
   color: #2C3E50;
 }
 
-.flat-green .nav.navbar-nav > li > a:hover > span, .flat-green .nav.navbar-nav > li > a:hover:after {
-  color: #FFF !important;
-}
-
 .flat-green .navbar .navbar-nav > li.open > a, .flat-green .navbar.navbar-default .navbar-nav > li.open > a {
   background-color: transparent;
   color: #006551;
@@ -348,12 +344,9 @@
 }
 
 .flat-green .card .card-header {
-  /*border-bottom: 1px solid #1ab394*/
-;
-  /*background-color: #EEE*/
-;
   border-top: 3px solid #e7eaec;
   border-bottom: 1px solid #E4E4E4;
+  height: 72px;
 }
 
 .flat-green .card .card-header .title {

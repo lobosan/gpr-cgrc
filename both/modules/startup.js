@@ -2,6 +2,8 @@ let startup = () => {
   if (Meteor.isClient) {
     Session.set("showLoadingIndicator", true);
 
+    AutoForm.setDefaultTemplateForType('afArrayField', 'customArrayOfObjects');
+
     TAPi18n.setLanguage('es')
       .done(function () {
         Session.set("showLoadingIndicator", false);

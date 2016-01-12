@@ -100,7 +100,8 @@ Respaldos.attachSchema(new SimpleSchema({
   },
   respaldos: {
     type: [Object],
-    label: 'Respaldos'
+    label: 'Respaldos',
+    minCount: 1
   },
   'respaldos.$.archivo': {
     type: String,

@@ -108,7 +108,7 @@ authenticatedRoutes.route('/nuevo-monto-venta', {
 authenticatedRoutes.route('/metas-gpr', {
   name: 'metas-gpr',
   action() {
-    BlazeLayout.render('default', {yield: 'metas-gpr'});
+    BlazeLayout.render('default', {yield: 'metas'});
   }
 });
 

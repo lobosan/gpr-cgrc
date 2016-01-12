@@ -335,7 +335,6 @@ Organizaciones.attachSchema(new SimpleSchema({
   'productoresCialco.$.cialcoID': {
     type: String,
     label: 'Nombre del circuito',
-    optional: true,
     autoform: {
       type: 'select2',
       options: function () {
@@ -347,7 +346,6 @@ Organizaciones.attachSchema(new SimpleSchema({
   },
   'productoresCialco.$.cialcoNombre': {
     type: String,
-    optional: true,
     autoValue: function () {
       let cialcoID = this.siblingField("cialcoID").value;
       if (cialcoID)
@@ -362,17 +360,14 @@ Organizaciones.attachSchema(new SimpleSchema({
     type: Number,
     label: 'Número de hombres en el circuito',
     min: 0,
-    optional: true
   },
   'productoresCialco.$.mujeres': {
     type: Number,
     label: 'Número de mujeres en el circuito',
     min: 0,
-    optional: true
   },
   'productoresCialco.$.totalProductores': {
     type: Number,
-    optional: true,
     autoValue: function () {
       let hombres = (this.siblingField("hombres").value) ? this.siblingField("hombres").value : 0;
       let mujeres = (this.siblingField("mujeres").value) ? this.siblingField("mujeres").value : 0;

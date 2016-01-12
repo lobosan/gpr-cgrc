@@ -1792,7 +1792,7 @@ body.login-page .login-footer {
 }
 
 .custom-fieldset {
-  border: 1px groove #ccc !important;
+  border: 1px solid #ccc !important;
   padding: 0 1.4em 1.4em 1.4em !important;
   margin: 0 0 1.5em 0 !important;
   border-radius: 5px !important;
@@ -1810,4 +1810,13 @@ body.login-page .login-footer {
 
 .card-header > a.btn-success {
   margin-right: 25px;
+}
+
+.row > [class*="col-"] {
+  margin-bottom: 0 !important;
+}
+
+label {
+  color: #252525;
+  font-weight: normal !important;
 }

@@ -5,8 +5,10 @@
         <div class="card card-top-buffer">
           <div class="card-body">
             {{#autoForm collection='Productores' id='insertProductorForm' type='insert' validation='keyup'}}
-              {{> afQuickField name='anio'}}
-              {{> afQuickField name='cuatrimestre'}}
+              <div class="row">
+                <div class="col-md-2">{{> afQuickField name='anio'}}</div>
+                <div class="col-md-2">{{> afQuickField name='cuatrimestre'}}</div>
+              </div>
               <fieldset class="custom-fieldset">
                 <legend class="custom-legend">Ubicación</legend>
                 {{> afQuickField name='zonaID'}}
@@ -14,15 +16,24 @@
                 {{> afQuickField name='cantonID'}}
                 {{> afQuickField name='parroquiaID'}}
               </fieldset>
-              {{> afQuickField name='cedula'}}
-              {{> afQuickField name='apellidos'}}
-              {{> afQuickField name='nombres'}}
-              {{> afQuickField name='edad'}}
-              {{> afQuickField name='sexo'}}
-              {{> afQuickField name='estadoCivil'}}
-              {{> afQuickField name='telefonoFijoContacto'}}
-              {{> afQuickField name='celularContacto'}}
-              {{> afQuickField name='emailContacto'}}
+              <fieldset class="custom-fieldset">
+                <legend class="custom-legend">Datos personales</legend>
+                <div class="row">
+                  <div class="col-md-2">{{> afQuickField name='cedula'}}</div>
+                  <div class="col-md-5">{{> afQuickField name='apellidos'}}</div>
+                  <div class="col-md-5">{{> afQuickField name='nombres'}}</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">{{> afQuickField name='edad'}}</div>
+                  <div class="col-md-2">{{> afQuickField name='sexo'}}</div>
+                  <div class="col-md-8">{{> afQuickField name='estadoCivil'}}</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">{{> afQuickField name='telefonoFijoContacto'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='celularContacto'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='emailContacto'}}</div>
+                </div>
+              </fieldset>
               {{> afQuickField name='organizaciones' class='s2b'}}
               {{> afQuickField name='cialcos' class='s2b'}}
               <button type='submit' class='btn btn-success'>GUARDAR</button>

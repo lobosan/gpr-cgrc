@@ -5,37 +5,51 @@
         <div class="card card-top-buffer">
           <div class="card-body">
             {{#autoForm collection='Metas' id='insertMetasForm' type='insert' validation='keyup'}}
-              {{> afQuickField name='anio'}}
-              {{> afQuickField name='zonaID'}}
-              {{> afQuickField name='provinciaID'}}
+              <div class="row">
+                <div class="col-md-2">{{> afQuickField name='anio'}}</div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">{{> afQuickField name='zonaID'}}</div>
+                <div class="col-md-10">{{> afQuickField name='provinciaID'}}</div>
+              </div>
               <fieldset class="custom-fieldset">
                 <legend class="custom-legend">CIALCOs</legend>
-                {{> afQuickField name='cialcoPrimerCuatrimestre'}}
-                {{> afQuickField name='cialcoSegundoCuatrimestre'}}
-                {{> afQuickField name='cialcoTercerCuatrimestre'}}
+                <div class="row">
+                  <div class="col-md-4">{{> afQuickField name='cialcoPrimerCuatrimestre'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='cialcoSegundoCuatrimestre'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='cialcoTercerCuatrimestre'}}</div>
+                </div>
               </fieldset>
               <fieldset class="custom-fieldset">
                 <legend class="custom-legend">Organizaciones</legend>
-                {{> afQuickField name='organizacionesPrimerCuatrimestre'}}
-                {{> afQuickField name='organizacionesSegundoCuatrimestre'}}
-                {{> afQuickField name='organizacionesTercerCuatrimestre'}}
+                <div class="row">
+                  <div class="col-md-4">{{> afQuickField name='organizacionesPrimerCuatrimestre'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='organizacionesSegundoCuatrimestre'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='organizacionesTercerCuatrimestre'}}</div>
+                </div>
               </fieldset>
               <fieldset class="custom-fieldset">
                 <legend class="custom-legend">Redes</legend>
-                {{> afQuickField name='redesPrimerCuatrimestre'}}
-                {{> afQuickField name='redesSegundoCuatrimestre'}}
-                {{> afQuickField name='redesTercerCuatrimestre'}}
+                <div class="row">
+                  <div class="col-md-4">{{> afQuickField name='redesPrimerCuatrimestre'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='redesSegundoCuatrimestre'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='redesTercerCuatrimestre'}}</div>
+                </div>
               </fieldset>
               <fieldset class="custom-fieldset">
                 <legend class="custom-legend">Productores</legend>
-                {{> afQuickField name='productoresPrimerCuatrimestre'}}
-                {{> afQuickField name='productoresSegundoCuatrimestre'}}
-                {{> afQuickField name='productoresTercerCuatrimestre'}}
+                <div class="row">
+                  <div class="col-md-4">{{> afQuickField name='productoresPrimerCuatrimestre'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='productoresSegundoCuatrimestre'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='productoresTercerCuatrimestre'}}</div>
+                </div>
               </fieldset>
               <fieldset class="custom-fieldset">
                 <legend class="custom-legend">Montos de venta</legend>
-                {{> afQuickField name='montoVentasPrimerSemestre'}}
-                {{> afQuickField name='montoVentasSegundoSemestre'}}
+                <div class="row">
+                  <div class="col-md-4">{{> afQuickField name='montoVentasPrimerSemestre'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='montoVentasSegundoSemestre'}}</div>
+                </div>
               </fieldset>
               <button type='submit' class='btn btn-success'>GUARDAR</button>
             {{/autoForm}}

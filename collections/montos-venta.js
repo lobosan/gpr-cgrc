@@ -97,12 +97,13 @@ MontosVenta.attachSchema(new SimpleSchema({
   },
   cialcos: {
     type: [Object],
-    label: 'CIALCOs'
+    label: 'CIALCOs',
+    minCount: 1,
+    optional: true
   },
   'cialcos.$.cialcoID': {
     type: String,
     label: 'CIALCO',
-    optional: true,
     autoform: {
       type: 'select2',
       options: function () {
@@ -114,7 +115,6 @@ MontosVenta.attachSchema(new SimpleSchema({
   },
   'cialcos.$.cialcoNombre': {
     type: String,
-    optional: true,
     autoValue: function () {
       let cialcoID = this.siblingField("cialcoID").value;
       if (cialcoID)

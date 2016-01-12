@@ -5,8 +5,10 @@
       <div class="card card-top-buffer">
         <div class="card-body">
             {{#autoForm collection='Respaldos' id='insertRespaldoForm' type='insert' validation='keyup'}}
-              {{> afQuickField name='anio'}}
-              {{> afQuickField name='periodo'}}
+              <div class="row">
+                <div class="col-md-2">{{> afQuickField name='anio'}}</div>
+                <div class="col-md-10">{{> afQuickField name='periodo'}}</div>
+              </div>
               {{> afQuickField name='zonaID'}}
               {{> afQuickField name='provinciaID'}}
               {{> afQuickField name='respaldos'}}

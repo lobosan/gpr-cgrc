@@ -3,8 +3,8 @@ let startup = function () {
   $.fn.select2.defaults.set('debug', true);
   $.fn.select2.defaults.set('language', 'es');
   $.fn.select2.defaults.set("minimumInputLength", "3");
-  AutoForm.setDefaultTemplateForType('afArrayField', 'customArrayOfObjects');
   SimpleSchema.debug = true;
+  AutoForm.setDefaultTemplateForType('afArrayField', 'customArrayOfObjects');
   AutoForm.debug();
   Bert.defaults.style = 'growl-top-right';
 };

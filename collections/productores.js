@@ -218,7 +218,7 @@ Productores.attachSchema(new SimpleSchema({
           {label: 'CASADO', value: 'CASADO'},
           {label: 'VIUDO', value: 'VIUDO'},
           {label: 'DIVORCIADO', value: 'DIVORCIADO'},
-          {label: 'EN UNIÓN DE HECHO', value: 'EN UNIÓN DE HECHO'}
+          {label: 'UNIÓN DE HECHO', value: 'UNIÓN DE HECHO'}
         ];
       }
     }

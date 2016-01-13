@@ -1,4 +1,4 @@
-Template.default.onRendered( () => {
+Template.default.onRendered(function () {
   Meteor.setTimeout(function () {
     return $(".side-menu .nav .dropdown").on('show.bs.collapse', function() {
       return $(".side-menu .nav .dropdown .collapse").collapse('hide');

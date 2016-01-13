@@ -4,7 +4,7 @@
       <div class="col-xs-12">
         <div class="card card-top-buffer">
           <div class="card-body">
-            {{#autoForm collection='Productores' id='insertProductorForm' type='insert' validation='keyup'}}
+            {{#autoForm collection='Productores' id='insertProductorForm' type='insert'}}
               <div class="row">
                 <div class="col-md-2">{{> afQuickField name='anio'}}</div>
                 <div class="col-md-2">{{> afQuickField name='cuatrimestre'}}</div>
@@ -34,8 +34,8 @@
                   <div class="col-md-4">{{> afQuickField name='emailContacto'}}</div>
                 </div>
               </fieldset>
-              {{> afQuickField name='organizaciones' class='s2b'}}
-              {{> afQuickField name='cialcos' class='s2b'}}
+              {{> afQuickField name='organizaciones' select2Options=s2optOrganizaciones}}
+              {{> afQuickField name='cialcos' select2Options=s2optCialcos}}
               <button type='submit' class='btn btn-success'>GUARDAR</button>
             {{/autoForm}}
           </div>

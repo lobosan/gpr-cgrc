@@ -202,7 +202,7 @@ Redes.attachSchema(new SimpleSchema({
       type: 'select2',
       options: function () {
         return Organizaciones.find().map(function (organizacion) {
-          return {label: organizacion.nombreOrganizacion, value: organizacion._id};
+          return {label: organizacion.nombreOrganizacion, value: organizacion._id, title: organizacion.provinciaNombre};
         });
       },
       afFieldInput: {

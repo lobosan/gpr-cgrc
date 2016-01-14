@@ -1,5 +1,7 @@
 <template name="nuevaRed">
   {{#if Template.subscriptionsReady}}
+    {{> modalCialco}}
+    {{> modalOrganizacion}}
     <div class="row animated fadeIn">
       <div class="col-xs-12">
         <div class="card card-top-buffer">
@@ -20,8 +22,22 @@
                 <legend class="custom-legend">Datos de la red</legend>
                 {{> afQuickField name='nombreRed'}}
                 {{> afQuickField name='estado'}}
-                {{> afQuickField name='organizaciones' select2Options=s2optOrganizaciones}}
-                {{> afQuickField name='cialcos' select2Options=s2optCialcos}}
+                <div class="row">
+                  <div class="col-md-11">{{> afQuickField name='cialcos' select2Options=s2optCialcos}}</div>
+                  <div class="col-md-1">
+                    <button class="btn btn-default select2-add-option" type="button" data-toggle="modal" data-target="#nuevo-cialco">
+                      <span class="fa fa-plus"></span>
+                    </button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-11">{{> afQuickField name='organizaciones' select2Options=s2optOrganizaciones}}</div>
+                  <div class="col-md-1">
+                    <button class="btn btn-default select2-add-option" type="button" data-toggle="modal" data-target="#nueva-organizacion">
+                      <span class="fa fa-plus"></span>
+                    </button>
+                  </div>
+                </div>
               </fieldset>
               <fieldset class="custom-fieldset">
                 <legend class="custom-legend">Datos del representante de la red</legend>

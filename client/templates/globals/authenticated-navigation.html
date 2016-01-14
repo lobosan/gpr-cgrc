@@ -4,7 +4,7 @@
       <!--CIALCOs-->
       <li class="dropdown {{currentRoute 'cialcos'}} {{currentRoute 'nuevo-cialco'}}">
         <a data-toggle="collapse" href="#dropdown-cialcos">
-          <span class="icon fa fa-balance-scale"></span><span class="title">CIALCOs</span>
+          <span class="cialco-icon"></span><span class="title">CIALCOs</span>
         </a>
         <div id="dropdown-cialcos" class="panel-collapse collapse">
           <ul class="nav navbar-nav">
@@ -40,7 +40,7 @@
       <!--Productores-->
       <li class="dropdown {{currentRoute 'productores'}} {{currentRoute 'nuevo-productor'}}">
         <a data-toggle="collapse" href="#dropdown-productores">
-          <span class="icon fa fa-child"></span><span class="title">Productores</span>
+          <span class="icon icon-gla glyphicon glyphicon-grain"></span><span class="title title-gla">Productores</span>
         </a>
         <div id="dropdown-productores" class="panel-collapse collapse">
           <ul class="nav navbar-nav">
@@ -88,7 +88,7 @@
       <!--Usuarios-->
       <li class="{{currentRoute 'administracion-de-usuarios'}}">
         <a href="{{pathFor 'administracion-de-usuarios'}}">
-          <span class="icon fa fa-user-secret"></span><span class="title">Administración de usuarios</span>
+          <span class="icon fa fa-user"></span><span class="title">Administración de usuarios</span>
         </a>
       </li>
     {{/if}}

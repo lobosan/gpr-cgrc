@@ -7,7 +7,7 @@
             {{#autoForm collection='Organizaciones' id='insertOrganizacionForm' type='insert'}}
               <div class="row">
                 <div class="col-md-2">{{> afQuickField name='periodo.0.anio'}}</div>
-                <div class="col-md-2">{{> afQuickField name='periodo.0.cuatrimestre'}}</div>
+                <div class="col-md-3">{{> afQuickField name='periodo.0.cuatrimestre'}}</div>
               </div>
               <fieldset class="custom-fieldset">
                 <legend class="custom-legend">Ubicación</legend>
@@ -23,8 +23,8 @@
               <fieldset class="custom-fieldset">
                 <legend class="custom-legend">Datos de contacto de la organización</legend>
                 <div class="row">
-                  <div class="col-md-2">{{> afQuickField name='cedulaRepresentante'}}</div>
-                  <div class="col-md-10">{{> afQuickField name='nombreRepresentante'}}</div>
+                  <div class="col-md-3">{{> afQuickField name='cedulaRepresentante'}}</div>
+                  <div class="col-md-9">{{> afQuickField name='nombreRepresentante'}}</div>
                 </div>
                 {{> afQuickField name='direccion'}}
                 <div class="row">

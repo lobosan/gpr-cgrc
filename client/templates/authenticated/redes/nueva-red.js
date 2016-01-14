@@ -8,16 +8,7 @@ Template.nuevaRed.onCreated(function () {
 Template.nuevaRed.helpers({
   s2optOrganizaciones: function () {
     return {
-      placeholder: 'Seleccione una o varias organizaciones',
-      language: 'es'/*,
-      language: {
-        inputTooShort: function () {
-          return 'Ingrese al menos 3 caracteres';
-        },
-        noResults: function() {
-          return 'No existen resultados';
-        }
-      }*/
+      placeholder: 'Seleccione una o varias organizaciones'
     };
   },
   s2optCialcos: function () {

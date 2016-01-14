@@ -383,6 +383,12 @@ a:hover {
   display: inline-block;
 }
 
+.app-container .content-container .side-menu .navbar-nav li a .icon-gla {
+  margin-top: 9px;
+  width: 34px;
+  font-size: 1.7em;
+}
+
 .app-container .content-container .side-menu .navbar-nav li a .title {
   width: 0px;
   color: #a7b1c2;
@@ -427,6 +433,12 @@ a:hover {
 .app-container .content-container .side-menu:hover .navbar-nav li a .title {
   width: 192px;
   display: inline-block;
+}
+
+.app-container .content-container .side-menu .navbar-nav li a .title-gla {
+  position: relative;
+  top: -5px;
+  padding-left: 10px !important;
 }
 
 .app-container .content-container .side-menu:hover .navbar-nav li.dropdown > a:after {
@@ -696,7 +708,7 @@ a:hover {
 }
 
 .panel {
-  border-radius: 1px;
+  border-radius: 4px;
 }
 
 .panel .panel-heading {
@@ -767,6 +779,7 @@ a:hover {
 
 .modal .modal-dialog .modal-header {
   font-family: 'Roboto Condensed', sans-serif;
+  padding: 15px 20px;
 }
 
 .modal .modal-dialog .modal-content {
@@ -1853,7 +1866,53 @@ label {
   margin-left: 7px !important;
   font-family: 'Roboto Condensed', sans-serif !important;
 }
+
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #FFF !important;
   border: 1px solid #ccc !important;
+}
+
+.select2-add-option {
+  margin: 24px 0 0 0;
+  padding-left: -15px !important;
+}
+
+.modal-body .row .col-xs-12 .card-top-buffer {
+  margin-top: -15px !important;
+}
+
+.modal-body .row .col-xs-12 .card {
+  box-shadow: none !important;
+}
+
+.cialco-icon {
+  display: inline-block;
+  margin: 0 7px -5px 8px !important;
+  width: 22px !important;
+  height: 22px;
+  -webkit-mask: url(cialco.svg) no-repeat 100% 100%;
+  mask: url(cialco.svg) no-repeat 100% 100%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  background-color: #a7b1c2;
+}
+
+.flat-green .side-menu.sidebar-inverse .navbar li.active > a .cialco-icon {
+  background-color: #fff;
+  margin-left: 5px !important;
+}
+
+.modal-title {
+  color: #2C3E50;
+  font-size: 20px;
+}
+
+.list-group-item.autoform-array-item .autoform-array-item-body {
+  position: relative;
+  top: 5px;
+}
+
+.autoform-array-item-body .panel .panel-heading .panel-title {
+  font-size: 14px;
+  color: #555;
 }

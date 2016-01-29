@@ -1,12 +1,7 @@
-Template.default.onRendered(function () {
-  Meteor.setTimeout(function () {
-    return $(".side-menu .nav .dropdown").on('show.bs.collapse', function() {
-      return $(".side-menu .nav .dropdown .collapse").collapse('hide');
-    });
-  }, 1500);
-});
-
 Template.default.events({
+  'show.bs.collapse .side-menu .nav .dropdown': function () {
+    return $(".side-menu .nav .dropdown .collapse").collapse('hide');
+  },
   'click .navbar-expand-toggle': function (event, template) {
     event.preventDefault();
     $(".app-container").toggleClass("expanded");

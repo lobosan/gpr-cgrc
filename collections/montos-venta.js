@@ -103,7 +103,7 @@ MontosVenta.attachSchema(new SimpleSchema({
   },
   'cialcos.$.cialcoID': {
     type: String,
-    label: 'CIALCO',
+    label: 'Nombre del circuito',
     autoform: {
       type: 'select2',
       options: function () {
@@ -142,7 +142,7 @@ MontosVenta.attachSchema(new SimpleSchema({
     type: Number,
     decimal: true,
     min: 1,
-    label: 'Total de ventas del CIALCO por semestre ($)'
+    label: 'Total de ventas del circuito por semestre ($)'
   },
   createdAt: {
     type: String,

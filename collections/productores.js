@@ -265,7 +265,7 @@ Productores.attachSchema(new SimpleSchema({
   },
   cialcos: {
     type: [String],
-    label: 'CIALCOs a los que perntenece',
+    label: 'CIALCOs en los que participa',
     autoform: {
       type: 'select2',
       options: function () {

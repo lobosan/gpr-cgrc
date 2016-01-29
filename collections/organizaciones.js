@@ -359,12 +359,12 @@ Organizaciones.attachSchema(new SimpleSchema({
   'productoresCialco.$.hombres': {
     type: Number,
     label: 'Número de hombres en el circuito',
-    min: 0,
+    min: 0
   },
   'productoresCialco.$.mujeres': {
     type: Number,
     label: 'Número de mujeres en el circuito',
-    min: 0,
+    min: 0
   },
   'productoresCialco.$.totalProductores': {
     type: Number,

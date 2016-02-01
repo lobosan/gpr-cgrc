@@ -110,6 +110,12 @@ MontosVenta.attachSchema(new SimpleSchema({
         return Cialcos.find().map(function (cialco) {
           return {label: cialco.nombreCialco, value: cialco._id};
         });
+      },
+      select2Options: function () {
+        return {placeholder: 'Busque y seleccione un CIALCO'};
+      },
+      afFormGroup: {
+        'formgroup-class': 'col-md-8'
       }
     }
   },
@@ -142,7 +148,12 @@ MontosVenta.attachSchema(new SimpleSchema({
     type: Number,
     decimal: true,
     min: 1,
-    label: 'Total de ventas del circuito por semestre ($)'
+    label: 'Total de ventas del circuito por semestre ($)',
+    autoform: {
+      afFormGroup: {
+        'formgroup-class': 'col-md-4'
+      }
+    }
   },
   createdAt: {
     type: String,

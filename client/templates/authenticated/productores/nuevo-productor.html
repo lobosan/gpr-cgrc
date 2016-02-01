@@ -1,5 +1,7 @@
 <template name="nuevoProductor">
   {{#if Template.subscriptionsReady}}
+    {{> modalCialco}}
+    {{> modalOrganizacion}}
     <div class="row animated fadeIn">
       <div class="col-xs-12">
         <div class="card card-top-buffer">
@@ -34,8 +36,22 @@
                   <div class="col-md-4">{{> afQuickField name='emailContacto'}}</div>
                 </div>
               </fieldset>
-              {{> afQuickField name='cialcos' select2Options=s2optCialcos}}
-              {{> afQuickField name='organizaciones' select2Options=s2optOrganizaciones}}
+              <div class="row">
+                <div class="col-md-11">{{> afQuickField name='cialcos'}}</div>
+                <div class="col-md-1">
+                  <button class="btn btn-default select2-add-option" type="button" data-toggle="modal" data-target="#nuevo-cialco">
+                    <span class="fa fa-plus"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-11">{{> afQuickField name='organizaciones'}}</div>
+                <div class="col-md-1">
+                  <button class="btn btn-default select2-add-option" type="button" data-toggle="modal" data-target="#nueva-organizacion">
+                    <span class="fa fa-plus"></span>
+                  </button>
+                </div>
+              </div>
               <button type='submit' class='btn btn-success'>GUARDAR</button>
             {{/autoForm}}
           </div>

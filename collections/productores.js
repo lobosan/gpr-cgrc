@@ -258,6 +258,12 @@ Productores.attachSchema(new SimpleSchema({
           return {label: organizacion.nombreOrganizacion, value: organizacion._id};
         });
       },
+      select2Options: function () {
+        return {
+          placeholder: 'Seleccione una o varias organizaciones',
+          allowClear: true
+        };
+      },
       afFieldInput: {
         multiple: true
       }
@@ -272,6 +278,12 @@ Productores.attachSchema(new SimpleSchema({
         return Cialcos.find().map(function (cialco) {
           return {label: cialco.nombreCialco, value: cialco._id};
         });
+      },
+      select2Options: function () {
+        return {
+          placeholder: 'Seleccione uno o varios CIALCOs',
+          allowClear: true
+        };
       },
       afFieldInput: {
         multiple: true
@@ -333,17 +345,17 @@ Productores.attachSchema(new SimpleSchema({
 }));
 
 TabularTables.Productores = new Tabular.Table({
-  name: "Lista de productores",
+  name: 'Lista de productores',
   collection: Productores,
   columns: [
-    {data: "anio", title: "Año"},
-    {data: "cuatrimestre", title: "Cuatrimestre"},
-    {data: "zonaNombre", title: "Zona"},
-    {data: "provinciaNombre", title: "Provincia"},
-    {data: "cedula", title: "Cédula"},
-    {data: "apellidos", title: "Apellidos"},
-    {data: "nombres", title: "Nombres"},
-    {data: "responsable", title: "Responsable"}
+    {data: 'anio', title: 'Año'},
+    {data: 'cuatrimestre', title: 'Cuatrimestre'},
+    {data: 'zonaNombre', title: 'Zona'},
+    {data: 'provinciaNombre', title: 'Provincia'},
+    {data: 'cedula', title: 'Cédula'},
+    {data: 'apellidos', title: 'Apellidos'},
+    {data: 'nombres', title: 'Nombres'},
+    {data: 'responsable', title: 'Responsable'}
   ],
   sub: new SubsManager()
 });

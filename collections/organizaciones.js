@@ -341,6 +341,12 @@ Organizaciones.attachSchema(new SimpleSchema({
         return Cialcos.find().map(function (cialco) {
           return {label: cialco.nombreCialco, value: cialco._id};
         });
+      },
+      select2Options: function () {
+        return {placeholder: 'Busque y seleccione un CIALCO'};
+      },
+      afFormGroup: {
+        'formgroup-class': 'col-md-4'
       }
     }
   },
@@ -359,12 +365,22 @@ Organizaciones.attachSchema(new SimpleSchema({
   'productoresCialco.$.hombres': {
     type: Number,
     label: 'Número de hombres en el circuito',
-    min: 0
+    min: 0,
+    autoform: {
+      afFormGroup: {
+        'formgroup-class': 'col-md-4'
+      }
+    }
   },
   'productoresCialco.$.mujeres': {
     type: Number,
     label: 'Número de mujeres en el circuito',
-    min: 0
+    min: 0,
+    autoform: {
+      afFormGroup: {
+        'formgroup-class': 'col-md-4'
+      }
+    }
   },
   'productoresCialco.$.totalProductores': {
     type: Number,

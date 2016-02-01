@@ -5,19 +5,6 @@ Template.nuevaRed.onCreated(function () {
   self.subscribe('cialcos');
 });
 
-Template.nuevaRed.helpers({
-  s2optOrganizaciones: function () {
-    return {
-      placeholder: 'Seleccione una o varias organizaciones'
-    };
-  },
-  s2optCialcos: function () {
-    return {
-      placeholder: 'Seleccione uno o varios CIALCOs'
-    };
-  }
-});
-
 Template.nuevaRed.events({
   'change [name="cedulaRepresentante"]': function (event, template) {
     event.preventDefault();

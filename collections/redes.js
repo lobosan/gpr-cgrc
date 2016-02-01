@@ -205,6 +205,12 @@ Redes.attachSchema(new SimpleSchema({
           return {label: organizacion.nombreOrganizacion, value: organizacion._id, title: organizacion.provinciaNombre};
         });
       },
+      select2Options: function () {
+        return {
+          placeholder: 'Seleccione una o varias organizaciones',
+          allowClear: true
+        };
+      },
       afFieldInput: {
         multiple: true
       }
@@ -220,12 +226,18 @@ Redes.attachSchema(new SimpleSchema({
           return {label: cialco.nombreCialco, value: cialco._id};
         });
       },
+      select2Options: function () {
+        return {
+          placeholder: 'Seleccione uno o varios CIALCOs',
+          allowClear: true
+        };
+      },
       afFieldInput: {
         multiple: true
       }
     }
   },
-  cedulaRepresentante: {
+  redCedulaRepresentante: {
     type: String,
     label: 'Cédula',
     regEx: /^[0-9]{10}$/,
@@ -233,7 +245,7 @@ Redes.attachSchema(new SimpleSchema({
     max: 10,
     optional: true
   },
-  nombreRepresentante: {
+  redNombreRepresentante: {
     type: String,
     label: 'Nombre del representante'
   },
@@ -332,7 +344,7 @@ TabularTables.Redes = new Tabular.Table({
     {data: "zonaNombre", title: "Zona"},
     {data: "provinciaNombre", title: "Provincia"},
     {data: "nombreRed", title: "Red"},
-    {data: "nombreRepresentante", title: "Representante"},
+    {data: "redNombreRepresentante", title: "Representante"},
     {data: "responsable", title: "Responsable"}
   ],
   sub: new SubsManager()

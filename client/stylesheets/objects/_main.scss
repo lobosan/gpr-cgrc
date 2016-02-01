@@ -1802,10 +1802,6 @@ body.login-page .login-footer {
   margin-top: 25px;
 }
 
-.select2-container--default .select2-selection--multiple {
-  border-color: #CCC !important;
-}
-
 [data-required] label:not(.radio-inline):after {
   content: ' *';
   color: #a94442;
@@ -1839,6 +1835,21 @@ body.login-page .login-footer {
 label {
   color: #252525;
   font-weight: normal !important;
+}
+
+.select2-container {
+  width: 100% !important;
+}
+
+.select2-close-mask{
+  z-index: 200000;
+}
+.select2-dropdown{
+  z-index: 200099;
+}
+
+.select2-container--default .select2-selection--multiple {
+  border-color: #CCC !important;
 }
 
 .select2-container--default .select2-selection--single {

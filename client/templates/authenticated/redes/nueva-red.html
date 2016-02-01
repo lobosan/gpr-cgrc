@@ -23,7 +23,7 @@
                 {{> afQuickField name='nombreRed'}}
                 {{> afQuickField name='estado'}}
                 <div class="row">
-                  <div class="col-md-11">{{> afQuickField name='cialcos' select2Options=s2optCialcos}}</div>
+                  <div class="col-md-11">{{> afQuickField name='cialcos'}}</div>
                   <div class="col-md-1">
                     <button class="btn btn-default select2-add-option" type="button" data-toggle="modal" data-target="#nuevo-cialco">
                       <span class="fa fa-plus"></span>
@@ -31,7 +31,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-11">{{> afQuickField name='organizaciones' select2Options=s2optOrganizaciones}}</div>
+                  <div class="col-md-11">{{> afQuickField name='organizaciones'}}</div>
                   <div class="col-md-1">
                     <button class="btn btn-default select2-add-option" type="button" data-toggle="modal" data-target="#nueva-organizacion">
                       <span class="fa fa-plus"></span>
@@ -42,8 +42,8 @@
               <fieldset class="custom-fieldset">
                 <legend class="custom-legend">Datos del representante de la red</legend>
                 <div class="row">
-                  <div class="col-md-2">{{> afQuickField name='cedulaRepresentante'}}</div>
-                  <div class="col-md-10">{{> afQuickField name='nombreRepresentante'}}</div>
+                  <div class="col-md-4">{{> afQuickField name='redCedulaRepresentante'}}</div>
+                  <div class="col-md-8">{{> afQuickField name='redNombreRepresentante'}}</div>
                 </div>
                 <div class="row">
                   <div class="col-md-4">{{> afQuickField name='telefonoFijoRepresentante'}}</div>

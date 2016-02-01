@@ -5,21 +5,6 @@ Template.nuevoProductor.onCreated(function () {
   self.subscribe('cialcos');
 });
 
-Template.nuevoProductor.helpers({
-  s2optOrganizaciones: function () {
-    return {
-      placeholder: "Seleccione una o varias organizaciones",
-      allowClear: true
-    };
-  },
-  s2optCialcos: function () {
-    return {
-      placeholder: "Seleccione uno o varios CIALCOs",
-      allowClear: true
-    };
-  }
-});
-
 Template.nuevoProductor.events({
   'change [name="cedula"]': function (event, template) {
     event.preventDefault();

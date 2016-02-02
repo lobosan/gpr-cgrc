@@ -36,21 +36,21 @@
                   <div class="col-md-4">{{> afQuickField name='emailContacto'}}</div>
                 </div>
               </fieldset>
-              <div class="row">
-                <div class="col-md-11">{{> afQuickField name='cialcos'}}</div>
-                <div class="col-md-1">
-                  <button class="btn btn-default select2-add-option" type="button" data-toggle="modal" data-target="#nuevo-cialco">
-                    <span class="fa fa-plus"></span>
-                  </button>
-                </div>
+              <div class="input-group select2-bootstrap-append">
+                {{> afQuickField name='cialcos'}}
+                <span class="input-group-btn s2m-add">
+                    <button class="btn btn-default" type="button" data-toggle="modal" data-target="#nuevo-cialco">
+                      <span class="fa fa-plus"></span>
+                    </button>
+                  </span>
               </div>
-              <div class="row">
-                <div class="col-md-11">{{> afQuickField name='organizaciones'}}</div>
-                <div class="col-md-1">
-                  <button class="btn btn-default select2-add-option" type="button" data-toggle="modal" data-target="#nueva-organizacion">
-                    <span class="fa fa-plus"></span>
-                  </button>
-                </div>
+              <div class="input-group select2-bootstrap-append">
+                {{> afQuickField name='organizaciones'}}
+                <span class="input-group-btn s2m-add">
+                    <button class="btn btn-default" type="button" data-toggle="modal" data-target="#nueva-organizacion">
+                      <span class="fa fa-plus"></span>
+                    </button>
+                  </span>
               </div>
               <button type='submit' class='btn btn-success'>GUARDAR</button>
             {{/autoForm}}

@@ -260,7 +260,7 @@ Productores.attachSchema(new SimpleSchema({
       },
       select2Options: function () {
         return {
-          placeholder: 'Seleccione una o varias organizaciones',
+          placeholder: 'Seleccione una o varias',
           allowClear: true
         };
       },
@@ -281,7 +281,7 @@ Productores.attachSchema(new SimpleSchema({
       },
       select2Options: function () {
         return {
-          placeholder: 'Seleccione uno o varios CIALCOs',
+          placeholder: 'Seleccione uno o varios',
           allowClear: true
         };
       },

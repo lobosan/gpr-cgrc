@@ -1837,7 +1837,25 @@ label {
   font-weight: normal !important;
 }
 
+.s2m-add {
+  vertical-align: bottom !important;
+  top: -10px;
+}
+
+.select2-container--default .select2-selection--multiple {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.select2-selection--multiple {
+  height: 34px !important;
+}
+
 .select2-container {
+  width: 100% !important;
+}
+
+.select2-search__field {
   width: 100% !important;
 }
 

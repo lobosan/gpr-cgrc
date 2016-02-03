@@ -6,7 +6,7 @@ Template.nuevaRed.onCreated(function () {
 });
 
 Template.nuevaRed.events({
-  'change [name="cedulaRepresentante"]': function (event, template) {
+  'change #redCedulaRepresentante': function (event, template) {
     event.preventDefault();
 
     let cedula = event.currentTarget.value;
@@ -15,7 +15,7 @@ Template.nuevaRed.events({
         if (error) {
           Bert.alert(error.reason, "warning");
         } else {
-          $('input[name="nombreRepresentante"]').val(`${response.apellidos} ${response.nombres}`);
+          $('#redNombreRepresentante').val(`${response.apellidos} ${response.nombres}`);
         }
       });
     }

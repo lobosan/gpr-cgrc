@@ -3,7 +3,7 @@ let hooksObject = {
     Bert.alert('Información guardada exitosamente', 'success');
   },
   onError: function (formType, error) {
-    Bert.alert(`No se guardó la información, revise sus datos. ${error}`, 'warning');
+    Bert.alert('No se guardó la información, revise sus datos', 'warning');
   }
 };
 
@@ -16,3 +16,18 @@ AutoForm.addHooks([
   'insertMetasForm',
   'insertRespaldoForm'
 ], hooksObject);
+
+AutoForm.hooks({
+  insertOrganizacionForm: {
+    before: {
+      insert: function (doc) {
+        if (doc.telefonoFijo1 === undefined && doc.celular1 === undefined && doc.email=== undefined) {
+          Bert.alert('Al menos un dato de contacto es requerido', 'warning');
+          return false;
+        } else {
+          return doc;
+        }
+      }
+    }
+  }
+});

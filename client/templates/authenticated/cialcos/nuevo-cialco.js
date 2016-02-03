@@ -4,7 +4,7 @@ Template.nuevoCialco.onCreated(function () {
 });
 
 Template.nuevoCialco.events({
-  'change [name="cedulaRepresentante"]': function (event, template) {
+  'change #ciaCedulaRepresentante': function (event, template) {
     event.preventDefault();
 
     let cedula = event.currentTarget.value;
@@ -13,7 +13,7 @@ Template.nuevoCialco.events({
         if (error) {
           Bert.alert(error.reason, "warning");
         } else {
-          $('input[name="nombreRepresentante"]').val(`${response.apellidos} ${response.nombres}`);
+          $('#ciaNombreRepresentante').val(`${response.apellidos} ${response.nombres}`);
         }
       });
     }

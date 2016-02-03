@@ -16,10 +16,11 @@ Template.nuevaOrganizacion.events({
         } else {
           if (response.error) {
             Bert.alert(response.error, "warning");
+            $('input[name="ruc"]').val('');
             $('input[name="nombreOrganizacion"]').val('');
             $('input[name="actividadEconomica"]').val('');
-            $('input[name="cedulaRepresentante"]').val('');
-            $('input[name="nombreRepresentante"]').val('');
+            $('#orgCedulaRepresentante').val('');
+            $('#orgNombreRepresentante').val('');
             $('textarea[name="direccion"]').val('');
             $('input[name="telefonoFijo1"]').val('');
             $('input[name="telefonoFijo2"]').val('');
@@ -27,8 +28,8 @@ Template.nuevaOrganizacion.events({
           } else {
             $('input[name="nombreOrganizacion"]').val(response.nombreOrganizacion);
             $('input[name="actividadEconomica"]').val(response.actividadEconomica);
-            $('input[name="cedulaRepresentante"]').val(response.cedulaRepresentante);
-            $('input[name="nombreRepresentante"]').val(response.nombreRepresentante);
+            $('#orgCedulaRepresentante').val(response.cedulaRepresentante);
+            $('#orgNombreRepresentante').val(response.nombreRepresentante);
             $('textarea[name="direccion"]').val(response.direccion);
             $('input[name="telefonoFijo1"]').val(response.telefonoFijo1);
             $('input[name="telefonoFijo2"]').val(response.telefonoFijo2);

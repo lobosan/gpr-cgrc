@@ -237,7 +237,7 @@ Redes.attachSchema(new SimpleSchema({
       }
     }
   },
-  redCedulaRepresentante: {
+  cedulaRepresentante: {
     type: String,
     label: 'Cédula',
     regEx: /^[0-9]{10}$/,
@@ -245,7 +245,7 @@ Redes.attachSchema(new SimpleSchema({
     max: 10,
     optional: true
   },
-  redNombreRepresentante: {
+  nombreRepresentante: {
     type: String,
     label: 'Nombre del representante'
   },
@@ -344,7 +344,7 @@ TabularTables.Redes = new Tabular.Table({
     {data: "zonaNombre", title: "Zona"},
     {data: "provinciaNombre", title: "Provincia"},
     {data: "nombreRed", title: "Red"},
-    {data: "redNombreRepresentante", title: "Representante"},
+    {data: "nombreRepresentante", title: "Representante"},
     {data: "responsable", title: "Responsable"}
   ],
   sub: new SubsManager()

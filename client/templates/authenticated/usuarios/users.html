@@ -1,7 +1,7 @@
 <template name="users">
   {{#if isInRole 'admin'}}
-    {{> sendInvitationModal}}
     {{#if Template.subscriptionsReady}}
+      {{> sendInvitationModal}}
       <div class="row animated fadeIn">
         <div class="col-xs-12">
           <div class="card card-top-buffer">
@@ -24,8 +24,8 @@
                   <tr>
                     <td class="text-left text-middle">{{profile.name}}</td>
                     <td class="text-left text-middle">
-                      {{#if isCurrentUser _id}}<label
-                        class="label label-success">USTED!</label>{{/if}} {{emails.[0].address}}
+                      {{#if isCurrentUser _id}}
+                        <label class="label label-success">USTED!</label>{{/if}} {{emails.[0].address}}
                     </td>
                     <td>
                       <select {{disableIfAdmin _id}} name="userRole" class="form-control">

@@ -1,6 +1,11 @@
 Template.invite.onCreated(function () {
   let self = this;
-  self.subscribe('invite', FlowRouter.current().params.token);
+  self.ready = new ReactiveVar();
+  self.autorun(function() {
+    let token = FlowRouter.current().params.token;
+    let handleInvites = InviteSubs.subscribe('invite', token);
+    self.ready.set(handleInvites.ready());
+  });
 });
 
 Template.invite.helpers({

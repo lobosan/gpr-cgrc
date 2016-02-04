@@ -2,6 +2,8 @@ DPASubs = new SubsManager();
 OrganizacionesSubs = new SubsManager();
 CialcosSubs = new SubsManager();
 UsersSubs = new SubsManager();
+InviteSubs = new SubsManager();
+InvitationsSubs = new SubsManager();
 
 let pathFor = ( path, view ) => {
   if ( path.hash ) {

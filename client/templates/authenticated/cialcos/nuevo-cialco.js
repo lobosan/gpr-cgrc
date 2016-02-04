@@ -1,6 +1,10 @@
 Template.nuevoCialco.onCreated(function () {
   let self = this;
-  self.subscribe('dpa');
+  self.ready = new ReactiveVar();
+  self.autorun(function() {
+    let handle = DPASubs.subscribe('dpa');
+    self.ready.set(handle.ready());
+  });
 });
 
 Template.nuevoCialco.events({

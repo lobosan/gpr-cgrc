@@ -31,3 +31,16 @@ AutoForm.hooks({
     }
   }
 });
+
+AutoForm.addHooks(['insertCialcoForm', 'insertRedForm'], {
+  before: {
+    insert: function (doc) {
+      if (doc.telefonoFijoRepresentante === undefined && doc.celularRepresentante === undefined && doc.emailRepresentante=== undefined) {
+        Bert.alert('Al menos un dato de contacto es requerido', 'warning');
+        return false;
+      } else {
+        return doc;
+      }
+    }
+  }
+});

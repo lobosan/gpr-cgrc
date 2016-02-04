@@ -1,5 +1,5 @@
 Meteor.publish('dpa', function () {
-    return DPA.find({});
+    return DPA.find({}, {reactive: false});
 });
 
 Meteor.publish('provincias', function () {

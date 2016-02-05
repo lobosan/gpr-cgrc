@@ -1,5 +1,5 @@
 .flat-green {
-  background-color: #F3F3F3;
+  background-color: #F2F2F2;
   /* small screen */
 }
 
@@ -339,8 +339,7 @@
 }
 
 .flat-green .card {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  border: 0px solid #E4E4E4;
+  box-shadow: 0 -1px 0 #e5e5e5,0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
 }
 
 .flat-green .card .card-header {

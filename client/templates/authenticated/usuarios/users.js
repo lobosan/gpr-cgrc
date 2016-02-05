@@ -2,8 +2,8 @@ Template.users.onCreated(function () {
   let self = this;
   self.ready = new ReactiveVar();
   self.autorun(function() {
-    let handleUsers = UsersSubs.subscribe('users');
-    let handleInvitations = InvitationsSubs.subscribe('invitations');
+    let handleUsers = SubscriptionManager.subscribe('users');
+    let handleInvitations = SubscriptionManager.subscribe('invitations');
     self.ready.set(handleUsers.ready());
     self.ready.set(handleInvitations.ready());
   });

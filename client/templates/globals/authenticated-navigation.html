@@ -1,6 +1,17 @@
 <template name="authenticatedNavigation">
   <ul class="nav navbar-nav">
     {{#if isInRole 'admin'}}
+      <!--Reportes-->
+      <li class="dropdown {{currentRoute 'reporte-de-cialcos'}}">
+        <a data-toggle="collapse" href="#dropdown-reportes">
+          <span class="icon fa fa-line-chart"></span><span class="title">Reportes</span>
+        </a>
+        <div id="dropdown-reportes" class="panel-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="{{pathFor 'reporte-de-cialcos'}}">CIALCOs nuevos o fortalecidos</a></li>
+          </ul>
+        </div>
+      </li>
       <!--CIALCOs-->
       <li class="dropdown {{currentRoute 'cialcos'}} {{currentRoute 'nuevo-cialco'}}">
         <a data-toggle="collapse" href="#dropdown-cialcos">

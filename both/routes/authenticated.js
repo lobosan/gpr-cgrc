@@ -21,14 +21,63 @@ const authenticatedRoutes = FlowRouter.group({
   triggersEnter: [authenticatedRedirect]
 });
 
-authenticatedRoutes.route('/administracion-de-usuarios', {
-  name: 'administracion-de-usuarios',
-  triggersEnter: [blockUnauthorizedAdmin],
+// Reportes
+authenticatedRoutes.route('/reporte-de-cialcos', {
+  name: 'reporte-de-cialcos',
   action() {
-    BlazeLayout.render('default', {yield: 'users'});
+    BlazeLayout.render('default', {yield: 'reporteCialcos'});
   }
 });
 
+// CIALCOs
+authenticatedRoutes.route('/cialcos', {
+  name: 'cialcos',
+  action() {
+    BlazeLayout.render('default', {yield: 'cialcos'});
+  }
+});
+
+authenticatedRoutes.route('/nuevo-cialco', {
+  name: 'nuevo-cialco',
+  triggersEnter: [blockUnauthorizedManager],
+  action() {
+    BlazeLayout.render('default', {yield: 'nuevoCialco'});
+  }
+});
+
+// Organizaciones
+authenticatedRoutes.route('/organizaciones', {
+  name: 'organizaciones',
+  action() {
+    BlazeLayout.render('default', {yield: 'organizaciones'});
+  }
+});
+
+authenticatedRoutes.route('/nueva-organizacion', {
+  name: 'nueva-organizacion',
+  triggersEnter: [blockUnauthorizedManager],
+  action() {
+    BlazeLayout.render('default', {yield: 'nuevaOrganizacion'});
+  }
+});
+
+// Redes
+authenticatedRoutes.route('/redes', {
+  name: 'redes',
+  action() {
+    BlazeLayout.render('default', {yield: 'redes'});
+  }
+});
+
+authenticatedRoutes.route('/nueva-red', {
+  name: 'nueva-red',
+  triggersEnter: [blockUnauthorizedManager],
+  action() {
+    BlazeLayout.render('default', {yield: 'nuevaRed'});
+  }
+});
+
+// Productores
 authenticatedRoutes.route('/productores', {
   name: 'productores',
   triggersEnter: [blockUnauthorizedManager],
@@ -45,51 +94,7 @@ authenticatedRoutes.route('/nuevo-productor', {
   }
 });
 
-authenticatedRoutes.route('/organizaciones', {
-  name: 'organizaciones',
-  action() {
-    BlazeLayout.render('default', {yield: 'organizaciones'});
-  }
-});
-
-authenticatedRoutes.route('/nueva-organizacion', {
-  name: 'nueva-organizacion',
-  triggersEnter: [blockUnauthorizedManager],
-  action() {
-    BlazeLayout.render('default', {yield: 'nuevaOrganizacion'});
-  }
-});
-
-authenticatedRoutes.route('/cialcos', {
-  name: 'cialcos',
-  action() {
-    BlazeLayout.render('default', {yield: 'cialcos'});
-  }
-});
-
-authenticatedRoutes.route('/nuevo-cialco', {
-  name: 'nuevo-cialco',
-  triggersEnter: [blockUnauthorizedManager],
-  action() {
-    BlazeLayout.render('default', {yield: 'nuevoCialco'});
-  }
-});
-
-authenticatedRoutes.route('/redes', {
-  name: 'redes',
-  action() {
-    BlazeLayout.render('default', {yield: 'redes'});
-  }
-});
-
-authenticatedRoutes.route('/nueva-red', {
-  name: 'nueva-red',
-  triggersEnter: [blockUnauthorizedManager],
-  action() {
-    BlazeLayout.render('default', {yield: 'nuevaRed'});
-  }
-});
-
+// Montos de venta
 authenticatedRoutes.route('/montos-de-venta', {
   name: 'montos-de-venta',
   action() {
@@ -105,6 +110,23 @@ authenticatedRoutes.route('/nuevo-monto-venta', {
   }
 });
 
+// Respaldos
+authenticatedRoutes.route('/respaldos-gpr', {
+  name: 'respaldos-gpr',
+  action() {
+    BlazeLayout.render('default', {yield: 'respaldos'});
+  }
+});
+
+authenticatedRoutes.route('/nuevo-respaldo-gpr', {
+  name: 'nuevo-respaldo-gpr',
+  triggersEnter: [blockUnauthorizedManager],
+  action() {
+    BlazeLayout.render('default', {yield: 'nuevoRespaldo'});
+  }
+});
+
+// Metas
 authenticatedRoutes.route('/metas-gpr', {
   name: 'metas-gpr',
   action() {
@@ -120,17 +142,11 @@ authenticatedRoutes.route('/nuevas-metas-gpr', {
   }
 });
 
-authenticatedRoutes.route('/respaldos-gpr', {
-  name: 'respaldos-gpr',
+// Usuarios
+authenticatedRoutes.route('/administracion-de-usuarios', {
+  name: 'administracion-de-usuarios',
+  triggersEnter: [blockUnauthorizedAdmin],
   action() {
-    BlazeLayout.render('default', {yield: 'respaldos'});
-  }
-});
-
-authenticatedRoutes.route('/nuevo-respaldo-gpr', {
-  name: 'nuevo-respaldo-gpr',
-  triggersEnter: [blockUnauthorizedManager],
-  action() {
-    BlazeLayout.render('default', {yield: 'nuevoRespaldo'});
+    BlazeLayout.render('default', {yield: 'users'});
   }
 });

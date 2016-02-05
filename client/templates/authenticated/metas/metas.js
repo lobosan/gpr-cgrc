@@ -1,13 +1,18 @@
 Template.metas.onCreated(function () {
   let self = this;
-  self.subscribe('provincias');
+  self.ready = new ReactiveVar();
   self.anio = new ReactiveVar();
   self.provinciaID = new ReactiveVar();
 
   self.autorun(function() {
+    let handleProvincias = SubscriptionManager.subscribe('provincias');
+    self.ready.set(handleProvincias.ready());
     let anio = self.anio.get();
     let provinciaID = self.provinciaID.get();
-    if (anio && provinciaID) self.subscribe('metas', anio, provinciaID);
+    if (anio && provinciaID) {
+      let handleMetas = SubscriptionManager.subscribe('metas', anio, provinciaID);
+      self.ready.set(handleMetas.ready());
+    }
   });
 });
 

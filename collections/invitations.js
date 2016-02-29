@@ -1,4 +1,5 @@
 Invitations = new Meteor.Collection('invitations');
+SubsManagerInvitations = new SubsManager();
 
 Invitations.allow({
   insert: () => false,

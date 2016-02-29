@@ -1,4 +1,5 @@
 Organizaciones = new Meteor.Collection('organizaciones');
+SubsManagerOrganizaciones = new SubsManager();
 
 Organizaciones.attachSchema(new SimpleSchema({
   periodo: {

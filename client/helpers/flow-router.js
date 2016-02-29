@@ -1,5 +1,3 @@
-SubscriptionManager = new SubsManager();
-
 let pathFor = (path, view) => {
   if (path.hash) {
     view = path;

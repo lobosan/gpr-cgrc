@@ -1,4 +1,5 @@
 Cialcos = new Meteor.Collection('cialcos');
+SubsManagerCialcos = new SubsManager();
 
 Cialcos.attachSchema(new SimpleSchema({
   periodo: {

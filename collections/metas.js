@@ -1,4 +1,5 @@
 Metas = new Meteor.Collection('metas');
+SubsManagerMetas = new SubsManager();
 
 Metas.attachSchema(new SimpleSchema({
   anio: {

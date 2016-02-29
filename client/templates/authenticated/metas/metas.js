@@ -5,12 +5,12 @@ Template.metas.onCreated(function () {
   self.provinciaID = new ReactiveVar();
 
   self.autorun(function() {
-    let handleProvincias = SubscriptionManager.subscribe('provincias');
+    let handleProvincias = SubsManagerDPA.subscribe('provincias');
     self.ready.set(handleProvincias.ready());
     let anio = self.anio.get();
     let provinciaID = self.provinciaID.get();
     if (anio && provinciaID) {
-      let handleMetas = SubscriptionManager.subscribe('metas', anio, provinciaID);
+      let handleMetas = SubsManagerMetas.subscribe('metas', anio, provinciaID);
       self.ready.set(handleMetas.ready());
     }
   });

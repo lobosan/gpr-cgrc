@@ -2,9 +2,9 @@ Template.nuevaRed.onCreated(function () {
   let self = this;
   self.ready = new ReactiveVar();
   self.autorun(function() {
-    let handleDPA = SubscriptionManager.subscribe('dpa');
-    let handleOrganizaciones = SubscriptionManager.subscribe('organizaciones');
-    let handleCialcos = SubscriptionManager.subscribe('cialcos');
+    let handleDPA = SubsManagerDPA.subscribe('dpa');
+    let handleOrganizaciones = SubsManagerOrganizaciones.subscribe('organizaciones');
+    let handleCialcos = SubsManagerCialcos.subscribe('cialcos');
     self.ready.set(handleDPA.ready());
     self.ready.set(handleOrganizaciones.ready());
     self.ready.set(handleCialcos.ready());

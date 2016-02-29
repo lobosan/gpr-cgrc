@@ -3,7 +3,7 @@ Template.invite.onCreated(function () {
   self.ready = new ReactiveVar();
   self.autorun(function() {
     let token = FlowRouter.current().params.token;
-    let handleInvites = SubscriptionManager.subscribe('invite', token);
+    let handleInvites = SubsManagerInvitations.subscribe('invite', token);
     self.ready.set(handleInvites.ready());
   });
 });

@@ -3,7 +3,7 @@ Template.reporteCialcos.onCreated(function () {
   self.ready = new ReactiveVar();
   self.cialcosData = new ReactiveVar();
   self.autorun(function () {
-    let handleCialcos = SubscriptionManager.subscribe('reporteCialcos');
+    let handleCialcos = SubsManagerCialcos.subscribe('reporteCialcos');
     self.ready.set(handleCialcos.ready());
     if (handleCialcos.ready()) {
       self.cialcosData.set({

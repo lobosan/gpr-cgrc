@@ -1,3 +1,5 @@
+SubsManagerUsers = new SubsManager();
+
 Meteor.users.allow({
   insert: () => false,
   update: () => false,
